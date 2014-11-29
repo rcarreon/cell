@@ -18,7 +18,7 @@ mysql_select_db("cellcity",$con2);
 if(isset($_GET['folio'])){
 	$e_folio     = $_GET['folio'];
 	$nombree = mysql_real_escape_string($_GET['editcliente']);
-	$query1=mysql_query("select folio,modelo,imei,cliente,status,reparacion,detalles,password,fecha from dispos where folio='$e_folio'",$con2);
+	$query1=mysql_query("select folio,modelo,imei,cliente,status,reparacion,detalles,password,fecha,sucursal  from dispos where folio='$e_folio'",$con2);
 	$query3=mysql_query("select email,telefono from cliente where nombre ='$nombree'",$con2);	
 	$query2=mysql_fetch_array($query1);
 	$query4=mysql_fetch_array($query3);
@@ -36,6 +36,10 @@ if(isset($_GET['folio'])){
 		<div >
 			<input  name="editcliente" id="editcliente" disabled="disabled" value="<?php echo $query2[3];?>" />
 		</div>
+		
+		
+			Sucursal: <label > <?php echo $query2[9]; ?></label><br />
+		
 		Equipo:
 		<div >
 			<input type="text" name="editmodelo"  id="editmodelo" value="<?php echo $query2[1]; ?>" tabindex=1 />

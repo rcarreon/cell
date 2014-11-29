@@ -294,5 +294,13 @@ agregar campo extra en s_sumito para agregar
 
  campo sucursal  en el INSERT y variable $adonde  en VALUES
 
+////////
+
+
+
+base de datos 
+
+ alter table dispos add sucursal varchar(10) after detalles;
+
 
 

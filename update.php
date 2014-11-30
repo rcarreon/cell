@@ -29,7 +29,7 @@ if(isset($_GET['folio'])){
 		<h4> Edita Folio </h4>
 		<div style="position:absolute;top:15%;left:15%">
 		Folio:
-		<div >
+		<div>
 			<input type="text" name="editfolio"  disabled="disabled" id="editfolio" value="<?php echo $e_folio ;?>" />
 		</div>
 		Cliente:
@@ -78,19 +78,19 @@ if(isset($_GET['folio'])){
 								
 				Status:<label ><?php echo $query2[4]; ?></label><br/>
 			<div>
-			<select id="editstatus" tabindex=4 class="form-control">
-				<option selected="selected" disabled="disabled"><?php echo $query2[4]; ?></option>
-				<option  value="listo" id="listo"> Listo </option>
-				<option  value="listo" id="nohay"> No hay reparacion </option>
-				<option  value="Entregado" id="Entregado" > Entregado </option>
+				<select id="editstatus" tabindex=4 class="form-control">
+					<option selected="selected" disabled="disabled"><?php echo $query2[4]; ?></option>
+					<option  value="listo" id="listo"> Listo </option>
+					<option  value="listo" id="nohay"> No hay reparacion </option>
+					<option  value="Entregado" id="Entregado" > Entregado </option>
 
-			</select>
-		</div>			
-				Detalles:
-				<div><textarea type="text"  maxlength="115" name="editdetalles" id="editdetalles" tabindex=5 ><?php echo $query2[6]; ?></textarea></div>
-				Contraseña:<div><input type="text" name="editpassword" id="editpassword" value="<?php echo $query2[7]; ?>" tabindex=6 /></div>		
+				</select>
+			</div>	
 				Email:<div><input type="text" disabled="disabled"  name="editemail" id="editemail" value="<?php echo $query4[0]; ?>"/></div>									
-				Contacto:<div><input type="text"  disabled="disabled" name="editcontacto" id="editcontacto" value="<?php echo $query4[1]; ?>"/></div>	
+				Contacto:<div><input type="text"  disabled="disabled" name="editcontacto" id="editcontacto" value="<?php echo $query4[1]; ?>"/></div>		
+				Detalles:<div><textarea type="text"  maxlength="115" name="editdetalles" id="editdetalles" tabindex=5 ><?php echo $query2[6]; ?></textarea></div>
+				Contraseña:<div><input type="text" name="editpassword" id="editpassword" value="<?php echo $query2[7]; ?>" tabindex=6 /></div>		
+					
 			<br /><br>		
 		</div></div>	<br> <br /><br /><br /><br />
 		

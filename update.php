@@ -18,7 +18,7 @@ mysql_select_db("cellcity",$con2);
 if(isset($_GET['folio'])){
 	$e_folio     = $_GET['folio'];
 	$nombree = mysql_real_escape_string($_GET['editcliente']);
-	$query1=mysql_query("select folio,modelo,imei,cliente,status,reparacion,detalles,password,fecha,sucursal  from dispos where folio='$e_folio'",$con2);
+	$query1=mysql_query("select folio,modelo,imei,cliente,status,reparacion,detalles,password,fecha,sucursal,recibe  from dispos where folio='$e_folio'",$con2);
 	$query3=mysql_query("select email,telefono from cliente where nombre ='$nombree'",$con2);	
 	$query2=mysql_fetch_array($query1);
 	$query4=mysql_fetch_array($query3);
@@ -107,6 +107,7 @@ if(isset($_GET['folio'])){
 		<!-- #######################IMPRIMIR################# -->
 
 		<div id="print" class="print" >	
+			<label>Original</label>
 			<img id="logo" src="images/logocellcity250x1002.jpg" alt="Cell City logo" height="110" width="350">
 				
 				<table class="printt" style="width:35em;height:5em;">
@@ -131,7 +132,7 @@ if(isset($_GET['folio'])){
 					<input type="checkbox"> Tapa</input>
 					<input type="checkbox"> Memoria </input>
 				</div>
-				Original
+				
 				<table class="printt" id="pfolio">
 					<tr>
 						<strong><td class="uno" align="center"><strong>Folio</strong></td></strong>
@@ -164,21 +165,21 @@ if(isset($_GET['folio'])){
 						</tr>
 					</thead>																
 				</table>
-				<p class="alinea"><strong>EN CAMBIO DE CRISTAL EL CLIENTE ACEPTA EL RIESGO DE DANO DE PANTALLA</strong></p>	
-				<div style="width:550px;" class="alinea">
-					<p id="politicas" align="justify">Politicas: 1.Debe de presentar este comprobante para que se le haga entrrega del equipo.2.Despues de 15 dias no nos hacemos
+				<p class="alinea"><strong><font size="3em;">EN CAMBIO DE CRISTAL EL CLIENTE ACEPTA EL RIESGO DE DANO DE PANTALLA</font></strong></p>	
+				<div style="width:750px;" class="alinea">
+					<p id="politicas" align="justify"><font size="2em;">Politicas: 1.Debe de presentar este comprobante para que se le haga entrrega del equipo.2.Despues de 15 dias no nos hacemos
 				responsables de su equipo.3.Si no recoge su equipo en 30 dias,pasa a ser propiedad de Cell City.4. No se hacen garantias en equipos golpeados
 				o mojados.5. No nos hacemos responsables de la perdida parcial o total de la informacion en su equipo. NO NOS HACEMOS RESPONSABLES EN CASO DE
-				ROBO O INCENDIO.</p>
+				ROBO O INCENDIO.</font></p>
 				</div>
 				<br><br><br>				
 								<div style="position:relative;left:5%;">
 									<p > ________________________________  <br/>                   
-									Recibio <?php echo $uname ?></p>
+									Recibio: <?php echo $query2[10]; ?></p>
 								</div>
 								<div style="position:relative;left:55%;bottom:7%;">
 								<p > ________________________________  <br/>                   
-									Aceptacion de Cliente</p>
+									Aceptacion de Cliente: <?php echo $query2[3];?></p>
 								</div>
 										<strong><hr style="position:absolute;top:670px;"></strong>
 								<p>
@@ -191,10 +192,13 @@ if(isset($_GET['folio'])){
 				</div>					
 		</div>
 		
-		<div id="segundo" style="display:none;">			
+		<div id="segundo" style="display:none;">	
+			<label>Copia al Cliente</label>		
 				<!-- SEGUNDO -->
-				<img id="logo" src="images/logocellcity250x1002.jpg" alt="Cell City logo" height="110" width="350">				
-				<table class="printt" style="width:35em;height:5em;">				
+				<img id="logo" src="images/logocellcity250x1002.jpg" alt="Cell City logo" height="110" width="350">		
+
+				<table class="printt" style="width:35em;height:5em;">
+
 					<tr>
 						<td class="uno" ><strong>Cliente</strong></td>
 						<td class="dos" id="cliente2" ><font style="font-size:10em;" name="cliente"></font></td>
@@ -243,30 +247,32 @@ if(isset($_GET['folio'])){
 							<td rowspan="4" class="uno" id="detalles2" ></td>
 						</tr>
 					</thead>
-					<br /><br/>																
+					<br />															
 				</table>
-				<p class="alinea"><strong>EN CAMBIO DE CRISTAL EL CLIENTE ACEPTA EL RIESGO DE DANO DE PANTALLA</strong></p>	
-				<div style="width:550px;" class="alinea">
-					<p id="politicas" align="justify">Politicas: 1.Debe de presentar este comprobante para que se le haga entrrega del equipo.2.Despues de 15 dias no nos hacemos
+				<p class="alinea"><strong><font size="3em;">EN CAMBIO DE CRISTAL EL CLIENTE ACEPTA EL RIESGO DE DANO DE PANTALLA</font></strong></p>	
+				<div style="width:750px;" class="alinea">
+					<p id="politicas" align="justify"><font size="2em;">Politicas: 1.Debe de presentar este comprobante para que se le haga entrrega del equipo.2.Despues de 15 dias no nos hacemos
 				responsables de su equipo.3.Si no recoge su equipo en 30 dias,pasa a ser propiedad de Cell City.4. No se hacen garantias en equipos golpeados
 				o mojados.5. No nos hacemos responsables de la perdida parcial o total de la informacion en su equipo. NO NOS HACEMOS RESPONSABLES EN CASO DE
-				ROBO O INCENDIO.</p>
+				ROBO O INCENDIO.</font></p>
 				</div>
-				<br><br><br><br>
-				
-								<div style="position:relative;left:5%;">
-									<p > ________________________________  <br/>                   
-									Recibio <?php echo $uname ?></p>
-								</div>
-								<br>
-								<div style="position:relative;left:55%;bottom:9%;">
-								<p > ________________________________  <br/>                   
-									Aceptacion de Cliente</p>
-								</div>
-								<p>
 				<div style="position:absolute;top:133%;left:78%;">Patron:
 					<img src="images/cuadritocellcity2.jpg" width="120" height="120">
 				</div>
+				<br><br><br>
+				
+								<div style="position:relative;left:5%;">
+									<p > ________________________________  <br/>                   
+									Recibio: <strong><?php echo $query2[10];?> <strong></p>
+								</div>
+								
+								<div style="position:relative;left:55%;bottom:45px;">
+								<p > ________________________________  <br/>                   
+									Aceptacion de Cliente: <label><?php echo $query2[3];?></label> </p>
+								</div>
+								<p>
+				
+				
 				<div style="position:relative;bottom:20%;padding-left:20em;">
 					<button id="imp" TYPE="button" onClick="printArea('print');" >Imprimir
 					<button type="regresa" id="cancelar">Cancelar

@@ -309,23 +309,10 @@ function optionCheck4(){
 							<option name="s_donde" value="Matriz" > Matriz </option>
 							<option name="s_donde" value="Quiroga" > Quiroga </option> 
 						</select> 		
-						<button   type="button" class="btn btn-primary" id="s_submit" style="display:none;"   >Buscar</button>					
-					</div>
-					
-
-					 	
-				</form>
-				<div class="col-xs-3" style="padding: 4px 2px;display:none;" >
-                                        <select name="entries" id="entries" class="form-control" >
-                                                <option value="10">10</option>
-                                                <option value="20" selected="selected">20</option>
-                                                <option value="50">50</option>
-                                                <option value="100">100</option>
-                                                <option value="200">200</option>
-                                                <option value="-1">All</option>
-                                        </select>
-                   </div>	
-		</div>
+						<button   type="button" class="btn btn-primary" id="s_submit" style="display:none;"   >Buscar</button>			
+				</form>		
+		</div>						 						
+		
 		<div class="container" id="s_table"  style="display:none;">
 			<div  style="display:inline-block;">
 				<br />
@@ -367,15 +354,9 @@ function optionCheck4(){
 						<input class="datte" type="text" name="a_fecha" id="a_fecha" value="<?php $date = date('Y-m-d'); echo $date; ?>" tabindex=3 style="text-transform:uppercase;">
 				</div>
 				<div class="f_agrega">
-				 <input type="radio" name="a_status" id="a_status"   class="lis" value="Garantia" tabindex=4 >Garantia
-					   <input type="radio" name="a_status" id="a_status"  class="rep" value="En reparacion" tabindex=5 >Nuevo Ingreso 	
-					
-			   
-			   		
-			   </div>
-			   
-
-			    
+				 		<input type="radio" name="a_status" id="a_status"   class="lis" value="Garantia" tabindex=4 >Garantia
+						<input type="radio" name="a_status" id="a_status"  class="rep" value="En reparacion" tabindex=5 >Nuevo Ingreso 					   			   		
+			   </div>   		    
 			   Detalles Tecnicos:
 			    <div>			
 			    	<textarea maxlength="115" type="text" id="a_detalles" name="a_detalles" placeholder="Detalles Servicio Tecnico" tabindex=7 style="text-transform:uppercase;"></textarea>					
@@ -383,36 +364,41 @@ function optionCheck4(){
 			    <div style="position:absolute;top:55%;right:10%">
 			    	Sucursal:
 			    	<div>
-			    		<input type="radio" name="a_donde" id="a_donde"   value="Matriz" tabindex=6 style="">Matriz
+			    		<input type="radio" name="a_donde" id="a_donde"   value="Matriz" tabindex=6 >Matriz
 					    <input type="radio" name="a_donde" id="a_donde"  value="Quiroga" tabindex=7 >Quiroga 
 					</div>
-			    Contrasena:
-			    <div>
-					<input type="text" id="a_password" name="a_password" placeholder="Ingresa Contraseña" tabindex=8 style="text-transform:uppercase;">				
-				</div>
+			    	Contrasena:
+			    	<div>
+						<input type="text" id="a_password" name="a_password" placeholder="Ingresa Contraseña" tabindex=8  style="text-transform:uppercase;">				
+					</div>
+					<input  id="a_recibe" name="a_recibe" value="<?php echo $uname;?>" hidden >
 				</div>
 				</strong><br/><br>
 				<button    type="button" id="a_submit" class="btn btn-primary" tabindex=9 > Agregar Folio </button>
 				<!--<button    type="button" id="nuevo" class="btn btn-primary" > Nuevo Folio </button> -->
 				<button type="button" id="printeando" onclick="updateoutput()" disabled="disabled" tabindex=10> Imprimir </button>											
-				</form>	
-				<button  style="position:absolute;bottom:-9%;left:65%;"  id="limpia" type="button" tabindex=12>Limpiar datos</button>												
-				<a href="/" >
-   				<button style="position:absolute;bottom:-9%;left:85%;" type="button" tabindex=11>Regresar</button>
-				</a>
+			</form>	
+			<button  style="position:absolute;bottom:-9%;left:65%;"  id="limpia" type="button" tabindex=12>Limpiar datos</button>												
+			<a href="/" >
+   			<button style="position:absolute;bottom:-9%;left:85%;" type="button" tabindex=11>Regresar</button>
+			</a>
 
 		</div>		
 		<!--IMPRIMIR -->
 	<div id="print" class="print" >	
-			<img id="logo" src="images/logocellcity250x1002.jpg" alt="Cell City logo" height="110" width="350">				
+		<label>Original</label>	
+			<img id="logo" src="images/logocellcity250x1002.jpg" alt="Cell City logo" height="110" width="350">	
+			Original			
 				<table class="printt" style="width:35em;height:5em;">				
 					<tr>
 						<td class="uno" ><strong>Cliente</strong></td>
 						<td class="dos" id="cliente" name="cliente"></td>
 					</tr>
+					<tr>
 						<strong><td class="uno"  ><strong>Equipo</strong></td></strong>
 						<td class="dos" id="equipo"  > </td>
 					</tr>
+					<tr>
 						<strong><td class="uno"  ><strong>Imei</strong></td></strong>
 						<td class="dos" id="imei" ></td>
 					</tr>
@@ -457,17 +443,20 @@ function optionCheck4(){
 						</tr>
 					</thead>																
 				</table>
-				<p class="alinea"><strong>EN CAMBIO DE CRISTAL EL CLIENTE ACEPTA EL RIESGO DE DANO DE PANTALLA</strong></p>	
-				<div style="width:550px;" class="alinea">
-					<p id="politicas" align="justify">Politicas: 1.Debe de presentar este comprobante para que se le haga entrrega del equipo.2.Despues de 15 dias no nos hacemos
+				<p class="alinea"><strong><font size="3em;">EN CAMBIO DE CRISTAL EL CLIENTE ACEPTA EL RIESGO DE DANO DE PANTALLA</font></strong></p>	
+				<div style="width:750px;" class="alinea">
+					<p id="politicas" align="justify"><font size="2em;">Politicas: 1.Debe de presentar este comprobante para que se le haga entrrega del equipo.2.Despues de 15 dias no nos hacemos
 				responsables de su equipo.3.Si no recoge su equipo en 30 dias,pasa a ser propiedad de Cell City.4. No se hacen garantias en equipos golpeados
 				o mojados.5. No nos hacemos responsables de la perdida parcial o total de la informacion en su equipo. NO NOS HACEMOS RESPONSABLES EN CASO DE
-				ROBO O INCENDIO.</p>
+				ROBO O INCENDIO.</font></p>
 				</div>
-				<br><br><br>				
+				<div style="position:relative;bottom:35%;left:78%;">Patron:
+					<img src="images/cuadritocellcity2.jpg" width="120" height="120">
+				</div>
+								
 								<div style="position:relative;left:5%;">
 									<p > ________________________________  <br/>                   
-									Recibio <?php echo $uname ?></p>
+									Recibio: <?php echo $uname ?></p>
 								</div>
 								<div style="position:relative;left:55%;bottom:7%;">
 								<p > ________________________________  <br/>                   
@@ -476,28 +465,30 @@ function optionCheck4(){
 										<strong><hr style="position:absolute;top:670px;"></strong>
 								<p>
 
-				<div style="position:relative;bottom:50%;left:78%;">Patron:
-					<img src="images/cuadritocellcity2.jpg" width="120" height="120">
-				</div>
+				
 
 				<div style="position:relative;bottom:20%;padding-left:20em;">
 					<button id="imp" TYPE="button" onClick="printArea('print');" >Imprimir
 					<button type="regresa" id="cancelar">Cancelar
 				</div>	
 							
-		</div>
+	</div>
 		
-		<div id="segundo" style="display:none;">			
+	<div id="segundo" style="display:none;">			
 				<!-- SEGUNDO -->
-				<img id="logo" src="images/logocellcity250x1002.jpg" alt="Cell City logo" height="110" width="350">				
+				<label>Copia al Cliente</label>	
+				<img id="logo" src="images/logocellcity250x1002.jpg" alt="Cell City logo" height="110" width="350">		
+				
 				<table class="printt" style="width:35em;height:5em;">				
 					<tr>
 						<td class="uno" ><strong>Cliente</strong></td>
 						<td class="dos" id="cliente2" name="cliente"></td>
 					</tr>
+					<tr>
 						<strong><td class="uno"  ><strong>Equipo</strong></td></strong>
 						<td class="dos" id="equipo2"  > </td>
 					</tr>
+					<tr>
 						<strong><td class="uno"  ><strong>Imei</strong></td></strong>
 						<td class="dos" id="imei2" ></td>
 					</tr>				
@@ -542,18 +533,21 @@ function optionCheck4(){
 					</thead>
 					<br /><br/>																
 				</table>
-				<p class="alinea"><strong>EN CAMBIO DE CRISTAL EL CLIENTE ACEPTA EL RIESGO DE DANO DE PANTALLA</strong></p>	
-				<div style="width:550px;" class="alinea">
-					<p id="politicas" align="justify">Politicas: 1.Debe de presentar este comprobante para que se le haga entrrega del equipo.2.Despues de 15 dias no nos hacemos
+				<p class="alinea"><strong><font size="3em;">EN CAMBIO DE CRISTAL EL CLIENTE ACEPTA EL RIESGO DE DANO DE PANTALLA</font></strong></p>	
+				<div style="width:750px;" class="alinea">
+					<p id="politicas" align="justify"><font size="2em;">Politicas: 1.Debe de presentar este comprobante para que se le haga entrrega del equipo.2.Despues de 15 dias no nos hacemos
 				responsables de su equipo.3.Si no recoge su equipo en 30 dias,pasa a ser propiedad de Cell City.4. No se hacen garantias en equipos golpeados
 				o mojados.5. No nos hacemos responsables de la perdida parcial o total de la informacion en su equipo. NO NOS HACEMOS RESPONSABLES EN CASO DE
-				ROBO O INCENDIO.</p>
+				ROBO O INCENDIO.</font></p>
+				</div>
+				<div style="position:absolute;top:135%;left:78%;">Patron:
+					<img src="images/cuadritocellcity2.jpg" width="120" height="120">
 				</div>
 				<br><br><br><br>
 				
 								<div style="position:relative;left:5%;">
 									<p > ________________________________  <br/>                   
-									Recibio <?php echo $uname ?></p>
+									Recibio: <?php echo $uname ?></p>
 								</div>
 								<br>
 								<div style="position:relative;left:55%;bottom:9%;">
@@ -561,14 +555,12 @@ function optionCheck4(){
 									Aceptacion de Cliente:<label id="getname2"></label></p>
 								</div>
 								<p>
-				<div style="position:absolute;top:125%;left:78%;">Patron:
-					<img src="images/cuadritocellcity2.jpg" width="120" height="120">
-				</div>
+				
 				<div style="position:relative;bottom:20%;padding-left:20em;">
 					<button id="imp" TYPE="button" onClick="printArea('print');" >Imprimir
 					<button type="regresa" id="cancelar">Cancelar
 				</div>
-</div>
+	</div>
 		<!--FIN IMPRIMIR-->
 		<p id="agregarespuesta"> </p>
 		<div class="container" style="display:none;" id="manageusr">
@@ -883,6 +875,7 @@ $("#a_submit").click(function(){
 	var aconta 		= $('#a_conta').val();
 	var afecha 		= $('#a_fecha').val();
 	var aemail 		= $('#a_email').val();
+	var arecibe 	= $('#a_recibe').val();
 	var adonde     = $('input:radio[name=a_donde]:checked').val();	
 	document.getElementById('getname').innerHTML=document.getElementById('a_cliente').value;		
 	document.getElementById('getname2').innerHTML=document.getElementById('a_cliente').value;
@@ -897,7 +890,7 @@ $("#a_submit").click(function(){
 	} else {
 		$.ajax({
 			type: "GET",
-			url: "ins.php?s_sumito=1&a_imei="+aimei+"&a_cliente="+acliente+"&a_modelo="+amodelo+"&a_status="+astatus+"&a_conta="+aconta+"&a_fecha="+afecha+"&a_email="+aemail+"&a_rep="+repara+"&a_password="+apass+"&a_detalles="+adetalles+"&a_donde="+adonde,
+			url: "ins.php?s_sumito=1&a_imei="+aimei+"&a_cliente="+acliente+"&a_modelo="+amodelo+"&a_status="+astatus+"&a_conta="+aconta+"&a_fecha="+afecha+"&a_email="+aemail+"&a_rep="+repara+"&a_password="+apass+"&a_detalles="+adetalles+"&a_donde="+adonde+"&a_recibe="+arecibe,
 			dataType: "html",
 			success: function(response){
 				$('#agregarespuesta').html(response);				

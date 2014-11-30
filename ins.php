@@ -15,6 +15,7 @@ $ataller  = $_GET['a_taller'];
 $aconta   = $_GET['a_conta'];
 $arep     = $_GET['a_rep'];
 $adonde   = $_GET['a_donde'];
+$arecibe  = $_GET['a_recibe'];
 $sfolio   = $_GET['s_folio'];
 $simei   = $_GET['s_imei'];
 $smodelo   = $_GET['s_modelo'];
@@ -141,8 +142,8 @@ if(!empty($_GET['s_sumito'])){
              exit(1);
           }else{
               if ($acliente){ 
-                    $query = "INSERT INTO dispos ( modelo, imei, cliente, email, status, detalles, reparacion, fecha, contacto,password,sucursal )
-                    VALUES ('$amodelo','$aimei','$acliente','$aemail','$astatus','$adetalles','$arep', '$afecha','$aconta', '$apass', '$adonde')";
+                    $query = "INSERT INTO dispos ( modelo, imei, cliente, email, status, detalles, reparacion, fecha, contacto,password,sucursal,recibe)
+                    VALUES ('$amodelo','$aimei','$acliente','$aemail','$astatus','$adetalles','$arep', '$afecha','$aconta', '$apass', '$adonde', '$arecibe')";
                     $result = mysqli_query($con,$query);
                     if (!$result){
                         die('Couldn\'t query' . mysqli_error($con));

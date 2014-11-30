@@ -371,8 +371,7 @@ function optionCheck4(){
 					   <input type="radio" name="a_status" id="a_status"  class="rep" value="En reparacion" tabindex=5 >Nuevo Ingreso 	
 					
 			   
-			   		<input type="radio" name="a_donde" id="a_donde"   value="Matriz" tabindex=6 style="">Matriz
-					   <input type="radio" name="a_donde" id="a_donde"  value="Quiroga" tabindex=7 >Quiroga 
+			   		
 			   </div>
 			   
 
@@ -381,7 +380,12 @@ function optionCheck4(){
 			    <div>			
 			    	<textarea maxlength="115" type="text" id="a_detalles" name="a_detalles" placeholder="Detalles Servicio Tecnico" tabindex=7 style="text-transform:uppercase;"></textarea>					
 			    </div>
-			    <div style="position:absolute;top:67%;right:10%">
+			    <div style="position:absolute;top:55%;right:10%">
+			    	Sucursal:
+			    	<div>
+			    		<input type="radio" name="a_donde" id="a_donde"   value="Matriz" tabindex=6 style="">Matriz
+					    <input type="radio" name="a_donde" id="a_donde"  value="Quiroga" tabindex=7 >Quiroga 
+					</div>
 			    Contrasena:
 			    <div>
 					<input type="text" id="a_password" name="a_password" placeholder="Ingresa Contraseña" tabindex=8 style="text-transform:uppercase;">				

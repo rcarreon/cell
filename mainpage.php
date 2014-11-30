@@ -454,11 +454,11 @@ function optionCheck4(){
 					<img src="images/cuadritocellcity2.jpg" width="120" height="120">
 				</div>
 								
-								<div style="position:relative;left:5%;">
+								<div style="position:relative;left:5%;bottom:7%;">
 									<p > ________________________________  <br/>                   
 									Recibio: <?php echo $uname ?></p>
 								</div>
-								<div style="position:relative;left:55%;bottom:7%;">
+								<div style="position:relative;left:55%;bottom:14%;">
 								<p > ________________________________  <br/>                   
 									Aceptacion de Cliente:<label id="getname"></label></p>
 								</div>
@@ -540,7 +540,7 @@ function optionCheck4(){
 				o mojados.5. No nos hacemos responsables de la perdida parcial o total de la informacion en su equipo. NO NOS HACEMOS RESPONSABLES EN CASO DE
 				ROBO O INCENDIO.</font></p>
 				</div>
-				<div style="position:absolute;top:135%;left:78%;">Patron:
+				<div style="position:absolute;top:125%;left:78%;">Patron:
 					<img src="images/cuadritocellcity2.jpg" width="120" height="120">
 				</div>
 				<br><br><br><br>

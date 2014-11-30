@@ -256,7 +256,7 @@ if(isset($_GET['folio'])){
 				o mojados.5. No nos hacemos responsables de la perdida parcial o total de la informacion en su equipo. NO NOS HACEMOS RESPONSABLES EN CASO DE
 				ROBO O INCENDIO.</font></p>
 				</div>
-				<div style="position:absolute;top:133%;left:78%;">Patron:
+				<div style="position:absolute;top:135%;left:78%;">Patron:
 					<img src="images/cuadritocellcity2.jpg" width="120" height="120">
 				</div>
 				<br><br><br>

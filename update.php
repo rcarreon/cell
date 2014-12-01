@@ -268,7 +268,7 @@ if(isset($_GET['folio'])){
 								
 								<div style="position:relative;left:55%;bottom:45px;">
 								<p > ________________________________  <br/>                   
-									Aceptacion de Cliente: <label><?php echo $query2[3];?></label> </p>
+									Aceptacion de Cliente: <?php echo $query2[3];?> </p>
 								</div>
 								<p>
 				

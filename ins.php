@@ -119,15 +119,15 @@ mysql_select_db("cellcity",$con2);
             echo "<td  align=center name=editfolio id=editfolio>$data[0]</td>";
             echo "<td  align=center id=editmodelo >$data[1]</td>";
             echo "<td  align=center id=editimei >$data[2]</td>";
-            echo "<td  align=center id=editcliente >".urldecode($data[14])."</td>";
+            echo "<td  align=center id=editcliente >".urldecode($data[15])."</td>";
             echo "<td  align=center id=editstatus >$data[4]</td>";
             echo "<td  align=center id=editrepara >$data[5]</td>";
             echo "<td  align=center id=editdonde>$data[7]</td>";
             echo "<td  align=center id=editpassword>$data[8]</td>";
             echo "<td  align=center id=editdetalles>$data[6]</td>"; 
             echo "<td  align=center id=editfecha >$data[9]</td>";          
-            echo "<td  align=center id=editmail >$data[12]</td>";
-            echo "<td  align=center id=editcontacto >$data[13]</td>";            
+            echo "<td  align=center id=editmail >$data[13]</td>";
+            echo "<td  align=center id=editcontacto >$data[14]</td>";            
             echo "</tr>";
     }
   ///Cerrando Connection a la base de datos usando con2       

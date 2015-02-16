@@ -566,7 +566,7 @@ function optionCheck4(){
 		<div class="container" style="display:none;" id="manageusr">
 				<h4>Manejar Usuarios:</h4>
 				<form>
-					<select onchange="optionCheck();" name="maneja" id="opsearch">
+					<select onchange="optionCheck();" name="maneja" id="opsearch" class="form-control" style="width:200px;height:30px;">
 						<option selected="selected" disabled="disabled">--Selecciona Opcion--</option>
 						<option value="agregaru">Agregar Usuario </option>
 						<option value="mostraru">Muestra Usuarios</option>						

@@ -387,7 +387,7 @@ function optionCheck4(){
 		<!--IMPRIMIR -->
 	<div id="print" class="print" >	
 		<label>Original</label>	
-			<img id="logo" src="images/logocellcity250x1002.jpg" alt="Cell City logo" height="110" width="350">	
+			<img id="logo" src="images/logo_2015.jpg" alt="Cell City logo" height="110" width="350">	
 			Original			
 				<table class="printt" style="width:35em;height:5em;">				
 					<tr>
@@ -477,7 +477,7 @@ function optionCheck4(){
 	<div id="segundo" style="display:none;">			
 				<!-- SEGUNDO -->
 				<label>Copia al Cliente</label>	
-				<img id="logo" src="images/logocellcity250x1002.jpg" alt="Cell City logo" height="110" width="350">		
+				<img id="logo" src="images/logo_2015.jpg" alt="Cell City logo" height="110" width="350">		
 				
 				<table class="printt" style="width:35em;height:5em;">				
 					<tr>

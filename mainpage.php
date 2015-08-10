@@ -351,7 +351,7 @@ function optionCheck4(){
 				</div>
 					Fecha:
 				<div>
-						<input class="datte" type="text" name="a_fecha" id="a_fecha" value="<?php $date = date('Y-m-d'); echo $date; ?>" tabindex=3 style="text-transform:uppercase;">
+						<input class="datte" type="text" name="a_fecha" id="a_fecha" value="<?php date_default_timezone_set('America/Hermosillo'); $date = date('Y-m-d h:i A'); echo $date; ?>" tabindex=3 style="text-transform:uppercase;">
 				</div>
 				<div class="f_agrega">
 				 		<input type="radio" name="a_status" id="a_status"   class="lis" value="Garantia" tabindex=4 >Garantia
@@ -387,7 +387,7 @@ function optionCheck4(){
 		<!--IMPRIMIR -->
 	<div id="print" class="print" >	
 		<label>Original</label>	
-			<img id="logo" src="images/logo_2015.jpg" alt="Cell City logo" height="110" width="350">	
+			<img id="logo" src="images/logo_2015.jpg" alt="Cell City logo" height="135" width="340">	
 			Original			
 				<table class="printt" style="width:35em;height:5em;">				
 					<tr>
@@ -477,7 +477,7 @@ function optionCheck4(){
 	<div id="segundo" style="display:none;">			
 				<!-- SEGUNDO -->
 				<label>Copia al Cliente</label>	
-				<img id="logo" src="images/logo_2015.jpg" alt="Cell City logo" height="110" width="350">		
+				<img id="logo" src="images/logo_2015.jpg" alt="Cell City logo" height="135" width="340">		
 				
 				<table class="printt" style="width:35em;height:5em;">				
 					<tr>

@@ -238,7 +238,8 @@ function optionCheck4(){
 				<?php if ($tipo != 1){?>
 					<br><button  style="display:none;"  class="btn btn-primary" id="s_submit_mu"  value="manejausuario">Manejar Usuarios</button>
 				<?php } else { ?>
-					<br><br /><button   type="image"   style="position:relative;left: 13.5%;" id="s_submit_mu"  value="manejausuario">Manejar Usuarios</button>
+					<br><br><br /><input type="button" style="position:relative;left: 13.5%;height:50px;width:140px;"  onclick="location.href='/estadistico.php';"  id="f_submit_num" value="Estadisticas"/>
+					<br><br /><button   type="image"   style="position:relative;right: 12%;bottom:70px;" id="s_submit_mu"  value="manejausuario">Manejar Usuarios</button>
 					<?php  } ?>
 			</div>
 		</div>	
@@ -351,22 +352,31 @@ function optionCheck4(){
 				</div>
 					Fecha:
 				<div>
-						<input class="datte" type="text" name="a_fecha" id="a_fecha" value="<?php date_default_timezone_set('America/Hermosillo'); $date = date('Y-m-d h:i A'); echo $date; ?>" tabindex=3 style="text-transform:uppercase;">
+						<input class="datte" type="text" name="a_fecha" id="a_fecha" value="<?php date_default_timezone_set('America/Hermosillo'); $date = date('Y-m-d'); echo $date; ?>" tabindex=3 style="text-transform:uppercase;">
 				</div>
 				<div class="f_agrega">
-				 		<input type="radio" name="a_status" id="a_status"   class="lis" value="Garantia" tabindex=4 >Garantia
-						<input type="radio" name="a_status" id="a_status"  class="rep" value="En reparacion" tabindex=5 >Nuevo Ingreso 					   			   		
+				 		<input type="radio" name="a_status" id="a_status"   class="lis" value="Garantia" tabindex=4 ><font color="red">*</font>Garantia
+						<input type="radio" name="a_status" id="a_status"  class="rep" value="En reparacion" tabindex=5 ><font color="red">*</font>Nuevo Ingreso 					   			   		
 			   </div>   		    
 			   Detalles Tecnicos:
 			    <div>			
 			    	<textarea maxlength="115" type="text" id="a_detalles" name="a_detalles" placeholder="Detalles Servicio Tecnico" tabindex=7 style="text-transform:uppercase;"></textarea>					
 			    </div>
 			    <div style="position:absolute;top:55%;right:10%">
-			    	Sucursal:
+				<font color="red">**</font>Sucursal:
 			    	<div>
-			    		<input type="radio" name="a_donde" id="a_donde"   value="Matriz" tabindex=6 >Matriz
-					    <input type="radio" name="a_donde" id="a_donde"  value="Quiroga" tabindex=7 >Quiroga 
-					</div>
+			    		<select name="a_sucurs" id="a_sucurs" class="form-control" tabindex=6 style="width:150px;">
+							<option selected="selected" disabled="disabled" value="sucursal">Sucursal</option>
+							<option value="Matriz"  > Matriz</option>
+							<option value="Quiroga"> Colosio - Quiroga</option>
+							<Option  value= "Progreso">Progreso </option>
+							<Option  value= "Plaza Dila">Plaza Dila </option>
+							<Option  value= "Sendero">Sendero </option>
+						</select>
+
+			    		<!-- <input type="radio" name="a_donde" id="a_donde"   value="Matriz" tabindex=6 >Matriz
+					    <input type="radio" name="a_donde" id="a_donde"  value="Quiroga" tabindex=7 >Quiroga  -->
+				</div>
 			    	Contrasena:
 			    	<div>
 						<input type="text" id="a_password" name="a_password" placeholder="Ingresa Contraseña" tabindex=8  style="text-transform:uppercase;">				
@@ -376,7 +386,8 @@ function optionCheck4(){
 				</strong><br/><br>
 				<button    type="button" id="a_submit" class="btn btn-primary" tabindex=9 > Agregar Folio </button>
 				<!--<button    type="button" id="nuevo" class="btn btn-primary" > Nuevo Folio </button> -->
-				<button type="button" id="printeando" onclick="updateoutput()" disabled="disabled" tabindex=10> Imprimir </button>											
+				<button type="button" id="printeando" onclick="updateoutput()" disabled="disabled" tabindex=10> Imprimir </button> 					
+		
 			</form>	
 			<button  style="position:absolute;bottom:-9%;left:65%;"  id="limpia" type="button" tabindex=12>Limpiar datos</button>												
 			<a href="/" >
@@ -450,7 +461,7 @@ function optionCheck4(){
 				o mojados.5. No nos hacemos responsables de la perdida parcial o total de la informacion en su equipo. NO NOS HACEMOS RESPONSABLES EN CASO DE
 				ROBO O INCENDIO.</font></p>
 				</div>
-				<div style="position:relative;bottom:35%;left:78%;">Patron:
+				<div style="position:relative;bottom:35%;left:80%;">Patron:
 					<img src="images/cuadritocellcity2.jpg" width="120" height="120">
 				</div>
 								
@@ -462,8 +473,7 @@ function optionCheck4(){
 								<p > ________________________________  <br/>                   
 									Aceptacion de Cliente:<label id="getname"></label></p>
 								</div>
-										<strong><hr style="position:absolute;top:670px;"></strong>
-								<p>
+										<strong><hr style="position:absolute;top:710px;"></strong>
 
 				
 
@@ -500,25 +510,29 @@ function optionCheck4(){
 					<input type="checkbox"> Tapa</input>
 					<input type="checkbox"> Memoria </input>
 				</div>
-				<table class="printt" id="pfolio">
-					<tr>
-						<strong><td class="uno" align="center"><strong>Folio</strong></td></strong>
-					</tr>
-					<tr>
-						<td class="uno" align="center" id="pfolio2" >
+				<div style="position:absolute;top:110%;left:81%;">
+					<table class="printt" id="pfolio">
+						<tr>
+							<strong><td class="uno" align="center"><strong>Folio</strong></td></strong>
+						</tr>
+						<tr>
+							<td class="uno" align="center" id="pfolio2" >
 
-						</td>
-					</tr>
-				</table>
-				<br>
-				<table class="printt" id="pfolio">
-					<tr>
-						<strong><td class="uno" align="center"><strong>Fecha</strong></td></strong>
-					</tr>
-					<tr>
-						<td class="uno" id="fecha2"></td>
-					</tr>
-				</table>									
+							</td>
+						</tr>
+					</table>
+					<br>
+					<table class="printt" id="pfolio">
+						<tr>
+							<strong><td class="uno" align="center"><strong>Fecha</strong></td></strong>
+						</tr>
+						<tr>
+							<td class="uno" id="fecha2"></td>
+						</tr>
+					</table><br><br><br>Patron:		
+					<img src="images/cuadritocellcity2.jpg" width="120" height="120">
+				</div>							
+				<div style="position:absolute;top:129%;left:2.5%;">
 				<table class="printt" style="width:35em;height:5em;bottom:10%;">
 					<thead>
 						<tr>
@@ -533,24 +547,24 @@ function optionCheck4(){
 					</thead>
 					<br /><br/>																
 				</table>
-				<p class="alinea"><strong><font size="3em;">EN CAMBIO DE CRISTAL EL CLIENTE ACEPTA EL RIESGO DE DANO DE PANTALLA</font></strong></p>	
-				<div style="width:750px;" class="alinea">
-					<p id="politicas" align="justify"><font size="2em;">Politicas: 1.Debe de presentar este comprobante para que se le haga entrrega del equipo.2.Despues de 15 dias no nos hacemos
+				</div>
+				<div  style="position:absolute;top:152%;left:2%;">
+					<p class="alinea"><strong><font size="3em;">EN CAMBIO DE CRISTAL EL CLIENTE ACEPTA EL RIESGO DE DANO DE PANTALLA</font></strong></p>	
+					<div style="width:750px;" class="alinea">
+						<p id="politicas" align="justify"><font size="2em;">Politicas: 1.Debe de presentar este comprobante para que se le haga entrrega del equipo.2.Despues de 15 dias no nos hacemos
 				responsables de su equipo.3.Si no recoge su equipo en 30 dias,pasa a ser propiedad de Cell City.4. No se hacen garantias en equipos golpeados
 				o mojados.5. No nos hacemos responsables de la perdida parcial o total de la informacion en su equipo. NO NOS HACEMOS RESPONSABLES EN CASO DE
 				ROBO O INCENDIO.</font></p>
-				</div>
-				<div style="position:absolute;top:125%;left:78%;">Patron:
-					<img src="images/cuadritocellcity2.jpg" width="120" height="120">
+					</div>
 				</div>
 				<br><br><br><br>
 				
-								<div style="position:relative;left:5%;">
+								<div style="position:absolute;left:5%;bottom:-650px;">
 									<p > ________________________________  <br/>                   
 									Recibio: <?php echo $uname ?></p>
 								</div>
 								<br>
-								<div style="position:relative;left:55%;bottom:9%;">
+								<div style="position:absolute;left:55%;bottom:-650px;">
 								<p > ________________________________  <br/>                   
 									Aceptacion de Cliente:<label id="getname2"></label></p>
 								</div>
@@ -606,9 +620,8 @@ function optionCheck4(){
 			<div style="display:inline-block;">
 				<form  method="get" id="bujca3">
 					<button type="button" id="m_submit" style="position:relative; left:5.5%;">Mostrar usuarios</button><br><br />					
-						<table style="display:inline-block;"  id="muestrabla"  class="table table-striped table-hover tablesorter" >	
-
-						</table>					
+					<table style="display:inline-block;position:relative; left:60%;bottom:80px;"  id="muestrabla"  class="table table-striped table-hover tablesorter"  >	
+					</table>
 				</form>
 
 			</div>
@@ -876,7 +889,8 @@ $("#a_submit").click(function(){
 	var afecha 		= $('#a_fecha').val();
 	var aemail 		= $('#a_email').val();
 	var arecibe 	= $('#a_recibe').val();
-	var adonde     = $('input:radio[name=a_donde]:checked').val();	
+	//var adonde     = $('input:radio[name=a_donde]:checked').val();	
+	var adonde 	=  $('#a_sucurs option:selected').val();
 	document.getElementById('getname').innerHTML=document.getElementById('a_cliente').value;		
 	document.getElementById('getname2').innerHTML=document.getElementById('a_cliente').value;
 	//$('#printeando').show();
@@ -884,10 +898,15 @@ $("#a_submit").click(function(){
 	   $(':checkbox:checked').each(function(i){
 	   		repara[i] = $(this).val();
 	   });
-	if (!acliente){
+	 if (!acliente){
 		alert('Tienes que proporcionar nombre de cliente');	
 		var nohay = 1;
-	} else {
+	}  else if (!astatus){
+                 alert('Tienes que elegir tipo de ingreso');
+          } else if (adonde == "sucursal"){
+		alert('Tienes que elegir alguna sucursal');
+   	}
+	   else {
 		$.ajax({
 			type: "GET",
 			url: "ins.php?s_sumito=1&a_imei="+aimei+"&a_cliente="+acliente+"&a_modelo="+amodelo+"&a_status="+astatus+"&a_conta="+aconta+"&a_fecha="+afecha+"&a_email="+aemail+"&a_rep="+repara+"&a_password="+apass+"&a_detalles="+adetalles+"&a_donde="+adonde+"&a_recibe="+arecibe,

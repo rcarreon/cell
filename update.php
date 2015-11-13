@@ -181,7 +181,7 @@ if(isset($_GET['folio'])){
 								<p > ________________________________  <br/>                   
 									Aceptacion de Cliente: <?php echo $query2[3];?></p>
 								</div>
-										<strong><hr style="position:absolute;top:670px;"></strong>
+										<strong><hr style="position:absolute;top:710px;"></strong>
 								<p>
 				<div style="position:relative;bottom:50%;left:78%;">Patron:
 					<img src="images/cuadritocellcity2.jpg" width="120" height="120">
@@ -249,6 +249,8 @@ if(isset($_GET['folio'])){
 					</thead>
 					<br />															
 				</table>
+				 <div  style="position:absolute;top:155%;left:2%;">
+
 				<p class="alinea"><strong><font size="3em;">EN CAMBIO DE CRISTAL EL CLIENTE ACEPTA EL RIESGO DE DANO DE PANTALLA</font></strong></p>	
 				<div style="width:750px;" class="alinea">
 					<p id="politicas" align="justify"><font size="2em;">Politicas: 1.Debe de presentar este comprobante para que se le haga entrrega del equipo.2.Despues de 15 dias no nos hacemos
@@ -256,17 +258,18 @@ if(isset($_GET['folio'])){
 				o mojados.5. No nos hacemos responsables de la perdida parcial o total de la informacion en su equipo. NO NOS HACEMOS RESPONSABLES EN CASO DE
 				ROBO O INCENDIO.</font></p>
 				</div>
-				<div style="position:absolute;top:135%;left:78%;">Patron:
+				</div>
+				<div style="position:absolute;top:138%;left:78%;">Patron:
 					<img src="images/cuadritocellcity2.jpg" width="120" height="120">
 				</div>
 				<br><br><br>
 				
-								<div style="position:relative;left:5%;">
+								<div style="position:absolute;left:5%;bottom:-660px;">
 									<p > ________________________________  <br/>                   
-									Recibio: <strong><?php echo $query2[10];?> <strong></p>
+									Recibio: <?php echo $query2[10];?> </p>
 								</div>
 								
-								<div style="position:relative;left:55%;bottom:45px;">
+								<div style="position:absolute;left:55%;bottom:-660px;">
 								<p > ________________________________  <br/>                   
 									Aceptacion de Cliente: <?php echo $query2[3];?> </p>
 								</div>

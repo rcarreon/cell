@@ -33,7 +33,7 @@ form#update{
     margin: 0 auto; 
     padding: 20px; 
     width: 550px; 
-    height: 450px;
+    height: 500px;
     top: 80px;
     background-color: #FFFFFF;
     box-shadow:0px 0px 20px black; 
@@ -85,8 +85,8 @@ div#agregac{
 	font-family: sans-serif; 
     margin: 0 auto; 
     padding: 30px; 
-    width: 550px; 
-    height: 300px;
+    width: 650px; 
+    height: 400px;
     top: 35%;
     left: 30%;
     background-color: #FFFFFF;
@@ -187,7 +187,7 @@ div#uupdate{
     margin: 0 auto; 
     padding: 20px; 
     width: 550px; 
-    height: 300px;
+    height: 450px;
     top: 80px;
     background-color: #FFFFFF;
     box-shadow:0px 0px 20px black; 
@@ -237,12 +237,80 @@ div form#cagrega{
 	border:1px solid black;
     border-collapse:collapse ;
 }
+.printt2 td,th{
+	border:1px solid black;
+    border-collapse:collapse ;
+}
+.printto td,th{
+	border:1px solid black;
+    border-collapse:collapse ;
+}
+
 td.dos{
 	width: 600px;
+font-size: 10;
 }
 td.uno{
-	width: 100px;
+	width: 300px;
+	height: 75px;
+
+font-size: 10;
 }
+td.tres{
+	width: 200px;
+
+font-size: 10;
+}
+td.cuatro{
+	width: 70px;
+	height: 25px;
+	font-size: 10;
+}
+td.cinco{
+	width: 130px;
+	height: 90px;
+	font-size: 10;
+}
+td.seis{
+	width: 130px;
+font-size: 10;
+}
+
+td.siete{
+	width: 200px;
+	height: 165px;
+font-size: 10;
+	vertical-align: top;
+}
+td.ocho{
+	width: 1024px;
+	height: 50px;
+font-size: 10;
+	margin: auto;
+}
+td.nueve{
+	width: 512px;
+	height: 200px;
+	font-size: 10;
+	margin: auto;
+
+}
+
+td.diez{
+	width: 690px;
+	height: 15px;
+	font-size: 10;
+}
+td.once{
+	width: 512px;
+	font-size: 8;
+
+
+}
+.onces{
+	font-size: 9;
+}
+
 #pprint{
 	position: relative;
 	
@@ -261,13 +329,21 @@ td.uno{
 	border-width: 1px;
 	border-color: #000000;
 	border-radius:10px;
-	width: 850px;
+	width: 1024px;
 	z-index: 8;
 	height: 750px
+}
+div.size {
+	font-size: xx-small;
 }
 .printt{
 	position: relative;
 	left:5%;
+	
+}
+.printto{
+	position: relative;
+	left:-3.5%;
 	
 }
 #wrapper{
@@ -296,6 +372,10 @@ td.uno{
 	position: relative;
 	left:5%;
 }
+.ui-dialog{
+    z-index: 1050;
+}
+
 
 /* ESTO ES PARA QUITAR EL HEADER Y EL FOOTER AL MOMENTO DE IMPRESION  */
 @media print {

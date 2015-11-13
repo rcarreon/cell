@@ -21,27 +21,77 @@ if(isset($_GET['id'])){
 	<form  method="get"  >
 		
 		<h4 align="center"> Edita Cliente </h4>
-		<div id="upo"><strong>
-			Id: <br><input type="text" name="editid"  disabled="disabled" id="editid" value="<?php echo $c_id ;?>" /><br/><br/>
-			Nombre:<input type="text" name="editnombre"  id="editnombre" disabled="disabled" value="<?php echo $query2[1]; ?>"/><br/><br/>
-			Email:<input type="text" name="editemail"  id="editemail" value="<?php echo $query2[2]; ?>"/><br/><br/><br/>
-			<br/>
-		</div>
-		<div id="upo" >
-						
-			Celular:<input type="text" name="editcel"  id="editcel" value="<?php echo $query2[3]; ?>"/><br/>
-			Telefono:<input type="text" name="edittel"  id="edittel" value="<?php echo $query2[4]; ?>"/><br/>
-			<br/><br/></strong>			
-		<br> <br /><br>	 <br /><br>	
-		</div>	<br>	
-		<a style="padding-right:-2em;">
+		<div>
+			Id:
+				<div>				 
+					<input type="text" name="editid"  disabled="disabled" id="editid" value="<?php echo $c_id ;?>" />
+				</div>
+			Nombre:
+				<div>
+					<input type="text" name="editnombre"  id="editnombre" disabled="disabled" value="<?php echo $query2[1]; ?>"/>
+				</div>
+
+				<div style="position:absolute;top:27%;left:55%;">	
+					Email:
+					<div>
+						<input type="text" name="editemail"  id="editemail" value="<?php echo $query2[2]; ?>"/>			
+					</div>			
+				</div>
+			Ciudad:
+				<div>
+					<input type="text" name="editcd"  id="editcd" value="<?php echo $query2[8]; ?>"/>
+				</div>
+
+				<div style="position:absolute;top:42%;left:55%;">
+				Celular:
+					<div>
+						<input type="text" name="editcel"  id="editcel" value="<?php echo $query2[3]; ?>"/>
+					</div>
+				</div>
+			RFC:
+				<div>
+					<input type="text" name="editnrfc"  id="editrfc" value="<?php echo $query2[5]; ?>"/>
+				</div>
+			
+				<div style="position:absolute;top:55%;left:55%;">
+				Telefono:
+					<div>
+						<input type="text" name="edittel"  id="edittel" value="<?php echo $query2[4]; ?>"/>
+					</div>
+				</div>
+			
+			Domicilio:	
+				<div>		
+					<input type="text" name="editdom"  id="editdom" value="<?php echo $query2[6]; ?>"/>
+				</div>
+				<div style="position:absolute;top:67%;left:55%;">
+				Colonia:
+					<div>
+						<input type="text" name="editcol"  id="editcol" value="<?php echo $query2[7]; ?>"/>
+					</div>
+				</div>
+			
+			    
+				Codigo Postal:
+					<div>
+						<input type="text" name="editcp"  id="editcp" value="<?php echo $query2[9]; ?>"/>
+					</div>
+				
+			</strong>	
+
+				<a >
 				 <button  class="btn btn-primary" type="button" id="c_editaa" > Guardar cambios </button>
-				</a>
-		<a   href="/" style="padding-right:3em;">
+				</a>	
+
+		</div>
+			
+		
+		
+		<a   href="/">
    				<button type="button" id="regresa">Regresar</button>
 				</a>
 				
-		<br> <br />		
+			
 	</form>	
 </div>
 <p id="ceditaste"></p>
@@ -64,10 +114,15 @@ $("#c_editaa").click(function(){
 	var ccel	= $('#editcel').val();
 	var ctel 	= $('#edittel').val();
 	var cid 	= $('#editid').val();
+	var ccpostal 	= $('#editcp').val();
+	var cdom 	= $('#editdom').val();
+	var ccol 	= $('#editcol').val();
+	var crfc	= $('#editrfc').val();
+	var ccd     = $('#editcd').val();
 //		return estatus;
 	$.ajax({
 	type:"GET",
-		url:"ins.php?mcliente=1&editemail="+cemail+"&editnombre="+cnombre+"&editcel="+ccel+"&edittel="+ctel+"&editid="+cid,
+		url:"ins.php?mcliente=1&editemail="+cemail+"&editnombre="+cnombre+"&editcel="+ccel+"&edittel="+ctel+"&editid="+cid+"&editcd="+ccd+"&editcp="+ccpostal+"&editdom="+cdom+"&editcol="+ccol+"&editrfc="+crfc,
 		success: function(response){
 			$('#ceditaste').html(response);
 			alert('Contacto modificado con exito');

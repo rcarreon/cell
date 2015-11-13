@@ -77,37 +77,37 @@ mysql_select_db("cellcity",$con2);
 ////Filtro para buscar registro segun el folio
     if($sfolio){
       
-      $resulta= mysql_query("SELECT dispos.*,cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente ON  cliente.nombre = dispos.cliente where dispos.folio = '$sfolio' order by dispos.folio desc",$con2);
+      $resulta= mysql_query("SELECT dispos.*,cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente ON  cliente.nombre = dispos.cliente where dispos.folio = '$sfolio'",$con2);
       echo $tr;
     }
 ////Filtro para buscar registro segun imei 
     if($simei){
       
-      $resulta= mysql_query("SELECT dispos.*,cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente ON  cliente.nombre = dispos.cliente where dispos.imei = '$simei' order by dispos.folio desc",$con2);
+      $resulta= mysql_query("SELECT dispos.*,cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente ON  cliente.nombre = dispos.cliente where dispos.imei = '$simei'",$con2);
       echo $tr;         
     }
 ////Filtro para buscar registro segun equipo/modelo
     if($smodelo){
       
-      $resulta= mysql_query("SELECT dispos.*,cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente ON  cliente.nombre = dispos.cliente where dispos.modelo LIKE '$smodelo%' order by dispos.folio desc",$con2);
+      $resulta= mysql_query("SELECT dispos.*,cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente ON  cliente.nombre = dispos.cliente where dispos.modelo LIKE '$smodelo%'",$con2);
       echo $tr;
     }   
 ////Filtro para buscar registro segun cliente y status
     if($scliente){    
         if (!empty($sstatus)){      
-                  $resulta= mysql_query("SELECT dispos.*,cliente.email,cliente.telefono,cliente.nombre from dispos   LEFT JOIN cliente ON  cliente.nombre = dispos.cliente where dispos.cliente LIKE '$scliente%' AND dispos.status = '$sstatus' order by dispos.folio desc",$con2);
+                  $resulta= mysql_query("SELECT dispos.*,cliente.email,cliente.telefono,cliente.nombre from dispos   LEFT JOIN cliente ON  cliente.nombre = dispos.cliente where dispos.cliente LIKE '$scliente%' AND dispos.status = '$sstatus'",$con2);
         }else{                  
                   
-                  $resulta= mysql_query("SELECT dispos.*,cliente.email,cliente.telefono,cliente.nombre from dispos  LEFT JOIN cliente ON  cliente.nombre = dispos.cliente where dispos.cliente LIKE '$scliente%' order by dispos.folio desc",$con2);
+                  $resulta= mysql_query("SELECT dispos.*,cliente.email,cliente.telefono,cliente.nombre from dispos  LEFT JOIN cliente ON  cliente.nombre = dispos.cliente where dispos.cliente LIKE '$scliente%'",$con2);
         }        
         echo $tr;          
     }    
      if($sfecha){        
-        $resulta=mysql_query("SELECT dispos.*, cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente  ON  cliente.nombre = dispos.cliente where dispos.fecha = '$sfecha' order by dispos.folio desc",$con2);
+        $resulta=mysql_query("SELECT dispos.*, cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente  ON  cliente.nombre = dispos.cliente where dispos.fecha = '$sfecha'",$con2);
         echo $tr;
     }  
     if($sdonde){        
-        $resulta=mysql_query("SELECT dispos.*, cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente  ON  cliente.nombre = dispos.cliente where dispos.sucursal = '$sdonde' order by dispos.folio desc",$con2);
+        $resulta=mysql_query("SELECT dispos.*, cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente  ON  cliente.nombre = dispos.cliente where dispos.sucursal = '$sdonde'",$con2);
         echo $tr;
         
     }      

@@ -171,7 +171,12 @@ mysql_select_db("cellcity",$con2);
  }
 /// AGREGA NUEVO FOLIO PERO CHECA SI EL CLIENTE YA ESTA REGISTRADO.
 if(!empty($_GET['s_sumito'])){  
-            
+         $q2 = mysql_query("SELECT  marca  from marcas  where marca = '$amodelo' ",$con2);
+         $ress2 = mysql_fetch_row($q2);  
+          if (!$ress2) {
+               echo "<script type=text/javascript>alert('Marca  $amodelo no existe favor de registrar marca y luego agregar folio')</script>";
+             exit(1);
+          }
          $q = mysql_query("SELECT  nombre  from cliente  where nombre = '$acliente' ",$con2);
          $ress = mysql_fetch_row($q);         
           if (!$ress) {

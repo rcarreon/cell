@@ -374,7 +374,7 @@ function optionCheck5(){
 							<option name="s_donde" value="Quiroga" > Quiroga </option> 
 							<option name="s_donde" value="Progreso" > Progreso </option> 
 							<option name="s_donde" value="Dila" > Dila </option> 
-							<option name="s_donde" value="Sendero" > Sendero </option> 
+							<option name="s_donde" value="Patio" > Patio </option> 
 						</select> 		
 						<button   type="button" class="btn btn-primary" id="s_submit" style="display:none;"   >Buscar</button>			
 				</form>		
@@ -447,7 +447,7 @@ function optionCheck5(){
 								<option value="Quiroga"> Colosio - Quiroga</option>
 								<option  value= "Progreso">Progreso </option>
 								<option  value= "Dila">Dila </option>
-								<option  value= "Sendero">Sendero </option>>
+								<option  value= "Patio">Patio </option>>
 							</select>
 
 			    		<!-- <input type="radio" name="a_donde" id="a_donde"   value="Matriz" tabindex=6 >Matriz
@@ -524,7 +524,7 @@ function optionCheck5(){
 						<td  align="center"  >
 							<font size="1"><strong>Fecha</strong></font>
 							<tr>
-								<td class="cuatro" id="fecha"><font size="1"></font></td>
+								<td class="cuatro" id="fecha"></td>
 							</tr>
 						</td>
 					</tr>
@@ -1176,37 +1176,37 @@ Leído que fue por las partes el contenido del presente contrato y sabedoras de 
 					</div>
 						RFC:
  					<div>
- 						<input size="30" type="text" name="c_rfc" id="c_rfc" placeholder="RFC" tabindex=5 style="text-transform:uppercase;" >				
+ 						<input size="30" type="text" name="c_rfc" id="c_rfc" placeholder="RFC" tabindex=3 style="text-transform:uppercase;" >				
  					</div>
  					<div style="position:absolute;top:125px;left:55%;">
 						Domicilio:
 						<div>						
-							<input size="30" type="text" name="c_dom" id="c_dom" placeholder="Domicilio" tabindex=6 style="text-transform:uppercase;" >
+							<input size="30" type="text" name="c_dom" id="c_dom" placeholder="Domicilio" tabindex=4 style="text-transform:uppercase;" >
 						</div>
 					</div>
 						Colonia:
  					<div>
- 						<input size="30" type="text" name="c_col" id="c_col" placeholder="Colonia" tabindex=7 style="text-transform:uppercase;" >				
+ 						<input size="30" type="text" name="c_col" id="c_col" placeholder="Colonia" tabindex=3 style="text-transform:uppercase;" >				
  					</div>
  					<div style="position:absolute;top:175px;left:55%;">
 						Ciudad:
 						<div>						
-							<input size="30" type="text" name="c_cd" id="c_cd" placeholder="Ciudad" tabindex=8 style="text-transform:uppercase;" >
+							<input size="30" type="text" name="c_cd" id="c_cd" placeholder="Ciudad" tabindex=4 style="text-transform:uppercase;" >
 						</div>
 					</div>
 						Codigo Postal:
  					<div>
- 						<input size="30" type="text" name="c_postal" id="c_postal" placeholder="Codigo Postal" tabindex=9 style="text-transform:uppercase;" >				
+ 						<input size="30" type="text" name="c_postal" id="c_postal" placeholder="Codigo Postal" tabindex=3 style="text-transform:uppercase;" >				
  					</div>
 
 					<br/>
 				</strong>
 				</div>						
 			</form>
-			<button type="button"id="c_submit" class="btn btn-primary" tabindex=10> Guardar Cliente </button>	
+			<button type="button"id="c_submit" class="btn btn-primary" tabindex=5> Guardar Cliente </button>	
 
 			<a style="padding-left:20em;"  href="/">
-   				<button type="button" tabindex=11 >Regresar</button>
+   				<button type="button" tabindex=6 >Regresar</button>
 			</a>		
 			<p id="agregacliente"></p>
 		</div>
@@ -1413,7 +1413,7 @@ function 	updateoutput(){
 			document.getElementById('p_tel').innerHTML =document.getElementById('ptelefono').getAttribute("value");
 			document.getElementById('p_email').innerHTML=document.getElementById('pemail').getAttribute("value");
 			document.getElementById('p_cliente').innerHTML=document.getElementById('a_cliente').value;
-			document.getElementById('cliente2').innerHTML=document.getElementById('a_cliente').value;
+			//document.getElementById('cliente2').innerHTML=document.getElementById('a_cliente').value;
 			document.getElementById('p_cliente3').innerHTML=document.getElementById('a_cliente').value;
 						document.getElementById('p_cliente2').innerHTML=document.getElementById('a_cliente').value;
 
@@ -1620,11 +1620,11 @@ $("#a_submit").click(function(){
 		var adnd = "Blvd. Morelos #349 Local 6 Hermosillo, Sonora. Teléfono:(662) 211 33 90";
 		document.getElementById('adnd').innerHTML= adnd;
 
-	}else if (adonde == "Sendero"){
+	}else if (adonde == "Patio"){
 		var adnd = "Llamas Comunicación, S.A. de C.V. Matriz: Bernardo Reyes # 178 RFC: LCO9906169Y0  Teléfono 301-64-64 Quiroga: Blvd. Quiroga esquina con Colosio, Local 18, Teléfono 118-94-92  Hermosillo, Sonora Correo electrónico";
 		document.getElementById('adnd').innerHTML= adnd;
 
-	}else if (adonde == "Progreso"){
+	}else 	if (adonde == "Progreso"){
 		var adnd = "Blvd. Progreso #140-X entre Reyes y Yañez Hermosillo, Sonora. Teléfono: (662) 284 28 04";
 		document.getElementById('adnd').innerHTML= adnd;
 

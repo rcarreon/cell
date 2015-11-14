@@ -812,7 +812,7 @@ function optionCheck5(){
 
 			</div>
 
-				<div style="position:absolute;top:187%;left:-8%;"  >
+				<div style="position:absolute;top:187%;left:-9%;"  >
 				<table  >		
 								
 						<tr>

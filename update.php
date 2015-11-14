@@ -440,7 +440,7 @@ if(isset($_GET['folio'])){
 
 			</div>
 
-				<div style="position:absolute;top:187%;left:-8%;"  >
+				<div style="position:absolute;top:187%;left:-9%;"  >
 				<table  >		
 								
 						<tr>
@@ -887,7 +887,7 @@ document.getElementById('p_cliente65').innerHTML=document.getElementById('editcl
 
 
 			//document.getElementById('p_cp').innerHTML=document.getElementById('pcpostal').getAttribute("value");
-			document.getElementById('p_cp').innerHTML=document.getElementById('pcpostal').value;
+			document.getElementById('p_cp').innerHTML=document.getElementById('pcpostal').getAttribute("value");
 			document.getElementById('p_cd').innerHTML=document.getElementById('pciudad').getAttribute("value");
 			document.getElementById('p_col').innerHTML=document.getElementById('pcolonia').getAttribute("value");
 			document.getElementById('p_dom').innerHTML=document.getElementById('pdomicilio').getAttribute("value");

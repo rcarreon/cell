@@ -118,7 +118,7 @@ if(isset($_GET['folio'])){
  								TELEFONÍA CELULAR, O EQUIPOS DE MANEJO DE DATOS E INFORMACIÓN, O EQUIPOS <br>ELECTRÓNICOS</label>
 							</div>
 
-			<div style="position:absolute;top:13%;left:-6%;">
+			<div style="position:absolute;top:10%;left:-6%;">
 				<table class="printt" >
 					
 					<tr>
@@ -131,7 +131,7 @@ if(isset($_GET['folio'])){
 				</table>
 			</div>
 
-			<div style="position:absolute;top:26%;left:-5%;">
+			<div style="position:absolute;top:23%;left:-5%;">
 				<table class="printt" >
 					
 					<tr>
@@ -144,7 +144,7 @@ if(isset($_GET['folio'])){
 					</tr>
 				</table>
 			</div>
-			<div style="position:absolute;top:26%;right:60.1%;">
+			<div style="position:absolute;top:23%;right:60.1%;">
 				<table class="printt" >
 					
 					<tr>
@@ -157,7 +157,7 @@ if(isset($_GET['folio'])){
 					</tr>
 				</table>
 			</div>
-			<div style="position:absolute;top:13%;right:14.5%;">
+			<div style="position:absolute;top:10%;right:14.5%;">
 				<table class="printt" id="pfolio">
 					<tr>
 						<strong><td class="seis" align="center"><strong>Folio</strong></td></strong>
@@ -170,7 +170,7 @@ if(isset($_GET['folio'])){
 				</table>
 			</div>
 
-			<div style="position:absolute;top:19%;right:7.5%;" >
+			<div style="position:absolute;top:16%;right:7.5%;" >
 				<table class="printt" >					
 					<tr>
 						<td class="seis" align="center">
@@ -185,7 +185,7 @@ if(isset($_GET['folio'])){
 				</table>
 			</div>
 
-			<div style="position:absolute;top:13%;right:31%;"   >
+			<div style="position:absolute;top:10%;right:31%;"   >
 				<table class="printt" >					
 					<tr>
 						
@@ -204,7 +204,7 @@ if(isset($_GET['folio'])){
 					</tr>
 				</table>
 			</div>
-			<div style="position:absolute;top:40%;right:3%;"    >
+			<div style="position:absolute;top:37%;right:3%;"    >
 				<table class="printto" >					
 					<tr>
 						
@@ -222,7 +222,7 @@ if(isset($_GET['folio'])){
 					</tr>
 				</table>
 			</div>
-			<div style="position:absolute;top:50%;right:3%;"   >
+			<div style="position:absolute;top:47%;right:3%;"   >
 				<table class="printto" >					
 					<tr>
 						
@@ -239,7 +239,7 @@ if(isset($_GET['folio'])){
 					</tr>
 				</table>
 			</div>
-			<div style="position:absolute;top:60%;right:3%;"  >
+			<div style="position:absolute;top:57%;right:3%;"  >
 				<table class="printto" >		
 					<thead >			
 						<tr>
@@ -264,16 +264,16 @@ if(isset($_GET['folio'])){
 								</td>
 								<td class="nueve" align="left"  >  
 									Riesgos para el equipo que se pueden presentar por el desarrollo del Diagnóstico o la reparación y/o mantenimiento del equipo,
- 									y que por tanto no existe garantía<br>
+ 									y que por tanto no existe garantía.<br>
 
-									1. En equipo mojado ya que el equipo después de reparado tiene el riesgo de no encender<br>
-									2. En equipo golpeado<br>
-									3. En lectores SIM, ya que por calentamiento de los mismos se pueden dañar<br>
-									4. En display por cambio de cristal<br>
+									1. En equipo mojado ya que el equipo después de reparado tiene el riesgo de no encender.<br>
+									2. En equipo golpeado.<br>
+									3. En lectores SIM, ya que por calentamiento de los mismos se pueden dañar.<br>
+									4. En display por cambio de cristal.<br>
 									5. La Empresa no se hace responsable de datos personales contenidos en el equipo tales como contactos, fotos, notas, etc.<br>
-									6. En los casos en los que, previa autorización de <label id="p_cliente62"></label>, se utilicen partes y/o refacciones usadas, o bien, por entrega que él mismo haga, se utilicen refacciones y/o partes nuevas y/o usadas<br>
-									7. Sobre daños que presente el equipo<br>
-									8. En reparaciones realizadas en otros talleres ajenos a La Empresa <br>
+									6. En los casos en los que, previa autorización de <label id="p_cliente62"></label>, se utilicen partes y/o refacciones usadas, o bien, por entrega que él mismo haga, se utilicen refacciones y/o partes nuevas y/o usadas.<br>
+									7. Sobre daños que presente el equipo.<br>
+									8. En reparaciones realizadas en otros talleres ajenos a La Empresa.<br>
 									
 								</td>
 						    </tr>
@@ -284,7 +284,7 @@ if(isset($_GET['folio'])){
 				</table>
 			</div>
 
-			<div style="position:absolute;top:101%;left:0%;"  >
+			<div style="position:absolute;top:98%;left:0%;"  >
 				<table class="printto" >		
 					<thead >			
 						<tr>
@@ -401,7 +401,7 @@ if(isset($_GET['folio'])){
 				
 				</table>
 			</div>
-			<div style="position:absolute;top:144%;right:2%; width:700px;" align="justify"  >
+			<div style="position:absolute;top:141%;right:2%; width:700px;" align="justify"  >
 
 				
 					<font size="1"><label id="p_cliente61" class="onces" ></label> acepta que en el caso de que por razones técnicas y al momento de la entrega de su equipo no se pueda  
@@ -423,7 +423,7 @@ if(isset($_GET['folio'])){
 
 			</div>
 
-			<div style="position:absolute;top:171%;right:2%; width:700px;"  >
+			<div style="position:absolute;top:166%;right:2%; width:700px;"  >
 
 				
 					<font size="1" >Autorización que otorga <label id="p_cliente58" class="onces"></label> para el uso de la información con fines mercadológicos o publicitarios
@@ -440,83 +440,7 @@ if(isset($_GET['folio'])){
 
 			</div>
 
-				<div style="position:absolute;top:187%;left:-9%;"  >
-				<table  >		
-								
-						<tr>
-						   
-							<tr> 
-								<td  align="left" class="once" style="postition:absolute;top:15%;"> 
-									Además de los datos contenidos en el Anverso del presente Contrato de<br> prestación de servicios de reparación y/o mantenimiento de equipos de<br> telefonía celular, o equipos de manejo de datos e información, o equipos electrónicos, las partes se sujetan a las siguientes:
-CLÁUSULAS 
-
-PRIMERA: Las partes del presente contrato son, por una parte la empresa Llamas Comunicación, S.A. de C.V., en su carácter de prestadora del servicio y a quien en lo sucesivo en este contrato también se le podrá denominar como La Empresa, y por otra parte el solicitante del servicio de la reparación y/o mantenimiento del equipo señalado en el anverso en este contrato, misma persona a quien en el presente contrato se le denominará como <label id="p_cliente55"></label>, y de quien se tienen sus datos asimismo en el anverso.
-
-SEGUNDA: Este contrato tiene como objeto la prestación de servicios de reparación y/o mantenimiento de equipos de telefonía celular, o equipos de manejo de datos e información, o equipos electrónicos.
-
-TERCERA: El precio total de los servicios contratados se establece en el presupuesto que forma parte del presente contrato y se describe en el anverso del mismo, el cual será pagado por <label id="p_cliente54"></label> de la siguiente forma: al momento de celebrar el presente contrato por concepto de anticipo, la cantidad que se indica en el anverso del mismo y el resto en la fecha de entrega del equipo.
-
-CUARTA: <label id="p_cliente53"></label> deberá: I.- Proporcionar sus datos personales de identificación, domicilio y demás requeridos conforme al anverso de este contrato; II.- Revisar y verificar cuidadosamente los datos asentados en el anverso de este contrato; III.- Dejar, de ser necesario, los accesorios del equipo materia de este contrato, que se requieran para el servicio de reparación y/o mantenimiento del equipo, en cuyo caso deberá asegurarse que La Empresa haga constar este hecho en el anverso del presente contrato; IV.- A proporcionar su clave electrónica personal de acceso al equipo; V.- Asegurarse de que la descripción de la falla o fallas reportadas en el anverso de este contrato sean las que desea se reparen; VI.- Hacer del conocimiento de La Empresa los daños que presente el equipo; VII.- Recoger el equipo en la fecha convenida; VIII.- Pagar por concepto de almacenaje, después de transcurridos treinta días del pactado para su entrega, el 1% (uno por ciento), sobre el valor del servicio por cada día que transcurra sin que recoja el equipo. El almacenaje no excederá de treinta días. En caso de que transcurran los treinta días de almacenaje sin que <label id="p_cliente52"></label> recoja el equipo, este último acepta la transmisión de la propiedad del equipo a La Empresa, la que podrá disponer del equipo materia de este contrato; IX.- Verificar al momento de recoger el equipo, y en su caso los accesorios que entregó a La Empresa, que son los mismos que se le están entregando a él mismo; X.- Verificar que el servicio fue satisfactorio; XI.- Verificar exhaustivamente el funcionamiento del equipo al momento de recibirlo y frente al personal de La Empresa, y muy particularmente las reparaciones y/o el mantenimiento realizado respecto al servicio solicitado por el propio <label id="p_cliente51"></label> y en referencia a las fallas informadas por él mismo; XII.- Pagar en el establecimiento de La Empresa el precio convenido, de contado y en moneda nacional, salvo que La Empresa acepte otros tipos de pago y de moneda; XIII.- En el caso de que <label id="p_cliente50"></label> no acepte dejar el equipo para su reparación y/o mantenimiento no existirá cobro de revisión y diagnóstico; XIV.- En caso de pérdida de la orden de servicio exhibir una identificación oficial vigente y hacer una descripción del equipo; XV .- Entregar las partes y/o refacciones, para el caso de que La Empresa apruebe que <label id="p_cliente49"></label> pueda suministrar partes y/o refacciones, necesarios para la reparación y/o mantenimiento del equipo, según se haya indicado en el anverso del presente contrato; XVI.- A recoger el equipo en las instalaciones de La Empresa donde lo entregó para su reparación y/o mantenimiento.
-
-QUINTA: La Empresa se obliga a: I.- Realizar adecuadamente las composturas establecidas en el anverso de este contrato conforme a los términos y condiciones contratados, los cuales deben corresponder a la información o publicidad proporcionada o difundida; II.- Entregar a <label id="p_cliente48"></label> un presupuesto por escrito al momento de contratar el servicio, para lo cual, en caso de no ser aceptado, La Empresa deberá devolver el equipo en las mismas condiciones que le fue entregado para su revisión y diagnóstico, salvo que técnicamente no sea posible; III.- Revisar el estado general del equipo, haciendo notar a <label id="p_cliente47"></label> cualquier daño o desperfecto que tenga el equipo al momento en que <label id="p_cliente46"></label> lo presente a La Empresa; IV.- Responder por las descomposturas, daños, pérdidas parciales o totales, imputables a La Empresa o a sus empleados, que sufra el equipo y sus accesorios que <label id="p_cliente45"></label> haya entregado al momento de su recepción, mientras se encuentren bajo responsabilidad de La Empresa para llevar a cabo la reparación y/o mantenimiento solicitado, así como para hacer efectiva la garantía otorgada; V.- Utilizar en el servicio solicitado partes y/o refacciones nuevas y apropiadas al modelo y marca del equipo, salvo que <label id="p_cliente44"></label> autorice utilizar otras, misma autorización que podrá ser vía telefónica o por correo electrónico, y lo cual asimismo podrá hacerse constar en el anverso del presente contrato. En todos los casos las partes y/o refacciones deben cumplir con las Normas aplicables; VI.- Entregar el equipo el día pactado, salvo causas de fuerza mayor; VII.- Recibir las reclamaciones de <label id="p_cliente43"></label> en su establecimiento; VIII.- Notificar, en su caso, por escrito o por correo electrónico a <label id="p_cliente42"></label> la variación del presupuesto aprobado; IX.- Expedir el comprobante de pago por los trabajos efectuados especificando los precios de mano de obra, partes y/o refacciones, otros materiales empleados y/o por servicios o conceptos adicionales; X.- Entregar a <label id="p_cliente41"></label> las piezas sustituidas por la reparación y/o mantenimiento, previa firma de recibido, salvo que no sea posible por el deterioro, roturas o desintegración en fragmentos, de dichas piezas; así como también entregar a <label id="p_cliente40"></label> los accesorios correspondientes, también previa firma de recibido; XI.- A devolver a <label id="p_cliente39"></label> el equipo en el caso de que solo se haya realizado la revisión y el diagnóstico, cuando el equipo no haya entrado a reparación y/o mantenimiento; XII.- No condicionar la prestación de los servicios de reparación y/o mantenimiento del equipo, a la adquisición o renta de otros productos o servicios en el establecimiento o en otro taller predeterminado; XIII.- Responsabilizarse ante <label id="p_cliente38"></label> por el incumplimiento de los servicios contratados, aún cuando La Empresa subcontrate con terceros dicha prestación de servicios. 
-
-SEXTA: Los incrementos que resulten durante la prestación del servicio por costos no previsibles en rubros específicos que su cotización este fuera del control de La Empresa, deberán ser autorizados por <label id="p_cliente37"></label> en forma escrita o por correo electrónico, siempre y cuando éstos excedan del 10% (diez por ciento) del presupuesto; si el incremento citado es inferior, <label id="p_cliente36"></label> lo podrá autorizar telefónicamente. El tiempo que tendrá <label id="p_cliente35"></label> para autorizar la variación del presupuesto será de cinco días hábiles contados a partir de que La Empresa le dé aviso de dicha variación;en caso de haber transcurrido dicho término sin que <label id="p_cliente34"></label> haya dado respuesta al aviso de variación del presupuesto, éste se tendrá por no autorizado y por terminado el presente contrato, debiendo <label id="p_cliente33"></label> recoger su equipo dentro de los cinco días hábiles siguientes, en caso contrario, pagará el costo por almacenaje que se establece en la Cláusula Cuarta del presente contrato, operando aquí lo establecido en el punto VIII.- (octavo),  de la referida Cláusula Cuarta. Si <label id="p_cliente32"></label> autoriza la variación del presupuesto, la fecha de entrega del equipo se modificará en la misma proporción.</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
-									
-									
-								</td><br>
-								<td  align="left" class="once" >  							   
-SÉPTIMA: En caso de que en el desarrollo de la reparación y/o mantenimiento La Empresa detecte alguna falla o desperfecto que no se haya contemplado en el presupuesto, deberá hacerlo del conocimiento de <label id="p_cliente31"></label> en los términos que se indican en la cláusula que antecede y en relación, en su caso, a los incrementos del precio, con la finalidad de que éste autorice la reparación de dicha falla o desperfecto. Para lo cual <label id="p_cliente30"></label> tendrá el mismo plazo que se establece en la Cláusula inmediata anterior a ésta, para realizar la autorización. Transcurrido dicho término sin que <label id="p_cliente29"></label> dé cumplimiento a lo aquí estipulado y la falla encontrada impida a La Empresa realizar la reparación y/o mantenimiento del equipo conforme a lo pactado. con <label id="p_cliente28"></label>, el presente contrato se dará por terminado, debiendo <label id="p_cliente27"></label> recoger su equipo en el mismo plazo que se indica en la Cláusula inmediata anterior a esta, y pagar a La Empresa la cantidad que corresponda a las reparaciones y/o mantenimiento ya efectuados conforme al presupuesto o, en caso de no haberse hecho ninguna, y que <label id="p_cliente26"></label> no acuda a recoger el equipo, operará aquí lo establecido en el punto VIII.- (octavo), de la referida Cláusula Cuarta. En caso de que <label id="p_cliente25"></label> autorice la nueva reparación, la fecha de entrega del equipo se modificará en la misma proporción. 
-
-OCTAVA: En el caso de que por razones técnicas no se pueda elaborar el  presupuesto al momento de que <label id="p_cliente24"></label> entregue su equipo para reparación y/o mantenimiento, <label id="p_cliente23"></label> acepta que se le informe el respectivo presupuesto por correo electrónico, mismo que <label id="p_cliente22"></label> deberá autorizar informando a La Empresa por ese mismo medio de comunicación; o en su defecto, <label id="p_cliente21"></label> se compromete a acudir personalmente a la empresa para autorizar y recibir por escrito el correspondiente presupuesto; todo lo indicado en esta Cláusula para que se puedan iniciar los trabajos de la reparación y/o mantenimiento. Para el caso de que <label id="p_cliente20"></label> no responda el correo electrónico aquí indicado y enviado por La Empresa, o bien no acuda personalmente como aquí se ha mencionado, operará lo señalado en la Cláusula Sexta en lo relativo a plazos, almacenaje y sus consecuencias.  
-
-NOVENA: Las reparaciones y/o mantenimiento objeto del presente contrato, tienen una garantía de sesenta días contados a partir de la fecha de entrega del equipo ya reparado, por lo que en el caso de que el equipo entre por garantía a La Empresa, no se computará dentro de dicho plazo el tiempo que dure la reparación del equipo. La garantía se hará efectiva siempre y cuando no se manifieste mal uso, negligencia o descuido en la operación del equipo; y al igual, la garantía no ampara fallas distintas a las especificadas en el anverso de este contrato o a las autorizadas por <label id="p_cliente19"></label> en los términos del presente contrato, por lo que, quedará sin efecto si el equipo es intervenido por un tercero que no esté autorizado por La Empresa. Asimismo, no existirá garantía para fallas que presente el equipo y que no hayan sido materia de reparación y/o mantenimiento por parte de La Empresa. Para hacer efectiva la garantía <label id="p_cliente18"></label> deberá presentar el correspondiente comprobante y el equipo materia del contrato en el establecimiento de La Empresa. Las reparaciones efectuadas en cumplimiento de la garantía, serán sin cargo alguno para <label id="p_cliente17"></label> y amparan la mano de obra y refacciones que se hayan utilizado en el servicio solicitado; salvo que <label id="p_cliente16"></label> haya autorizado por escrito o por correo electrónico a La Empresa a utilizar otro tipo de partes y/o refacciones o bien, que <label id="p_cliente15"></label>, únicamente con aprobación previa de La Empresa, haya entregado partes y/o refacciones para la reparación y/o mantenimiento del equipo, por lo que en estos dos últimos casos únicamente se garantizará la mano de obra. <label id="p_cliente14"></label> podrá presentar cualquier queja o reclamación relacionada con el servicio en el domicilio de La Empresa donde entregó su equipo, y en el horario que se detalla en el anverso de este contrato.
-
-DÉCIMA: <label id="p_cliente13"></label> acepta que por razones técnicas y por los riesgos que se puedan presentar en el desarrollo de la revisión o en la reparación y/o mantenimiento del equipo, no existe garantía en los siguientes casos: 1.- En equipo mojado ya que el equipo después de reparado tiene el riesgo de no encender; 2.- En equipo golpeado; 3.- En lectores SIM, ya que por calentamiento dichos componentes se pueden dañar; 4.- En display por cambio de cristal; 5.- La Empresa no se hace responsable de datos personales contenidos en el equipo tales como contactos, fotos, notas, etc.; 6.- En los casos en los que <label id="p_cliente12"></label>, previa autorización por escrito o por correo electrónico que haga el mismo, haya autorizado el uso de partes y/o refacciones usadas, o por la entrega que el mismo realice, previa aprobación de La Empresa, de partes y/o refacciones nuevas y/o usadas, no existirá garantía en las partes y/o refacciones mencionadas en este punto; 7.- Sobre daños que presente el equipo al momento de que <label id="p_cliente11"></label> haya solicitado la revisión y diagnóstico; 8.- En reparaciones realizadas en otros talleres ajenos a La Empresa. 
-
-DÉCIMA PRIMERA: La Empresa hará entrega de las partes y/o refacciones que reemplace por el servicio de reparación y/o mantenimiento, al momento de la entrega del equipo a <label id="p_cliente10"></label>, salvo que: a) <label id="p_cliente9"></label> exprese lo contrario; b) las partes y/o refacciones u otros materiales sean cambiados en uso de garantía.
-
-DÉCIMA SEGUNDA: La Empresa al momento de entregar el equipo deberá, en presencia de <label id="p_cliente8"></label>, realizar todas aquellas pruebas de funcionamiento necesarias con la finalidad de que <label id="p_cliente7"></label> verifique que el equipo se le entrega en óptimas condiciones de acuerdo al servicio contratado. 
-
-DÉCIMA TERCERA: Son causas de rescisión del presente contrato: I.- Que La Empresa no cumpla con la fecha de entrega por causas imputables a ella misma, salvo que por la inexistencia de partes y/o refacciones en los inventarios de La Empresa no se cuente con las necesarias al momento de estarse desarrollando la reparación y/o mantenimiento del equipo de <label id="p_cliente6"></label>, o bien porque las partes y/o refacciones hayan sido descontinuadas por los correspondientes proveedores y técnicamente no se puedan realizar sustituciones de las mismas, o bien por causas no imputables a La Empresa; II.- Que el servicio brindado no corresponda con lo pactado. En estos casos, La Empresa deberá devolver el equipo, reintegrar las contraprestaciones que en su caso hubiere recibido, y pagar a <label id="p_cliente5"></label> la pena convencional estipulada en la cláusula Décima Cuarta de este contrato; III. Ante el incumplimiento de <label id="p_cliente4"></label> a lo dispuesto en el presente contrato, <label id="p_cliente3"></label> pagará a La Empresa la pena convencional establecida en la cláusula Décima Cuarta del presente contrato.
-
-DÉCIMA CUARTA: Se establece como pena convencional por el incumplimiento de cualquiera de las partes de este contrato, a las obligaciones contraídas en el presente contrato, el 20% (veinte por ciento), del precio total de la operación que se encuentra precisada en el anverso de este contrato.
-
-DÉCIMA QUINTA: <label id="p_cliente3"></label> libera de toda responsabilidad a La Empresa para los casos en que el equipo sufra daños o pérdida parcial o total por causas de fuerza mayor tales como inundación, terremoto, incendio o robo, entre otras, siempre y cuando La Empresa haya denunciado ante las autoridades correspondiente los casos que así corresponda hacer del conocimiento formal a dichas autoridades mediante denuncia, cuando así se requiera. 
-
-DÉCIMA SEXTA: Las partes del presente contrato se someten a la jurisdicción de las autoridades correspondientes de Hermosillo, Sonora, renunciando expresamente a cualquier otra jurisdicción que pudiera corresponderles por razón de sus domicilios presentes o futuros, o por cualquier otra causa.
-
-Leído que fue por las partes el contenido del presente contrato y sabedoras de su alcance legal, lo firman por duplicado en Hermosillo, Sonora, a los _____ días de mes de _____________ del año __________.
-
-
-
-              
-
-									
-									
-								</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
-								<br>
-
-							</td>
-
-						    </tr>
-						    
-						   
-							
-						</tr><br>
-
 				
-				</table>
-				<font size="2">
-					<strong><label style="position:absolute;top:85%;padding-left:5em;padding-right:5em;">Llamas Comunicación, S.A. de C.V.</strong>	</label>
-					<strong><label style="position:absolute;top:85%;padding-left:35em;" id="p_cliente2"></label><br> 
-					<strong><label style="position:absolute;top:86%;padding-left:5em;padding-right:5em;">(Firma)</strong>	</label>
-					<strong><label style="position:absolute;top:86%;padding-left:35em;">			(Nombre y Firma)</label>
-
-				</font>
-				</br>
-				</br>
-
-			</div>
 
 			
 			<!-- <img id="logo" src="images/logo_2015.jpg" alt="Cell City logo" height="110" width="350" style="position:relative;left:35px;">	
@@ -802,7 +726,7 @@ function 	updateoutput(){
 			//var tele = document.getElementById('ptelefono').getAttribute("value");
 			//document.getElementById('p_tel').innerHTML= tele;
 			document.getElementById('p_cliente').innerHTML=document.getElementById('editcliente').value;
-			document.getElementById('p_cliente3').innerHTML=document.getElementById('editcliente').value;
+			/*document.getElementById('p_cliente3').innerHTML=document.getElementById('editcliente').value;
 			document.getElementById('p_cliente2').innerHTML=document.getElementById('editcliente').value;
 document.getElementById('p_cliente4').innerHTML=document.getElementById('editcliente').value;
 document.getElementById('p_cliente5').innerHTML=document.getElementById('editcliente').value;
@@ -855,7 +779,7 @@ document.getElementById('p_cliente51').innerHTML=document.getElementById('editcl
 document.getElementById('p_cliente52').innerHTML=document.getElementById('editcliente').value;
 document.getElementById('p_cliente53').innerHTML=document.getElementById('editcliente').value;
 document.getElementById('p_cliente54').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente55').innerHTML=document.getElementById('editcliente').value;
+document.getElementById('p_cliente55').innerHTML=document.getElementById('editcliente').value;*/
 document.getElementById('p_cliente56').innerHTML=document.getElementById('editcliente').value;
 document.getElementById('p_cliente57').innerHTML=document.getElementById('editcliente').value;
 document.getElementById('p_cliente58').innerHTML=document.getElementById('editcliente').value;

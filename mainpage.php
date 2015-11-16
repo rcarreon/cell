@@ -1587,6 +1587,7 @@ $("#a_submit").click(function(){
 						$('#a_fecha').attr("disabled","disabled");
 						$('#a_email').attr("disabled","disabled");
 						$('#a_mmodelo').attr("disabled","disabled");
+						$('#a_access').attr("disabled","disabled");
 						$('input:radio[name=a_status]:checked').attr("disabled","disabled");						
 						$('input:radio[name=a_donde]:checked').attr("disabled","disabled");
 						$('#printeando').removeAttr("disabled");
@@ -1616,21 +1617,32 @@ $("#a_submit").click(function(){
 });
 $('#limpia').click(function(){
 						$('#a_imei').val('');
-						$('#a_modelo').val('');
-						$('#a_cliente').val('');
-						$('#a_detalles').val('');
-						$('#a_password').val('');
-						//$('input:radio[name=a_status]:checked').val('');	
-						$('#a_status').val();
-						$('#a_conta').val('');						
-						$('#a_email').val('');						
-						$('#printeando').attr("disabled","disabled");
-						$('#a_submit').removeAttr("disabled");
-						$('#a_modelo').removeAttr("disabled");
 						$('#a_imei').removeAttr("disabled");
+
+						$('#a_mmodelo').removeAttr("disabled");
+						$('#a_mmodelo').val('');
+
+						$('#a_modelo').removeAttr("disabled");
+						$('#a_modelo').val('');
+
+						$('#a_cliente').val('');
 						$('#a_cliente').removeAttr("disabled");
+
+						$('#a_detalles').val('');
 						$('#a_detalles').removeAttr("disabled");
+
+						$('#a_password').val('');
 						$('#a_password').removeAttr("disabled");
+
+						//$('input:radio[name=a_status]:checked').val('');	
+						$('#a_status').val('');
+						$('#a_conta').val('');						
+						$('#a_email').val('');	
+						$('#a_access').removeAttr("disabled");
+						$('#a_access').val('');		
+						$('#a_modelo').val('');	
+						$('#printeando').attr("disabled","disabled");
+						$('#a_submit').removeAttr("disabled");																					
 						$('#a_conta').removeAttr("disabled");
 						$('#a_fecha').removeAttr("disabled");
 						$('#a_email').removeAttr("disabled");

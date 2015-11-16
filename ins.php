@@ -500,7 +500,7 @@ if(!empty($_GET['pclient'])){
 
 
 
-/*if (!empty($_GET['pclient2'])){  
+if (!empty($_GET['pclient2'])){  
 
   $pcliente2 = $_GET['a_cliente'];
     $sql2 = "SELECT email,celular,telefono,RFC,domicilio,colonia,ciudad,cpostal from cliente where nombre = '$pcliente2'"; 
@@ -518,7 +518,7 @@ if(!empty($_GET['pclient'])){
             echo "<label align=center id=pcpostal value=".$dato[7]." >$dato[7]</label>";
           //echo "</tr>";
     } 
-}*/
+}
 
 
 

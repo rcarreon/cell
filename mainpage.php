@@ -486,12 +486,12 @@ function optionCheck5(){
 		</div>		
 		<!--IMPRIMIR -->
 	<div id="print" class="print" >	
-							<div align="justify">
-								<label> PRESTACIÓN DE SERVICIOS DE REPARACIÓN Y/O MANTENIMIENTO DE EQUIPOS DE<br>
- 								TELEFONÍA CELULAR, O EQUIPOS DE MANEJO DE DATOS E INFORMACIÓN, O EQUIPOS <br>ELECTRÓNICOS</label>
+							<div align="justify" class="doces" style="position:absolute;top:-5%;">
+								<label> PRESTACIÓN DE SERVICIOS DE REPARACIÓN Y/O MANTENIMIENTO DE EQUIPOS DE
+ 								TELEFONÍA CELULAR, O EQUIPOS <br> DE MANEJO DEDATOS E INFORMACIÓN, O EQUIPOS LECTRÓNICOS.</label>
 							</div>
 
-			<div style="position:absolute;top:10%;left:-6%;">
+			<div style="position:absolute;top:3%;left:-6%;">
 				<table class="printt" >
 					
 					<tr>
@@ -504,7 +504,7 @@ function optionCheck5(){
 				</table>
 			</div>
 
-			<div style="position:absolute;top:23%;left:-5%;">
+			<div style="position:absolute;top:16%;left:-5%;">
 				<table class="printt" >
 					
 					<tr>
@@ -517,7 +517,7 @@ function optionCheck5(){
 					</tr>
 				</table>
 			</div>
-			<div style="position:absolute;top:23%;right:60.1%;">
+			<div style="position:absolute;top:16%;right:60.1%;">
 				<table class="printt" >
 					
 					<tr>
@@ -530,7 +530,7 @@ function optionCheck5(){
 					</tr>
 				</table>
 			</div>
-			<div style="position:absolute;top:10%;right:14.5%;">
+			<div style="position:absolute;top:3%;right:14.5%;">
 				<table class="printt" id="pfolio">
 					<tr>
 						<strong><td class="seis" align="center"><strong>Folio</strong></td></strong>
@@ -543,7 +543,7 @@ function optionCheck5(){
 				</table>
 			</div>
 
-			<div style="position:absolute;top:16%;right:7.5%;" >
+			<div style="position:absolute;top:9%;right:7.5%;" >
 				<table class="printt" >					
 					<tr>
 						<td class="seis" align="center">
@@ -558,7 +558,7 @@ function optionCheck5(){
 				</table>
 			</div>
 
-			<div style="position:absolute;top:10%;right:31%;"   >
+			<div style="position:absolute;top:3%;right:31%;"   >
 				<table class="printt" >					
 					<tr>
 						
@@ -577,7 +577,7 @@ function optionCheck5(){
 					</tr>
 				</table>
 			</div>
-			<div style="position:absolute;top:37%;right:3%;"    >
+			<div style="position:absolute;top:30%;right:3%;"    >
 				<table class="printto" >					
 					<tr>
 						
@@ -595,7 +595,7 @@ function optionCheck5(){
 					</tr>
 				</table>
 			</div>
-			<div style="position:absolute;top:47%;right:3%;"   >
+			<div style="position:absolute;top:40%;right:3%;"   >
 				<table class="printto" >					
 					<tr>
 						
@@ -612,7 +612,7 @@ function optionCheck5(){
 					</tr>
 				</table>
 			</div>
-			<div style="position:absolute;top:57%;right:3%;"  >
+			<div style="position:absolute;top:52%;right:3%;"  >
 				<table class="printto" >		
 					<thead >			
 						<tr>
@@ -656,7 +656,7 @@ function optionCheck5(){
 				</table>
 			</div>
 
-			<div style="position:absolute;top:98%;left:0%;"  >
+			<div style="position:absolute;top:91%;left:0%;"  >
 				<table class="printto" >		
 					<thead >			
 						<tr>
@@ -773,7 +773,7 @@ function optionCheck5(){
 				
 				</table>
 			</div>
-			<div style="position:absolute;top:141%;right:2%; width:700px;" align="justify"  >
+			<div style="position:absolute;top:131%;right:2%; width:700px;" align="justify"  >
 
 				
 					<font size="1"><label id="p_cliente61" class="onces" ></label> acepta que en el caso de que por razones técnicas y al momento de la entrega de su equipo no se pueda  
@@ -795,7 +795,7 @@ function optionCheck5(){
 
 			</div>
 
-			<div style="position:absolute;top:166%;right:2%; width:700px;"  >
+			<div style="position:absolute;top:156%;right:2%; width:700px;"  >
 
 				
 					<font size="1" >Autorización que otorga <label id="p_cliente58" class="onces"></label> para el uso de la información con fines mercadológicos o publicitarios

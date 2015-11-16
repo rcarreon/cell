@@ -19,11 +19,21 @@ if(isset($_GET['folio'])){
 	$e_folio     = $_GET['folio'];
 	$nombree = mysql_real_escape_string($_GET['editcliente']);
 	$query1=mysql_query("select folio,modelo,imei,cliente,status,reparacion,detalles,password,fecha,sucursal,recibe,marca  from dispos where folio='$e_folio'",$con2);
-	$query3=mysql_query("select email,telefono from cliente where nombre ='$nombree'",$con2);	
+	$query3=mysql_query("select email,telefono,celular,RFC,domicilio,colonia,ciudad,cpostal from cliente where nombre ='$nombree'",$con2);	
 	$query2=mysql_fetch_array($query1);
 	$query4=mysql_fetch_array($query3);
 ?>
 <div id="update">
+			<div style="display:none;">
+			  			<label id="pemail"  name="pemail" value="<?php echo $query4[0]; ?>"><?php echo $query4[0]; ?></label>
+			  			<label id="pcelular"  name="pcelular" value="<?php echo $query4[2]; ?>"><?php echo $query4[2]; ?></label>
+			  			<label id="ptelefono"  name="ptelefono" value="<?php echo $query4[1]; ?>"><?php echo $query4[1]; ?></label>
+			  			<label id="prfc"  name="prfc" value="<?php echo $query4[3]; ?>"><?php echo $query4[3]; ?></label>
+			  			<label id="pdomicilio"  name="pdomicilio" value="<?php echo $query4[4]; ?>"><?php echo $query4[4]; ?></label>
+			  			<label id="pcolonia"  name="pcolonia" value="<?php echo $query4[5]; ?>"><?php echo $query4[5]; ?></label>
+			  			<label id="pciudad"  name="pciudad" value="<?php echo $query4[6]; ?>"><?php echo $query4[6]; ?></label>
+			  			<label id="pcpostal"  name="pcpostal" value="<?php echo $query4[7]; ?>"><?php echo $query4[7]; ?></label>
+			 </div>
 	<!-- <a href=logout.php>Salir sesion</a> -->
 	<form  method="get" id="update" >		
 		<h4> Edita Folio </h4>
@@ -113,12 +123,12 @@ if(isset($_GET['folio'])){
 		<!-- #######################IMPRIMIR################# -->
 		<br><br>
 	<div id="print" class="print" >	
-							<div align="justify">
-								<label> PRESTACIÓN DE SERVICIOS DE REPARACIÓN Y/O MANTENIMIENTO DE EQUIPOS DE<br>
- 								TELEFONÍA CELULAR, O EQUIPOS DE MANEJO DE DATOS E INFORMACIÓN, O EQUIPOS <br>ELECTRÓNICOS</label>
+							<div align="justify" class="doces" style="position:absolute;top:-5%;">
+								<label> PRESTACIÓN DE SERVICIOS DE REPARACIÓN Y/O MANTENIMIENTO DE EQUIPOS DE
+ 								TELEFONÍA CELULAR, O EQUIPOS <br> DE MANEJO DEDATOS E INFORMACIÓN, O EQUIPOS LECTRÓNICOS.</label>
 							</div>
 
-			<div style="position:absolute;top:10%;left:-6%;">
+			<div style="position:absolute;top:3%;left:-6%;">
 				<table class="printt" >
 					
 					<tr>
@@ -131,7 +141,7 @@ if(isset($_GET['folio'])){
 				</table>
 			</div>
 
-			<div style="position:absolute;top:23%;left:-5%;">
+			<div style="position:absolute;top:16%;left:-5%;">
 				<table class="printt" >
 					
 					<tr>
@@ -144,7 +154,7 @@ if(isset($_GET['folio'])){
 					</tr>
 				</table>
 			</div>
-			<div style="position:absolute;top:23%;right:60.1%;">
+			<div style="position:absolute;top:16%;right:60.1%;">
 				<table class="printt" >
 					
 					<tr>
@@ -157,7 +167,7 @@ if(isset($_GET['folio'])){
 					</tr>
 				</table>
 			</div>
-			<div style="position:absolute;top:10%;right:14.5%;">
+			<div style="position:absolute;top:3%;right:14.5%;">
 				<table class="printt" id="pfolio">
 					<tr>
 						<strong><td class="seis" align="center"><strong>Folio</strong></td></strong>
@@ -170,7 +180,7 @@ if(isset($_GET['folio'])){
 				</table>
 			</div>
 
-			<div style="position:absolute;top:16%;right:7.5%;" >
+			<div style="position:absolute;top:9%;right:7.5%;" >
 				<table class="printt" >					
 					<tr>
 						<td class="seis" align="center">
@@ -185,7 +195,7 @@ if(isset($_GET['folio'])){
 				</table>
 			</div>
 
-			<div style="position:absolute;top:10%;right:31%;"   >
+			<div style="position:absolute;top:3%;right:31%;"   >
 				<table class="printt" >					
 					<tr>
 						
@@ -204,7 +214,7 @@ if(isset($_GET['folio'])){
 					</tr>
 				</table>
 			</div>
-			<div style="position:absolute;top:37%;right:3%;"    >
+			<div style="position:absolute;top:30%;right:3%;"    >
 				<table class="printto" >					
 					<tr>
 						
@@ -222,7 +232,7 @@ if(isset($_GET['folio'])){
 					</tr>
 				</table>
 			</div>
-			<div style="position:absolute;top:47%;right:3%;"   >
+			<div style="position:absolute;top:40%;right:3%;"   >
 				<table class="printto" >					
 					<tr>
 						
@@ -231,7 +241,7 @@ if(isset($_GET['folio'])){
 								<td class="ocho" align="left"  >  
 									<strong>Equipo</strong><br>
 									Marca: <label style="width:100px;"  align="center" id="p_marca">  </label>  Modelo: <label style="width:100px;" align="center" id="p_modelo">  </label>    IMEI: <label style="width:100px;" align="center" id="p_imei">  </label> Otros:<label style="width:100px;" align="center" id="p_otros">  </label> </br>
-									Acesorios Entregados por <label style="width:250px;" id="cliente2" align="left" id="p_acces">  </label></br>Fecha de ingreso: <label style="width:250px;" id="fecha2" align="center"> </label> Fecha de entrega : <label style="width:150px;" id="fechaentre" align="center"></label>
+									Acesorios Entregados por <label style="width:250px;" id="p_cliente66" align="left" id="p_acces">  </label></br>Fecha de ingreso: <label style="width:250px;" id="fecha2" align="center"> </label> Fecha de entrega : <label style="width:150px;" id="fechaentre" align="center"></label>
 
 						    </tr>
 
@@ -239,7 +249,7 @@ if(isset($_GET['folio'])){
 					</tr>
 				</table>
 			</div>
-			<div style="position:absolute;top:57%;right:3%;"  >
+			<div style="position:absolute;top:52%;right:3%;"  >
 				<table class="printto" >		
 					<thead >			
 						<tr>
@@ -284,7 +294,7 @@ if(isset($_GET['folio'])){
 				</table>
 			</div>
 
-			<div style="position:absolute;top:98%;left:0%;"  >
+			<div style="position:absolute;top:91%;left:-1%;"  >
 				<table class="printto" >		
 					<thead >			
 						<tr>
@@ -375,7 +385,7 @@ if(isset($_GET['folio'])){
 								</td>
 						    </tr>
 						    <tr>
-								<th   colspan="3" style="height:50px;" ><label style="position:absolute;top:60%;right:15%;"align="right"><font size="2">Subtotal</font></label><br>
+								<th   colspan="3" style="height:30px;" ><label style="position:absolute;top:57%;right:15%;"align="right"><font size="2">Subtotal</font></label><br>
 																		<label style="position:absolute;top:68%;right:15%;"align="right"><font size="1">I.V.A</font></label><br>
 																	    <label style="position:absolute;top:76%;right:15%;"align="right"><font size="1">Anticipo</font></label><br>
 																		<label style="position:absolute;top:85%;right:15%;"align="right"><font size="1">Resto de Pago</font></label><br>
@@ -401,7 +411,7 @@ if(isset($_GET['folio'])){
 				
 				</table>
 			</div>
-			<div style="position:absolute;top:141%;right:2%; width:700px;" align="justify"  >
+			<div style="position:absolute;top:131%;right:3%; width:700px;" align="justify"  >
 
 				
 					<font size="1"><label id="p_cliente61" class="onces" ></label> acepta que en el caso de que por razones técnicas y al momento de la entrega de su equipo no se pueda  
@@ -423,12 +433,12 @@ if(isset($_GET['folio'])){
 
 			</div>
 
-			<div style="position:absolute;top:166%;right:2%; width:700px;"  >
+			<div style="position:absolute;top:156%;right:3%; width:700px;"  >
 
 				
 					<font size="1" >Autorización que otorga <label id="p_cliente58" class="onces"></label> para el uso de la información con fines mercadológicos o publicitarios
 					<label id="p_cliente57"></label> Sí (   )  No (   ) acepta que Llamas Comunicación, S.A. de C.V., utilice con fines mercadológicos o publicitarios o bien, que ceda
-					o transmita a terceros, con los mimos fines, la información proporcionada por él mismo con motivo de este contrato.<br><br>
+					o transmita a terceros, con los mimos fines, la información proporcionada por él mismo con motivo de este contrato.<br><br><br>
 
 														 <label style="padding-left:20em"> _______________________________________________</label><br>
 														 <label style="padding-left:22em"><label id="p_cliente56"></label> (firma de autorización)</label>
@@ -790,6 +800,8 @@ document.getElementById('p_cliente62').innerHTML=document.getElementById('editcl
 document.getElementById('p_cliente63').innerHTML=document.getElementById('editcliente').value;
 document.getElementById('p_cliente64').innerHTML=document.getElementById('editcliente').value;
 document.getElementById('p_cliente65').innerHTML=document.getElementById('editcliente').value;
+document.getElementById('p_cliente66').innerHTML=document.getElementById('editcliente').value;
+
 
 
 
@@ -926,16 +938,16 @@ $("#editaa").click(function(){
 		},
 	});
 
-	var pcliente2 = $('#editcliente').val();
-			$.ajax({
-			type:"GET",
-			url:"ins.php?pclient2=1&a_cliente="+pcliente2,
-			dataType:"html",
-			success:function(response){
-				$("#printdiv").html(response); 
-				
-			},
-		});
+	//var pcliente2 = $('#editcliente').val();
+	//		$.ajax({
+	//		type:"GET",
+	//		url:"ins.php?pclient2=1&a_cliente="+pcliente2,
+	//		dataType:"html",
+	//		success:function(response){
+	//			$("#printdiv").html(response); 
+	//			
+	//		},
+	//	});
 });
 </script>
 </body>

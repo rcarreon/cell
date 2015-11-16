@@ -500,17 +500,12 @@ if(!empty($_GET['pclient'])){
 
 
 
-if (!empty($_GET['pclient2'])){  
+/*if (!empty($_GET['pclient2'])){  
 
   $pcliente2 = $_GET['a_cliente'];
-
-
-
     $sql2 = "SELECT email,celular,telefono,RFC,domicilio,colonia,ciudad,cpostal from cliente where nombre = '$pcliente2'"; 
-
     $result = mysql_query($sql2,$con2) or die ("Query failed: ".mysql_error()."Actual query:".$sql2); 
-   // $result=mysql_query("select * from cliente",$con2);
-    //echo $tr6;
+
     while($dato = mysql_fetch_row($result)){
          // echo "<tr>";
             echo "<label align=center id=pemail value=".$dato[0].">$dato[0]</label>";
@@ -523,10 +518,7 @@ if (!empty($_GET['pclient2'])){
             echo "<label align=center id=pcpostal value=".$dato[7]." >$dato[7]</label>";
           //echo "</tr>";
     } 
-
-
-
-}
+}*/
 
 
 

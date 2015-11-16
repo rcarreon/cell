@@ -79,15 +79,15 @@ if(isset($_GET['id'])){
 				
 			</strong>	
 
-				<a >
+				
+		</div>
+			
+		<a style="position:absolute;bottom:-10%;right:115%;">
 				 <button  class="btn btn-primary" type="button" id="c_editaa" > Guardar cambios </button>
 				</a>	
 
-		</div>
-			
 		
-		
-		<a   href="/">
+		<a  style="position:absolute;bottom:-10%;left:20%;"  href="/">
    				<button type="button" id="regresa">Regresar</button>
 				</a>
 				

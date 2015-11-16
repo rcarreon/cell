@@ -316,7 +316,7 @@ function optionCheck5(){
 
 
 		<div class="container" style="display:none;" id="manageeq" >
-				<h4>Agregr marca/modelo:</h4>
+				<h4>Agregar marca/modelo:</h4>
 				<form>
 					<select onchange="optionCheck5();" name="manejaeq" id="opsearch5"  class="form-control" style="width:200px;">
 						<option selected="selected" disabled="disabled">--Selecciona Opcion--</option>
@@ -326,7 +326,7 @@ function optionCheck5(){
 
 				</form>
 		</div>
-		<div id="agregamarca" style="display:none;">
+		<div id="agregamarca" style="display:none;position:relative;bottom:50px;left:250px;">
 				<form name="busqueda" method="get" >
 					<input  type="text" name="a_marca" id="a_marca"  placeholder="Nueva Marca"  style="display:none;text-transform:uppercase;" >
 					<input  type="text" name="modelos" id="modelos"  placeholder="Nuevo Modelo"  style="display:none;text-transform:uppercase;" >

@@ -1183,6 +1183,8 @@ $("#s_submit_a").click(function(){
 		$('#manageeq').hide();
 		$('#modelos').hide();
 		$('#mod_submit').hide();
+		$('#a_marca').hide();
+		$('#eq_submit').hide();
 
 
 });
@@ -1220,6 +1222,10 @@ $("#s_submit_mu").click(function(){
 		$("#manageagre").hide();				
 		$('#m_todosclientes').hide();
 		$('#manageeq').hide();
+		$('#a_marca').hide();
+		$('#a_mmodelo').hide();
+
+		
 });
 
 

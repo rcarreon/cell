@@ -52,7 +52,7 @@ if(isset($_GET['folio'])){
 		
 			Marca:
 			<div >
-				<input type="text" name="editmodelo"  id="editmodelo" value="<?php echo $query2[1]; ?>" tabindex=1 />
+				<input type="text" name="editmodelo"  id="editmodelo" disabled="disabled"  value="<?php echo $query2[1]; ?>" tabindex=1 />
 			</div>
 			Fecha:
 			<div >

@@ -292,18 +292,18 @@ if (!empty($_GET['mclientes'])){
 }
 ///MODIFICA CLIENTES
 if(!empty($_GET['mcliente'])){
-    $cnombre    = strtoupper($_GET['editnombre']);
-    $cemail     = strtoupper($_GET['editemail']);
+    $cnombre    = $_GET['editnombre'];
+    $cemail     = $_GET['editemail'];
     $ccel       = $_GET['editcel'];   
     $ctel       = $_GET['edittel'];
     $cid        = $_GET['editid'];
-    $ccd        = strtoupper($_GET['editcd']);
+    $ccd        = $_GET['editcd'];
     $ccol       = $_GET['editcol'];
     $ccpostal   = $_GET['editcp'];
     $cdom       = $_GET['editdom'];
-    $crfc       = strtoupper($_GET['editrfc']);
+    $crfc       = $_GET['editrfc'];
 
-   
+   //strtoupper($variable) pero truena en esta funcion de modifical el cliente 
 
     $query2 = "UPDATE dispos SET  cliente = '$cnombre'  WHERE cliente = '$cnombre'";
     $result2 = mysqli_query($con,$query2);
@@ -316,17 +316,17 @@ if(!empty($_GET['mcliente'])){
 }
 ///AGREGA CLIENTE
 if(!empty($_GET['agregac'])){
-    $cnombre    = strtoupper($_GET['c_nombre']);
+    $cnombre    = $_GET['c_nombre'];
     $cemail     = $_GET['c_email'];
     $ccel       = $_GET['c_cel'];
     $ctel       = $_GET['c_tel'];
 
     
-    $crfc       =   strtoupper($_GET['c_rfc']);
-    $ccol       =   $_GET['c_col'];
-    $ccd        =   strtoupper($_GET['c_cd']);
-    $cpostal    =   $_GET['c_postal'];
-    $cdom       =   $_GET['c_dom'];
+    $crfc       = $_GET['c_rfc'];
+    $ccol       = $_GET['c_col'];
+    $ccd       = $_GET['c_cd'];
+    $cpostal       = $_GET['c_postal'];
+    $cdom       = $_GET['c_dom'];
 
 
 
@@ -351,7 +351,7 @@ if(!empty($_GET['agregac'])){
 //// GREGA MARCA 
 
 if(!empty($_GET['eqsubmit'])){
-    $marca    = strtoupper($_GET['a_marca']);
+    $marca    = $_GET['a_marca'];
     //$modelo   = $_GET['modelos'];
     $q = mysql_query("SELECT  marca  from marcas  where marca = '$marca' ",$con2);
     $ress = mysql_fetch_row($q); 
@@ -375,7 +375,7 @@ if(!empty($_GET['eqsubmit'])){
 
 
 if(!empty($_GET['modsubmit'])){
-    $modelo    = strtoupper($_GET['modelos']);
+    $modelo    = $_GET['modelos'];
     //$modelo   = $_GET['modelos'];
     $q = mysql_query("SELECT  modelo  from modelos  where modelo = '$modelo' ",$con2);
     $ress = mysql_fetch_row($q); 

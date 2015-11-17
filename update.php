@@ -222,9 +222,9 @@ if(isset($_GET['folio'])){
 							<tr>
 								<td class="ocho" align="left"  >  
 									
-								<font size="1">	Cliente: <label style="width:150px;" id="p_cliente" align="center">  </label>  RFC: <label style="width:150px;" id="p_rfc" align="center">  </label>    Domicilio:<label style="width:100px;" align="center" id="p_dom"></label>      Colonia:<label style="width:100px;" align="center" id="p_col"></label>    Ciudad:<label style="width:100px;" align="center" id="p_cd"></label>    
-									Código postal: <label style="width:100px;" align="center" id="p_cp"></label>	Teléfono  en el que se le pueda localizar:<label style="width:100px;" align="center" id="p_tel"></label> </br>
-									Correo electrónico: <label style="width:100px;" align="center" id="p_email"></label>
+								<font size="1">	Cliente: <label style="width:150px;" id="p_cliente" align="center">  </label>  RFC: <label style="width:150px;" id="p_rfc" align="center">  </label>    Correo electrónico: <label style="width:100px;" align="center" id="p_email"></label>    
+									<br>Código postal: <label style="width:100px;" align="center" id="p_cp"></label>	Teléfono  en el que se le pueda localizar:<label style="width:100px;" align="center" id="p_tel"></label> </br>
+									Domicilio:<label style="width:200px;" align="left" id="p_dom"></label>      Colonia:<label style="width:100px;" align="left" id="p_col"></label>    Ciudad:<label style="width:100px;" align="center" id="p_cd"></label>
 
 						    </tr>
 

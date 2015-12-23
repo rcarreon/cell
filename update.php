@@ -146,9 +146,9 @@ if(isset($_GET['folio'])){
 					
 					<tr>
 						<td class ="tres" align="center"  >
+							
 							<font size="1"><strong>Horario de atención al público </strong><br>
-							Lun a Vie de 9 a 20 horas <br>
-							Sábados de 10 a 13 horas </font>
+							<div id="hora"></font></div>
 
 						</td>
 					</tr>
@@ -698,22 +698,28 @@ function 	updateoutput(){
 
 			var adonde 	=  document.getElementById('editsucursal').getAttribute("value");
 			if (adonde == "Matriz"){
-				var adnd = "Llamas Comunicación, S.A. de C.V. Matriz: Bernardo Reyes # 178 RFC: LCO9906169Y0  Teléfono 301-64-64 Quiroga: Blvd. Quiroga esquina con Colosio, Local 18, Teléfono 118-94-92  Hermosillo, Sonora Correo electrónico"
+				var adnd = "Llamas Comunicación, S.A. de C.V. Matriz: Bernardo Reyes # 178 RFC: LCO9906169Y0  Teléfono 301-64-64 Quiroga: Blvd. Quiroga esquina con Colosio, Local 18, Teléfono 118-94-92  Hermosillo, Sonora."
+				var hora =  "Lun a Vie de 9:00 - 20:00 horas Sábados de 10:00 - 13:00 horas";			
+				document.getElementById('hora').innerHTML= hora;
 			document.getElementById('adnd').innerHTML= adnd;
 			}else if (adonde == "Quiroga"){
-				var adnd = "Blvd. Quiroga esquina con Colosio, Local 18, Teléfono 118-94-92  Hermosillo, Sonora ";
+				var adnd = "Blvd. Quiroga esquina con Colosio, Local 18, Teléfono 118-94-92  Hermosillo, Sonora.";
+				var hora = "Lunes a Viernes de 10:00 - 20:00 horas y Sábados de 10:00 - 18:00 horas";
+				document.getElementById('hora').innerHTML= hora;
 				document.getElementById('adnd').innerHTML= adnd;
 
 			}else if (adonde == "Dila"){
-				var adnd = "Blvd. Morelos #349 Local 6 Hermosillo, Sonora. Teléfono:(662) 211 33 90";
+				var adnd = "Blvd. Morelos #349 Local 6, Teléfono:(662) 211 33 90 Hermosillo, Sonora.";
+				var hora = "Lunes a Viernes de 9:30 - 20:00 horas y Sábados de 9:30 -20:00 horas";			
+				document.getElementById('hora').innerHTML= hora;
 				document.getElementById('adnd').innerHTML= adnd;
 
 			}else if (adonde == "Sendero"){
-				var adnd = "Llamas Comunicación, S.A. de C.V. Matriz: Bernardo Reyes # 178 RFC: LCO9906169Y0  Teléfono 301-64-64 Quiroga: Blvd. Quiroga esquina con Colosio, Local 18, Teléfono 118-94-92  Hermosillo, Sonora Correo electrónico";
+				var adnd = "Llamas Comunicación, S.A. de C.V. Matriz: Bernardo Reyes # 178 RFC: LCO9906169Y0  Teléfono 301-64-64 Quiroga: Blvd. Quiroga esquina con Colosio, Local 18, Teléfono 118-94-92  Hermosillo, Sonora.";
 				document.getElementById('adnd').innerHTML= adnd;
 
 			}else if (adonde == "Progreso"){
-				var adnd = "Blvd. Progreso #140-X entre Reyes y Yañez Hermosillo, Sonora. Teléfono: (662) 284 28 04";
+				var adnd = "Blvd. Progreso #140-X entre Reyes y Yañez, Teléfono: (662) 284 28 04 Hermosillo, Sonora. ";
 				document.getElementById('adnd').innerHTML= adnd;
 
 			}

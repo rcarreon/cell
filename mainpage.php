@@ -441,7 +441,7 @@ function optionCheck5(){
 					<div style="position:absolute;top:210px;left:55%" tabindex=9>
 			    		<font color="red">**</font>Sucursal
 			    		<div>
-			    			<select name="a_sucurs" id="a_sucurs" class="form-control" style="width:150px;">
+			    			<select name="a_sucurs" id="a_sucurs"  style="width:150px;">
 								<option  disabled="disabled" value="sucursal">Sucursal</option>
 								<option value="Matriz"  selected="selected"> Matriz</option>
 								<option value="Quiroga"> Colosio - Quiroga</option>
@@ -510,8 +510,7 @@ function optionCheck5(){
 					<tr>
 						<td class ="tres" align="center"  >
 							<font size="1"><strong>Horario de atención al público </strong><br>
-							Lun a Vie de 9 a 20 horas <br>
-							Sábados de 10 a 13 horas </font>
+							<div id="hora"></font></div>
 
 						</td>
 					</tr>
@@ -1540,14 +1539,20 @@ $("#a_submit").click(function(){
 	   ////  ESTO es para detectaar que sucursl eligio  y poner la direccion y datos correspondientes, faltan las demas msucursaales //////////
 	if (adonde == "Matriz"){
 		var adnd = "Llamas Comunicación, S.A. de C.V. Matriz: Bernardo Reyes # 178 RFC: LCO9906169Y0  Teléfono 301-64-64  Hermosillo, Sonora";
+		var hora =  "Lun a Vie de 9:00 - 20:00 horas Sábados de 10:00 - 13:00 horas";			
+		document.getElementById('hora').innerHTML= hora;
 		document.getElementById('adnd').innerHTML= adnd;
 
 	}else if (adonde == "Quiroga"){
 		var adnd = "Blvd. Quiroga esquina con Colosio, Local 18, Teléfono 118-94-92  Hermosillo, Sonora ";
+		var hora = "Lunes a Viernes de 10:00 - 20:00 horas y Sábados de 10:00 - 18:00 horas";
+		document.getElementById('hora').innerHTML= hora;
 		document.getElementById('adnd').innerHTML= adnd;
 
 	}else if (adonde == "Dila"){
 		var adnd = "Blvd. Morelos #349 Local 6 Hermosillo, Sonora. Teléfono:(662) 211 33 90";
+		var hora = "Lunes a Viernes de 9:30 - 20:00 horas y Sábados de 9:30 -20:00 horas";				
+		document.getElementById('hora').innerHTML= hora;
 		document.getElementById('adnd').innerHTML= adnd;
 
 	}else if (adonde == "Patio"){

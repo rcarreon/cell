@@ -26,6 +26,7 @@ $sfecha    = $_GET['s_fecha'];
 $sdonde   = $_GET['s_donde'];
 $fpor     = $_GET['f_por'];
 $fsucur   = $_GET['f_sucur'];
+$numcolum = $_GET['n_columnas'];
 
 //////////tabla para mostrar todas las columas de la tabla dispos//////////
 
@@ -103,13 +104,21 @@ mysql_select_db("cellcity",$con2);
  if(!empty($_GET['s_submit'])){
 ////Filtro para buscar todos los registros de la tabla dispos 
     if(!empty($_GET['s_submit']) && empty($sfolio) && empty($simei) && empty($smodelo) && empty($scliente) && empty($sfecha) && empty($sdonde)){
-      
-      $resulta= mysql_query("SELECT dispos.*, cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente ON  cliente.nombre = dispos.cliente order by dispos.folio desc" ,$con2);     
+
+       if ( $numcolum > 500){
+          $resulta= mysql_query("SELECT dispos.*, cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente ON  cliente.nombre = dispos.cliente order by dispos.folio desc" ,$con2);
+       }
+        if ( empty($numcolum) ){
+          $resulta= mysql_query("SELECT dispos.*, cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente ON  cliente.nombre = dispos.cliente order by dispos.folio desc LIMIT 100" ,$con2);
+       }
+       else {      
+          $resulta= mysql_query("SELECT dispos.*, cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente ON  cliente.nombre = dispos.cliente order by dispos.folio desc LIMIT $numcolum" ,$con2);     
+       }
       echo $tr;
     }  
 ////Filtro para buscar registro segun el folio
-    if($sfolio){
-      
+    if($sfolio){     
+
       $resulta= mysql_query("SELECT dispos.*,cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente ON  cliente.nombre = dispos.cliente where dispos.folio = '$sfolio' order by dispos.folio desc",$con2);
       echo $tr;
     }
@@ -121,26 +130,66 @@ mysql_select_db("cellcity",$con2);
     }
 ////Filtro para buscar registro segun equipo/modelo
     if($smodelo){
-      
-      $resulta= mysql_query("SELECT dispos.*,cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente ON  cliente.nombre = dispos.cliente where dispos.modelo LIKE '$smodelo%' order by dispos.folio desc",$con2);
+        if ( $numcolum > 500){
+           $resulta= mysql_query("SELECT dispos.*,cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente ON  cliente.nombre = dispos.cliente where dispos.modelo LIKE '$smodelo%' order by dispos.folio desc",$con2);
+        }
+        if ( empty($numcolum) ){
+           $resulta= mysql_query("SELECT dispos.*,cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente ON  cliente.nombre = dispos.cliente where dispos.modelo LIKE '$smodelo%' order by dispos.folio desc LIMIT 100",$con2);
+        }else {
+           $resulta= mysql_query("SELECT dispos.*,cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente ON  cliente.nombre = dispos.cliente where dispos.modelo LIKE '$smodelo%' order by dispos.folio desc LIMIT $numcolum",$con2);
+        }
       echo $tr;
     }   
 ////Filtro para buscar registro segun cliente y status
     if($scliente){    
-        if (!empty($sstatus)){      
+        if (!empty($sstatus)){   
+              if ( $numcolum > 500){   
                   $resulta= mysql_query("SELECT dispos.*,cliente.email,cliente.telefono,cliente.nombre from dispos   LEFT JOIN cliente ON  cliente.nombre = dispos.cliente where dispos.cliente LIKE '$scliente%' AND dispos.status = '$sstatus' order by dispos.folio desc",$con2);
-        }else{                  
-                  
+              }
+              if ( empty($numcolum) ){
+                  $resulta= mysql_query("SELECT dispos.*,cliente.email,cliente.telefono,cliente.nombre from dispos   LEFT JOIN cliente ON  cliente.nombre = dispos.cliente where dispos.cliente LIKE '$scliente%' AND dispos.status = '$sstatus' order by dispos.folio desc LIMIT 100",$con2);
+              } else {
+                  $resulta= mysql_query("SELECT dispos.*,cliente.email,cliente.telefono,cliente.nombre from dispos   LEFT JOIN cliente ON  cliente.nombre = dispos.cliente where dispos.cliente LIKE '$scliente%' AND dispos.status = '$sstatus' order by dispos.folio desc LIMIT $numcolum",$con2);
+
+              }         
+        }else{       
+                if ( $numcolum > 500){                               
                   $resulta= mysql_query("SELECT dispos.*,cliente.email,cliente.telefono,cliente.nombre from dispos  LEFT JOIN cliente ON  cliente.nombre = dispos.cliente where dispos.cliente LIKE '$scliente%' order by dispos.folio desc",$con2);
+                }
+                if ( empty($numcolum) ){
+                  $resulta= mysql_query("SELECT dispos.*,cliente.email,cliente.telefono,cliente.nombre from dispos  LEFT JOIN cliente ON  cliente.nombre = dispos.cliente where dispos.cliente LIKE '$scliente%' order by dispos.folio desc LIMI 100",$con2);
+                }
+                else {
+                  $resulta= mysql_query("SELECT dispos.*,cliente.email,cliente.telefono,cliente.nombre from dispos  LEFT JOIN cliente ON  cliente.nombre = dispos.cliente where dispos.cliente LIKE '$scliente%' order by dispos.folio desc LIMIT $numcolum",$con2);
+ 
+                }
         }        
         echo $tr;          
     }    
-     if($sfecha){        
-        $resulta=mysql_query("SELECT dispos.*, cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente  ON  cliente.nombre = dispos.cliente where dispos.fecha = '$sfecha' order by dispos.folio desc",$con2);
+     if($sfecha){  
+        if ( $numcolum > 500){       
+            $resulta=mysql_query("SELECT dispos.*, cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente  ON  cliente.nombre = dispos.cliente where dispos.fecha = '$sfecha' order by dispos.folio desc",$con2);
+        }
+        if ( empty($numcolum) ){
+            $resulta=mysql_query("SELECT dispos.*, cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente  ON  cliente.nombre = dispos.cliente where dispos.fecha = '$sfecha' order by dispos.folio desc LIMIT 100",$con2);
+        }else {
+            $resulta=mysql_query("SELECT dispos.*, cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente  ON  cliente.nombre = dispos.cliente where dispos.fecha = '$sfecha' order by dispos.folio desc LIMIT $numcolum",$con2);
+
+        }
         echo $tr;
     }  
-    if($sdonde){        
-        $resulta=mysql_query("SELECT dispos.*, cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente  ON  cliente.nombre = dispos.cliente where dispos.sucursal = '$sdonde' order by dispos.folio desc",$con2);
+    if($sdonde){   
+      if ( $numcolum > 500){     
+         $resulta=mysql_query("SELECT dispos.*, cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente  ON  cliente.nombre = dispos.cliente where dispos.sucursal = '$sdonde' order by dispos.folio desc",$con2);
+      }
+      if ( empty($numcolum) ){
+         $resulta=mysql_query("SELECT dispos.*, cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente  ON  cliente.nombre = dispos.cliente where dispos.sucursal = '$sdonde' order by dispos.folio desc LIMIT 100 ",$con2);
+
+      }else {
+         $resulta=mysql_query("SELECT dispos.*, cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente  ON  cliente.nombre = dispos.cliente where dispos.sucursal = '$sdonde' order by dispos.folio desc LIMIT $numcolum",$con2);
+
+      }
+
         echo $tr;
         
     }      

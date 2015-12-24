@@ -39,7 +39,8 @@ switch (option2){
 			$("#s_status").val('').hide();
 			$("#s_todos").val('').hide();
 			$("#s_fecha").val('').hide();
-			$("#s_donde").val('').hide();
+			$("#s_donde").val('').hide(); 
+			$("#n_columnas").val('').hide(); 
 			$("#s_submit").show();
 			$("#s_table").show();
 			$('#sestatus').hide();
@@ -53,6 +54,7 @@ switch (option2){
 			$("#s_cliente").val('').hide();
 			$("#s_fecha").val('').hide();
 			$("#s_donde").val('').hide();
+			$("#n_columnas").val('').hide();
 			$("#s_submit").show();
 			$("#s_table").show();
 			$('#sestatus').hide();
@@ -66,6 +68,7 @@ switch (option2){
 			$("#s_cliente").val('').hide();
 			$("#s_fecha").val('').hide();
 			$("#s_donde").val('').hide();
+			$("#n_columnas").val('').show();
 			$("#s_submit").show();
 			$("#s_table").show();
 			$('#sestatus').hide();
@@ -78,6 +81,7 @@ switch (option2){
 			$("#s_todos").val('').hide();
 			$("#s_fecha").val('').hide();
 			$("#s_donde").val('').hide();
+			$("#n_columnas").val('').show();
 			$('#sestatus').show();
 			$("#s_cliente").show();
 			$("#s_submit").show();
@@ -91,6 +95,7 @@ switch (option2){
 			$("#s_status").val('').hide();
 			$("#s_fecha").val('').hide();
 			$("#s_donde").val('').hide();
+			$("#n_columnas").val('').show();
 			$("#s_todos").show();
 			$("#s_submit").show();
 			$("#s_table").show();
@@ -104,6 +109,7 @@ switch (option2){
 			$("#s_status").val('').hide();
 			$("#s_fecha").val('').hide();
 			$("#s_donde").val('').hide();
+			$("#n_columnas").val('').show();
 			$("#s_todos").show();
 			$("#s_submit").show();
 			$("#s_table").show();
@@ -116,6 +122,7 @@ switch (option2){
 			$("#s_cliente").val('').hide();
 			$("#s_status").val('').hide();
 			$("#s_donde").val('').hide();
+			$("#n_columnas").val('').show();
 			$("#s_fecha").show();
 			$("#s_todos").show();
 			$("#s_submit").show();
@@ -129,6 +136,7 @@ switch (option2){
 			$("#s_cliente").val('').hide();
 			$("#s_status").val('').hide();
 			$("#s_fecha").val('').hide();
+			$("#n_columnas").val('').show();
 			$("#s_donde").show();
 			$("#s_todos").show();
 			$("#s_submit").show();
@@ -284,7 +292,7 @@ function optionCheck5(){
 						<option selected="selected" disabled="disabled">--Seleciona  opcion--</option>
 						<option value="imei"  > Imei</option>
 						<option value="folio" > Folio </option>
-						<option value="modelo" > Equipo </option>
+						<option value="modelo" > Marca </option>
 						<option value="cliente" > Cliente</option>	
 						<option value="fecha" > Fecha</option>
 						<option value="sucursal"> Recibido en </option>	
@@ -368,7 +376,7 @@ function optionCheck5(){
 							<option name="s_status" value="Garantia" > Garantia </option>  
 							<option name="s_status" value="Entregado" > Entregado </option>
 					  	</select>	
-					  	<select name="s_donde" id="s_donde" style="display:none;width:110px;position:relative;left:19%;bottom:48px;" class="form-control"  >
+					  	<select name="s_donde" id="s_donde" style="display:none;width:110px;position:relative;left:19%;bottom:60px;" class="form-control"  >
 							<option selected="selected" disabled="disabled" value="">opcion</option>
 							<option name="s_donde" value="Matriz" > Matriz </option>
 							<option name="s_donde" value="Quiroga" > Quiroga </option> 
@@ -376,6 +384,14 @@ function optionCheck5(){
 							<option name="s_donde" value="Dila" > Dila </option> 
 							<option name="s_donde" value="Patio" > Patio </option> 
 						</select> 		
+						<select name="n_columnas" id="n_columnas" style="display:none;width:180px;position:absolute;left:45%;top:45%;" class="form-control"  >
+							<option selected="selected"  value="" >100 Recientes </option>
+							<option name="n_columnas" value="200" > 200 </option>
+							<option name="n_columnas" value="300" > 300 </option> 
+							<option name="n_columnas" value="500" > 500 </option> 
+							<option name="n_columnas" value="1000" > Todos </option> 
+							
+						</select> 
 						<button   type="button" class="btn btn-primary" id="s_submit" style="display:none;"   >Buscar</button>			
 				</form>		
 		</div>						 						
@@ -809,97 +825,7 @@ function optionCheck5(){
 					</font>
 
 
-			</div>
-
-		
-
-			
-			<!-- <img id="logo" src="images/logo_2015.jpg" alt="Cell City logo" height="110" width="350" style="position:relative;left:35px;">	
-			Original			
-				<table class="printt" style="width:35em;height:5em;">				
-					<tr>
-						<td class="uno" ><strong>Cliente</strong></td>
-						<td class="dos" id="cliente" name="cliente"></td>
-					</tr>
-					<tr>
-						<strong><td class="uno"  ><strong>Equipo</strong></td></strong>
-						<td class="dos" id="equipo"  > </td>
-					</tr>
-					<tr>
-						<strong><td class="uno"  ><strong>Imei</strong></td></strong>
-						<td class="dos" id="imei" ></td>
-					</tr>
-				
-				</table>
-				<br>				
-				<div style="position:relative;left:15%;">
-					<input type="checkbox"> SIM </input>
-					<input type="checkbox"> Bateria</input>
-					<input type="checkbox"> Tapa</input>
-					<input type="checkbox"> Memoria </input>
-				</div>				
-				<table class="printt" id="pfolio">
-					<tr>
-						<strong><td class="uno" align="center"><strong>Folio</strong></td></strong>
-					</tr>
-					<tr>
-						<td class="uno" align="center" id="pfolio1" >
-
-						</td>
-					</tr>
-				</table>
-				<br>
-				<table class="printt" id="pfolio">
-					<tr>
-						<strong><td class="uno" align="center"><strong>Fecha</strong></td></strong>
-					</tr>
-					<tr>
-						<td class="uno" id="fecha"></td>
-					</tr>
-				</table>									
-				<table class="printt" style="width:35em;height:5em;bottom:10%;">
-					<thead>
-						<tr>
-							<th>DETALLES DE SERVICIO TECNICO</th>
-						</tr>
-						<tr>
-							<td>La contraseña es <label id="contra"></label></td>
-						</tr>
-						<tr>
-							<td rowspan="4" class="uno" id="detalles" ></td>
-						</tr>
-					</thead>																
-				</table>
-				<p class="alinea"><strong><font size="3em;">EN CAMBIO DE CRISTAL EL CLIENTE ACEPTA EL RIESGO DE DANO DE PANTALLA</font></strong></p>	
-				<div style="width:750px;" class="alinea">
-					<p id="politicas" align="justify"><font size="2em;">Politicas: 1.Debe de presentar este comprobante para que se le haga entrrega del equipo.2.Despues de 15 dias no nos hacemos
-				responsables de su equipo.3.Si no recoge su equipo en 30 dias,pasa a ser propiedad de Cell City.4. No se hacen garantias en equipos golpeados
-				o mojados.5. No nos hacemos responsables de la perdida parcial o total de la informacion en su equipo. NO NOS HACEMOS RESPONSABLES EN CASO DE
-				ROBO O INCENDIO.</font></p>
-				</div>
-				<div style="position:relative;bottom:35%;left:78%;">Patron:
-					<img src="images/cuadritocellcity2.jpg" width="120" height="120">
-				</div>
-								
-								<div style="position:relative;left:5%;bottom:7%;">
-									<p > ________________________________  <br/>                   
-									Recibio: <?php echo $uname ?></p>
-								</div>
-								<div style="position:relative;left:55%;bottom:14%;">
-								<p > ________________________________  <br/>                   
-									Aceptacion de Cliente:<label id="getname"></label></p>
-								</div>
-										<strong><hr style="position:absolute;top:670px;"></strong>
-								<p>
-
-				
-
-				<div style="position:relative;bottom:20%;padding-left:20em;" class="prnt">
-					<button id="imp" TYPE="button" onClick="printArea('print');" >Imprimir
-					<button type="regresa" id="cancelar">Cancelar
-				</div> -->
-
-							
+			</div>							
 	</div> 
 				<!-- SE Usa para el dialogo de impresion  -->
 				<div  style="display:none;" style="position:absolute;top:20%;padding-left:30em;" align="center" class="prnt">
@@ -1328,112 +1254,31 @@ $(function() {
 ////ESTA FUNCION ES PARA MANDAR LOS VALORES QUE ESTAN EN EL DIV DE UPDATE PARA EL DIV DE PRINT /////////////
 function 	updateoutput(){
 
-	//email,celular,telefono,RFC,domicilio,colonia,ciudad,cpostal
-			//document.getElementById('detalles').innerHTML=document.getElementById('a_detalles').value;
-			//document.getElementById('imei').innerHTML=document.getElementById('a_imei').value;
-			//document.getElementById('equipo').innerHTML=document.getElementById('a_modelo').getAttribute("value");
 			document.getElementById('p_cp').innerHTML=document.getElementById('pcpostal').getAttribute("value");
 			document.getElementById('p_cd').innerHTML=document.getElementById('pciudad').getAttribute("value");
 			document.getElementById('p_col').innerHTML=document.getElementById('pcolonia').getAttribute("value");
 			document.getElementById('p_dom').innerHTML=document.getElementById('pdomicilio').getAttribute("value");
-			document.getElementById('p_rfc').innerHTML=document.getElementById('prfc').getAttribute("value");
-			//var tele = document.getElementById('ptelefono').getAttribute("value");
-			//document.getElementById('p_tel').innerHTML= tele;
+			document.getElementById('p_rfc').innerHTML=document.getElementById('prfc').getAttribute("value");			
 			document.getElementById('p_tel').innerHTML =document.getElementById('ptelefono').getAttribute("value");
 			document.getElementById('p_email').innerHTML=document.getElementById('pemail').getAttribute("value");
 			document.getElementById('p_cliente').innerHTML=document.getElementById('a_cliente').value;
-			//document.getElementById('cliente2').innerHTML=document.getElementById('a_cliente').value;
-			/*document.getElementById('p_cliente3').innerHTML=document.getElementById('a_cliente').value;
-				document.getElementById('p_cliente2').innerHTML=document.getElementById('a_cliente').value;
-
-document.getElementById('p_cliente4').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente5').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente6').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente7').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente8').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente9').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente10').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente11').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente12').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente13').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente14').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente15').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente16').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente17').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente18').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente19').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente20').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente21').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente22').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente23').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente24').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente25').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente26').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente27').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente28').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente29').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente30').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente31').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente32').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente33').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente34').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente35').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente36').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente37').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente38').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente39').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente40').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente41').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente42').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente43').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente44').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente45').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente46').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente47').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente48').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente49').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente50').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente51').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente52').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente53').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente54').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente55').innerHTML=document.getElementById('a_cliente').value;*/
-document.getElementById('p_cliente56').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente57').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente58').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente59').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente60').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente61').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente62').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente63').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente64').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente65').innerHTML=document.getElementById('a_cliente').value;
-document.getElementById('p_cliente66').innerHTML=document.getElementById('a_cliente').value;
-
-
-
-
-
-
-
-			//document.getElementById('contra').innerHTML=document.getElementById('a_password').value;				
+			document.getElementById('p_cliente56').innerHTML=document.getElementById('a_cliente').value;
+			document.getElementById('p_cliente57').innerHTML=document.getElementById('a_cliente').value;
+			document.getElementById('p_cliente58').innerHTML=document.getElementById('a_cliente').value;
+			document.getElementById('p_cliente59').innerHTML=document.getElementById('a_cliente').value;
+			document.getElementById('p_cliente60').innerHTML=document.getElementById('a_cliente').value;
+			document.getElementById('p_cliente61').innerHTML=document.getElementById('a_cliente').value;
+			document.getElementById('p_cliente62').innerHTML=document.getElementById('a_cliente').value;
+			document.getElementById('p_cliente63').innerHTML=document.getElementById('a_cliente').value;
+			document.getElementById('p_cliente64').innerHTML=document.getElementById('a_cliente').value;
+			document.getElementById('p_cliente65').innerHTML=document.getElementById('a_cliente').value;
+			document.getElementById('p_cliente66').innerHTML=document.getElementById('a_cliente').value;						
 			document.getElementById('fecha').innerHTML=document.getElementById('a_fecha').value; 
 			document.getElementById('fecha2').innerHTML=document.getElementById('a_fecha').value;	
-			document.getElementById('p_detalles').innerHTML=document.getElementById('a_detalles').value;
-
-
-
-
-			//document.getElementById('p_acces').innerHTML=document.getElementById('a_access').value;
+			document.getElementById('p_detalles').innerHTML=document.getElementById('a_detalles').value;			
 			document.getElementById('p_marca').innerHTML=document.getElementById('a_modelo').value;
 			document.getElementById('p_modelo').innerHTML=document.getElementById('a_mmodelo').value;
 			document.getElementById('p_imei').innerHTML=document.getElementById('a_imei').value;
-			
-		
-
-
-
-
 }
 
 ////ESTA FUNCION ES PARA MANDAR A IMPRIMIR NADA MAS EL DIV QUE SE QUIERE ///////////
@@ -1444,10 +1289,6 @@ function printArea(areaName){
         document.body.innerHTML= "";
         location.reload();        
 }   
-
-
-
-
 
 ////////////////////////////////////////////////////////////////////////////
 
@@ -1498,11 +1339,12 @@ $(function(){
  	            var sfolio 		=  $('#s_folio').val();
  	            var scliente 	=  $('#s_cliente').val();
  	            var sfecha 		=  $('#s_fecha').val();
+ 	            var columnas 	=  $('#n_columnas option:selected').val();
  	            
 
     $.ajax({    
       type: "GET",
-      url: "ins.php?s_submit=1&s_folio="+sfolio+"&s_imei="+simei+"&s_cliente="+scliente+"&s_modelo="+smodelo+"&s_status="+sstatus+"&s_fecha="+sfecha+"&s_donde="+sdonde,
+      url: "ins.php?s_submit=1&s_folio="+sfolio+"&s_imei="+simei+"&s_cliente="+scliente+"&s_modelo="+smodelo+"&s_status="+sstatus+"&s_fecha="+sfecha+"&s_donde="+sdonde+"&n_columnas="+columnas,
       dataType: "html",   
       //expect html to be returned                
       success: function(response){                    
@@ -1778,11 +1620,6 @@ $('#mod_submit').click(function(){
 		$('#modelos').val('');
 	}
 });
-
-
-
-
-
 
 </script>
 </body>

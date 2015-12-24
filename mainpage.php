@@ -384,7 +384,7 @@ function optionCheck5(){
 							<option name="s_donde" value="Dila" > Dila </option> 
 							<option name="s_donde" value="Patio" > Patio </option> 
 						</select> 		
-						<select name="n_columnas" id="n_columnas" style="display:none;width:180px;position:absolute;left:45%;top:64%;" class="form-control"  >
+						<select name="n_columnas" id="n_columnas" style="display:none;width:180px;position:relative;left:45%;bottom:90px;" class="form-control"  >
 							<option selected="selected"  value="" >100 Recientes </option>
 							<option name="n_columnas" value="200" > 200 </option>
 							<option name="n_columnas" value="300" > 300 </option> 

@@ -263,7 +263,8 @@ function optionCheck5(){
 		$uname =$_SESSION['uname'];
 	echo "<p>Bienvenid@<strong> $uname !</strong></p>";
 	?>			
-		<a id="logout" href=logout.php>Salir Sesion</a>  
+		<a id="logout" href=logout.php>Salir Sesion</a> 
+		<p style="position:relative;top:5%;left:80%;"class="text-muted credit" ><?php  date_default_timezone_set('America/Hermosillo'); $date = date('Y'); echo "Cellcity $date" ?></p> 
 
 		<div align="center" >				
 				<img src="images/titulocellcity.jpg">
@@ -376,7 +377,7 @@ function optionCheck5(){
 							<option name="s_status" value="Garantia" > Garantia </option>  
 							<option name="s_status" value="Entregado" > Entregado </option>
 					  	</select>	
-					  	<select name="s_donde" id="s_donde" style="display:none;width:110px;position:relative;left:22%;bottom:60px;" class="form-control"  >
+					  	<select name="s_donde" id="s_donde" style="display:none;width:110px;position:relative;left:19%;bottom:60px;" class="form-control"  >
 							<option selected="selected" disabled="disabled" value="">opcion</option>
 							<option name="s_donde" value="Matriz" > Matriz </option>
 							<option name="s_donde" value="Quiroga" > Quiroga </option> 
@@ -384,7 +385,7 @@ function optionCheck5(){
 							<option name="s_donde" value="Dila" > Dila </option> 
 							<option name="s_donde" value="Patio" > Patio </option> 
 						</select> 		
-						<select name="n_columnas" id="n_columnas" style="display:none;width:180px;position:relative;left:45%;bottom:90px;" class="form-control"  >
+						<select name="n_columnas" id="n_columnas" style="display:none;width:180px;position:absolute;left:45%;top:45%;" class="form-control"  >
 							<option selected="selected"  value="" >100 Recientes </option>
 							<option name="n_columnas" value="200" > 200 </option>
 							<option name="n_columnas" value="300" > 300 </option> 

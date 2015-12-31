@@ -289,7 +289,7 @@ function optionCheck5(){
 			<h4>Busca Folio por:</h4>
 			<form  action="" id="bpor">				
 					<select  onchange="optionCheck2();"name="busq" id="opsearch2" title="Selecciona una de las opciones siguientes para buscar
-					un equipo en nuestra base de datos" class="form-control" style="width:200px;">
+					un equipo en nuestra base de datos" class="form-control" style="width:200px;float:left;">
 						<option selected="selected" disabled="disabled">--Seleciona  opcion--</option>
 						<option value="imei"  > Imei</option>
 						<option value="folio" > Folio </option>
@@ -299,7 +299,25 @@ function optionCheck5(){
 						<option value="sucursal"> Recibido en </option>	
 						<option value="todos">Todos los Equipos</status>
 					</select>
+					<select name="s_donde" id="s_donde" style="display:none;width:110px;float:left;" class="form-control"  >
+							<option selected="selected" disabled="disabled" value="">opcion</option>
+							<option name="s_donde" value="Matriz" > Matriz </option>
+							<option name="s_donde" value="Quiroga" > Quiroga </option> 
+							<option name="s_donde" value="Progreso" > Progreso </option> 
+							<option name="s_donde" value="Dila" > Dila </option> 
+							<option name="s_donde" value="Patio" > Patio </option> 
+						</select> 	
+					<select name="n_columnas" id="n_columnas" style="display:none;width:180px;float:left;" class="form-control"  >
+							<option selected="selected"  value="" >100 Recientes </option>
+							<option name="n_columnas" value="200" > 200 </option>
+							<option name="n_columnas" value="300" > 300 </option> 
+							<option name="n_columnas" value="500" > 500 </option> 
+							<option name="n_columnas" value="1000" > Todos </option> 
+							
+				   </select> 
+
 				</form>
+
 		</div>
 		<div class="container" style="display:none;" id="manageagre">
 				<h4>Agregar por:</h4>
@@ -377,22 +395,8 @@ function optionCheck5(){
 							<option name="s_status" value="Garantia" > Garantia </option>  
 							<option name="s_status" value="Entregado" > Entregado </option>
 					  	</select>	
-					  	<select name="s_donde" id="s_donde" style="display:none;width:110px;position:relative;left:19%;bottom:60px;" class="form-control"  >
-							<option selected="selected" disabled="disabled" value="">opcion</option>
-							<option name="s_donde" value="Matriz" > Matriz </option>
-							<option name="s_donde" value="Quiroga" > Quiroga </option> 
-							<option name="s_donde" value="Progreso" > Progreso </option> 
-							<option name="s_donde" value="Dila" > Dila </option> 
-							<option name="s_donde" value="Patio" > Patio </option> 
-						</select> 		
-						<select name="n_columnas" id="n_columnas" style="display:none;width:180px;position:absolute;left:45%;top:45%;" class="form-control"  >
-							<option selected="selected"  value="" >100 Recientes </option>
-							<option name="n_columnas" value="200" > 200 </option>
-							<option name="n_columnas" value="300" > 300 </option> 
-							<option name="n_columnas" value="500" > 500 </option> 
-							<option name="n_columnas" value="1000" > Todos </option> 
-							
-						</select> 
+					  		
+						
 						<button   type="button" class="btn btn-primary" id="s_submit" style="display:none;"   >Buscar</button>			
 				</form>		
 		</div>						 						
@@ -1167,6 +1171,9 @@ $("#s_submit_eq").click(function(){
 		$("#manageagre").hide();				
 		$('#m_todosclientes').hide();
 		$('#manageusr').hide();
+		$("#agregamarca").hide();
+		$("#m_submit").hide();
+		$("#agregau").hide();
 
 
 		$('#opsearch2 option:eq(0)').attr('selected','selected');

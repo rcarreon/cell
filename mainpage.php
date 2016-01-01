@@ -1075,6 +1075,8 @@ $("#s_submit_b").click(function(){
 	$('#opsearch option:eq(0)').attr('selected','selected');
 		$('#opsearch3 option:eq(0)').attr('selected','selected');
 		$('#opsearch4 option:eq(0)').attr('selected','selected');
+		$('#opsearch5 option:eq(0)').attr('selected','selected');
+
 	    $('#agregac').hide();
   		$("#bujca").show();
 		$("#agregaf").hide();
@@ -1097,6 +1099,8 @@ $("#s_submit_a").click(function(){
 		$('#opsearch option:eq(0)').attr('selected','selected');
 		$('#opsearch2 option:eq(0)').attr('selected','selected');
 		$('#opsearch4 option:eq(0)').attr('selected','selected');
+		$('#opsearch5 option:eq(0)').attr('selected','selected');
+
 		$('#agregac').hide();
 		$("#agregaf").show();
 		$("#manageclien").hide();
@@ -1122,6 +1126,8 @@ $("#s_submit_c").click(function(){
 	$('#opsearch2 option:eq(0)').attr('selected','selected');
 	$('#opsearch3 option:eq(0)').attr('selected','selected');
 	$('#opsearch option:eq(0)').attr('selected','selected');
+	$('#opsearch5 option:eq(0)').attr('selected','selected');
+
 
 		$('#s_submit').hide();
 		$('#agregac').hide();
@@ -1141,6 +1147,7 @@ $("#s_submit_mu").click(function(){
 	$('#opsearch2 option:eq(0)').attr('selected','selected');
 	$('#opsearch3 option:eq(0)').attr('selected','selected');
 	$('#opsearch4 option:eq(0)').attr('selected','selected');
+	$('#opsearch5 option:eq(0)').attr('selected','selected');
 		$('#s_submit').hide();
 		$('#manageusr').show();
 		$("#manageclien").hide();
@@ -1154,6 +1161,10 @@ $("#s_submit_mu").click(function(){
 		$('#manageeq').hide();
 		$('#a_marca').hide();
 		$('#a_mmodelo').hide();
+		$('#eq_submit').hide();
+		$('#modelos').hide();
+		$('#mod_submit').hide();
+
 
 		
 });
@@ -1179,6 +1190,8 @@ $("#s_submit_eq").click(function(){
 		$('#opsearch2 option:eq(0)').attr('selected','selected');
 		$('#opsearch3 option:eq(0)').attr('selected','selected');
 		$('#opsearch4 option:eq(0)').attr('selected','selected');
+		$('#opsearch5 option:eq(0)').attr('selected','selected');
+
 });
 
 $(document).ready(function() {

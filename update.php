@@ -714,7 +714,7 @@ function 	updateoutput(){
 				document.getElementById('hora').innerHTML= hora;
 				document.getElementById('adnd').innerHTML= adnd;
 
-			}else if (adonde == "Sendero"){
+			}else if (adonde == "Patio"){
 				var adnd = "Llamas Comunicación, S.A. de C.V. Matriz: Bernardo Reyes # 178 RFC: LCO9906169Y0  Teléfono 301-64-64 Quiroga: Blvd. Quiroga esquina con Colosio, Local 18, Teléfono 118-94-92  Hermosillo, Sonora.";
 				document.getElementById('adnd').innerHTML= adnd;
 
@@ -723,6 +723,7 @@ function 	updateoutput(){
 				document.getElementById('adnd').innerHTML= adnd;
 
 			}
+
 
 			document.getElementById('pfolio1').innerHTML=document.getElementById('editfolio').getAttribute("value");	
 

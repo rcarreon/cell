@@ -299,13 +299,16 @@ function optionCheck5(){
 						<option value="sucursal"> Recibido en </option>	
 						<option value="todos">Todos los Equipos</status>
 					</select>
-					<select name="s_donde" id="s_donde" style="display:none;width:110px;float:left;" class="form-control"  >
+					<select name="s_donde" id="s_donde" style="display:none;width:165px;float:left;" class="form-control"  >
 							<option selected="selected" disabled="disabled" value="">opcion</option>
 							<option name="s_donde" value="Matriz" > Matriz </option>
 							<option name="s_donde" value="Quiroga" > Quiroga </option> 
 							<option name="s_donde" value="Progreso" > Progreso </option> 
 							<option name="s_donde" value="Dila" > Dila </option> 
 							<option name="s_donde" value="Patio" > Patio </option> 
+							<option name="s_donde" value="Monteverde">Monteverde</option>
+							<option name="s_donde" value= "CaminoSeri">Camino del Seri</option>
+							<option name="s_donde" value= "PaseoSoli">Paseo Solidaridad</option>
 						</select> 	
 					<select name="n_columnas" id="n_columnas" style="display:none;width:180px;float:left;" class="form-control"  >
 							<option selected="selected"  value="" >100 Recientes </option>
@@ -468,7 +471,10 @@ function optionCheck5(){
 								<option value="Quiroga"> Colosio - Quiroga</option>
 								<option  value= "Progreso">Progreso </option>
 								<option  value= "Dila">Dila </option>
-								<option  value= "Patio">Patio </option>>
+								<option  value= "Patio">Patio </option>
+								<option  value= "Monteverde">Monteverde</option>
+								<option  value= "CaminoSeri">Camino del Seri</option>
+								<option  value= "PaseoSoli">Paseo Solidaridad</option>
 							</select>
 
 			    		<!-- <input type="radio" name="a_donde" id="a_donde"   value="Matriz" tabindex=6 >Matriz
@@ -1427,6 +1433,7 @@ $("#a_submit").click(function(){
 		document.getElementById('adnd').innerHTML= adnd;
 
 	}
+
 
 	/////////////////////////////////////////////////////////////////
 	if (!acliente){

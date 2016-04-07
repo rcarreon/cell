@@ -78,7 +78,10 @@ function optionCheck6(){
 									<option value="Quiroga"> Colosio - Quiroga</option>
 									<Option  value= "Progreso">Progreso </option>
 									<Option  value= "Plaza Dila">Dila </option>
-									<Option  value= "Sendero">Sendero </option>
+									<Option  value= "Patio">Patio </option>
+									<option  value= "Monteverde">Plaza Monteverde</option>
+									<option  value= "CaminoSeri">Plaza Maria</option>
+									<option  value= "PaseoSoli">Paseo Solidaridad</option>
 
 								</select>
 							</div>

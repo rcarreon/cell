@@ -620,7 +620,7 @@ if (!empty($_GET['f_submit'])){
         break;
         ##ESTO ESTA PENDIENTE Sin cargo  alguno ##
         case 'Todos':         
-            $querye = "SELECT count(folio),status,sucursal from dispos where (sucursal = '$fsucur' and status LIKE '%') and  fecha between '$fechaini'  and  '$fechater' group by status order by count(folio)";    
+            $querye = "SELECT count(folio),status,sucursal from dispos where (sucursal = '$fsucur' and status IS NOT NULL) and  fecha between '$fechaini'  and  '$fechater' group by status order by count(folio)";    
             $result=mysql_query($querye,$con2) or die ("Query failed: ".mysql_error()."Actual query:".$querye);
             echo $tr4;
             while($dato = mysql_fetch_row($result)){

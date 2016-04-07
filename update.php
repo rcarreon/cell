@@ -722,7 +722,27 @@ function 	updateoutput(){
 				var adnd = "Blvd. Progreso #140-X entre Reyes y Yañez, Teléfono: (662) 284 28 04 Hermosillo, Sonora. ";
 				document.getElementById('adnd').innerHTML= adnd;
 
+			}else 	if (adonde == "Monteverde"){
+				var adnd = "Veracruz #270, Local 13, Sonora. Teléfono: (662) 210 70 75";
+				var hora = "Lunes a Viernes  09:00 - 19:00 horas Sabados de 9:00 - 17:00 horas";
+				document.getElementById('hora').innerHTML= hora;
+				document.getElementById('adnd').innerHTML= adnd;
+
+			}else 	if (adonde == "CaminoSeri"){
+				var adnd = "Blvd. Camino del Seri #331, Local 331-B. Celular: (6622)-20 31 41";
+				var hora = "Lunes a Viernes  09:00 - 19:00 horas Sabados de 9:00 - 14:00 horas";
+				document.getElementById('hora').innerHTML= hora;
+				document.getElementById('adnd').innerHTML= adnd;
+
 			}
+    		else 	if (adonde == "PaseoSoli"){
+				var adnd = "Blvd. Solidaridad No. 65 esquina con Avenida Camelia. Col. Libertad, Local LA026, Celular: (6624)-21 55 24";
+				var hora = "Lunes a Domingo   10:00 - 20:00 horas";
+				document.getElementById('hora').innerHTML= hora;
+				document.getElementById('adnd').innerHTML= adnd;
+
+			}
+
 
 
 			document.getElementById('pfolio1').innerHTML=document.getElementById('editfolio').getAttribute("value");	

@@ -593,7 +593,7 @@ if (!empty($_GET['f_submit'])){
 
     switch ($fpor) {
       case 'GarantiaNoen':
-          $queryn = "SELECT count(folio),status,sucursal from dispos where (sucursal = '$fsucur' and status = 'listo' and reparacion = 'Grantia') and  fecha between '$fechaini'  and  '$fechater'";    
+          $queryn = "SELECT count(folio),status,sucursal from dispos where (sucursal = '$fsucur' and status = 'listo' and reparacion = 'Grantia') and  fecha between '$fechaini%'  and  '$fechater%'";    
           $result=mysql_query($queryn,$con2) or die ("Query failed: ".mysql_error()."Actual query:".$queryn);
           echo $tr4;
           while($dato = mysql_fetch_row($result)){
@@ -606,7 +606,7 @@ if (!empty($_GET['f_submit'])){
           }
         break;
       case 'GarantiaEn':
-          $querye = "SELECT count(folio),status,sucursal from dispos where (sucursal = '$fsucur' and status = 'Entregado' and reparacion = 'Grantia') and  fecha between '$fechaini'  and  '$fechater'";    
+          $querye = "SELECT count(folio),status,sucursal from dispos where (sucursal = '$fsucur' and status = 'Entregado' and reparacion = 'Grantia') and  fecha between '$fechaini%'  and  '$fechater%'";    
           $result=mysql_query($querye,$con2) or die ("Query failed: ".mysql_error()."Actual query:".$querye);
           echo $tr4;
           while($dato = mysql_fetch_row($result)){
@@ -620,7 +620,7 @@ if (!empty($_GET['f_submit'])){
         break;
         ##ESTO ESTA PENDIENTE Sin cargo  alguno ##
         case 'Todos':         
-            $querye = "SELECT count(folio),status,sucursal from dispos where (sucursal = '$fsucur' and status IS NOT NULL) and  fecha between '$fechaini'  and  '$fechater' group by status order by count(folio)";    
+            $querye = "SELECT count(folio),status,sucursal from dispos where (sucursal = '$fsucur' and status IS NOT NULL) and  fecha between '$fechaini%'  and  '$fechater%' group by status order by count(folio)";    
             $result=mysql_query($querye,$con2) or die ("Query failed: ".mysql_error()."Actual query:".$querye);
             echo $tr4;
             while($dato = mysql_fetch_row($result)){
@@ -633,7 +633,7 @@ if (!empty($_GET['f_submit'])){
             }        
         break;             
       default:
-        $query = "SELECT count(folio),status,sucursal from dispos where (sucursal = '$fsucur' and status = '$fpor') and  fecha between '$fechaini'  and  '$fechater'";    
+        $query = "SELECT count(folio),status,sucursal from dispos where (sucursal = '$fsucur' and status = '$fpor') and  fecha between '$fechaini%'  and  '$fechater%'";    
         $result=mysql_query($query,$con2) or die ("Query failed: ".mysql_error()."Actual query:".$query);
         echo $tr4;
         while($dato = mysql_fetch_row($result)){
@@ -654,7 +654,7 @@ if (!empty($_GET['f_submit_es'])){
     $fechater = $_GET['f_fecha_t'];
     switch ($fpor) {
       case 'GarantiaNoen':
-        $query = "SELECT folio,modelo,cliente,status,sucursal,fecha from dispos where (sucursal = '$fsucur' and status = 'listo' and reparacion = 'Grantia') and  fecha between '$fechaini'  and  '$fechater' order by fecha desc";    
+        $query = "SELECT folio,modelo,cliente,status,sucursal,fecha from dispos where (sucursal = '$fsucur' and status = 'listo' and reparacion = 'Grantia') and  fecha between '$fechaini%'  and  '$fechater%' order by fecha desc";    
         $result=mysql_query($query,$con2) or die ("Query failed: ".mysql_error()."Actual query:".$query);
         echo $tr5;
         while($dato = mysql_fetch_row($result)){
@@ -669,7 +669,7 @@ if (!empty($_GET['f_submit_es'])){
         }  
         break;
       case 'GarantiaEn':
-        $query = "SELECT folio,modelo,cliente,status,sucursal,fecha from dispos where (sucursal = '$fsucur' and status = 'Entregado' and reparacion = 'Grantia') and  fecha between '$fechaini'  and  '$fechater' order by fecha desc";    
+        $query = "SELECT folio,modelo,cliente,status,sucursal,fecha from dispos where (sucursal = '$fsucur' and status = 'Entregado' and reparacion = 'Grantia') and  fecha between '$fechaini%'  and  '$fechater%' order by fecha desc";    
         $result=mysql_query($query,$con2) or die ("Query failed: ".mysql_error()."Actual query:".$query);
         echo $tr5;
         while($dato = mysql_fetch_row($result)){
@@ -685,7 +685,7 @@ if (!empty($_GET['f_submit_es'])){
         break;
       case 'Todos':
         //$query = "SELECT folio,modelo,cliente,status,sucursal,fecha from dispos where (sucursal = '$fsucur' and status = '%' and reparacion = '%') and  fecha between '$fechaini'  and  '$fechater' group by status  order by fecha  desc";    
-        $query = "SELECT folio,modelo,cliente,status,sucursal,fecha from dispos where (sucursal = '$fsucur')  and  fecha between '2015-07-01'  and  '2015-07-31'   order by status desc";
+        $query = "SELECT folio,modelo,cliente,status,sucursal,fecha from dispos where (sucursal = '$fsucur')  and  fecha between '$fechaini%'  and  '$fechater%'   order by status desc";
         $result=mysql_query($query,$con2) or die ("Query failed: ".mysql_error()."Actual query:".$query);
         echo $tr5;
         while($dato = mysql_fetch_row($result)){
@@ -701,7 +701,7 @@ if (!empty($_GET['f_submit_es'])){
         break;
 
       default:
-        $query = "SELECT folio,modelo,cliente,status,sucursal,fecha from dispos where (sucursal = '$fsucur' and status = '$fpor') and  fecha between '$fechaini'  and  '$fechater' order by fecha desc";    
+        $query = "SELECT folio,modelo,cliente,status,sucursal,fecha from dispos where (sucursal = '$fsucur' and status = '$fpor') and  fecha between '$fechaini%'  and  '$fechater%' order by fecha desc";    
         $result=mysql_query($query,$con2) or die ("Query failed: ".mysql_error()."Actual query:".$query);
         echo $tr5;
         while($dato = mysql_fetch_row($result)){

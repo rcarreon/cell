@@ -1407,13 +1407,13 @@ $("#a_submit").click(function(){
 
 	   ////  ESTO es para detectaar que sucursl eligio  y poner la direccion y datos correspondientes, faltan las demas msucursaales //////////
 	if (adonde == "Matriz"){
-		var adnd = "Llamas Comunicación, S.A. de C.V. Matriz: Bernardo Reyes # 178 RFC: LCO9906169Y0  Teléfono 301-64-64  Hermosillo, Sonora";
+		var adnd = "Llamas Comunicación, S.A. de C.V. Matriz: Bernardo Reyes # 178 RFC: LCO9906169Y0, Hermosillo, Sonora, Teléfono 301-64-64 ";
 		var hora =  "Lun a Vie de 9:00 - 20:00 horas Sábados de 10:00 - 13:00 horas";			
 		document.getElementById('hora').innerHTML= hora;
 		document.getElementById('adnd').innerHTML= adnd;
 
 	}else if (adonde == "Quiroga"){
-		var adnd = "Blvd. Quiroga esquina con Colosio, Local 18, Teléfono 118-94-92  Hermosillo, Sonora ";
+		var adnd = "Blvd. Quiroga esquina con Colosio, Local 18,Hermosillo, Sonora ,  Teléfono 118-94-92   ";
 		var hora = "Lunes a Viernes de 10:00 - 20:00 horas y Sábados de 10:00 - 18:00 horas";
 		document.getElementById('hora').innerHTML= hora;
 		document.getElementById('adnd').innerHTML= adnd;
@@ -1425,21 +1425,26 @@ $("#a_submit").click(function(){
 		document.getElementById('adnd').innerHTML= adnd;
 
 	}else if (adonde == "Patio"){
-		var adnd = "Llamas Comunicación, S.A. de C.V. Matriz: Bernardo Reyes # 178 RFC: LCO9906169Y0  Teléfono 301-64-64 Quiroga: Blvd. Quiroga esquina con Colosio, Local 18, Teléfono 118-94-92  Hermosillo, Sonora Correo electrónico";
+		var adnd = "Blvd. Periferico Oriente #1247, Local F10  Hermosillo,Sonora , Cel: 6624269080";
+		var hora = "Lunes a Domingo 10:00 - 17:00 horas";
+		document.getElementById('hora').innerHTML= hora;
 		document.getElementById('adnd').innerHTML= adnd;
+
 
 	}else 	if (adonde == "Progreso"){
 		var adnd = "Blvd. Progreso #140-X entre Reyes y Yañez Hermosillo, Sonora. Teléfono: (662) 284 28 04";
+		var hora = "Lunes a Viernes 10:00 - 17:00 horas y Sabado 11:00 - 18:00 horas";
+		document.getElementById('hora').innerHTML= hora;
 		document.getElementById('adnd').innerHTML= adnd;
 
 	}else 	if (adonde == "Monteverde"){
-		var adnd = "Veracruz #270, Local 13, Sonora. Teléfono: (662) 210 70 75";
+		var adnd = "Veracruz #270, Local 13, Hermosillo, Sonora. Teléfono: (662) 210 70 75";
 		var hora = "Lunes a Viernes  09:00 - 19:00 horas Sabados de 9:00 - 17:00 horas";
 		document.getElementById('hora').innerHTML= hora;
 		document.getElementById('adnd').innerHTML= adnd;
 
 	}else 	if (adonde == "P.Maria"){
-		var adnd = "Blvd. Camino del Seri #331, Local 331-B. Celular: (6622)-20 31 41";
+		var adnd = "Blvd. Camino del Seri #331, Local 331-B., Hermosillo, Sonora, Celular: (6622)-20 31 41";
 		var hora = "Lunes a Viernes  09:00 - 19:00 horas Sabados de 9:00 - 14:00 horas";
 		document.getElementById('hora').innerHTML= hora;
 		document.getElementById('adnd').innerHTML= adnd;

@@ -728,7 +728,7 @@ function 	updateoutput(){
 				document.getElementById('hora').innerHTML= hora;
 				document.getElementById('adnd').innerHTML= adnd;
 
-			}else 	if (adonde == "CaminoSeri"){
+			}else 	if (adonde == "P.Maria"){
 				var adnd = "Blvd. Camino del Seri #331, Local 331-B. Celular: (6622)-20 31 41";
 				var hora = "Lunes a Viernes  09:00 - 19:00 horas Sabados de 9:00 - 14:00 horas";
 				document.getElementById('hora').innerHTML= hora;

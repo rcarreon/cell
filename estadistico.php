@@ -80,7 +80,7 @@ function optionCheck6(){
 									<Option  value= "Plaza Dila">Dila </option>
 									<Option  value= "Patio">Patio </option>
 									<option  value= "Monteverde">Plaza Monteverde</option>
-									<option  value= "CaminoSeri">Plaza Maria</option>
+									<option  value= "P.Maria">Plaza Maria</option>
 									<option  value= "PaseoSoli">Paseo Solidaridad</option>
 
 								</select>

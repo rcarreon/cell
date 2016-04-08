@@ -307,7 +307,7 @@ function optionCheck5(){
 							<option name="s_donde" value="Dila" > Dila </option> 
 							<option name="s_donde" value="Patio" > Patio </option> 
 							<option name="s_donde" value="Monteverde">Plaza Monteverde</option>
-							<option name="s_donde" value= "CaminoSeri">Plaza Maria</option>
+							<option name="s_donde" value= "P.Maria">Plaza Maria</option>
 							<option name="s_donde" value= "PaseoSoli">Paseo Solidaridad</option>
 						</select> 	
 					<select name="n_columnas" id="n_columnas" style="display:none;width:180px;float:left;" class="form-control"  >
@@ -473,7 +473,7 @@ function optionCheck5(){
 								<option  value= "Dila">Dila </option>
 								<option  value= "Patio">Patio </option>
 								<option  value= "Monteverde">Plaza Monteverde</option>
-								<option  value= "CaminoSeri">Plaza Maria</option>
+								<option  value= "P.Maria">Plaza Maria</option>
 								<option  value= "PaseoSoli">Paseo Solidaridad</option>
 							</select>
 
@@ -1438,7 +1438,7 @@ $("#a_submit").click(function(){
 		document.getElementById('hora').innerHTML= hora;
 		document.getElementById('adnd').innerHTML= adnd;
 
-	}else 	if (adonde == "CaminoSeri"){
+	}else 	if (adonde == "P.Maria"){
 		var adnd = "Blvd. Camino del Seri #331, Local 331-B. Celular: (6622)-20 31 41";
 		var hora = "Lunes a Viernes  09:00 - 19:00 horas Sabados de 9:00 - 14:00 horas";
 		document.getElementById('hora').innerHTML= hora;

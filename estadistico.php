@@ -71,41 +71,40 @@ function optionCheck6(){
 			</div>
                 <hr style="position:relative;top:15px;width:700px;">
 					<form action="">
-							<div style="position:relative;left:25%;top:30px;width:300px;">
-								<select onchange="optionCheck5();" name="opsearch5" id="f_sucur" class="form-control" style="width:200px;">
-									<option selected="selected" disabled="disabled" value="sucursal">Sucursal</option>
-									<option value="Matriz"> Matriz</option>
-									<option value="Quiroga"> Colosio - Quiroga</option>
-									<Option  value= "Progreso">Progreso </option>
-									<Option  value= "Plaza Dila">Dila </option>
-									<Option  value= "Patio">Patio </option>
-									<option  value= "Monteverde">Plaza Monteverde</option>
-									<option  value= "P.Maria">Plaza Maria</option>
-									<option  value= "PaseoSoli">Paseo Solidaridad</option>
-
-								</select>
-							</div>
-		
-							<div style="position:relative;left:50%;top:-3px;width:200px;" style="display:none;">				
-								<select  onchange="optionCheck6();" id="f_por"   title="Selecciona una de las opciones siguientes para filtrar dispositivos en nuestra base de datos" class="form-control" style="width:200px;display:none;">
-									<option selected="selected" disabled="disabled">--Seleciona  opcion--</option>
+						
+							   <div style="position:relative;left:25%;">
+									<select onchange="optionCheck5();" name="opsearch5" id="f_sucur" class="form-control" style="width:200px;float:left;">
+										<option selected="selected" disabled="disabled" value="sucursal">Sucursal</option>
+										<option value="Matriz"> Matriz</option>
+										<option value="Quiroga"> Colosio - Quiroga</option>
+										<Option  value= "Progreso">Progreso </option>
+										<Option  value= "Plaza Dila">Dila </option>
+										<Option  value= "Patio">Patio </option>
+										<option  value= "Monteverde">Plaza Monteverde</option>
+										<option  value= "P.Maria">Plaza Maria</option>
+										<option  value= "PaseoSoli">Paseo Solidaridad</option>
+									</select>																					
+									<select  onchange="optionCheck6();" id="f_por"   title="Selecciona una de las opciones siguientes para filtrar dispositivos en nuestra base de datos" class="form-control" style="display:none;width:200px;float:left;">
+										<option selected="selected" disabled="disabled">--Seleciona  opcion--</option>
 							<!--<option value="En reparacion"  > Recibidos  </option>-->
-									<option value="Entregado" > Entregados </option>
-									<option value="listo" > Listos, no entregados </option>
-									<option value="En reparacion" > En reparacion, no listos  </option>	
-									<option value="Garantia" > Garantia, en reparacion</option>	
-									<option value="GarantiaEn" > Garantia, entregados</option>	
-									<option value="GarantiaNoen">Garantia,listos no entregados</option>	
-									<option value="Todos">Todos</option>															
-								</select>
-							</div>
-							<div id="f_fecha" style="display:none;position:relative;left:25%;top:20px;width:400px;"> <p>Rango de Fecha</p> 
+										<option value="Entregado" > Entregados </option>
+										<option value="listo" > Listos, no entregados </option>
+										<option value="En reparacion" > En reparacion, no listos  </option>	
+										<option value="Garantia" > Garantia, en reparacion</option>	
+										<option value="GarantiaEn" > Garantia, entregados</option>	
+										<option value="GarantiaNoen">Garantia,listos no entregados</option>	
+										<option value="Todos">Todos</option>															
+									</select>
+								</div>
+								<div id="f_fecha" style="display:none;position:relative;left:25%;top:20px;width:400px;"> <p>Rango de Fecha</p> 
 									<input  type="text" name="f_fecha_i" id="f_fecha_i" placeholder="Inicial" style="display:none;" class="datte">
 									<input  type="text" name="f_fecha_t" id="f_fecha_t" placeholder="Final" style="display:none;" class="datte">
-							</div>
-						<button type="button" class="btn btn-primary" id="f_submit" style="position:relative;left:60%;top:-10px;display:none;" > Busca </button> 
-						<button type="button" id="genera"  style="position:relative;top:-10px;left:62%;display:none;" class="btn btn-success ">Generar Detalles</button>
-						<button type="button" id="mostrar"  style="position:relative;top:-10px;left:62%;display:none;" class="btn btn-success detalles">Mostrar</button>
+									<button type="button" class="btn btn-primary" id="f_submit" style="position:relative;left:89%;top:-28px;display:none;" > Busca </button> 
+									<button type="button" id="genera"  style="position:relative;top:-28px;left:90%;display:none;" class="btn btn-success ">Generar Detalles</button>
+									<button type="button" id="mostrar"  style="position:relative;top:-28px;left:90%;display:none;" class="btn btn-success detalles">Mostrar</button>
+								</div>
+							
+						
 					</form>
 		</div>
 		              
@@ -117,14 +116,9 @@ function optionCheck6(){
 			<table style="display:inline-block;position:relative;top:70px;left:15%;width:70%;"  id="escondetabla"  name="escondetabla" class="table table-striped table-hover tablesorter " >	
 
 			</table>
-		</div>
-		
-		
-        
-
-		
-
-</div> 
+		</div>        	
+	</div> 	
+</div>
 <script src="js/jquery-1.10.2.min.js"></script>
 <script src="js/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
 <script src="js/bootstrap.min.js"></script>

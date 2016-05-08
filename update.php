@@ -68,7 +68,7 @@ if(isset($_GET['folio'])){
 			    <input type="button"   class="btn btn-success bitacora" value="Bitacora"/>
 			</div>
 			<div id="bitacora" style="display: none;" title="Bitacora Folio: <?php echo $e_folio ;?>" > 
-					<textarea  type="text" id="editbitacora" name="editbitacora" style="width:350;height:200;text-align:left;" Placeholder="Bitacora" ><?php echo "$e_folio:\n"; ?> <?php echo $query2[12];?></textarea>	
+					<textarea  type="text" id="editbitacora" name="editbitacora" style="width:350;height:200;text-align:left;" Placeholder="Bitacora" > <?php echo $query2[12];?></textarea>	
 					<button class="btn btn-primary bita_guarda" >Guardar</button>
 			</div> 
 		</div>

@@ -503,13 +503,13 @@ function optionCheck5(){
 					</strong><br>
 					<button    type="button" id="a_submit" class="btn btn-primary" tabindex=12 > Agregar Folio </button>
 				<!--<button    type="button" id="nuevo" class="btn btn-primary" > Nuevo Folio </button> -->
-				<button type="button" id="printeando" onclick="updateoutput()" disabled="disabled" tabindex=13> Imprimir </button>	
+				<button type="button" id="printeando" onclick="updateoutput()" disabled="disabled" tabindex=13 class="btn"> Imprimir </button>	
 					<!-- <button type="button" id="printeando" onclick="updateoutput()"  tabindex=10> Imprimir </button>	-->										
 				</div>
 			</form>	
-			<button  style="position:absolute;bottom:5%;left:65%;"  id="limpia" type="button" tabindex=14>Limpiar datos</button>												
+			<button  style="position:absolute;bottom:5%;left:59%;"  id="limpia" type="button" tabindex=14 class="btn" >Limpiar datos</button>												
 			<a href="/" >
-   			<button style="position:absolute;bottom:5%;left:85%;" type="button" tabindex=15>Regresar</button>
+   			<button style="position:absolute;bottom:5%;left:81%;" type="button" tabindex=15 class="btn">Regresar</button>
 			</a>
 
 		</div>		
@@ -994,7 +994,7 @@ function optionCheck5(){
 			</strong>
 				<button type="button"id="u_submit" class="btn btn-primary"> Nuevo usuario </button>	
 				<a  href="/">
-   				<button type="button">Regresar</button>
+   				<button type="button" class="btn">Regresar</button>
 				</a>						
 			</form>
 			<p id="agregauser"></p>
@@ -1073,7 +1073,7 @@ function optionCheck5(){
 			<button type="button"id="c_submit" class="btn btn-primary" tabindex=5> Guardar Cliente </button>	
 
 			<a style="padding-left:20em;"  href="/">
-   				<button type="button" tabindex=6 >Regresar</button>
+   				<button type="button" tabindex=6 class="btn">Regresar</button>
 			</a>		
 			<p id="agregacliente"></p>
 		</div>

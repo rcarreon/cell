@@ -27,6 +27,7 @@ $sdonde   = $_GET['s_donde'];
 $fpor     = $_GET['f_por'];
 $fsucur   = $_GET['f_sucur'];
 $numcolum = $_GET['n_columnas'];
+$e_bitacora   = $_GET['editbitacora'];
 
 //////////tabla para mostrar todas las columas de la tabla dispos//////////
 
@@ -34,6 +35,7 @@ $tr = "
 <table>
      <tr>
         <td align=center ><b>Editar</b></td>
+        <td align=center><b>Bitacora</b></td>
         <td align=center><b>Folio</b></td>
         <td align=center><b>Marca</b></td>
         <td align=center><b>Modelo</b></td>
@@ -194,12 +196,13 @@ mysql_select_db("cellcity",$con2);
         
     }      
 ////loop para mostrar los registros mientras haya resultados en la busqueda
-    while($data = mysql_fetch_row($resulta)){           
+    while($data = mysql_fetch_row($resulta)){     
       //echo '<pre>';
       //print_r($data);
-        echo "<tr>";                
-            echo "<td align=center><a href=update.php?folio=".$data[0]."&editcliente=".urlencode($data[3]).">Editar</a></td> ";                  
-            //echo "<td align=center><input id='button' type='button' value='Editar' class='btn btn-info btn-sm' onclick=abre();></td>";     
+        echo "<tr>";   
+           
+            echo "<td align=center><a href=update.php?folio=".$data[0]."&editcliente=".urlencode($data[3]).">Editar</a></td> ";   
+            echo "<td align=center><button  type=\"button\"   class=\"btn  bitacora\" onClick=\"bitacora($data[0])\";>Bitacora</button></td>";
             echo "<td  align=center name=editfolio id=editfolio>$data[0]</td>";
             echo "<td  align=center id=editmodelo >$data[1]</td>";
             echo "<td  align=center name=editmmodelo id=editmmodelo>$data[13]</td>";            
@@ -211,9 +214,10 @@ mysql_select_db("cellcity",$con2);
             echo "<td  align=center id=editpassword>$data[8]</td>";
             echo "<td  align=center id=editdetalles>$data[6]</td>"; 
             echo "<td  align=center id=editfecha >$data[9]</td>";          
-            echo "<td  align=center id=editmail >$data[15]</td>";
-            echo "<td  align=center id=editcontacto >$data[16]</td>";            
+            echo "<td  align=center id=editmail >$data[16]</td>";
+            echo "<td  align=center id=editcontacto >$data[17]</td>";            
             echo "</tr>";
+            
     }
   ///Cerrando Connection a la base de datos usando con2       
     mysql_close($con2);
@@ -262,10 +266,11 @@ if(!empty($_GET['eeditas'])){
   $e_folio     = $_GET['editfolio'];
   $e_repara    = $_GET['editrepara'];
   $e_mmodelo   = $_GET['editmmodelo'];
+  
   if (!$e_repara){
-                $query = "UPDATE dispos SET modelo = '$e_modelo', imei = '$e_imei', cliente = '$e_cliente', status = '$e_status', fecha = '$e_fecha', email = '$e_email', detalles = '$e_detalles', password = '$e_pass', contacto = '$e_contacto' , marca = '$e_mmodelo' WHERE folio = '$e_folio'";
+                $query = "UPDATE dispos SET modelo = '$e_modelo', imei = '$e_imei', cliente = '$e_cliente', status = '$e_status', fecha = '$e_fecha', email = '$e_email', detalles = '$e_detalles', password = '$e_pass', contacto = '$e_contacto' , marca = '$e_mmodelo', bitacora = '$e_bitacora' WHERE folio = '$e_folio'";
   }else{
-                $query = "UPDATE dispos SET modelo = '$e_modelo', imei = '$e_imei', cliente = '$e_cliente', status = '$e_status', fecha = '$e_fecha', email = '$e_email', detalles = '$e_detalles', password = '$e_pass', contacto = '$e_contacto', marca = '$e_mmodelo',  reparacion = '$e_repara' WHERE folio = '$e_folio'";
+                $query = "UPDATE dispos SET modelo = '$e_modelo', imei = '$e_imei', cliente = '$e_cliente', status = '$e_status', fecha = '$e_fecha', email = '$e_email', detalles = '$e_detalles', password = '$e_pass', contacto = '$e_contacto', marca = '$e_mmodelo',  reparacion = '$e_repara', bitacora = '$e_bitacora' WHERE folio = '$e_folio'";
   }
       $result = mysqli_query($con,$query);
       if (!$result){
@@ -545,6 +550,18 @@ if(!empty($_GET['pclient'])){
 
 }
 
+if(!empty($_GET['id'])){
+
+    $bfolio = $_GET['bfolio'];
+
+    $sql2 = "SELECT bitacora from dispos where folio = '$bfolio'"; 
+    $rec2 = mysql_query($sql2,$con2) or die ("Query failed: ".mysql_error()."Actual query:".$query); 
+    $rows2 = mysql_fetch_row($rec2);
+     echo "$rows2[0]";
+
+}
+
+
 ////IMRPIMIR////
 
 
@@ -568,6 +585,9 @@ if (!empty($_GET['pclient2'])){
           //echo "</tr>";
     } 
 }
+
+
+
 
 
 

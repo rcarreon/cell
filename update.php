@@ -18,7 +18,7 @@ mysql_select_db("cellcity",$con2);
 if(isset($_GET['folio'])){
 	$e_folio     = $_GET['folio'];
 	$nombree = mysql_real_escape_string($_GET['editcliente']);
-	$query1=mysql_query("select folio,modelo,imei,cliente,status,reparacion,detalles,password,fecha,sucursal,recibe,marca  from dispos where folio='$e_folio'",$con2);
+	$query1=mysql_query("select folio,modelo,imei,cliente,status,reparacion,detalles,password,fecha,sucursal,recibe,marca,bitacora  from dispos where folio='$e_folio'",$con2);
 	$query3=mysql_query("select email,telefono,celular,RFC,domicilio,colonia,ciudad,cpostal from cliente where nombre ='$nombree'",$con2);	
 	$query2=mysql_fetch_array($query1);
 	$query4=mysql_fetch_array($query3);
@@ -65,7 +65,12 @@ if(isset($_GET['folio'])){
 			Contacto:
 			<div>
 				<input type="text"  disabled="disabled" name="editcontacto" id="editcontacto" value="<?php echo $query4[1]; ?>"/>
+			    <input type="button"   class="btn btn-success bitacora" value="Bitacora"/>
 			</div>
+			<div id="bitacora" style="display: none;" title="Bitacora Folio: <?php echo $e_folio ;?>" > 
+					<textarea  type="text" id="editbitacora" name="editbitacora" style="width:350;height:200;text-align:left;" Placeholder="Bitacora" ><?php echo $query2[12];?></textarea>	
+					<button class="btn btn-primary bita_guarda" >Guardar</button>
+			</div> 
 		</div>
 			<div class="rcasos"  style="display:none;">				
 					<h5 align="center"> Reparacion </h5>					
@@ -117,6 +122,8 @@ if(isset($_GET['folio'])){
 				</a>		
 			
 	</form>	
+
+
 
 				
 				
@@ -689,6 +696,18 @@ $(document).ready(function(){
 			$('.rcasos').hide();
 		});
 });
+
+$(".bitacora").click(function(){
+		var width = (screen.width - 700) / 2;
+		$('#bitacora').dialog({
+			modal: true,
+			width: 400,
+			height:300,
+            position: [width, 75],
+            resizable: true,
+
+        });
+});
 ////////////////////////IMPRIMIR/////////////////////////////////////////////
 ////ESTA FUNCION ES PARA MANDAR LOS VALORES QUE ESTAN EN EL DIV DE UPDATE PARA EL DIV DE PRINT /////////////
 function 	updateoutput(){
@@ -937,6 +956,12 @@ $('#cancelar').click(function(){
 		$('.prnt').dialog("close");
 });
 
+$('.bita_guarda').click(function(){
+		$('#bitacora').dialog('close');
+		
+
+		
+});
 $(function() {
     $( ".print" ).draggable();
 });
@@ -953,6 +978,7 @@ $("#editaa").click(function(){
 	var epass 		= $('#editpassword').val()
 	var edetalles   = $('#editdetalles').val();
 	var emmodelo	= $('#editmmodelo').val();
+	var ebitacora   = $('#editbitacora').val();
 	var estatus = $('#editstatus option:selected').val();
 	var repara  = [];
 	   $(':checkbox:checked').each(function(i){
@@ -960,7 +986,7 @@ $("#editaa").click(function(){
 	   });
 	$.ajax({
 	type:"GET",
-		url:"ins.php?eeditas=1&editimei="+eimei+"&editcliente="+ecliente+"&editmodelo="+emodelo+"&editstatus="+estatus+"&editcontacto="+econta+"&editfecha="+efecha+"&editemail="+eemail+"&editfolio="+efolio+"&editpassword="+epass+"&editdetalles="+edetalles+"&editrepara="+repara+"&editmmodelo="+emmodelo,
+		url:"ins.php?eeditas=1&editimei="+eimei+"&editcliente="+ecliente+"&editmodelo="+emodelo+"&editstatus="+estatus+"&editcontacto="+econta+"&editfecha="+efecha+"&editemail="+eemail+"&editfolio="+efolio+"&editpassword="+epass+"&editdetalles="+edetalles+"&editrepara="+repara+"&editmmodelo="+emmodelo+"&editbitacora="+ebitacora,
 		success: function(response){
 			$('#editaste').html(response);
 			alert('Contacto modificado con exito');

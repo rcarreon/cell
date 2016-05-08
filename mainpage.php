@@ -285,6 +285,8 @@ function optionCheck5(){
 					<?php  } ?>
 			</div>
 		</div>	
+
+		 
 		<div  class= "container" id="bujca"  style="display:none;">
 			<h4>Busca Folio por:</h4>
 			<form  action="" id="bpor">				
@@ -1010,6 +1012,11 @@ function optionCheck5(){
 
 		</div>
 
+		<div id="bitacora" style="display: none;" title="Bitacora de Folio" > 
+					<Label  type="text"  style="width:350;height:200;text-align:left;" Placeholder="Bitacora" id="bita"></Label>	
+					<button class="btn  bita_cierra" style="position:relative;bottom: 10%;">Cerrar</button>
+		</div>
+
 		<div class="container" id="agregac" style="display:none; " >				
 			<form name="cagrega" method="get" id="cagrega">
 				<h4 align="center"> Agrega Cliente Nuevo </h4>		
@@ -1223,6 +1230,38 @@ $(function() {
 	//$('#button').click(function(){
 	//		$("#dialog").dialog("open");
 	//});
+});
+
+//Function para traer bitacora 
+function bitacora(id){
+		var width = (screen.width - 700) / 2;
+			$('#bitacora').dialog({
+				modal: true,
+				width: 400,
+				height:300,
+            	position: [width, 75],
+            	resizable: true,
+
+        	});
+
+
+		$.ajax({
+			type: "GET",
+			url: "ins.php?id=1&bfolio="+id,
+			success: function(response){
+				$("#bita").html(response);           
+      		},
+
+        });
+	
+}
+
+
+$('.bita_cierra').click(function(){
+		$('#bitacora').dialog('close');
+		
+
+		
 });
 
 ////////////////////////IMPRIMIR/////////////////////////////////////////////

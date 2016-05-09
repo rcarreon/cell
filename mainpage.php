@@ -278,9 +278,9 @@ function optionCheck5(){
 				<?php if ($tipo != 1){?>
 					<br><button  style="display:none;"  class="btn btn-primary" id="s_submit_mu"  value="manejausuario">Manejar Usuarios</button>
 				<?php } else { ?>
-					<br><br><br /><input type="button" style="position:relative;left: 16.5%;height:50px;width:140px;"  onclick="location.href='/estadistico.php';"  id="f_submit_num" value="Estadisticas"/>
-					<br><br /><button type="image"   style="position:relative;right:8%;bottom:70px;" id="s_submit_mu"  value="manejausuario" >Manejar Usuarios</button>					
-					<button type="image"   style="position:relative;right:7.5%;bottom:70px;" id="s_submit_eq"  value="manejausuario" >Manejar equipos</button>					
+					<br><br><br /><input type="button" style="position:relative;left: 16.5%;height:50px;width:140px;"  onclick="location.href='/estadistico.php';"  id="f_submit_num" value="Estadisticas" class="btn" />
+					<br><br /><button type="image"   style="position:relative;right:8%;bottom:70px;" id="s_submit_mu"  value="manejausuario" class="btn" >Manejar Usuarios</button>					
+					<button type="image"   style="position:relative;right:7.5%;bottom:70px;" id="s_submit_eq"  value="manejausuario" class="btn" >Manejar equipos</button>					
 
 					<?php  } ?>
 			</div>
@@ -376,7 +376,7 @@ function optionCheck5(){
 		<div id="m_todosclientes"  style="display:none;position:absolute;left:3%;" class="container">
 			
 				<form  method="get" id="bujca4">
-					<button type="button" id="clientes_submit" style="position:relative; left:37%;">Mostrar Clientes</button><br><br />
+					<button type="button" id="clientes_submit" style="position:relative; left:27%;" class="btn" >Mostrar Clientes</button><br><br />
 					
 					<table   id="muestrablaclientes"  style="position:relative; left:24%;" class="table table-striped table-hover tablesorter" >	
 
@@ -952,58 +952,43 @@ function optionCheck5(){
 								</div>
 								<p>
 				
-				<div style="position:relative;bottom:20%;padding-left:20em;">
-					<button id="imp" TYPE="button" onClick="printArea('print');" >Imprimir
-					<button type="regresa" id="cancelar">Cancelar
-				</div>
-			</div> 
-	</div> -->
-		<!--FIN IMPRIMIR-->
-		<p id="agregarespuesta"> </p>
-		<div class="container" style="display:none;" id="manageusr">
-				<h4>Manejar Usuarios:</h4>
-				<form>
-					<select onchange="optionCheck();" name="maneja" id="opsearch" class="form-control" style="width:200px;height:30px;">
-						<option selected="selected" disabled="disabled">--Selecciona Opcion--</option>
-						<option value="agregaru">Agregar Usuario </option>
-						<option value="mostraru">Muestra Usuarios</option>						
-					</select>
-				</form>
-		</div>			
-		<div class="container" id="agregau" style="display:none;">			
-			<form name="uagrega" method="get" id="uagrega">
-				<h4 align="center"> Agrega usuario Nuevo </h4>
-				<strong><font color="red">**</font>Usuario:
-				<div>
-					<input type="text" name="u_usuario" id="u_usuario"> 
-				</div><br />
-				Nombre:
-				<div>				
-					<input type="text" name="u_nombre" id="u_nombre">
-				</div><br />
-				<font color="red">**</font>Contraseña:
- 				<div>
- 					<input type="password" name="u_pass" id="u_pass">
-				</div><br />
-				Tipo de usuario:
-				<div>				
-					<input type="radio" name="u_tipo" id="u_tipo" value="1">Administrador
-					<input type="radio" name="u_tipo" id="u_tipo" value="2">Regular			
-				</div><br />
-				<br/>
-			</strong>
-				<button type="button"id="u_submit" class="btn btn-primary"> Nuevo usuario </button>	
-				<a  href="/">
-   				<button type="button" class="btn">Regresar</button>
-				</a>						
-			</form>
-			<p id="agregauser"></p>
-		</div>
-		<div id="mostrar"  style="display:none;" class="container">
-			<div style="display:inline-block;">
-				<form  method="get" id="bujca3">
-					<button type="button" id="m_submit" style="position:relative; left:5.5%;">Mostrar usuarios</button><br><br />					
-						<table style="display:inline-block;position:relative; left:60%;bottom:80px;"  id="muestrabla"  class="table table-striped table-hover tablesorter"  >	
+                <div style="position:relative;bottom:20%;padding-left:20em;">
+<button id="imp" TYPE="button" onClick="printArea('print');" >Imprimir
+<button type="regresa" id="cancelar">Cancelar                 </div>
+</div>      </div> -->         <!--FIN IMPRIMIR-->         <p
+id="agregarespuesta"> </p>         <div class="container"
+style="display:none;" id="manageusr">                 <h4>Manejar
+Usuarios:</h4>                 <form>                     <select
+onchange="optionCheck();" name="maneja" id="opsearch" class="form-control"
+style="width:200px;height:30px;">                         <option
+selected="selected" disabled="disabled">--Selecciona Opcion--</option>
+<option value="agregaru">Agregar Usuario </option>
+<option value="mostraru">Muestra Usuarios</option>
+</select>                 </form>         </div>                   <div
+class="container" id="agregau" style="display:none;">
+<form name="uagrega" method="get" id="uagrega">                 <h4
+align="center"> Agrega usuario Nuevo </h4>                 <strong><font
+color="red">**</font>Usuario:                 <div>                     <input
+type="text" name="u_usuario" id="u_usuario">                  </div><br />
+Nombre:                 <div>                                    <input
+type="text" name="u_nombre" id="u_nombre">                 </div><br />
+<font color="red">**</font>Contraseña:                 <div>
+<input type="password" name="u_pass" id="u_pass">                 </div><br />
+Tipo de usuario:                 <div>
+<input type="radio" name="u_tipo" id="u_tipo" value="1">Administrador
+<input type="radio" name="u_tipo" id="u_tipo" value="2">Regular
+</div><br />                 <br/>             </strong>
+<button type="button"id="u_submit" class="btn btn-primary"> Nuevo usuario
+</button>                  <a  href="/">                 <button type="button"
+class="btn">Regresar</button>                 </a>
+</form>             <p id="agregauser"></p>         </div>         <div
+id="mostrar"  style="display:none;" class="container">             <div
+style="display:inline-block;">                 <form  method="get"
+id="bujca3">                     <button type="button" id="m_submit"
+style="position:relative; left:5.5%;" class="btn">Mostrar
+usuarios</button><br><br />                                            <table
+style="display:inline-block;position:relative; left:60%;bottom:80px;"
+id="muestrabla"  class="table table-striped table-hover tablesorter"  >
 
 						</table>					
 				</form>

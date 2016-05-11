@@ -489,27 +489,35 @@ function optionCheck5(){
 			   		</div>  <br>	    
 			   		Detalles Tecnicos:
 			    	<div>			
-			    		<textarea maxlength="115" type="text" id="a_detalles" name="a_detalles" placeholder="Detalles Servicio Tecnico" tabindex=10 style="text-transform:uppercase;" value="LOQUE SEA QUE SE LE HAYA ROTO"></textarea>					
+			    		<textarea maxlength="115" type="text" id="a_detalles" name="a_detalles" placeholder="Detalles Servicio Tecnico" tabindex=10 style="text-transform:uppercase;" ></textarea>					
 			    	</div>
 			    	<div style="position:absolute;top:270px;left:55%" >
 			    		Accesorios:
 			    			<div>
-			    			    <textarea maxlength="115" type="text" id="a_access" name="a_access" placeholder="Accesorios" tabindex=11 style="text-transform:uppercase;" value="Una moto"></textarea>					
+			    			    <textarea maxlength="115" type="text" id="a_access" name="a_access" placeholder="Accesorios" tabindex=11 style="text-transform:uppercase;" ></textarea>					
 
 			    			</div>
 			    	</div>
+			    	<div style="position:absolute;top:350px;" >
+			    	Bitacora:
+			    			<div>
+			    			    <textarea maxlength="115" type="text" id="a_bitacora" name="a_bitacora" placeholder="Bitacora" tabindex=12 style="text-transform:uppercase;width:460px;" ></textarea>					
+
+			    			</div>
+			    	</div>
+
 					<input  id="a_recibe" name="a_recibe" value="<?php echo $uname;?>" hidden >
 				
-					</strong><br>
-					<button    type="button" id="a_submit" class="btn btn-primary" tabindex=12 > Agregar Folio </button>
+					</strong><br><br><br><br><br>
+					<button    type="button" id="a_submit" class="btn btn-primary" tabindex=13 > Agregar Folio </button>
 				<!--<button    type="button" id="nuevo" class="btn btn-primary" > Nuevo Folio </button> -->
-				<button type="button" id="printeando" onclick="updateoutput()" disabled="disabled" tabindex=13 class="btn"> Imprimir </button>	
+				<button type="button" id="printeando" onclick="updateoutput()" disabled="disabled" tabindex=14 class="btn"> Imprimir </button>	
 					<!-- <button type="button" id="printeando" onclick="updateoutput()"  tabindex=10> Imprimir </button>	-->										
 				</div>
 			</form>	
-			<button  style="position:absolute;bottom:5%;left:59%;"  id="limpia" type="button" tabindex=14 class="btn" >Limpiar datos</button>												
+			<button  style="position:absolute;bottom:6%;left:59%;"  id="limpia" type="button" tabindex=15 class="btn" >Limpiar datos</button>												
 			<a href="/" >
-   			<button style="position:absolute;bottom:5%;left:81%;" type="button" tabindex=15 class="btn">Regresar</button>
+   			<button style="position:absolute;bottom:6%;left:81%;" type="button" tabindex=16 class="btn">Regresar</button>
 			</a>
 
 		</div>		
@@ -632,7 +640,7 @@ function optionCheck5(){
 								<td class="ocho" align="left"  >  
 									<strong>Equipo</strong><br>
 									Marca: <label style="width:100px;"  align="center" id="p_marca">  </label>  Modelo: <label style="width:100px;" align="center" id="p_modelo">  </label>    IMEI: <label style="width:100px;" align="center" id="p_imei">  </label> Otros:<label style="width:100px;" align="center" id="p_otros">  </label> </br>
-									Acesorios Entregados por <label style="width:250px;" id="p_cliente66" align="left" id="p_acces">  </label></br>Fecha de ingreso: <label style="width:250px;" id="fecha2" align="center"><font size="1"></font> </label> Fecha de entrega : <label style="width:150px;" id="fechaentre" align="center"><font size="1"></font> </label>
+									Acesorios Entregados por <label style="width:250px;" id="p_cliente66" align="left" id="p_acces">  </label></br>Fecha de ingreso: <label style="width:250px;" id="fecha2" align="center"><font size="1"></font> </label> Contraseña : <label style="width:150px;" id="p_passwd" align="center"><font size="1"></font> </label>
 
 						    </tr>
 
@@ -1319,7 +1327,7 @@ $(function() {
 
 ////ESTA FUNCION ES PARA MANDAR LOS VALORES QUE ESTAN EN EL DIV DE UPDATE PARA EL DIV DE PRINT /////////////
 function 	updateoutput(){
-
+			
 			document.getElementById('p_cp').innerHTML=document.getElementById('pcpostal').getAttribute("value");
 			document.getElementById('p_cd').innerHTML=document.getElementById('pciudad').getAttribute("value");
 			document.getElementById('p_col').innerHTML=document.getElementById('pcolonia').getAttribute("value");
@@ -1345,6 +1353,8 @@ function 	updateoutput(){
 			document.getElementById('p_marca').innerHTML=document.getElementById('a_modelo').value;
 			document.getElementById('p_modelo').innerHTML=document.getElementById('a_mmodelo').value;
 			document.getElementById('p_imei').innerHTML=document.getElementById('a_imei').value;
+			document.getElementById('p_passwd').innerHTML=document.getElementById('a_password').value;
+
 }
 
 ////ESTA FUNCION ES PARA MANDAR A IMPRIMIR NADA MAS EL DIV QUE SE QUIERE ///////////
@@ -1434,6 +1444,8 @@ $("#a_submit").click(function(){
 	var aemail 		= $('#a_email').val();
 	var arecibe 	= $('#a_recibe').val();
 	var ammodelo    = $('#a_mmodelo').val();
+	var abitacora    = $('#a_bitacora').val();
+
 	//var adonde     = $('input:radio[name=a_donde]:checked').val();	
 	var adonde 	=  $('#a_sucurs option:selected').val();
 	//document.getElementById('getname').innerHTML=document.getElementById('a_cliente').value;		
@@ -1459,7 +1471,7 @@ $("#a_submit").click(function(){
 
 	}else if (adonde == "Dila"){
 		var adnd = "Blvd. Morelos #349 Local 6 Hermosillo, Sonora. Teléfono:(662) 211 33 90";
-		var hora = "Lunes a Viernes de 9:30 - 20:00 horas y Sábados de 9:30 -20:00 horas";				
+		var hora = "Lunes a Viernes de 9:00 - 20:00 horas y Sábados de 10:00 - 18:00 horas";				
 		document.getElementById('hora').innerHTML= hora;
 		document.getElementById('adnd').innerHTML= adnd;
 
@@ -1472,7 +1484,7 @@ $("#a_submit").click(function(){
 
 	}else 	if (adonde == "Progreso"){
 		var adnd = "Blvd. Progreso #140-X entre Reyes y Yañez Hermosillo, Sonora. Teléfono: (662) 284 28 04";
-		var hora = "Lunes a Viernes 10:00 - 17:00 horas y Sabado 11:00 - 18:00 horas";
+		var hora = "Lunes a Viernes 10:00 - 21:00 horas y Sabado 11:00 - 18:00 horas";
 		document.getElementById('hora').innerHTML= hora;
 		document.getElementById('adnd').innerHTML= adnd;
 
@@ -1514,7 +1526,7 @@ $("#a_submit").click(function(){
 	else {
 		$.ajax({
 			type: "GET",
-			url: "ins.php?s_sumito=1&a_imei="+aimei+"&a_cliente="+acliente+"&a_modelo="+amodelo+"&a_status="+astatus+"&a_conta="+aconta+"&a_fecha="+afecha+"&a_email="+aemail+"&a_rep="+repara+"&a_password="+apass+"&a_detalles="+adetalles+"&a_donde="+adonde+"&a_recibe="+arecibe+"&a_mmodelo="+ammodelo,
+			url: "ins.php?s_sumito=1&a_imei="+aimei+"&a_cliente="+acliente+"&a_modelo="+amodelo+"&a_status="+astatus+"&a_conta="+aconta+"&a_fecha="+afecha+"&a_email="+aemail+"&a_rep="+repara+"&a_password="+apass+"&a_detalles="+adetalles+"&a_donde="+adonde+"&a_recibe="+arecibe+"&a_mmodelo="+ammodelo+"&a_bitacora="+abitacora,
 			dataType: "html",
 			success: function(response){
 				$('#agregarespuesta').html(response);				
@@ -1531,6 +1543,7 @@ $("#a_submit").click(function(){
 						$('#a_email').attr("disabled","disabled");
 						$('#a_mmodelo').attr("disabled","disabled");
 						$('#a_access').attr("disabled","disabled");
+						$('#a_bitacora').attr("disabled","disabled");
 						$('input:radio[name=a_status]:checked').attr("disabled","disabled");						
 						$('input:radio[name=a_donde]:checked').attr("disabled","disabled");
 						$('#printeando').removeAttr("disabled");
@@ -1582,7 +1595,9 @@ $('#limpia').click(function(){
 						$('#a_conta').val('');						
 						$('#a_email').val('');	
 						$('#a_access').removeAttr("disabled");
-						$('#a_access').val('');		
+						$('#a_access').val('');	
+						$('#a_bitacora').val('');
+						$('#a_bitacora').removeAttr("disabled");
 						$('#a_modelo').val('');	
 						$('#printeando').attr("disabled","disabled");
 						$('#a_submit').removeAttr("disabled");																					

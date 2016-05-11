@@ -248,7 +248,7 @@ if(isset($_GET['folio'])){
 								<td class="ocho" align="left"  >  
 									<strong>Equipo</strong><br>
 									Marca: <label style="width:100px;"  align="center" id="p_marca">  </label>  Modelo: <label style="width:100px;" align="center" id="p_modelo">  </label>    IMEI: <label style="width:100px;" align="center" id="p_imei">  </label> Otros:<label style="width:100px;" align="center" id="p_otros">  </label> </br>
-									Acesorios Entregados por <label style="width:250px;" id="p_cliente66" align="left" id="p_acces">  </label></br>Fecha de ingreso: <label style="width:250px;" id="fecha2" align="center"> </label> Fecha de entrega : <label style="width:150px;" id="fechaentre" align="center"></label>
+									Acesorios Entregados por <label style="width:250px;" id="p_cliente66" align="left" id="p_acces">  </label></br>Fecha de ingreso: <label style="width:250px;" id="fecha2" align="center"> </label> Contraseña <label style="width:150px;" id="p_password" align="center"></label>
 
 						    </tr>
 
@@ -730,7 +730,7 @@ function 	updateoutput(){
 
 			}else if (adonde == "Dila"){
 				var adnd = "Blvd. Morelos #349 Local 6 Hermosillo, Sonora. Teléfono:(662) 211 33 90";
-				var hora = "Lunes a Viernes de 9:30 - 20:00 horas y Sábados de 9:30 -20:00 horas";				
+				var hora = "Lunes a Viernes de 9:00 - 20:00 horas y Sábados de 10:00 - 18:00 horas";				
 				document.getElementById('hora').innerHTML= hora;
 				document.getElementById('adnd').innerHTML= adnd;
 
@@ -742,7 +742,7 @@ function 	updateoutput(){
 
 			}else 	if (adonde == "Progreso"){
 				var adnd = "Blvd. Progreso #140-X entre Reyes y Yañez Hermosillo, Sonora. Teléfono: (662) 284 28 04";
-				var hora = "Lunes a Viernes 10:00 - 17:00 horas y Sabado 11:00 - 18:00 horas";
+				var hora = "Lunes a Viernes 10:00 - 21:00 horas y Sabado 11:00 - 18:00 horas";
 				document.getElementById('hora').innerHTML= hora;
 				document.getElementById('adnd').innerHTML= adnd;
 
@@ -768,110 +768,25 @@ function 	updateoutput(){
 
 
 			document.getElementById('pfolio1').innerHTML=document.getElementById('editfolio').getAttribute("value");	
-
-
-
-
-
-
-
-
-			//var ecliente	= $('#editcliente').val();
-
-	//email,celular,telefono,RFC,domicilio,colonia,ciudad,cpostal
-			//document.getElementById('detalles').innerHTML=document.getElementById('a_detalles').value;
-			//document.getElementById('imei').innerHTML=document.getElementById('a_imei').value;
-			//document.getElementById('equipo').innerHTML=document.getElementById('a_modelo').getAttribute("value");
-			//var tele = document.getElementById('ptelefono').getAttribute("value");
-			//document.getElementById('p_tel').innerHTML= tele;
-			document.getElementById('p_cliente').innerHTML=document.getElementById('editcliente').value;
-			/*document.getElementById('p_cliente3').innerHTML=document.getElementById('editcliente').value;
-			document.getElementById('p_cliente2').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente4').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente5').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente6').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente7').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente8').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente9').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente10').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente11').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente12').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente13').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente14').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente15').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente16').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente17').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente18').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente19').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente20').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente21').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente22').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente23').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente24').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente25').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente26').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente27').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente28').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente29').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente30').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente31').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente32').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente33').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente34').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente35').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente36').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente37').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente38').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente39').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente40').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente41').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente42').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente43').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente44').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente45').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente46').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente47').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente48').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente49').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente50').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente51').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente52').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente53').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente54').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente55').innerHTML=document.getElementById('editcliente').value;*/
-document.getElementById('p_cliente56').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente57').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente58').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente59').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente60').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente61').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente62').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente63').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente64').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente65').innerHTML=document.getElementById('editcliente').value;
-document.getElementById('p_cliente66').innerHTML=document.getElementById('editcliente').value;
-
-
-
-
-
-
-
-			//document.getElementById('contra').innerHTML=document.getElementById('a_password').value;				
+			document.getElementById('p_password').innerHTML=document.getElementById('editpassword').getAttribute("value");	
+			document.getElementById('p_cliente').innerHTML=document.getElementById('editcliente').value;			
+			document.getElementById('p_cliente56').innerHTML=document.getElementById('editcliente').value;
+			document.getElementById('p_cliente57').innerHTML=document.getElementById('editcliente').value;
+			document.getElementById('p_cliente58').innerHTML=document.getElementById('editcliente').value;
+			document.getElementById('p_cliente59').innerHTML=document.getElementById('editcliente').value;
+			document.getElementById('p_cliente60').innerHTML=document.getElementById('editcliente').value;
+			document.getElementById('p_cliente61').innerHTML=document.getElementById('editcliente').value;
+			document.getElementById('p_cliente62').innerHTML=document.getElementById('editcliente').value;
+			document.getElementById('p_cliente63').innerHTML=document.getElementById('editcliente').value;
+			document.getElementById('p_cliente64').innerHTML=document.getElementById('editcliente').value;
+			document.getElementById('p_cliente65').innerHTML=document.getElementById('editcliente').value;
+			document.getElementById('p_cliente66').innerHTML=document.getElementById('editcliente').value;
 			document.getElementById('fecha').innerHTML=document.getElementById('editfecha').value; 
 			document.getElementById('p_detalles').innerHTML=document.getElementById('editdetalles').value; 
 			document.getElementById('fecha2').innerHTML=document.getElementById('editfecha').value;	
-			//document.getElementById('p_acces').innerHTML=document.getElementById('a_access').value;
 			document.getElementById('p_marca').innerHTML=document.getElementById('editmodelo').value;
 			document.getElementById('p_modelo').innerHTML=document.getElementById('editmmodelo').value;
-			document.getElementById('p_imei').innerHTML=document.getElementById('editimei').value;
-			
-			//document.getElementById('fecha').innerHTML=document.getElementById('editfecha').value; 
-			//document.getElementById('cliente').innerHTML=document.getElementById('editcliente').value;
-			//document.getElementById('contra').innerHTML=document.getElementById('editpassword').value;
-
-
-			//document.getElementById('p_cp').innerHTML=document.getElementById('pcpostal').getAttribute("value");
+			document.getElementById('p_imei').innerHTML=document.getElementById('editimei').value;			
 			document.getElementById('p_cp').innerHTML=document.getElementById('pcpostal').getAttribute("value");
 			document.getElementById('p_cd').innerHTML=document.getElementById('pciudad').getAttribute("value");
 			document.getElementById('p_col').innerHTML=document.getElementById('pcolonia').getAttribute("value");

@@ -28,6 +28,7 @@ $fpor     = $_GET['f_por'];
 $fsucur   = $_GET['f_sucur'];
 $numcolum = $_GET['n_columnas'];
 $e_bitacora   = $_GET['editbitacora'];
+$abitacora  = $_GET['a_bitacora'];
 
 //////////tabla para mostrar todas las columas de la tabla dispos//////////
 
@@ -159,7 +160,7 @@ mysql_select_db("cellcity",$con2);
                   $resulta= mysql_query("SELECT dispos.*,cliente.email,cliente.telefono,cliente.nombre from dispos  LEFT JOIN cliente ON  cliente.nombre = dispos.cliente where dispos.cliente LIKE '$scliente%' order by dispos.folio desc",$con2);
                 }
                 if ( empty($numcolum) ){
-                  $resulta= mysql_query("SELECT dispos.*,cliente.email,cliente.telefono,cliente.nombre from dispos  LEFT JOIN cliente ON  cliente.nombre = dispos.cliente where dispos.cliente LIKE '$scliente%' order by dispos.folio desc LIMI 100",$con2);
+                  $resulta= mysql_query("SELECT dispos.*,cliente.email,cliente.telefono,cliente.nombre from dispos  LEFT JOIN cliente ON  cliente.nombre = dispos.cliente where dispos.cliente LIKE '$scliente%' order by dispos.folio desc LIMIT 100",$con2);
                 }
                 else {
                   $resulta= mysql_query("SELECT dispos.*,cliente.email,cliente.telefono,cliente.nombre from dispos  LEFT JOIN cliente ON  cliente.nombre = dispos.cliente where dispos.cliente LIKE '$scliente%' order by dispos.folio desc LIMIT $numcolum",$con2);
@@ -237,8 +238,8 @@ if(!empty($_GET['s_sumito'])){
              exit(1);
           }else{
               if ($acliente){ 
-                    $query = "INSERT INTO dispos ( modelo, imei, cliente, email, status, detalles, reparacion, fecha, contacto,password,sucursal,recibe, marca)
-                    VALUES ('$amodelo','$aimei','$acliente','$aemail','$astatus','$adetalles','$arep', '$afecha','$aconta', '$apass', '$adonde', '$arecibe', '$ammodelo')";
+                    $query = "INSERT INTO dispos ( modelo, imei, cliente, email, status, detalles, reparacion, fecha, contacto,password,sucursal,recibe, marca,bitacora)
+                    VALUES ('$amodelo','$aimei','$acliente','$aemail','$astatus','$adetalles','$arep', '$afecha','$aconta', '$apass', '$adonde', '$arecibe', '$ammodelo', '$abitacora')";
                     $result = mysqli_query($con,$query);
                     if (!$result){
                         die('Couldn\'t query' . mysqli_error($con));

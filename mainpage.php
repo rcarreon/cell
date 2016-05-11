@@ -508,16 +508,16 @@ function optionCheck5(){
 
 					<input  id="a_recibe" name="a_recibe" value="<?php echo $uname;?>" hidden >
 				
-					</strong><br><br><br><br><br>
+					</strong><br><br><br><br><br><br>
 					<button    type="button" id="a_submit" class="btn btn-primary" tabindex=13 > Agregar Folio </button>
 				<!--<button    type="button" id="nuevo" class="btn btn-primary" > Nuevo Folio </button> -->
 				<button type="button" id="printeando" onclick="updateoutput()" disabled="disabled" tabindex=14 class="btn"> Imprimir </button>	
 					<!-- <button type="button" id="printeando" onclick="updateoutput()"  tabindex=10> Imprimir </button>	-->										
 				</div>
 			</form>	
-			<button  style="position:absolute;bottom:6%;left:59%;"  id="limpia" type="button" tabindex=15 class="btn" >Limpiar datos</button>												
+			<button  style="position:absolute;bottom:7%;left:59%;"  id="limpia" type="button" tabindex=15 class="btn" >Limpiar datos</button>												
 			<a href="/" >
-   			<button style="position:absolute;bottom:6%;left:81%;" type="button" tabindex=16 class="btn">Regresar</button>
+   			<button style="position:absolute;bottom:7%;left:81%;" type="button" tabindex=16 class="btn">Regresar</button>
 			</a>
 
 		</div>		

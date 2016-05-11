@@ -640,7 +640,7 @@ function optionCheck5(){
 								<td class="ocho" align="left"  >  
 									<strong>Equipo</strong><br>
 									Marca: <label style="width:100px;"  align="center" id="p_marca">  </label>  Modelo: <label style="width:100px;" align="center" id="p_modelo">  </label>    IMEI: <label style="width:100px;" align="center" id="p_imei">  </label> Otros:<label style="width:100px;" align="center" id="p_otros">  </label> </br>
-									Acesorios Entregados por <label style="width:250px;" id="p_cliente66" align="left" id="p_acces">  </label></br>Fecha de ingreso: <label style="width:250px;" id="fecha2" align="center"><font size="1"></font> </label> Contraseña : <label style="width:150px;" id="p_passwd" align="center"><font size="1"></font> </label>
+									Acesorios Entregados por <label style="width:250px;" id="p_cliente66" align="left" id="p_acces">  </label></br>Fecha de ingreso: <label style="width:250px;" id="fecha2" align="center"><font size="1"></font> </label> Contraseña : <label style="width:120px;" id="p_passwd" align="center"><font size="1"></font> </label> Recibio:<label><?php echo $uname?></label>
 
 						    </tr>
 

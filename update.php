@@ -11,7 +11,7 @@
 <body>
 <?php
 include("connection.php");
-//$uname =$_SESSION['uname'];
+$uname =$_SESSION['uname'];
 //$tipo =$_SESSION['tipouser'];
 
 mysql_select_db("cellcity",$con2);
@@ -248,7 +248,7 @@ if(isset($_GET['folio'])){
 								<td class="ocho" align="left"  >  
 									<strong>Equipo</strong><br>
 									Marca: <label style="width:100px;"  align="center" id="p_marca">  </label>  Modelo: <label style="width:100px;" align="center" id="p_modelo">  </label>    IMEI: <label style="width:100px;" align="center" id="p_imei">  </label> Otros:<label style="width:100px;" align="center" id="p_otros">  </label> </br>
-									Acesorios Entregados por <label style="width:250px;" id="p_cliente66" align="left" id="p_acces">  </label></br>Fecha de ingreso: <label style="width:250px;" id="fecha2" align="center"> </label> Contraseña <label style="width:150px;" id="p_password" align="center"></label>
+									Acesorios Entregados por <label style="width:250px;" id="p_cliente66" align="left" id="p_acces">  </label></br>Fecha de ingreso: <label style="width:250px;" id="fecha2" align="center"> </label> Contraseña <label style="width:150px;" id="p_password" align="center"></label> Recibio: <label align="center"><?php echo $query2[10] ?></label>
 
 						    </tr>
 

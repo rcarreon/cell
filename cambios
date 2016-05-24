@@ -304,3 +304,30 @@ base de datos
 
 
 
+
+
+
+*********************Mayo 2016*************************
+
+
++agregar nueva base de datos para catalogo de cotizador
+mysql 
+-create table cotizador(id int not null auto_increment primary key, codigo varchar(15) not null primary key, marca varchar(20), modelo varchar(20),producto varchar(40), descripcion varchar(60),precio int);
+-update  cliente  set nombre = UCASE(nombre);
++nueva seccion de cotizador 
+-se puede buscar con un metodo de autocompletar, ya sea por marca, modelo o producto o bien por los 3 para ser mas especificos
++nuevo tipo de usuario
++nuevo tipo de accesso de usuario para que ciertos usuarios puedan ver el manejode catalogo nada mas 
++seccion de manejar de catalogo
+--se puede agregar un articulo nuevo desde cero 
+---se hace restricciones de no duplicar codigo
+---no se puede crear un articulo nuevo sin el nombre del articulo o sin el nombre del codigo 
+--se hace una busqueda del catalogo completo, o si bien por marca o por modelo o producto
+---se puede editar  cada articulo por separado
++se agrega el boton para mostrar el directorio de sucursales
++agrega la opcion de que el boton de bitacora cambie de color si ya tiene algun comentario. 
+
+Ufff excelente sesion ! 
+
+
+*******************************************************

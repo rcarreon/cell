@@ -78,7 +78,7 @@ function optionCheck6(){
 										<option value="Matriz"> Matriz</option>
 										<option value="Quiroga"> Colosio - Quiroga</option>
 										<Option  value= "Progreso">Progreso </option>
-										<Option  value= "Plaza Dila">Dila </option>
+										<Option  value= "Dila">Dila </option>
 										<Option  value= "Patio">Patio </option>
 										<option  value= "Monteverde">Plaza Monteverde</option>
 										<option  value= "P.Maria">Plaza Maria</option>

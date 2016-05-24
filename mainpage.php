@@ -203,6 +203,25 @@ function optionCheck5(){
 
 }
 
+function optionCheck6(){
+		var option6 = $('#opsearch6 option:selected').val();
+		switch (option6) {
+			case "agregart":
+				$("#agregaarticulo").show();
+				$("#mcatalogo").hide();				
+				
+			break;
+			case "editart":			
+				$("#mcatalogo").show();
+ 				$("#agregaarticulo").hide();
+			break;
+
+		}
+
+}
+
+
+
 
 
 </script>
@@ -211,40 +230,7 @@ function optionCheck5(){
 </head>
 <body >	
 <div class="container">
-	<div class="main">
-
-		<!-- <div id="dialog"  style="width:50em;" title="Dialog Form">
-		<form action=""   method="post">
-			<label>Folio:</label>
-			<input id="efolio" name="efolio" type="text">
-			<label>Modelo:</label>
-			<input id="emodelo" name="emodelo" type="text">
-			<label>Imei:</label>
-			<input id="eimei" name="eimei" type="text">
-			<label>Cliente:</label>
-			<input id="ecliente" name="ecliente" type="text">
-			<label>Status:</label>
-			<input id="estatus" name="estatus" type="text">
-			<label>Repara:</label>
-			<input id="erepara" name="erepara" type="text">
-			<label>Password:</label>
-			<input id="epass" name="epass" type="text">
-			<label>Email:</label>
-			<input id="email" name="email" type="text">
-			<label>Detalles:</label>
-			<input id="edetalles" name="edetalles" type="text">
-			<label>Fecha:</label>
-			<input id="efecha" name="efecha" type="text">
-			<label>Email:</label>
-			<input id="eemail" name="eemail" type="text">	
-			<label>Contacto:</label>
-			<input id="econtacto" name="econtacto" type="text">			
-			<input id="submit" type="submit" value="Submit">
-		</form>
-		</div>		
-</div> -->
-
-	
+	<div class="main">	
 <?php
 	include "connection.php";
 	mysql_select_db("cellcity",$con2);	
@@ -264,6 +250,7 @@ function optionCheck5(){
 	echo "<p>Bienvenid@<strong> $uname !</strong></p>";
 	?>			
 		<a id="logout" href=logout.php>Salir Sesion</a> 
+		<button class="btn btn-success" id="directorio" style="position:relative;left:70%;" >Ir a Directorio</button>
 		<p style="position:relative;top:5%;left:80%;"class="text-muted credit" ><?php  date_default_timezone_set('America/Hermosillo'); $date = date('Y'); echo "Cellcity $date" ?></p> 
 
 		<div align="center" >				
@@ -272,19 +259,24 @@ function optionCheck5(){
 		</div>			
 		<div align="center" id="botones">			
 			<div>
-				<button   type="button" class="btn btn-primary" id="s_submit_b" value="bujcar" >Buscar</button>
-				<button   type="button" class="btn btn-primary" id="s_submit_a"  value="folios">Folios</button>
-				<button   type="button" class="btn btn-primary" id="s_submit_c"  value="clientela ">Clientes</button>
-				<?php if ($tipo != 1){?>
-					<br><button  style="display:none;"  class="btn btn-primary" id="s_submit_mu"  value="manejausuario">Manejar Usuarios</button>
-				<?php } else { ?>
-					<br><br><br /><input type="button" style="position:relative;left: 16.5%;height:50px;width:140px;"  onclick="location.href='/estadistico.php';"  id="f_submit_num" value="Estadisticas"/>
-					<br><br /><button type="image"   style="position:relative;right:8%;bottom:70px;" id="s_submit_mu"  value="manejausuario" >Manejar Usuarios</button>					
-					<button type="image"   style="position:relative;right:7.5%;bottom:70px;" id="s_submit_eq"  value="manejausuario" >Manejar equipos</button>					
-
-					<?php  } ?>
+				<div style="position:left5%;">
+					<button   type="button" class="btn btn-primary" id="s_submit_b" value="bujcar" >Buscar</button>
+					<button   type="button" class="btn btn-primary" id="s_submit_a"  value="folios">Folios</button>
+					<button   type="button" class="btn btn-primary" id="s_submit_c"  value="clientela ">Clientes</button>
+					<button   type="button" class="btn btn-primary" id="s_submit_co"  value="cotizando ">Cotizador</button>
+				</div>
+				<?php if ($tipo == 2){?>
+					<br><button  style="display:none;"  class="btn" id="s_submit_mu"  value="manejausuario">Manejar Usuarios</button>
+				<?php } else if ($tipo == 1) { ?>
+					<br><br /><input type="button" style="position:relative;left: 8%;height:50px;width:140px;bottom:20px;"  onclick="location.href='/estadistico.php';" class="btn" id="f_submit_num" value="Estadisticas"/>
+					<br><br /><button type="button"   style="position:relative;right:8%;bottom:90px;" id="s_submit_mu"  value="manejausuario" class="btn" >Manejar Usuarios</button>					
+					<button type="button"   style="position:relative;right:7.8%;bottom:90px;" id="s_submit_eq"  value="manejausuario" class="btn" >Manejar equipos</button>	
+					<button type="button"   style="position:relative;left:7.5%;bottom:90px;" id="s_submit_coti"  value="manejacotizador" class="btn" >Manejar Cotizador</button>				
+				<?php  } else {?>
+					<button type="button"   style="position:relative;top:15px;" id="s_submit_coti"  value="manejacotizador" class="btn">Manejar Catalogo</button>				
+				<?php }?>
 			</div>
-		</div>	
+		</div>
 
 		 
 		<div  class= "container" id="bujca"  style="display:none;">
@@ -324,6 +316,103 @@ function optionCheck5(){
 				</form>
 
 		</div>
+
+<!-- INICIA COTIZADOR -->			
+	<div  class= "container" id="cotiza"  style="display:none;position:relative;left:10%;">
+		<h4> Cotizacion </h4>				
+					<div>
+						<input type="text" id="s_cotiza" class="s_cotizamar_auto" name="s_cotiza" placeholder="Ingresa Marca" tabindex=1  style="text-transform:uppercase;" >
+						<input type="text" id="s_cotiza2" class="s_cotizamod_auto" name="s_cotiza2" placeholder="Ingresa Modelo" tabindex=2  style="text-transform:uppercase;display:none" >
+  						<input type="text" id="s_cotiza3" class="s_cotizaprod_auto" name="s_cotiza3" placeholder="Ingresa Producto" tabindex=3  style="text-transform:uppercase;display:none" >
+  						<button  id="limpia" class="btn" tabindex=4>Limpiar</button>
+  						<button id="s_submit_cotiza" class="btn" tabindex=5>Cotiza</button>
+  						<button id="s_submit_exporta" disabled="disabled" class="btn btn-warning" tabindex=6>Exporta</button>
+
+					</div>					
+	</div>
+	<div id="m_cotizador"   class="container" name="catalogo">	
+					<table   id="cotizatabla"  style="position:relative; right:7%;" class="table table-striped table-hover tablesorter" >									
+					</table>	
+
+   	</div> 
+	<div class="container" style="display:none;" id="managecotiza" >
+				<h4>Editar/agregar Catalogo:</h4>
+				<form>
+					<select onchange="optionCheck6();" name="manejacotiza" id="opsearch6"  class="form-control" style="width:200px;">
+						<option selected="selected" disabled="disabled">--Selecciona Opcion--</option>
+						<option value="agregart">Agregar articulo </option> 
+						<option value="editart" >Editar articulo</option>
+					</select>
+
+				</form>
+	</div>
+
+
+		<div class="container" id="agregaarticulo" style="display:none;">			
+			<form  method="get" >
+				<h4 align="center"> Agrega articulo Nuevo </h4>
+				<strong><font color="red">**</font>Codigo:
+				<div>
+					<input type="text" name="a_codigo_cot" id="a_codigo_cot" style="text-transform:uppercase;"> 
+				</div><br />
+				Marca:
+				<div>				
+					<input type="text" name="a_marca_cot" id="a_marca_cot" class="a_marca_cot" style="text-transform:uppercase;">
+				</div><br />
+				</font>Modelo:
+ 				<div>
+ 					<input type="text" name="a_modelo_cot" id="a_modelo_cot" class="a_modelo_cot" style="text-transform:uppercase;">
+				</div><br />
+				<font color="red">**</font>Articulo:
+				<div>				
+ 					<input type="text" name="a_producto_cot" style="text-transform:uppercase;" id="a_producto_cot" class="a_producto_cot">
+		
+				</div><br />
+				<br/>
+				<div style="position:relative;left:50%;bottom:280px;">
+				Descripcion:
+					<br>
+						<textarea id="a_descripcion_cot" name="a_descripcion_cot"  class="a_descripcion_cot"  style="width:250px;height:50px;text-transform:uppercase;"></textarea>
+			    </div>
+			    <div style="position:relative;left:50%;bottom:250px;">
+				Precio:
+					<br>
+ 					<input type="text" name="a_precio_cot" id="a_precio_cot"   style="text-transform:uppercase;" class="a_precio_cot">
+			    </div>
+				</strong>
+				<div style="position:absolute;left:35%;bottom:10px;">
+					<button type="button"id="c_submit_arti" class="btn btn-primary"> Guardar </button>	
+   					<button type="button" class="btn" id="regresando">Cerrar</button>
+				</div>
+			</form>
+		</div>
+	<p id="agregaarticulos"></p>
+
+
+	<div  class= "container" id="mcatalogo"  style="display:none;position:relative;left:10%;">
+		<h4> Buscar en catalogo </h4>				
+					<div>
+						<input type="text" id="cat_marca" class="s_catmar_auto" name="cat_marca" placeholder="Ingresa Marca" tabindex=1  style="text-transform:uppercase;" >
+						<input type="text" id="cat_modelo" class="s_catmod_auto" name="cat_modelo" placeholder="Ingresa Modelo" tabindex=2  style="text-transform:uppercase;display:none" >
+  						<input type="text" id="cat_producto" class="s_catprod_auto" name="cat_producto" placeholder="Ingresa Producto" tabindex=3  style="text-transform:uppercase;display:none" >
+  						<button  id="limpiando" class="btn" tabindex=4>Limpiar</button>
+  						<button id="s_submit_catalogo" class="btn" tabindex=5>Buscar</button>
+					</div>					
+	</div>
+
+	<div id="m_catalogo"   class="container">	
+					<table   id="catalogotabla"  style="position:relative; right:7%;" class="table table-striped table-hover tablesorter" >									
+					</table>	
+
+   	</div> 
+
+
+   	<div id="editacatalogo" style="display: none;" title="Editando articulo" > 
+					<texarea  type="text"  style="width:350;height:200;text-align:left;"   id="catedita"></textarea>	
+    </div>
+    <p id="catalogotablalive"></p>
+
+<!-- FIN COTIZADOR -->
 		<div class="container" style="display:none;" id="manageagre">
 				<h4>Agregar por:</h4>
 				<form >
@@ -343,10 +432,6 @@ function optionCheck5(){
 					</select>
 				</form>
 		</div>
-
-
-
-
 		<div class="container" style="display:none;" id="manageeq" >
 				<h4>Agregar marca/modelo:</h4>
 				<form>
@@ -367,66 +452,45 @@ function optionCheck5(){
 
 				</form>
 		</div>
-
 		<p id="agregamarcas"></p>
-
-
-
-
 		<div id="m_todosclientes"  style="display:none;position:absolute;left:3%;" class="container">
 			
 				<form  method="get" id="bujca4">
-					<button type="button" id="clientes_submit" style="position:relative; left:37%;">Mostrar Clientes</button><br><br />
-					
-					<table   id="muestrablaclientes"  style="position:relative; left:24%;" class="table table-striped table-hover tablesorter" >	
-
-								
-					</table>
-				
-				</form>
-			
+					<button type="button" id="clientes_submit" style="position:relative; left:37%;">Mostrar Clientes</button><br><br />					
+					<table   id="muestrablaclientes"  style="position:relative; left:24%;" class="table table-striped table-hover tablesorter" >									
+					</table>				
+				</form>			
 		</div>
 		<div class="container"  id="bujcapor">
 				<form name="busqueda" method="get" id="bujca2">
 					<input  type="text" name="s_folio" id="s_folio"  placeholder="Busca por folio" style="display:none;" >
 					<input  type="text" name="s_imei" id="s_imei"  class="s_imei_auto" placeholder="Busca por imei" style="display:none;"> 
-					<input  type="text" name="s_modelo" id="s_modelo"  placeholder="Busca por Equipo" style="display:none;" >
+					<input  type="text" name="s_modelo" id="s_modelo"  class="s_marca_auto" placeholder="Busca por Marca" style="display:none;" >
 					<input  type="text" name="s_fecha" id="s_fecha" placeholder="Buscar por fecha" style="display:none;" class="datte">
 					<input  type="text" name="s_cliente" id="s_cliente"  placeholder="Busca por cliente" class="s_cliente_auto" style="display:none;" >
-						<select name="s_status" id="s_status" style="display:none;width:110px;position:relative;left:18%;bottom:30px;" class="form-control"  >
+						<select name="s_status" id="s_status" style="display:none;width:110px;position:relative;left:19%;bottom:30px;" class="form-control"  >
 							<option selected="selected" disabled="disabled" value="">opcion</option>
 							<option name="s_status" value="listo" > Listo </option>
 							<option name="s_status" value="En reparacion" > En reparacion </option> 
 							<option name="s_status" value="Garantia" > Garantia </option>  
 							<option name="s_status" value="Entregado" > Entregado </option>
-					  	</select>	
-					  		
-						
-						<button   type="button" class="btn btn-primary" id="s_submit" style="display:none;"   >Buscar</button>			
+					  	</select>				  		
+							<button   type="button" class="btn btn-primary" id="s_submit" style="display:none;"   >Buscar</button>			
 				</form>		
 		</div>						 						
 		
 		<div class="container" id="s_table"  style="display:none;">
 			<div  style="display:inline-block;">
 				<br />
-				<form name="editar" method="get" id="eedita">
-					
+				<form name="editar" method="get" id="eedita">					
 					<table  id="respuestabla"  class="table table-striped table-hover tablesorter">	
 						<tbody>
-						</tbody>
-									
-					</table>
-				
-				</form>
-				
+						</tbody>									
+					</table>				
+				</form>				
 			</div>
 		</div>
-		
-		<!--<div id="footer">	
-			<div class="container span12">
-				<h4> CellCity 2014 </h4>
-			</div>
-		</div> -->
+
 		<div   class = "container" id="agregaf" style="display:none;">			
 			<form   name="agrega" method="post" id="aagrega"><strong>
 				<h4 align="Center" >Agregar Folio</h4>		
@@ -478,9 +542,6 @@ function optionCheck5(){
 								<option  value= "P.Maria">Plaza Maria</option>
 								<option  value= "PaseoSoli">Paseo Solidaridad</option>
 							</select>
-
-			    		<!-- <input type="radio" name="a_donde" id="a_donde"   value="Matriz" tabindex=6 >Matriz
-					    <input type="radio" name="a_donde" id="a_donde"  value="Quiroga" tabindex=7 >Quiroga  -->
 						</div>
 					</div>
 					<div class="f_agrega">
@@ -848,6 +909,39 @@ function optionCheck5(){
 
 			</div>							
 	</div> 
+				<!-- Dialogo para ver directorio de sucursales-->
+
+				<div  style="display:none;" style="position:absolute;top:20%;padding-left:30em;" align="center" class="direct">
+					<table    class="table table-striped table-hover tablesorter">	
+						<tr>
+						<td><label> Matriz: </label></td><td> Bernardo Reyes # 178 RFC: LCO9906169Y0, Hermosillo, Sonora, Teléfono 301-64-64</td> 
+						   <td>Lun a Vie de 9:00 - 20:00 horas Sábados de 10:00 - 13:00 horas </td>
+						</tr> 
+						<tr>
+					    <td><label> Quiroga:</label></td><td> Blvd. Quiroga esquina con Colosio, Local 18,Hermosillo, Sonora ,  Teléfono 118-94-92</td> 
+						   <td>Lunes a Viernes de 10:00 - 20:00 horas y Sábados de 10:00 - 18:00 horas </td>
+						 </tr> 
+						<tr><td><label> Dila:</label></td><td> Blvd. Morelos #349 Local 6 Hermosillo, Sonora. Teléfono:(662) 211 33 90</td> 
+						   <td>Lunes a Viernes de 9:00 - 20:00 horas y Sábados de 10:00 - 18:00 horas </td>
+						</tr>
+						<tr><td><label> Patio:</label></td><td> Blvd. Periferico Oriente #1247, Local F10  Hermosillo,Sonora , Cel: (6624) 26 90 80</td> 
+						   <td>Lunes a Domingo 10:00 - 17:00 horas </td>
+						 </tr>
+						<tr><td><label> Progreso:</label></td><td> Blvd. Progreso #140-X entre Reyes y Yañez Hermosillo, Sonora. Teléfono: (662) 284 28 04</td> 
+						   <td>Lunes a Viernes 10:00 - 21:00 horas y Sabado 11:00 - 18:00 horas </td>
+						</tr>
+						<tr><td><label> Monteverde:</label></td><td> Veracruz #270, Local 13, Hermosillo, Sonora. Teléfono: (662) 210 70 75</td> 
+						   <td>Lunes a Viernes  09:00 - 19:00 horas Sabados de 9:00 - 17:00 horas </td>
+						 </tr>
+						<tr><td><label> Plaza Maria:</label></td><td> Blvd. Camino del Seri #331, Local 331-B., Hermosillo, Sonora, Celular: (6622)-20 31 41</td> 
+						   <td> Lunes a Viernes  09:00 - 19:00 horas Sabados de 9:00 - 14:00 horas </td>
+						 </tr>
+						<tr><td><label> Paseo Solidaridad:</label></td><td> Blvd. Solidaridad No. 65 esquina con Avenida Camelia. Col. Libertad, Local LA026, Celular: (6624)-21 55 24</td> 
+						   <td>Lunes a Domingo   10:00 - 20:00 horas </td>
+						</tr>
+					</table>	
+				</div>
+
 				<!-- SE Usa para el dialogo de impresion  -->
 				<div  style="display:none;" style="position:absolute;top:20%;padding-left:30em;" align="center" class="prnt">
 					<button id="imp" TYPE="button" onClick="printArea('print');" >Imprimir 
@@ -868,104 +962,8 @@ function optionCheck5(){
 				
 				
 			</div>
-		</div>
-								
-<!--
-	<div id="segundo" style="display:none;">			
-				
-				<label>Copia al Cliente</label>	
+		</div>								
 
-				<img id="logo" src="images/logo_2015.jpg" alt="Cell City logo" height="110" width="350" >		
-			<div style="position:absolute;top:110%;left:2%;">
-				<table class="printt" style="width:35em;height:5em;">				
-					<tr>
-						<td class="uno" ><strong>Cliente</strong></td>
-						<td class="dos" id="cliente2" name="cliente"></td>
-					</tr>
-					<tr>
-						<strong><td class="uno"  ><strong>Equipo</strong></td></strong>
-						<td class="dos" id="equipo2"  > </td>
-					</tr>
-					<tr>
-						<strong><td class="uno"  ><strong>Imei</strong></td></strong>
-						<td class="dos" id="imei2" ></td>
-					</tr>				
-				</table>
-				<br><br>
-
-				<div style="position:relative;left:15%;">
-					<input type="checkbox"> SIM </input>
-					<input type="checkbox"> Bateria</input>
-					<input type="checkbox"> Tapa</input>
-					<input type="checkbox"> Memoria </input>
-				</div>
-			</div>
-				<div style="position:absolute;top:100%;left:80%;">
-				<table class="printt" id="pfolio">
-					<tr>
-						<strong><td class="uno" align="center"><strong>Folio</strong></td></strong>
-					</tr>
-					<tr>
-						<td class="uno" align="center" id="pfolio2" >
-
-						</td>
-					</tr>
-				</table>
-				<br>
-				<table class="printt" id="pfolio">
-					<tr>
-						<strong><td class="uno" align="center"><strong>Fecha</strong></td></strong>
-					</tr>
-					<tr>
-						<td class="uno" id="fecha2"></td>
-					</tr>
-				</table>	<br><br><br>
-				<img src="images/cuadritocellcity2.jpg" width="120" height="120">
-				</div>							
-				<div  style="position:absolute;top:125%;left:2%;">	
-				<table class="printt" style="width:35em;height:5em;bottom:10%;">
-					<thead>
-						<tr>
-							<th>DETALLES DE SERVICIO TECNICO</th>
-						</tr>
-						<tr>
-							<td>La contraseña es <label id="contra2"></label></td>
-						</tr>
-						<tr>
-							<td rowspan="4" class="uno" id="detalles2" ></td>
-						</tr>
-					</thead>
-					<br /><br/>																
-				</table>
-			</div>
-			<div style="position:absolute;top:150%;left:1%;">
-				<p class="alinea"><strong><font size="3em;">EN CAMBIO DE CRISTAL EL CLIENTE ACEPTA EL RIESGO DE DANO DE PANTALLA</font></strong></p>	
-				<div style="width:750px;" class="alinea">
-					<p id="politicas" align="justify"><font size="2em;">Politicas: 1.Debe de presentar este comprobante para que se le haga entrrega del equipo.2.Despues de 15 dias no nos hacemos
-				responsables de su equipo.3.Si no recoge su equipo en 30 dias,pasa a ser propiedad de Cell City.4. No se hacen garantias en equipos golpeados
-				o mojados.5. No nos hacemos responsables de la perdida parcial o total de la informacion en su equipo. NO NOS HACEMOS RESPONSABLES EN CASO DE
-				ROBO O INCENDIO.</font></p>
-				</div>
-				
-				<br><br><br><br>
-				
-								<div style="position:relative;left:5%;bottom:10px;padding-left:20em;" >
-									<p > ________________________________  <br/>                   
-									Recibio: <?php echo $uname ?>
-								
-								<br>
-								
-								________________________________  <br/>                   
-									Aceptacion de Cliente:<label id="getname2"></label></p>
-								</div>
-								<p>
-				
-				<div style="position:relative;bottom:20%;padding-left:20em;">
-					<button id="imp" TYPE="button" onClick="printArea('print');" >Imprimir
-					<button type="regresa" id="cancelar">Cancelar
-				</div>
-			</div> 
-	</div> -->
 		<!--FIN IMPRIMIR-->
 		<p id="agregarespuesta"> </p>
 		<div class="container" style="display:none;" id="manageusr">
@@ -996,7 +994,9 @@ function optionCheck5(){
 				Tipo de usuario:
 				<div>				
 					<input type="radio" name="u_tipo" id="u_tipo" value="1">Administrador
-					<input type="radio" name="u_tipo" id="u_tipo" value="2">Regular			
+					<input type="radio" name="u_tipo" id="u_tipo" value="2">Regular	
+					<input type="radio" name="u_tipo" id="u_tipo" value="3">Administrador(*)
+		
 				</div><br />
 				<br/>
 			</strong>
@@ -1021,8 +1021,8 @@ function optionCheck5(){
 		</div>
 
 		<div id="bitacora" style="display: none;" title="Bitacora de Folio" > 
-					<Label  type="text"  style="width:350;height:200;text-align:left;" Placeholder="Bitacora" id="bita"></Label>	
-					<button class="btn  bita_cierra" style="position:relative;bottom: 10%;">Cerrar</button>
+					<Label  type="text"  style="width:350;text-align:left;" Placeholder="Bitacora" id="bita"></Label><br>
+					<button class="btn  bita_cierra" style="position:relative;">Cerrar</button>
 		</div>
 
 		<div class="container" id="agregac" style="display:none; " >				
@@ -1098,6 +1098,12 @@ $("#s_submit_b").click(function(){
 		$('#opsearch4 option:eq(0)').attr('selected','selected');
 		$('#opsearch5 option:eq(0)').attr('selected','selected');
 
+
+		$('#mcatalogo').hide();
+		$('#m_catalogo').hide();
+		$('#catalogotabla').hide();
+		$('#agregaarticulo').hide();
+		$('#cotiza').hide();
 	    $('#agregac').hide();
   		$("#bujca").show();
 		$("#agregaf").hide();
@@ -1112,21 +1118,29 @@ $("#s_submit_b").click(function(){
 		$('#a_marca').hide();
 		$('#eq_submit').hide();
 		$('#manageeq').hide();
+		$("#cotizatabla").hide();
+		$('#managecotiza').hide();
+
 	
 		$('#m_todosclientes').hide();
 });
 $("#s_submit_a").click(function(){
-		//alert('Antes de agregar un folio recuerda agregar cliente primero, si el cliente ya esta registrado ignora el msg y sigue adelante');
 		$('#opsearch option:eq(0)').attr('selected','selected');
 		$('#opsearch2 option:eq(0)').attr('selected','selected');
 		$('#opsearch4 option:eq(0)').attr('selected','selected');
 		$('#opsearch5 option:eq(0)').attr('selected','selected');
+		$('#opsearch6 option:eq(0)').attr('selected','selected');
 
+
+		$('#mcatalogo').hide();
+		$('#m_catalogo').hide();
+		$('#catalogotabla').hide();
+		$('#agregaarticulo').hide();
+		$('#cotiza').hide();
 		$('#agregac').hide();
 		$("#agregaf").show();
 		$("#manageclien").hide();
 		$('#s_submit').hide();
-		//$("#agrega").show();
 		$("#bujca").hide();
 		$("#respuestabla").hide();
 		$("#bujca2").hide();
@@ -1140,7 +1154,8 @@ $("#s_submit_a").click(function(){
 		$('#mod_submit').hide();
 		$('#a_marca').hide();
 		$('#eq_submit').hide();
-
+		$("#cotizatabla").hide();
+		$('#managecotiza').hide();
 
 });
 $("#s_submit_c").click(function(){
@@ -1148,8 +1163,14 @@ $("#s_submit_c").click(function(){
 	$('#opsearch3 option:eq(0)').attr('selected','selected');
 	$('#opsearch option:eq(0)').attr('selected','selected');
 	$('#opsearch5 option:eq(0)').attr('selected','selected');
+	$('#opsearch6 option:eq(0)').attr('selected','selected');
 
 
+		$('#mcatalogo').hide();
+		$('#m_catalogo').hide();
+		$('#catalogotabla').hide();
+		$('#agregaarticulo').hide();
+		$('#cotiza').hide();
 		$('#s_submit').hide();
 		$('#agregac').hide();
   		$("#manageclien").show();
@@ -1162,6 +1183,8 @@ $("#s_submit_c").click(function(){
 		$("#agregau").hide();
 		$("#mostrar").hide();
 		$('#manageeq').hide();
+		$("#cotizatabla").hide();
+		$('#managecotiza').hide();
 
 });
 $("#s_submit_mu").click(function(){
@@ -1169,6 +1192,15 @@ $("#s_submit_mu").click(function(){
 	$('#opsearch3 option:eq(0)').attr('selected','selected');
 	$('#opsearch4 option:eq(0)').attr('selected','selected');
 	$('#opsearch5 option:eq(0)').attr('selected','selected');
+	$('#opsearch6 option:eq(0)').attr('selected','selected');
+
+
+		$('#mcatalogo').hide();
+		$('#m_catalogo').hide();
+		$('#catalogotabla').hide();
+
+		$('#agregaarticulo').hide();
+		$("#cotizatabla").hide();
 		$('#s_submit').hide();
 		$('#manageusr').show();
 		$("#manageclien").hide();
@@ -1185,13 +1217,20 @@ $("#s_submit_mu").click(function(){
 		$('#eq_submit').hide();
 		$('#modelos').hide();
 		$('#mod_submit').hide();
-
-
+		$('#managecotiza').hide();
 		
 });
 
 
 $("#s_submit_eq").click(function(){
+
+
+		$('#mcatalogo').hide();
+		$('#m_catalogo').hide();
+		$('#catalogotabla').hide();
+
+		$('#agregaarticulo').hide();
+		$('#cotiza').hide();
 		$('#manageeq').show();
 		$('#s_submit').hide();
 		$("#manageclien").hide();
@@ -1206,8 +1245,8 @@ $("#s_submit_eq").click(function(){
 		$("#agregamarca").hide();
 		$("#m_submit").hide();
 		$("#agregau").hide();
-
-
+		$("#cotizatabla").hide();
+		$('#managecotiza').hide();
 		$('#opsearch2 option:eq(0)').attr('selected','selected');
 		$('#opsearch3 option:eq(0)').attr('selected','selected');
 		$('#opsearch4 option:eq(0)').attr('selected','selected');
@@ -1215,30 +1254,111 @@ $("#s_submit_eq").click(function(){
 
 });
 
+///CLICK COTIZADOR ///
+
+$("#s_submit_co").click(function(){
+	$('#opsearch2 option:eq(0)').attr('selected','selected');
+	$('#opsearch3 option:eq(0)').attr('selected','selected');
+	$('#opsearch option:eq(0)').attr('selected','selected');
+	$('#opsearch5 option:eq(0)').attr('selected','selected');
+	$('#opsearch6 option:eq(0)').attr('selected','selected');
+
+
+		$('#mcatalogo').hide();
+		$('#m_catalogo').hide();
+		$('#catalogotabla').hide();
+
+		$('#agregaarticulo').hide();
+		$('#cotiza').show();
+		$('#s_submit').hide();
+		$('#agregac').hide();
+  		$("#manageclien").hide();
+  		$("#bujca").hide();
+		$("#agregaf").hide();
+		$('#manageagre').hide();
+		$("#respuestabla").hide();
+		$("#bujca2").hide();
+		$('#manageusr').hide();
+		$("#agregau").hide();
+		$("#mostrar").hide();
+		$('#manageeq').hide();
+		$("#cotizatabla").show();
+		$('#managecotiza').hide();
+
+});
+
+$("#s_submit_coti").click(function(){
+	$('#opsearch2 option:eq(0)').attr('selected','selected');
+	$('#opsearch3 option:eq(0)').attr('selected','selected');
+	$('#opsearch option:eq(0)').attr('selected','selected');
+	$('#opsearch5 option:eq(0)').attr('selected','selected');
+	$('#opsearch6 option:eq(0)').attr('selected','selected');
+
+		$('#agregaarticulo').hide();
+		$('#managecotiza').show();
+		$('#cotiza').hide();
+		$('#s_submit').hide();
+		$('#agregac').hide();
+  		$("#manageclien").hide();
+  		$("#bujca").hide();
+		$("#agregaf").hide();
+		$('#manageagre').hide();
+		$("#respuestabla").hide();
+		$("#bujca2").hide();
+		$('#manageusr').hide();
+		$("#agregau").hide();
+		$("#mostrar").hide();
+		$('#manageeq').hide();
+		$("#cotizatabla").hide();
+		$('#clientes_submit').hide();
+
+		//$('#mcatalogo').show();
+		$('#m_catalogo').show();
+		$('#catalogotabla').show();
+
+
+});
+
+////
+
+
+
+
 $(document).ready(function() {
 	$(".datte").datepicker({dateFormat: "yy-mm-dd"});
 });
 </script>
-
 <script type="text/javascript">
 
-
-
 ////////////////DIALOGO //////////////////
-//$(document).ready(function() {
 $(function() {
 	$("#dialog").dialog({
 		autoOpen: false,
 		width: 600,
 		height: 300
 	});
-	//$("#button").on("click", function() {
-	//	$("#dialog").dialog("open");
-	//});
-	//$('#button').click(function(){
-	//		$("#dialog").dialog("open");
-	//});
 });
+/////Funcion para traer elemento de catalogo y editarlo 
+function catalogo(id){
+		var width = (screen.width - 700) / 2;
+			$('#editacatalogo').dialog({
+				modal: true,
+				width: 400,
+				height:430,
+            	position: [width, 75],
+            	resizable: true,
+        	});
+		$.ajax({
+			type: "GET",
+			url: "ins.php?idcat=1&catfolio="+id,
+			success: function(response){
+				$("#catedita").html(response);           
+      		},
+
+        });	
+}
+
+
 
 //Function para traer bitacora 
 function bitacora(id){
@@ -1249,10 +1369,7 @@ function bitacora(id){
 				height:300,
             	position: [width, 75],
             	resizable: true,
-
         	});
-
-
 		$.ajax({
 			type: "GET",
 			url: "ins.php?id=1&bfolio="+id,
@@ -1260,25 +1377,26 @@ function bitacora(id){
 				$("#bita").html(response);           
       		},
 
-        });
-	
+        });	
 }
 
 
 $('.bita_cierra').click(function(){
-		$('#bitacora').dialog('close');
-		
-
-		
+		$('#bitacora').dialog('close');	
 });
-
+////Directorio /////////
+$('#directorio').click(function(){
+		var width = (screen.width - 850) / 2;
+		$('.direct').dialog({
+			modal: true,
+			width: 700,
+            position: [300, 305],
+            resizable: true,
+            title: "Directorio de Sucusales",
+        });
+});
+////////////////
 ////////////////////////IMPRIMIR/////////////////////////////////////////////
-
-
-
-
-
-
 $('#printeando').click(function(){
 		var width = (screen.width - 850) / 2;
 		$('.prnt').dialog({
@@ -1290,10 +1408,6 @@ $('#printeando').click(function(){
 
         });
 
-		
-
-		//$('.prnt').show();
-		//$('.print').show();
 		var pcliente = $('#a_cliente').val();
 		$.ajax({
 			type:"GET",
@@ -1323,7 +1437,6 @@ $('#cancelar').click(function(){
 $(function() {
     $( ".print" ).draggable();
 });
-
 
 ////ESTA FUNCION ES PARA MANDAR LOS VALORES QUE ESTAN EN EL DIV DE UPDATE PARA EL DIV DE PRINT /////////////
 function 	updateoutput(){
@@ -1378,7 +1491,13 @@ $(function() {
     $( "#agregau" ).draggable();
   });
 
+$(function() {
+    $( "#agregaarticulo" ).draggable();
+  });
+//// AUTOCOMPLETE  ////////
 $(function(){
+
+
 		$('.s_cliente_auto').autocomplete({
 			source: 'ins.php?clienteauto=2',
 			minLength: 2
@@ -1402,12 +1521,163 @@ $(function(){
 			minLength: 2
 		
 		});
+/////////////COTIZADOR AUTOCOMPLETE PARA BUSQUEDA///////////////
+	
+//////Catalogo marca ///////
+		$('.s_catmar_auto').autocomplete({
+			source: 'ins.php?marcaauto=2',
+			minLength: 2,
+			 select: function (a, b) {
+        		$(this).val(b.item.value);
+        		$('#cat_modelo').show();
+        		$('#cat_marca').attr('disabled','disabled');
+
+  			 }
+		
+		});
+//////Catalogo modelo ///////
+		$('.s_catmod_auto').autocomplete({
+			 source: function(request, response) {
+      			  $.ajax({
+            			url: "ins.php?modelocata=1",
+            			dataType: "json",
+            			data: {
+                			cat_marca : $("#cat_marca").val()
+            			},
+            			success: function(data) {
+                			response(data);
+            		}
+        		});
+    		},
+    		minLength: 0,
+			select: function (a, b) {
+        		$(this).val(b.item.value);
+        		$('#cat_producto').show();
+        		$('#cat_modelo').attr('disabled','disabled');
+		
+  			 }		
+		
+		});
+//////Catalogo producto ///////
+
+	$('.s_catprod_auto').autocomplete({
+			 source: function(request, response) {
+      			  $.ajax({
+            			url: "ins.php?productocata=1",
+            			dataType: "json",
+            			data: {
+            				cat_marca : $("#cat_marca").val(),
+                			cat_modelo : $("#cat_modelo").val()
+            			},
+            			success: function(data) {
+                			response(data);
+            		}
+        		});
+    		},
+    		minLength: 0,
+			select: function (a, b) {
+        		$(this).val(b.item.value);
+        		$('#cat_producto').attr('disabled','disabled');
+			
+  			 }		
+		
+		});
+
+
+//////Cotiza marca ///////
+
+
+		$('.s_cotizamar_auto').autocomplete({
+			source: 'ins.php?marcaauto=2',
+			minLength: 2,
+			 select: function (a, b) {
+        		$(this).val(b.item.value);
+        		$('#s_cotiza2').show();
+        		$('#s_cotiza').attr('disabled','disabled');
+
+  			 }
+		
+		});
+
+		
+//////Cotiza modelo ///////
+		$('.s_cotizamod_auto').autocomplete({
+			 source: function(request, response) {
+      			  $.ajax({
+            			url: "ins.php?modeloautocotiza=1",
+            			dataType: "json",
+            			data: {
+                			s_cotiza : $("#s_cotiza").val()
+            			},
+            			success: function(data) {
+                			response(data);
+            		}
+        		});
+    		},
+    		minLength: 0,
+			select: function (a, b) {
+        		$(this).val(b.item.value);
+        		$('#s_cotiza3').show();
+        		$('#s_cotiza2').attr('disabled','disabled');
+		
+  			 }		
+		
+		});
+
+//////Cotiza producto ///////
+
+		$('.s_cotizaprod_auto').autocomplete({
+			 source: function(request, response) {
+      			  $.ajax({
+            			url: "ins.php?productoautocotiza=1",
+            			dataType: "json",
+            			data: {
+            				s_cotiza : $("#s_cotiza").val(),
+                			s_cotiza2 : $("#s_cotiza2").val()
+            			},
+            			success: function(data) {
+                			response(data);
+            		}
+        		});
+    		},
+    		minLength: 0,
+			select: function (a, b) {
+        		$(this).val(b.item.value);
+        		$('#s_cotiza4').show();
+        		$('#s_cotiza3').attr('disabled','disabled');
+			
+  			 }		
+		
+		});
+
+/////Agregar articulo nuevo ///////////
+
+		$('.a_marca_cot').autocomplete({
+
+			source: 'ins.php?marcaauto=1',
+			minLength: 2
+		
+		});
+
+		$('.a_modelo_cot').autocomplete({
+
+			source: 'ins.php?modeloauto=1',
+			minLength: 2
+		
+		});
+
+$('#regresando').click(function(){
+		$('#agregaarticulo').hide();
+		$('#opsearch6 option:eq(0)').attr('selected','selected');	
+
 });
+/////////////////////////////////////////
+
+});
+/////////////////////////////////////////////////
 
 ///Buscar
- $("#s_submit").click(function() {
-
- 				
+ $("#s_submit").click(function() { 				
  				var simei 		=  $('#s_imei').val();
  				var smodelo 	=  $('#s_modelo').val(); 				
  				var sstatus 	=  $('#s_status option:selected').val();
@@ -1416,6 +1686,7 @@ $(function(){
  	            var scliente 	=  $('#s_cliente').val();
  	            var sfecha 		=  $('#s_fecha').val();
  	            var columnas 	=  $('#n_columnas option:selected').val();
+
  	            
 
     $.ajax({    
@@ -1445,17 +1716,11 @@ $("#a_submit").click(function(){
 	var arecibe 	= $('#a_recibe').val();
 	var ammodelo    = $('#a_mmodelo').val();
 	var abitacora    = $('#a_bitacora').val();
-
-	//var adonde     = $('input:radio[name=a_donde]:checked').val();	
 	var adonde 	=  $('#a_sucurs option:selected').val();
-	//document.getElementById('getname').innerHTML=document.getElementById('a_cliente').value;		
-	//document.getElementById('getname2').innerHTML=document.getElementById('a_cliente').value;
-	//$('#printeando').show();
 	var repara  = [];
 	   $(':checkbox:checked').each(function(i){
 	   		repara[i] = $(this).val();
 	   });
-
 	   ////  ESTO es para detectaar que sucursl eligio  y poner la direccion y datos correspondientes, faltan las demas msucursaales //////////
 	if (adonde == "Matriz"){
 		var adnd = "Llamas Comunicación, S.A. de C.V. Matriz: Bernardo Reyes # 178 RFC: LCO9906169Y0, Hermosillo, Sonora, Teléfono 301-64-64 ";
@@ -1557,7 +1822,6 @@ $("#a_submit").click(function(){
 		});
 	}	
 
-		//$('#impo').show();
 		var pcliente2 = $('#a_cliente').val();
 			$.ajax({
 			type:"GET",
@@ -1571,26 +1835,41 @@ $("#a_submit").click(function(){
 
 
 });
-$('#limpia').click(function(){
+
+$('#limpiando').click(function(){
+						$('#cat_marca').val('');
+						$('#cat_modelo').val('');
+						$('#cat_producto').val('');
+						$('#cat_marca').removeAttr("disabled");
+						$('#cat_modelo').removeAttr("disabled");
+						$('#cat_producto').removeAttr("disabled");
+
+});
+
+
+$('#limpia').click(function(){									
+
+						$('#s_cotiza').val('');
+						$('#s_cotiza2').val('');
+						$('#s_cotiza3').val('');
+						$('#s_cotiza4').val('');
+						$('#s_cotiza').removeAttr("disabled");
+						$('#s_cotiza2').removeAttr("disabled");
+						$('#s_cotiza3').removeAttr("disabled");
+
+
 						$('#a_imei').val('');
 						$('#a_imei').removeAttr("disabled");
-
 						$('#a_mmodelo').removeAttr("disabled");
 						$('#a_mmodelo').val('');
-
 						$('#a_modelo').removeAttr("disabled");
 						$('#a_modelo').val('');
-
 						$('#a_cliente').val('');
 						$('#a_cliente').removeAttr("disabled");
-
 						$('#a_detalles').val('');
 						$('#a_detalles').removeAttr("disabled");
-
 						$('#a_password').val('');
 						$('#a_password').removeAttr("disabled");
-
-						//$('input:radio[name=a_status]:checked').val('');	
 						$('#a_status').val('');
 						$('#a_conta').val('');						
 						$('#a_email').val('');	
@@ -1610,15 +1889,20 @@ $('#limpia').click(function(){
 ///Agrega Usuarios 
 $('#u_submit').click(function(){
 	var uusuario = $('#u_usuario').val();
+	var UUSUARIO = uusuario.toUpperCase();
 	var unombre  = $('#u_nombre').val();
-	var upass 	 = $('#u_pass').val();	
+	var UNOMBRE  = unombre.toUpperCase();
+	var upass    = $('#u_pass').val();	
+	var UPASS    = upass.toUpperCase();
+
 	var utipo 	 = $('input:radio[name=u_tipo]:checked').val();
-	if(!uusuario || !upass ){
+
+	if(!UUSUARIO || !UPASS ){
 		alert('Para dar de alta a un usuario tiene que tener usuario y password');
 	}else{
 		$.ajax({
 			type: "GET",
-			url: "ins.php?agregau=1&u_usuario="+uusuario+"&u_nombre="+unombre+"&u_pass="+upass+"&u_tipo="+utipo,
+			url: "ins.php?agregau=1&u_usuario="+UUSUARIO+"&u_nombre="+UNOMBRE+"&u_pass="+UPASS+"&u_tipo="+utipo,
 			dataType: "html",
 			success: function(resp){
 				 $('#agregauser').html(resp);
@@ -1630,26 +1914,33 @@ $('#u_submit').click(function(){
 });
 
 ////Agregar marca y modelos //////
-
-
 ///Agrega Cliente
 $('#c_submit').click(function(){
 	var cnombre = $('#c_nombre').val();
+	var CNOMBRE = cnombre.toUpperCase();
 	var cemail 	= $('#c_email').val();
+	var CEMAIL = cemail.toUpperCase();
 	var ccel 	= $('#c_cel').val();
+	var CCEL = ccel.toUpperCase();
 	var ctel 	= $('#c_tel').val();
+	var CTEL = ctel.toUpperCase();
 	var ccol 	= $('#c_col').val();
+	var CCOL = ccol.toUpperCase();
 	var cdom 	= $('#c_dom').val();
+	var CDOM = cdom.toUpperCase();
 	var crfc 	= $('#c_rfc').val();
+	var CRFC = crfc.toUpperCase();
 	var cpostal	= $('#c_postal').val();
+	var CPOSTAL = cpostal.toUpperCase();
 	var ccd 	= $('#c_cd').val();
+	var CCD = ccd.toUpperCase();
 
-	if (!cnombre || !ctel){
+	if (!CNOMBRE || !CTEL){
 		alert('Para seguir tienes que proporcionar nombre de cliente y/o numero de contacto');		
 	} else {
 		$.ajax({
 			type: "GET",
-			url: "ins.php?agregac=1&c_nombre="+cnombre+"&c_email="+cemail+"&c_cel="+ccel+"&c_tel="+ctel+"&c_dom="+cdom+"&c_col="+ccol+"&c_rfc="+crfc+"&c_postal="+cpostal+"&c_cd="+ccd,
+			url: "ins.php?agregac=1&c_nombre="+CNOMBRE+"&c_email="+CEMAIL+"&c_cel="+CCEL+"&c_tel="+CTEL+"&c_dom="+CDOM+"&c_col="+CCOL+"&c_rfc="+CRFC+"&c_postal="+CPOSTAL+"&c_cd="+CCD,
 			dataType:"html",
 			success: function(resp){
 				$('#agregacliente').append(resp);
@@ -1706,10 +1997,8 @@ $('#eq_submit').click(function(){
 
 
 
-$('#mod_submit').click(function(){
-	
+$('#mod_submit').click(function(){	
 	var modelo = $('#modelos').val();
-
 	if (!modelo){
 		alert('Para seguir tienes que proporcionar algun modelo');
 	}else {
@@ -1725,6 +2014,135 @@ $('#mod_submit').click(function(){
 		$('#modelos').val('');
 	}
 });
+
+///COTIZADOR
+$("#s_submit_cotiza").click(function() {
+				$( "#s_submit_exporta" ).prop( "disabled", false ); 	
+ 				var cmarca 		=  $('#s_cotiza').val();
+ 				var cmodelo 	=  $('#s_cotiza2').val(); 				
+ 				var cproducto 	=  $('#s_cotiza3').val(); 						
+ 	            
+ 	if (!cmarca && !cmodelo && !cproducto){
+ 		alert('Para cotizar tienes que proporcional al menos una marca');
+ 	}else {
+    	$.ajax({    
+      	type: "GET",
+      	url: "ins.php?s_cotizador=1&s_cotiza="+cmarca+"&s_cotiza2="+cmodelo+"&s_cotiza3="+cproducto,
+      	dataType: "html",   
+      //expect html to be returned                
+      		success: function(resp){                    
+      	    	$("#cotizatabla").html(resp);   
+      		}      
+    	});
+    }
+});
+
+$('#c_submit_arti').click(function(){
+	var codigo = $('#a_codigo_cot').val();
+	var CODIGO = codigo.toUpperCase();
+	var marca  = $('#a_marca_cot').val();
+	var MARCA = marca.toUpperCase();
+	var modelo  = $('#a_modelo_cot').val();
+	var MODELO = modelo.toUpperCase();
+	var producto  =$('#a_producto_cot').val();
+	var PRODUCTO = producto.toUpperCase();
+	var descripcion  =$('#a_descripcion_cot').val();
+	var DESCRIPCION = descripcion.toUpperCase();
+	var precio  =$('#a_precio_cot').val();
+	var PRECIO = precio.toUpperCase();
+
+
+	//var modelo = $('#modelos').val();
+	if (!codigo || !producto){
+		alert('Para seguir tienes que proporcionar codigo y/o articulo nuevo');
+	}else {
+
+	$.ajax({
+			type:"GET",
+			url: "ins.php?artisubmit=1&a_codigo_cot="+CODIGO+"&a_marca_cot="+MARCA+"&a_modelo_cot="+MODELO+"&a_producto_cot="+PRODUCTO+"&a_descripcion_cot="+DESCRIPCION+"&a_precio_cot="+PRECIO,
+			dataType:"html",
+			success: function(resp){
+				$('#agregaarticulos').html(resp);
+			}
+		});
+		$('#a_codigo_cot').val('');
+		$('#a_marca_cot').val('');
+		$('#a_modelo_cot').val('');
+		$('#a_producto_cot').val('');
+		$('#a_descripcion_cot').val('');
+		$('#a_precio_cot').val('');
+
+	}
+});
+
+
+$("#s_submit_catalogo").click(function() { 				
+ 				var catmarca 		=  $('#cat_marca').val();
+ 				var catmodelo 		=  $('#cat_modelo').val(); 				
+ 				var catproducto 	=  $('#cat_producto').val(); 						
+ 	            
+ 	   	$.ajax({    
+      		type: "GET",
+      		url: "ins.php?s_catalogo=1&cat_marca="+catmarca+"&cat_modelo="+catmodelo+"&cat_producto="+catproducto,
+      		dataType: "html",   
+      //expect html to be returned                
+      		success: function(resp){                    
+      	    	$("#catalogotabla").html(resp);   
+      		}      
+    	});
+    
+});
+
+
+function bitacora(id){
+		var width = (screen.width - 700) / 2;
+			$('#bitacora').dialog({
+				modal: true,
+				width: 400,
+				height:300,
+            	position: [width, 75],
+            	resizable: true,
+        	});
+		$.ajax({
+			type: "GET",
+			url: "ins.php?id=1&bfolio="+id,
+			success: function(response){
+				$("#bita").html(response);           
+      		},
+
+        });	
+}
+
+function editararticulo(){
+				var cateditid			=  $("#cateditid").val();
+				var cateditcodigo		=  $("#cateditcod").val();
+				var cateditmarca		=  $("#cateditmar").val();
+				var cateditmodelo		=  $("#cateditmod").val();
+				var cateditproducto		=  $("#cateditprod").val();
+				var cateditdescrip		=  $("#cateditdes").val();
+				var cateditprecio		=  $("#cateditprec").val();		
+
+				$.ajax({
+					type: "GET",
+      				url: "ins.php?e_catalogolive=1&cateditcod="+cateditcodigo+"&cateditmod="+cateditmodelo+"&cateditprod="+cateditproducto+"&cateditdes="+cateditdescrip+"&cateditprec="+cateditprecio+"&cateditid="+cateditid+"&cateditmar="+cateditmarca,
+					success: function(response){
+					$("#catalogotablalive").html(response);  
+					$('#editacatalogo').dialog("close");        
+      			},
+
+        });	
+}
+
+$("#s_submit_exporta").click(function(e) {
+	alert('Cambia el nobre del archivo al que te guste');
+	var archivo = "catalogo";
+    window.open('data:application/vnd.ms-excel,' + encodeURIComponent($('#m_cotizador').html().xls), "_self");
+    e.preventDefault();
+});
+
+
+
+
 
 </script>
 </body>

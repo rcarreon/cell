@@ -65,7 +65,6 @@ if(isset($_GET['folio'])){
 			Contacto:
 			<div>
 				<input type="text"  disabled="disabled" name="editcontacto" id="editcontacto" value="<?php echo $query4[1]; ?>"/>
-			    <input type="button"   class="btn btn-success bitacora" value="Bitacora"/>
 			</div>
 			<div id="bitacora" style="display: none;" title="Bitacora Folio: <?php echo $e_folio ;?>" > 
 					<textarea  type="text" id="editbitacora" name="editbitacora" style="width:350;height:200;text-align:left;" Placeholder="Bitacora" > <?php echo $query2[12];?></textarea>	
@@ -114,13 +113,14 @@ if(isset($_GET['folio'])){
 						<br /><br>		
 			</div>
 					<br> <br /><br /><br /><br />
-		
-				<button  style="position:relative;left:27%;top:340px;"class="btn btn-primary" type="button" id="editaa" tabindex=7 > Guardar cambios </button>
-				<button  style="position:relative;left:29%;top:340px;"  type="button" id="printeando" onclick="updateoutput()" tabindex=8> Imprimir </button>								
-				<a  href="/" >
-   					<button style="position:relative;left:35%;top:340px;" type="button" id="regresa" tabindex=9>Regresar</button>
-				</a>		
-			
+				<form>
+					<button  type="button" class="btn btn-success bitacora" style="position:relative;top:260px;">Bitacora</button>
+					<button  style="position:relative;left:1%;top:340px;"class="btn btn-primary" type="button" id="editaa" tabindex=7 > Guardar cambios </button>
+					<button  style="position:relative;top:340px;left:3%;" class="btn" type="button" id="printeando" onclick="updateoutput()" tabindex=8> Imprimir </button>								
+					<a  href="/" >
+	   					<button style="position:relative;top:340px;left:5%;" type="button" id="regresa" class="btn" tabindex=9>Regresar</button>
+					</a>		
+				</form>
 	</form>	
 
 

@@ -14,6 +14,7 @@
 
 <script type="text/javascript">
 
+///Coded by rcarreon ///  
 
 function optionCheck(){
 	var option = $('#opsearch option:selected').val();
@@ -326,7 +327,7 @@ function optionCheck6(){
   						<input type="text" id="s_cotiza3" class="s_cotizaprod_auto" name="s_cotiza3" placeholder="Ingresa Producto" tabindex=3  style="text-transform:uppercase;display:none" >
   						<button  id="limpia" class="btn" tabindex=4>Limpiar</button>
   						<button id="s_submit_cotiza" class="btn" tabindex=5>Cotiza</button>
-  						<button id="s_submit_exporta" disabled="disabled" class="btn btn-warning" tabindex=6>Exporta</button>
+  						<button id="s_submit_exporta" disabled="disabled" class="btn btn-warning" tabindex=6>Bajar Catalogo</button>
 
 					</div>					
 	</div>
@@ -456,7 +457,7 @@ function optionCheck6(){
 		<div id="m_todosclientes"  style="display:none;position:absolute;left:3%;" class="container">
 			
 				<form  method="get" id="bujca4">
-					<button type="button" id="clientes_submit" style="position:relative; left:37%;">Mostrar Clientes</button><br><br />					
+					<button type="button" id="clientes_submit" style="position:relative; left:37%;" class="btn">Mostrar Clientes</button><br><br />					
 					<table   id="muestrablaclientes"  style="position:relative; left:24%;" class="table table-striped table-hover tablesorter" >									
 					</table>				
 				</form>			
@@ -752,6 +753,7 @@ function optionCheck6(){
 				</thead>
 				</table>
 			</div>
+<!-- ///Coded by robc ///   -->
 
 			<div style="position:absolute;top:91%;left:0%;"  >
 				<table class="printto" >		
@@ -1098,6 +1100,7 @@ $("#s_submit_b").click(function(){
 		$('#opsearch4 option:eq(0)').attr('selected','selected');
 		$('#opsearch5 option:eq(0)').attr('selected','selected');
 
+///Coded by rcarreon ///  
 
 		$('#mcatalogo').hide();
 		$('#m_catalogo').hide();
@@ -1122,7 +1125,6 @@ $("#s_submit_b").click(function(){
 		$('#managecotiza').hide();
 
 	
-		$('#m_todosclientes').hide();
 });
 $("#s_submit_a").click(function(){
 		$('#opsearch option:eq(0)').attr('selected','selected');
@@ -1259,6 +1261,7 @@ $("#s_submit_eq").click(function(){
 $("#s_submit_co").click(function(){
 	$('#opsearch2 option:eq(0)').attr('selected','selected');
 	$('#opsearch3 option:eq(0)').attr('selected','selected');
+	$('#opsearch4 option:eq(0)').attr('selected','selected');
 	$('#opsearch option:eq(0)').attr('selected','selected');
 	$('#opsearch5 option:eq(0)').attr('selected','selected');
 	$('#opsearch6 option:eq(0)').attr('selected','selected');
@@ -1293,6 +1296,7 @@ $("#s_submit_coti").click(function(){
 	$('#opsearch option:eq(0)').attr('selected','selected');
 	$('#opsearch5 option:eq(0)').attr('selected','selected');
 	$('#opsearch6 option:eq(0)').attr('selected','selected');
+
 
 		$('#agregaarticulo').hide();
 		$('#managecotiza').show();
@@ -2133,15 +2137,35 @@ function editararticulo(){
         });	
 }
 
-$("#s_submit_exporta").click(function(e) {
-	alert('Cambia el nobre del archivo al que te guste');
-	var archivo = "catalogo";
-    window.open('data:application/vnd.ms-excel,' + encodeURIComponent($('#m_cotizador').html().xls), "_self");
+$("#s_submit_exporta").click(function(e) {	
+	//Valores de fecha para generar el archivo ///
+	var dt = new Date();
+    var day = dt.getDate();
+    var month = dt.getMonth() + 1;
+    var year = dt.getFullYear();
+    // not used var hour = dt.getHours();
+    // not used var mins = dt.getMinutes();
+    var postfix = day + "-" + month + "-" + year;
+    //Crando un elemento link html temporal ( estos suportan config para nombre de archivo )
+	var a = document.createElement('a');
+    var data_type = 'data:application/vnd.ms-excel';
+    var table_div = document.getElementById('m_cotizador');
+    var table_html = table_div.outerHTML.replace(/ /g, '%20');
+    a.href = data_type + ', ' + table_html;
+    //Nombre del archivo 
+    a.download = 'catalogo_' + postfix +  '.xls';
+    //llamando la funcion
+    a.click();
+    //  Ya no se usa window.open('data:application/vnd.ms-excel,filename=catalogo.xls,' + encodeURIComponent($('#m_cotizador').html()), "_self");
+    //previniendo el comportamiento default (shrug) 
     e.preventDefault();
+
+
+    ////Esta mamada me tomo algunas horas , parece una mamada pero a la v! 
 });
 
 
-
+///Coded by rcarreon ///  
 
 
 </script>

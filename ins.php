@@ -104,23 +104,27 @@ $tr6 ="
 $tr7 = "
 <table>
      <tr>
-        <td align=center><b>Codigo</b></td>
+        <td align=center><b>Linea</b></td>
         <td align=center><b>Marca</b></td>
         <td align=center><b>Modelo</b></td>
-        <td align=center><b>Producto</b></td>
-        <td align=center><b>Descripcion</b></td>
-        <td align=center><b>Precio</b></td>";
+        <td align=center><b>Nombre Comercial</b></td>
+        <td align=center><b>Modelos compatibles</b></td>
+        <td align=center><b>Distribuidor Bajo</b></td>
+        <td align=center><b>Distribuidor</b></td>
+        <td align=center><b>Publico</b></td>";
 
   $tr8 = "
 <table>
      <tr>
         <td align=center><b>Editar</b></td>
-        <td align=center><b>Codigo</b></td>
+        <td align=center><b>Linea</b></td>
         <td align=center><b>Marca</b></td>
         <td align=center><b>Modelo</b></td>
-        <td align=center><b>Producto</b></td>
-        <td align=center><b>Descripcion</b></td>
-        <td align=center><b>Precio</b></td>";
+        <td align=center><b>Nombre Comercial</b></td>
+        <td align=center><b>Modelos compatibles</b></td>
+        <td align=center><b>Distribuidor Bajo</b></td>
+        <td align=center><b>Distribuidor</b></td>
+        <td align=center><b>Publico</b></td>";
 
 //Abrimos Conexion a la base de datos usando la conexion 2 
 mysql_select_db("cellcity",$con2);
@@ -588,13 +592,13 @@ if(!empty($_GET['productoautocotiza'])) {
     $producto2 = $_GET['s_cotiza2'];
 
 
-    $query = "SELECT  DISTINCT producto FROM cotizador WHERE (marca = '$producto' AND modelo = '$producto2' )";
+    $query = "SELECT  DISTINCT linea FROM cotizador WHERE (marca = '$producto' AND modelo = '$producto2' )";
     $result = mysql_query($query, $con2);
     $producto = array();
    
     while($dat = mysql_fetch_array($result)){
         $elproducto[] = array(        
-           'label' => $dat["producto"],
+           'label' => $dat["linea"],
           );
         
     }
@@ -623,13 +627,13 @@ if(!empty($_GET['productocata'])) {
     $catmodelo = $_GET['cat_modelo'];
 
 
-    $query = "SELECT  DISTINCT producto FROM cotizador WHERE (marca = '$catmarca' AND modelo = '$catmodelo' )";
+    $query = "SELECT  DISTINCT linea FROM cotizador WHERE (marca = '$catmarca' AND modelo = '$catmodelo' )";
     $result = mysql_query($query, $con2);
     $producto = array();
    
     while($dat = mysql_fetch_array($result)){
         $elproducto[] = array(        
-           'label' => $dat["producto"],
+           'label' => $dat["linea"],
           );
         
     }
@@ -644,14 +648,14 @@ if(!empty($_GET['productocata'])) {
 if (!empty($_GET['s_cotizador'])){  
     $marca = $_GET['s_cotiza'];
     $modelo = $_GET['s_cotiza2'];
-    $producto = $_GET['s_cotiza3'];
+    $linea = $_GET['s_cotiza3'];
 
-    if ($marca and $modelo and $producto){
-        $query = "SELECT  *  FROM cotizador WHERE (marca = '$marca' AND modelo = '$modelo' AND producto = '$producto')";
-    } else if ( $marca and !$modelo and !$producto ){
+    if ($marca and $modelo and $linea){
+        $query = "SELECT  *  FROM cotizador WHERE (marca = '$marca' AND modelo = '$modelo' AND linea = '$linea')";
+    } else if ( $marca and !$modelo and !$linea ){
                  $query = "SELECT  *  FROM cotizador WHERE marca = '$marca' ";
                     //echo "<script type=text/javascript>alert('Te falto algo  ')</script>";
-    }else if ( $marca and $modelo and !$producto ){
+    }else if ( $marca and $modelo and !$linea ){
                  $query = "SELECT  *  FROM cotizador WHERE (marca = '$marca'  AND modelo = '$modelo')";
     }
    
@@ -666,18 +670,20 @@ if (!empty($_GET['s_cotizador'])){
             echo "<td align=center >$dato[4]</td>";
             echo "<td align=center >$dato[5]</td>";
             echo "<td align=center  >$dato[6]</td>";
+            echo "<td align=center  >$dato[7]</td>";
+            echo "<td align=center  >$dato[8]</td>";
           echo "</tr>";
     } 
 
 }
-
+///Genera Catalogo /// 
 if (!empty($_GET['s_catalogo'])){  
     $catmarca = $_GET['cat_marca'];
     $catmodelo = $_GET['cat_modelo'];
     $catproducto = $_GET['cat_producto'];
 
     if ($catmarca and $catmodelo and $catproducto){
-        $query = "SELECT  *  FROM cotizador WHERE (marca = '$catmarca' AND modelo = '$catmodelo' AND producto = '$catproducto')";
+        $query = "SELECT  *  FROM cotizador WHERE (marca = '$catmarca' AND modelo = '$catmodelo' AND linea = '$catproducto')";
     } else if ( $catmarca and !$catmodelo and !$catproducto ){
                  $query = "SELECT  *  FROM cotizador WHERE marca = '$catmarca' ";
                     //echo "<script type=text/javascript>alert('Te falto algo  ')</script>";
@@ -692,12 +698,40 @@ if (!empty($_GET['s_catalogo'])){
 
           echo "<td align=center><button  type=\"button\"   class=\"btn  catalogo\" onClick=catalogo($dato[0]);>Edita</button></td>";
           //echo "<td align=center ><a href=updateclientes.php?id=".$dato[0].">Editar</a></td> "; 
-            echo "<td align=center  >$dato[1]</td>";
-            echo "<td align=center  >$dato[2]</td>";
-            echo "<td align=center  >$dato[3]</td>";
-            echo "<td align=center >$dato[4]</td>";
-            echo "<td align=center >$dato[5]</td>";
-            echo "<td align=center  >$dato[6]</td>";
+            echo "<td align=center tabindex=1 >$dato[1]</td>";
+            echo "<td align=center  tabindex=2 >$dato[2]</td>";
+            echo "<td align=center  tabindex=3 >$dato[3]</td>";
+            echo "<td align=center tabindex=4 >$dato[4]</td>";
+            echo "<td align=center tabindex=5 >$dato[5]</td>";
+            echo "<td align=center tabindex=6 >$dato[6]</td>";
+            echo "<td align=center tabindex=6 >$dato[7]</td>";
+            echo "<td align=center tabindex=6 >$dato[8]</td>";           
+
+         echo "</tr>";
+    } 
+
+}
+
+
+if (!empty($_GET['s_catalogotodo'])){  
+  
+
+        $query = "SELECT  *  FROM cotizador order by marca";
+                    //echo "<script type=text/javascript>alert('Te falto algo  ')</script>";
+       
+    $result=mysql_query($query,$con2);
+    echo $tr7;
+    while($dato = mysql_fetch_row($result)){
+          echo "<tr>";
+          //echo "<td align=center ><a href=updateclientes.php?id=".$dato[0].">Editar</a></td> "; 
+            echo "<td align=center tabindex=1 >$dato[1]</td>";
+            echo "<td align=center  tabindex=2 >$dato[2]</td>";
+            echo "<td align=center  tabindex=3 >$dato[3]</td>";
+            echo "<td align=center tabindex=4 >$dato[4]</td>";
+            echo "<td align=center tabindex=5 >$dato[5]</td>";
+            echo "<td align=center tabindex=6 >$dato[6]</td>";
+            echo "<td align=center tabindex=6 >$dato[7]</td>";
+            echo "<td align=center tabindex=6 >$dato[8]</td>";
           echo "</tr>";
     } 
 
@@ -715,14 +749,16 @@ if(!empty($_GET['idcat'])){
     $rec2 = mysql_query($sql2,$con2) or die ("Query failed: ".mysql_error()."Actual query:".$query); 
     $rows2 = mysql_fetch_row($rec2);
 
-     echo "<strong>Codigo: <br> <input type=\"text\"   tabindex=1 id=\"cateditcod\" style=\"text-transform:uppercase;\" value=\"$rows2[1]\"><br> ";
+     echo "<strong>Linea: <br> <input type=\"text\"   tabindex=1 id=\"cateditlinea\" style=\"text-transform:uppercase;\" value=\"$rows2[1]\"><br> ";
      echo "<input type=\"text\"   tabindex=2  id=\"cateditid\" style=\"display:none;text-transform:uppercase;\" value=\"$rows2[0]\"><br>";
      echo "Marca:  <br> <input type=\"text\"   tabindex=2  id=\"cateditmar\" style=\"text-transform:uppercase;\" value=\"$rows2[2]\"><br>";
      echo "Modelo: <br> <input type=\"text\"   tabindex=3  id=\"cateditmod\" style=\"text-transform:uppercase;\" value=\"$rows2[3]\"><br>";
-     echo "Producto: <br> <input type=\"text\"   tabindex=4  id=\"cateditprod\" style=\"text-transform:uppercase;\" value=\"$rows2[4]\"><br>";
-     echo "Descripcion: <br> <input type=\"text\"   tabindex=5  id=\"cateditdes\" style=\"text-transform:uppercase;\" value=\"$rows2[5]\"><br>";
-     echo "Precio: <br>  <input type=\"text\"   tabindex=6  id=\"cateditprec\" style=\"text-transform:uppercase;\" value=\"$rows2[6]\"></strong><br><br>";
-     echo "<button type=\"button\"   tabindex=7  id=\"catalogolive\" class=\"btn btn-primary catalogolive\" onClick=editararticulo();>Guardar</button>";
+     echo "Nombre Comercial: <br> <input type=\"text\"   tabindex=4  id=\"cateditnomcom\" style=\"text-transform:uppercase;\" value=\"$rows2[4]\"><br>";
+     echo "Modelos compatibles: <br> <input type=\"text\"   tabindex=5  id=\"cateditmodcompat\" style=\"text-transform:uppercase;\" value=\"$rows2[5]\"><br>";
+     echo "Distribuidor Bajo: <br>  <input type=\"text\"   tabindex=6  id=\"cateditdistbajo\" style=\"text-transform:uppercase;\" value=\"$rows2[6]\"></strong><br><br>";
+     echo "Distribuidor : <br>  <input type=\"text\"   tabindex=7 id=\"cateditdist\" style=\"text-transform:uppercase;\" value=\"$rows2[7]\"></strong><br><br>";
+     echo "Publico: <br>  <input type=\"text\"   tabindex=8  id=\"cateditpublico\" style=\"text-transform:uppercase;\" value=\"$rows2[8]\"></strong><br><br>";
+     echo "<button type=\"button\"   tabindex=8  id=\"catalogolive\" class=\"btn btn-primary catalogolive\" onClick=editararticulo();>Guardar</button>";
 
 }
 
@@ -732,21 +768,25 @@ if(!empty($_GET['e_catalogolive'])){
 
 
   $live_id            = $_GET['cateditid'];
-  $live_codigo        = $_GET['cateditcod'];
+  $live_linea         = $_GET['cateditlinea'];
   $live_marca         = $_GET['cateditmar'];
   $live_modelo        = $_GET['cateditmod'];
-  $live_producto      = $_GET['cateditprod'];   
-  $live_descripcion   = $_GET['cateditdes'];
-  $live_precio        = $_GET['cateditprec'];
+  $live_nombrecom     = $_GET['cateditnomcom'];   
+  $live_modelocomp    = $_GET['cateditmodcompat'];
+  $live_distbajo      = $_GET['cateditdistbajo'];
+  $live_dist          = $_GET['cateditdist'];
+  $live_publico       = $_GET['cateditpublico'];
+
+
 
 
   
-                $query = "UPDATE cotizador SET codigo = '$live_codigo', marca = '$live_marca', modelo = '$live_modelo', producto = '$live_producto', descripcion = '$live_descripcion', precio = '$live_precio'  WHERE id = '$live_id'";
+                $query = "UPDATE cotizador SET linea = '$live_linea', marca = '$live_marca', modelo = '$live_modelo', nombrecomer = '$live_nombrecom', modelo_compat = '$live_modelocomp', precio_dist_bajo = '$live_distbajo' , precio_dist = '$live_dist' , precio_publico = '$live_publico'  WHERE id = '$live_id'";
                 $result = mysqli_query($con,$query);
       if (!$result){
             die('Coudnt query'. mysqli_error($con));
           } else {
-                echo "<script type=text/javascript>alert('parece que entro... papaw! $live_id ,  $live_codigo , $live_marca , $live_modelo, $live_producto, $live_descripcion , $live_precio  ')</script>";
+                echo "<script type=text/javascript>alert('parece que entro... papaw! $live_id ,  $live_linea , $live_marca , $live_modelo, $live_nombrecom, $live_modelocomp , $live_distbajo, $live_dist, $live_publico ')</script>";
           }
 
 }

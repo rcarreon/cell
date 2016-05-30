@@ -251,8 +251,12 @@ function optionCheck6(){
 	echo "<p>Bienvenid@<strong> $uname !</strong></p>";
 	?>			
 		<a id="logout" href=logout.php>Salir Sesion</a> 
-		<button class="btn btn-success" id="directorio" style="position:relative;left:70%;" >Ir a Directorio</button>
-		<p style="position:relative;top:5%;left:80%;"class="text-muted credit" ><?php  date_default_timezone_set('America/Hermosillo'); $date = date('Y'); echo "Cellcity $date" ?></p> 
+		<div style="position:relative;top:-35px;">
+			<p style="position:relative;top:5%;left:78%;"class="text-muted credit" ><?php  date_default_timezone_set('America/Hermosillo'); $date = date('Y'); echo "Cellcity $date" ?></p> 
+			<button class="btn btn-success" id="directorio" style="position:relative;left:70%;" >Ir a Directorio</button>
+			<button class="btn btn-success " id="s_submit_generacatalogo" style="position:relative;left:70%;" >Generar Catalogo</button>
+			<button class="btn btn-success " id="s_submit_catalogotodo" style="position:relative;left:70%;display:none;" >Bajar Catalogo</button></br></br>
+		</div>
 
 		<div align="center" >				
 				<img src="images/titulocellcity.jpg">
@@ -327,10 +331,15 @@ function optionCheck6(){
   						<input type="text" id="s_cotiza3" class="s_cotizaprod_auto" name="s_cotiza3" placeholder="Ingresa Producto" tabindex=3  style="text-transform:uppercase;display:none" >
   						<button  id="limpia" class="btn" tabindex=4>Limpiar</button>
   						<button id="s_submit_cotiza" class="btn" tabindex=5>Cotiza</button>
-  						<button id="s_submit_exporta" disabled="disabled" class="btn btn-warning" tabindex=6>Bajar Catalogo</button>
+  						<button id="s_submit_exporta" disabled="disabled" class="btn btn-warning" tabindex=6>Bajar Cotizacion</button>
 
 					</div>					
 	</div>
+	<div id="m_cotizador2"   class="container" name="catalogo2" style="display:none;">	
+					<table   id="cotizatabla2"  style="position:relative; right:7%;display:none;" class="table table-striped table-hover tablesorter" >									
+					</table>	
+
+   	</div> 
 	<div id="m_cotizador"   class="container" name="catalogo">	
 					<table   id="cotizatabla"  style="position:relative; right:7%;" class="table table-striped table-hover tablesorter" >									
 					</table>	
@@ -1323,6 +1332,15 @@ $("#s_submit_coti").click(function(){
 
 });
 
+$("#s_submit_generacatalogo").click(function(){
+	$("#s_submit_catalogotodo").show();
+	$("#s_submit_generacatalogo").hide();
+});
+$("#s_submit_catalogotodo").click(function(){
+	$("#s_submit_generacatalogo").show();
+	$("#s_submit_catalogotodo").hide();
+});
+
 ////
 
 
@@ -1605,6 +1623,9 @@ $(function(){
 
 		
 //////Cotiza modelo ///////
+
+
+
 		$('.s_cotizamod_auto').autocomplete({
 			 source: function(request, response) {
       			  $.ajax({
@@ -1614,10 +1635,12 @@ $(function(){
                 			s_cotiza : $("#s_cotiza").val()
             			},
             			success: function(data) {
+                			//response(data.slice(0,10));
                 			response(data);
             		}
         		});
     		},
+
     		minLength: 0,
 			select: function (a, b) {
         		$(this).val(b.item.value);
@@ -2024,7 +2047,9 @@ $("#s_submit_cotiza").click(function() {
 				$( "#s_submit_exporta" ).prop( "disabled", false ); 	
  				var cmarca 		=  $('#s_cotiza').val();
  				var cmodelo 	=  $('#s_cotiza2').val(); 				
- 				var cproducto 	=  $('#s_cotiza3').val(); 						
+ 				var Cproducto 	=  $('#s_cotiza3').val(); 
+ 				var cproducto 	=	encodeURIComponent(Cproducto);
+ 				
  	            
  	if (!cmarca && !cmodelo && !cproducto){
  		alert('Para cotizar tienes que proporcional al menos una marca');
@@ -2098,6 +2123,22 @@ $("#s_submit_catalogo").click(function() {
 });
 
 
+$("#s_submit_generacatalogo").click(function() { 			
+ 					
+ 	            
+ 	   	$.ajax({    
+      		type: "GET",
+      		url: "ins.php?s_catalogotodo=1",
+      		dataType: "html",   
+      //expect html to be returned                
+      		success: function(resp){                    
+      	    	$("#cotizatabla2").html(resp);   
+      		}      
+    	});
+    
+});
+
+
 function bitacora(id){
 		var width = (screen.width - 700) / 2;
 			$('#bitacora').dialog({
@@ -2119,16 +2160,19 @@ function bitacora(id){
 
 function editararticulo(){
 				var cateditid			=  $("#cateditid").val();
-				var cateditcodigo		=  $("#cateditcod").val();
+				var cateditlinea		=  $("#cateditlinea").val();
 				var cateditmarca		=  $("#cateditmar").val();
 				var cateditmodelo		=  $("#cateditmod").val();
-				var cateditproducto		=  $("#cateditprod").val();
-				var cateditdescrip		=  $("#cateditdes").val();
-				var cateditprecio		=  $("#cateditprec").val();		
+				var cateditnomcom		=  $("#cateditnomcom").val();
+				var cateditmodcompat	=  $("#cateditmodcompat").val();
+				var cateditdistbajo		=  $("#cateditdistbajo").val();		
+				var cateditdist			=  $("#cateditdist").val();
+				var cateditpublico			=  $("#cateditpublico").val();	
+
 
 				$.ajax({
 					type: "GET",
-      				url: "ins.php?e_catalogolive=1&cateditcod="+cateditcodigo+"&cateditmod="+cateditmodelo+"&cateditprod="+cateditproducto+"&cateditdes="+cateditdescrip+"&cateditprec="+cateditprecio+"&cateditid="+cateditid+"&cateditmar="+cateditmarca,
+      				url: "ins.php?e_catalogolive=1&cateditlinea="+cateditlinea+"&cateditmod="+cateditmodelo+"&cateditnomcom="+cateditnomcom+"&cateditmodcompat="+cateditmodcompat+"&cateditdistbajo="+cateditdistbajo+"&cateditid="+cateditid+"&cateditmar="+cateditmarca+"&cateditdist="+cateditdist+"&cateditpublico="+cateditpublico,
 					success: function(response){
 					$("#catalogotablalive").html(response);  
 					$('#editacatalogo').dialog("close");        
@@ -2136,6 +2180,36 @@ function editararticulo(){
 
         });	
 }
+
+
+$("#s_submit_catalogotodo").click(function(e) {	
+	//Valores de fecha para generar el archivo ///
+	var dt = new Date();
+    var day = dt.getDate();
+    var month = dt.getMonth() + 1;
+    var year = dt.getFullYear();
+    // not used var hour = dt.getHours();
+    // not used var mins = dt.getMinutes();
+    var postfix = day + "-" + month + "-" + year;
+    //Crando un elemento link html temporal ( estos suportan config para nombre de archivo )
+	var a = document.createElement('a');
+    var data_type = 'data:application/vnd.ms-excel';
+    var table_div = document.getElementById('m_cotizador2');
+    var table_html = table_div.outerHTML.replace(/ /g, '%20');
+    a.href = data_type + ', ' + table_html;
+    //Nombre del archivo 
+    a.download = 'catalogo_' + postfix +  '.xls';
+    //llamando la funcion
+    a.click();
+    //  Ya no se usa window.open('data:application/vnd.ms-excel,filename=catalogo.xls,' + encodeURIComponent($('#m_cotizador').html()), "_self");
+    //previniendo el comportamiento default (shrug) 
+    e.preventDefault();
+
+
+    ////Esta mamada me tomo algunas horas , parece una mamada pero a la v! 
+});
+
+
 
 $("#s_submit_exporta").click(function(e) {	
 	//Valores de fecha para generar el archivo ///
@@ -2153,7 +2227,7 @@ $("#s_submit_exporta").click(function(e) {
     var table_html = table_div.outerHTML.replace(/ /g, '%20');
     a.href = data_type + ', ' + table_html;
     //Nombre del archivo 
-    a.download = 'catalogo_' + postfix +  '.xls';
+    a.download = 'cotizacion_' + postfix +  '.xls';
     //llamando la funcion
     a.click();
     //  Ya no se usa window.open('data:application/vnd.ms-excel,filename=catalogo.xls,' + encodeURIComponent($('#m_cotizador').html()), "_self");

@@ -329,6 +329,5 @@ mysql
 
 Ufff excelente sesion ! 
 base de datos para la cotizacion 
-
-
+create table cotizador (id int not null auto_increment primary key, linea varchar(25),marca varchar(25),modelo varchar (25), nombrecomer varchar(50),modelo_compat varchar(100),precio_dist_bajo  varchar(10), precio_dist varchar(10), precio_publico varchar(10));
 *******************************************************

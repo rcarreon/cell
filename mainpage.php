@@ -250,7 +250,7 @@ function optionCheck6(){
 		$uname =$_SESSION['uname'];
 	echo "<p>Bienvenid@<strong> $uname !</strong></p>";
 	?>			
-		<a id="logout" href=logout.php>Salir Sesion</a> 
+		<a id="logout" href=logout.php style="z-index:3;">Salir Sesion</a> 
 		<div style="position:relative;top:-35px;">
 			<p style="position:relative;top:5%;left:78%;"class="text-muted credit" ><?php  date_default_timezone_set('America/Hermosillo'); $date = date('Y'); echo "Cellcity $date" ?></p> 
 			<button class="btn btn-success" id="directorio" style="position:relative;left:70%;" >Ir a Directorio</button>
@@ -268,7 +268,7 @@ function optionCheck6(){
 					<button   type="button" class="btn btn-primary" id="s_submit_b" value="bujcar" >Buscar</button>
 					<button   type="button" class="btn btn-primary" id="s_submit_a"  value="folios">Folios</button>
 					<button   type="button" class="btn btn-primary" id="s_submit_c"  value="clientela ">Clientes</button>
-					<button   type="button" class="btn btn-primary" id="s_submit_co"  value="cotizando ">Cotizador</button>
+					<button   type="button" class="btn btn-primary" id="s_submit_co"  value="cotizando ">Cotizador</button> 
 				</div>
 				<?php if ($tipo == 2){?>
 					<br><button  style="display:none;"  class="btn" id="s_submit_mu"  value="manejausuario">Manejar Usuarios</button>
@@ -1732,17 +1732,23 @@ $('#regresando').click(function(){
 $("#a_submit").click(function(){
 	
 	var aimei 		= $('#a_imei').val();
-	var amodelo 	= $('#a_modelo').val();
-	var acliente 	= $('#a_cliente').val();
-	var adetalles 	= $('#a_detalles').val();
+	var AMODELO 	= $('#a_modelo').val();	
+	var amodelo 	= AMODELO.toUpperCase();
+	var ACLIENTE 	= $('#a_cliente').val();
+	var acliente 	= ACLIENTE.toUpperCase();
+	var ADETALLES 	= $('#a_detalles').val();
+	var adetalles 	= ADETALLES.toUpperCase();
 	var apass 		= $('#a_password').val();
 	var astatus     = $('input:radio[name=a_status]:checked').val();	
 	var aconta 		= $('#a_conta').val();
 	var afecha 		= $('#a_fecha').val();
 	var aemail 		= $('#a_email').val();
-	var arecibe 	= $('#a_recibe').val();
-	var ammodelo    = $('#a_mmodelo').val();
-	var abitacora    = $('#a_bitacora').val();
+	var ARECIBE 	= $('#a_recibe').val();
+	var arecibe 	= ARECIBE.toUpperCase();
+	var AMMODELO 	= $('#a_mmodelo').val();
+	var ammodelo    = AMMODELO.toUpperCase();
+	var ABITACORA   = $('#a_bitacora').val();
+	var abitacora   = ABITACORA.toUpperCase();
 	var adonde 	=  $('#a_sucurs option:selected').val();
 	var repara  = [];
 	   $(':checkbox:checked').each(function(i){

@@ -117,8 +117,8 @@ $tr7 = "
   $tr8 = "
 <table>
      <tr>
-        <td align=center><b>Codigo</b></td>
         <td align=center><b>Editar</b></td>
+        <td align=center><b>Codigo</b></td>
         <td align=center><b>Linea</b></td>
         <td align=center><b>Marca</b></td>
         <td align=center><b>Modelo</b></td>

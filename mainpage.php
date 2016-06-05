@@ -1625,7 +1625,7 @@ $(function(){
 
 
 		$('.s_cotizamar_auto').autocomplete({
-			source: 'ins.php?marcaauto=2',
+			source: 'ins.php?marcaautocotiza=2',
 			minLength: 2,
 			 select: function (a, b) {
         		$(this).val(b.item.value);

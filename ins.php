@@ -549,7 +549,7 @@ if(!empty($_GET['imeiauto'])) {
 if(!empty($_GET['marcaauto'])) {
     $marcass = $_GET['term'];
 
-    $query = "SELECT  marca FROM marcas WHERE marca LIKE '$marcass%'";
+    $query = "SELECT  DISTINCT marca FROM marcas WHERE marca LIKE '$marcass%'";
     $result = mysql_query($query, $con2);
     $marcases = array();
    
@@ -566,7 +566,7 @@ if(!empty($_GET['marcaauto'])) {
 if(!empty($_GET['modeloauto'])) {
     $modeloss = $_GET['term'];
 
-    $query = "SELECT  modelo FROM modelos WHERE modelo LIKE '$modeloss%'";
+    $query = "SELECT  DISTINCT modelo FROM modelos WHERE modelo LIKE '$modeloss%'";
     $result = mysql_query($query, $con2);
     $modeloss = array();
    
@@ -580,6 +580,25 @@ if(!empty($_GET['modeloauto'])) {
 }
 
 ///Autocompleta cotizador /// 
+if(!empty($_GET['marcaautocotiza'])) {
+    $marca = $_GET['term'];
+
+    $query = "SELECT DISTINCT  marca FROM cotizador WHERE marca LIKE '$marca%'";
+    $result = mysql_query($query, $con2);
+    $marca = array();
+   
+    while($dat = mysql_fetch_array($result)){
+        $marca[] = array(        
+           'label' => $dat["marca"],
+          );
+        
+    }
+    echo json_encode($marca);
+}
+
+
+
+
 if(!empty($_GET['modeloautocotiza'])) {
     $marca = $_GET['s_cotiza'];
 

@@ -363,31 +363,46 @@ function optionCheck6(){
 				<h4 align="center"> Agrega articulo Nuevo </h4>
 				<strong><font color="red">**</font>Codigo:
 				<div>
-					<input type="text" name="a_codigo_cot" id="a_codigo_cot" style="text-transform:uppercase;"> 
+					<input type="text" name="a_codigo_cat" id="a_codigo_cat" class="a_codigo_cat"  style="text-transform:uppercase;"> 
 				</div><br />
 				Marca:
 				<div>				
-					<input type="text" name="a_marca_cot" id="a_marca_cot" class="a_marca_cot" style="text-transform:uppercase;">
+					<input type="text" name="a_marca_cat" id="a_marca_cat" class="a_marca_cat" style="text-transform:uppercase;">
 				</div><br />
 				</font>Modelo:
  				<div>
- 					<input type="text" name="a_modelo_cot" id="a_modelo_cot" class="a_modelo_cot" style="text-transform:uppercase;">
+ 					<input type="text" name="a_modelo_cat" id="a_modelo_cat" class="a_modelo_cat" style="text-transform:uppercase;">
 				</div><br />
-				<font color="red">**</font>Articulo:
+				<font color="red">**</font>Linea:
 				<div>				
- 					<input type="text" name="a_producto_cot" style="text-transform:uppercase;" id="a_producto_cot" class="a_producto_cot">
+ 					<input type="text" name="a_linea_cat" style="text-transform:uppercase;" id="a_linea_cat" class="a_producto_cot">
 		
 				</div><br />
 				<br/>
 				<div style="position:relative;left:50%;bottom:280px;">
-				Descripcion:
+				Nombre Comercial:
 					<br>
-						<textarea id="a_descripcion_cot" name="a_descripcion_cot"  class="a_descripcion_cot"  style="width:250px;height:50px;text-transform:uppercase;"></textarea>
+						<input  type="text" id="a_nomcom_cat" name="a_nomcom_cat"  class="a_nomcom_cat"  style="text-transform:uppercase;">
 			    </div>
-			    <div style="position:relative;left:50%;bottom:250px;">
-				Precio:
+			    <div style="position:relative;left:50%;bottom:270px;">
+				Modelos Compatibles:
 					<br>
- 					<input type="text" name="a_precio_cot" id="a_precio_cot"   style="text-transform:uppercase;" class="a_precio_cot">
+						<input  type="text" id="a_modcompat_cat" name="a_modcompat_cat"  class="a_modcompat_cat"  style="text-transform:uppercase;">
+			    </div>
+			     <div style="position:relative;left:50%;bottom:260px;">
+				Distribuidor Bajo:
+					<br>
+						<input  type="text" id="a_distbajo_cat" name="a_distbajo_cat"  class="a_distbajo_cat"  style="text-transform:uppercase;" value="$">
+			    </div>
+			     <div style="position:relative;left:50%;bottom:250px;">
+			    Distribuidor:
+					<br>
+						<input  type="text" id="a_dist_cat" name="a_dist_cat"  class="a_dist_cat"  style="text-transform:uppercase;" value="$">
+			    </div>
+			    <div style="position:relative;left:50%;bottom:240px;">
+				PUblico:
+					<br>
+ 					<input type="text" name="a_publico_cat" id="a_publico_cat"   style="text-transform:uppercase;" class="a_publico_cat" value="$">
 			    </div>
 				</strong>
 				<div style="position:absolute;left:35%;bottom:10px;">
@@ -1003,10 +1018,10 @@ function optionCheck6(){
  					<input type="password" name="u_pass" id="u_pass">
 				</div><br />
 				Tipo de usuario:
-				<div>				
+				<div style="position:relative;left:7%;">				
 					<input type="radio" name="u_tipo" id="u_tipo" value="1">Administrador
 					<input type="radio" name="u_tipo" id="u_tipo" value="2">Regular	
-					<input type="radio" name="u_tipo" id="u_tipo" value="3">Administrador(*)
+					<input type="radio" name="u_tipo" id="u_tipo" value="3">Manejador de Catalogo(*)
 		
 				</div><br />
 				<br/>
@@ -1679,14 +1694,14 @@ $(function(){
 
 /////Agregar articulo nuevo ///////////
 
-		$('.a_marca_cot').autocomplete({
+		$('.a_marca_cat').autocomplete({
 
 			source: 'ins.php?marcaauto=1',
 			minLength: 2
 		
 		});
 
-		$('.a_modelo_cot').autocomplete({
+		$('.a_modelo_cat').autocomplete({
 
 			source: 'ins.php?modeloauto=1',
 			minLength: 2
@@ -2073,39 +2088,52 @@ $("#s_submit_cotiza").click(function() {
 });
 
 $('#c_submit_arti').click(function(){
-	var codigo = $('#a_codigo_cot').val();
+
+
+
+	var codigo = $('#a_codigo_cat').val();
 	var CODIGO = codigo.toUpperCase();
-	var marca  = $('#a_marca_cot').val();
+	var marca  = $('#a_marca_cat').val();
 	var MARCA = marca.toUpperCase();
-	var modelo  = $('#a_modelo_cot').val();
+	var modelo  = $('#a_modelo_cat').val();
 	var MODELO = modelo.toUpperCase();
-	var producto  =$('#a_producto_cot').val();
-	var PRODUCTO = producto.toUpperCase();
-	var descripcion  =$('#a_descripcion_cot').val();
-	var DESCRIPCION = descripcion.toUpperCase();
-	var precio  =$('#a_precio_cot').val();
-	var PRECIO = precio.toUpperCase();
+	var linea  =$('#a_linea_cat').val();
+	var LINEA = linea.toUpperCase();
+	var nomcat  =$('#a_nomcom_cat').val();
+	var NOMCAT = nomcat.toUpperCase();
+	var modcompat  =$('#a_modcompat_cat').val();
+	var MODCOMPAT = modcompat.toUpperCase();
+	var distbajo  =$('#a_distbajo_cat').val();
+	var DISTBAJO = distbajo.toUpperCase();
+	var dist  =$('#a_dist_cat').val();
+	var DIST = dist.toUpperCase();
+	var publico  =$('#a_publico_cat').val();
+	var PUBLICO = publico.toUpperCase();
 
 
 	//var modelo = $('#modelos').val();
-	if (!codigo || !producto){
-		alert('Para seguir tienes que proporcionar codigo y/o articulo nuevo');
+	if (!LINEA){
+		alert('Para seguir tienes que proporcionar  articulo nuevo');
 	}else {
 
 	$.ajax({
 			type:"GET",
-			url: "ins.php?artisubmit=1&a_codigo_cot="+CODIGO+"&a_marca_cot="+MARCA+"&a_modelo_cot="+MODELO+"&a_producto_cot="+PRODUCTO+"&a_descripcion_cot="+DESCRIPCION+"&a_precio_cot="+PRECIO,
+			url: "ins.php?artisubmit=1&a_marca_cat="+MARCA+"&a_modelo_cat="+MODELO+"&a_linea_cat="+LINEA+"&a_nomcom_cat="+NOMCAT+"&a_modcompat_cat="+MODCOMPAT+"&a_distbajo_cat="+DISTBAJO+"&a_dist_cat="+DIST+"&a_publico_cat="+PUBLICO+"&a_codigo_cat="+CODIGO,
 			dataType:"html",
 			success: function(resp){
 				$('#agregaarticulos').html(resp);
 			}
 		});
-		$('#a_codigo_cot').val('');
-		$('#a_marca_cot').val('');
-		$('#a_modelo_cot').val('');
-		$('#a_producto_cot').val('');
-		$('#a_descripcion_cot').val('');
-		$('#a_precio_cot').val('');
+		$('#a_codigo_cat').val('');
+		$('#a_marca_cat').val('');
+		$('#a_modelo_cat').val('');
+		$('#a_linea_cat').val('');
+		$('#a_nomcom_cat').val('');
+		$('#a_modcompat_cat').val('');
+		$('#a_distbajo_cat').val('');
+		$('#a_dist_cat').val('');
+		$('#a_publico_cat').val('');
+
 
 	}
 });
@@ -2165,20 +2193,27 @@ function bitacora(id){
 }
 
 function editararticulo(){
+				var CATEDITCODIGO		=  $("#cateditcodigo").val();
+				var cateditcodigo		=  CATEDITCODIGO.toUpperCase();
 				var cateditid			=  $("#cateditid").val();
-				var cateditlinea		=  $("#cateditlinea").val();
-				var cateditmarca		=  $("#cateditmar").val();
-				var cateditmodelo		=  $("#cateditmod").val();
-				var cateditnomcom		=  $("#cateditnomcom").val();
-				var cateditmodcompat	=  $("#cateditmodcompat").val();
+				var CATEDITLINEA		=  $("#cateditlinea").val();
+				var cateditlinea		=  CATEDITLINEA.toUpperCase();
+				var CATEDITMARCA		=  $("#cateditmar").val();
+				var cateditmarca		=  CATEDITMARCA.toUpperCase();
+				var CATEDITMODELO		=  $("#cateditmod").val();
+				var cateditmodelo		=  CATEDITMODELO.toUpperCase();
+				var CATEDITNOMCOM		=  $("#cateditnomcom").val();
+				var cateditnomcom		=  CATEDITNOMCOM.toUpperCase();
+				var CATEDITMODCOMPAT	=  $("#cateditmodcompat").val();
+				var cateditmodcompat	=  CATEDITMODCOMPAT.toUpperCase();
 				var cateditdistbajo		=  $("#cateditdistbajo").val();		
 				var cateditdist			=  $("#cateditdist").val();
-				var cateditpublico			=  $("#cateditpublico").val();	
+				var cateditpublico		=  $("#cateditpublico").val();	
 
 
 				$.ajax({
 					type: "GET",
-      				url: "ins.php?e_catalogolive=1&cateditlinea="+cateditlinea+"&cateditmod="+cateditmodelo+"&cateditnomcom="+cateditnomcom+"&cateditmodcompat="+cateditmodcompat+"&cateditdistbajo="+cateditdistbajo+"&cateditid="+cateditid+"&cateditmar="+cateditmarca+"&cateditdist="+cateditdist+"&cateditpublico="+cateditpublico,
+      				url: "ins.php?e_catalogolive=1&cateditlinea="+cateditlinea+"&cateditmod="+cateditmodelo+"&cateditnomcom="+cateditnomcom+"&cateditmodcompat="+cateditmodcompat+"&cateditdistbajo="+cateditdistbajo+"&cateditid="+cateditid+"&cateditmar="+cateditmarca+"&cateditdist="+cateditdist+"&cateditpublico="+cateditpublico+"&cateditcodigo="+cateditcodigo,
 					success: function(response){
 					$("#catalogotablalive").html(response);  
 					$('#editacatalogo').dialog("close");        

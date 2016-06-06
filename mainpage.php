@@ -1021,7 +1021,7 @@ function optionCheck6(){
 				<div style="position:relative;left:7%;">				
 					<input type="radio" name="u_tipo" id="u_tipo" value="1">Administrador
 					<input type="radio" name="u_tipo" id="u_tipo" value="2">Regular	
-					<input type="radio" name="u_tipo" id="u_tipo" value="3">Manejador de Catalogo(*)
+					<input type="radio" name="u_tipo" id="u_tipo" value="3">Admin de Catalogo(*)
 		
 				</div><br />
 				<br/>
@@ -2239,7 +2239,7 @@ $("#s_submit_catalogotodo").click(function(e) {
     var table_html = table_div.outerHTML.replace(/ /g, '%20');
     a.href = data_type + ', ' + table_html;
     //Nombre del archivo 
-    a.download = 'catalogo_' + postfix +  '.xls';
+    a.download = 'catalogo_' + postfix +  '.xlsx';
     //llamando la funcion
     a.click();
     //  Ya no se usa window.open('data:application/vnd.ms-excel,filename=catalogo.xls,' + encodeURIComponent($('#m_cotizador').html()), "_self");
@@ -2258,9 +2258,9 @@ $("#s_submit_exporta").click(function(e) {
     var day = dt.getDate();
     var month = dt.getMonth() + 1;
     var year = dt.getFullYear();
-    // not used var hour = dt.getHours();
-    // not used var mins = dt.getMinutes();
-    var postfix = day + "-" + month + "-" + year;
+    var hour = dt.getHours();
+    var mins = dt.getMinutes();
+    var postfix = day + "-" + month + "-" + year + "_"+hour+mins;
     //Crando un elemento link html temporal ( estos suportan config para nombre de archivo )
 	var a = document.createElement('a');
     var data_type = 'data:application/vnd.ms-excel';
@@ -2268,7 +2268,7 @@ $("#s_submit_exporta").click(function(e) {
     var table_html = table_div.outerHTML.replace(/ /g, '%20');
     a.href = data_type + ', ' + table_html;
     //Nombre del archivo 
-    a.download = 'cotizacion_' + postfix +  '.xls';
+    a.download = 'cotizacion_' + postfix +  '.xlsx';
     //llamando la funcion
     a.click();
     //  Ya no se usa window.open('data:application/vnd.ms-excel,filename=catalogo.xls,' + encodeURIComponent($('#m_cotizador').html()), "_self");

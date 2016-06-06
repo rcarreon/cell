@@ -2239,7 +2239,7 @@ $("#s_submit_catalogotodo").click(function(e) {
     var table_html = table_div.outerHTML.replace(/ /g, '%20');
     a.href = data_type + ', ' + table_html;
     //Nombre del archivo 
-    a.download = 'catalogo_' + postfix +  '.xlsx';
+    a.download = 'catalogo_' + postfix +  '.xls';
     //llamando la funcion
     a.click();
     //  Ya no se usa window.open('data:application/vnd.ms-excel,filename=catalogo.xls,' + encodeURIComponent($('#m_cotizador').html()), "_self");
@@ -2268,7 +2268,7 @@ $("#s_submit_exporta").click(function(e) {
     var table_html = table_div.outerHTML.replace(/ /g, '%20');
     a.href = data_type + ', ' + table_html;
     //Nombre del archivo 
-    a.download = 'cotizacion_' + postfix +  '.xlsx';
+    a.download = 'cotizacion_' + postfix +  '.xls';
     //llamando la funcion
     a.click();
     //  Ya no se usa window.open('data:application/vnd.ms-excel,filename=catalogo.xls,' + encodeURIComponent($('#m_cotizador').html()), "_self");

@@ -2229,9 +2229,9 @@ $("#s_submit_catalogotodo").click(function(e) {
     var day = dt.getDate();
     var month = dt.getMonth() + 1;
     var year = dt.getFullYear();
-    // not used var hour = dt.getHours();
-    // not used var mins = dt.getMinutes();
-    var postfix = day + "-" + month + "-" + year;
+    var hour = dt.getHours();
+    var mins = dt.getMinutes();
+    var postfix = day + "-" + month + "-" + year + "_"+hour+mins;
     //Crando un elemento link html temporal ( estos suportan config para nombre de archivo )
 	var a = document.createElement('a');
     var data_type = 'data:application/vnd.ms-excel';

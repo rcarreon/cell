@@ -754,7 +754,6 @@ if (!empty($_GET['s_catalogotodo'])){
     while($dato = mysql_fetch_row($result)){
           echo "<tr>";
           //echo "<td align=center ><a href=updateclientes.php?id=".$dato[0].">Editar</a></td> "; 
-            echo "<td align=center tabindex=6 >$dato[9]</td>";
             echo "<td align=center tabindex=1 >$dato[1]</td>";
             echo "<td align=center  tabindex=2 >$dato[2]</td>";
             echo "<td align=center  tabindex=3 >$dato[3]</td>";
@@ -763,6 +762,8 @@ if (!empty($_GET['s_catalogotodo'])){
             echo "<td align=center tabindex=6 >$dato[6]</td>";
             echo "<td align=center tabindex=6 >$dato[7]</td>";
             echo "<td align=center tabindex=6 >$dato[8]</td>";
+            echo "<td align=center tabindex=6 >$dato[9]</td>";
+
           echo "</tr>";
     } 
 

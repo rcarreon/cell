@@ -253,8 +253,8 @@ function optionCheck6(){
 		<a id="logout" href=logout.php style="z-index:3;">Salir Sesion</a> 
 		<div style="position:relative;top:-35px;">
 			<p style="position:relative;top:5%;left:78%;"class="text-muted credit" ><?php  date_default_timezone_set('America/Hermosillo'); $date = date('Y'); echo "Cellcity $date" ?></p> 
-			<button class="btn btn-success" id="directorio" style="position:relative;left:70%;" >Ir a Directorio</button>
-			<button class="btn btn-success " id="s_submit_generacatalogo" style="position:relative;left:70%;" >Generar Catalogo</button>
+			<button class="btn btn-success" id="directorio" style="position:relative;left:65%;" >Directorio de Sucursales</button>
+			<button class="btn btn-success " id="s_submit_generacatalogo" style="position:relative;left:65%;" >Generar Catalogo</button>
 			<button class="btn btn-success " id="s_submit_catalogotodo" style="position:relative;left:70%;display:none;" >Bajar Catalogo</button></br></br>
 		</div>
 
@@ -303,7 +303,6 @@ function optionCheck6(){
 							<option name="s_donde" value="Matriz" > Matriz </option>
 							<option name="s_donde" value="Quiroga" > Quiroga </option> 
 							<option name="s_donde" value="Progreso" > Progreso </option> 
-							<option name="s_donde" value="Dila" > Dila </option> 
 							<option name="s_donde" value="Patio" > Patio </option> 
 							<option name="s_donde" value="Monteverde">Plaza Monteverde</option>
 							<option name="s_donde" value= "P.Maria">Plaza Maria</option>
@@ -361,45 +360,44 @@ function optionCheck6(){
 		<div class="container" id="agregaarticulo" style="display:none;">			
 			<form  method="get" >
 				<h4 align="center"> Agrega articulo Nuevo </h4>
-				<strong><font color="red">**</font>Codigo:
+				<strong><font color="red">**</font>Clave:
 				<div>
 					<input type="text" name="a_codigo_cat" id="a_codigo_cat" class="a_codigo_cat"  style="text-transform:uppercase;"> 
-				</div><br />
+				</div>
+				Descripcion:
+				<div>				
+					<input type="text" name="a_descripcion_cat" id="a_descripcion_cat" class="a_descripcion_cat" style="text-transform:uppercase;">
+				</div>
 				Marca:
 				<div>				
 					<input type="text" name="a_marca_cat" id="a_marca_cat" class="a_marca_cat" style="text-transform:uppercase;">
-				</div><br />
+				</div>
 				</font>Modelo:
  				<div>
  					<input type="text" name="a_modelo_cat" id="a_modelo_cat" class="a_modelo_cat" style="text-transform:uppercase;">
-				</div><br />
+				</div>
 				<font color="red">**</font>Linea:
 				<div>				
  					<input type="text" name="a_linea_cat" style="text-transform:uppercase;" id="a_linea_cat" class="a_producto_cot">
 		
-				</div><br />
+				</div>
 				<br/>
-				<div style="position:relative;left:50%;bottom:280px;">
+				<div style="position:relative;left:50%;bottom:240px;">
 				Nombre Comercial:
 					<br>
 						<input  type="text" id="a_nomcom_cat" name="a_nomcom_cat"  class="a_nomcom_cat"  style="text-transform:uppercase;">
 			    </div>
-			    <div style="position:relative;left:50%;bottom:270px;">
+			    <div style="position:relative;left:50%;bottom:230px;">
 				Modelos Compatibles:
 					<br>
 						<input  type="text" id="a_modcompat_cat" name="a_modcompat_cat"  class="a_modcompat_cat"  style="text-transform:uppercase;">
-			    </div>
-			     <div style="position:relative;left:50%;bottom:260px;">
-				Distribuidor Bajo:
-					<br>
-						<input  type="text" id="a_distbajo_cat" name="a_distbajo_cat"  class="a_distbajo_cat"  style="text-transform:uppercase;" value="$">
-			    </div>
-			     <div style="position:relative;left:50%;bottom:250px;">
+			    </div>			     
+			     <div style="position:relative;left:50%;bottom:210px;">
 			    Distribuidor:
 					<br>
 						<input  type="text" id="a_dist_cat" name="a_dist_cat"  class="a_dist_cat"  style="text-transform:uppercase;" value="$">
 			    </div>
-			    <div style="position:relative;left:50%;bottom:240px;">
+			    <div style="position:relative;left:50%;bottom:200px;">
 				PUblico:
 					<br>
  					<input type="text" name="a_publico_cat" id="a_publico_cat"   style="text-transform:uppercase;" class="a_publico_cat" value="$">
@@ -561,7 +559,6 @@ function optionCheck6(){
 								<option value="Matriz"  selected="selected"> Matriz</option>
 								<option value="Quiroga"> Colosio - Quiroga</option>
 								<option  value= "Progreso">Progreso </option>
-								<option  value= "Dila">Dila </option>
 								<option  value= "Patio">Patio </option>
 								<option  value= "Monteverde">Plaza Monteverde</option>
 								<option  value= "P.Maria">Plaza Maria</option>
@@ -946,10 +943,7 @@ function optionCheck6(){
 						<tr>
 					    <td><label> Quiroga:</label></td><td> Blvd. Quiroga esquina con Colosio, Local 18,Hermosillo, Sonora ,  Teléfono 118-94-92</td> 
 						   <td>Lunes a Viernes de 10:00 - 20:00 horas y Sábados de 10:00 - 18:00 horas </td>
-						 </tr> 
-						<tr><td><label> Dila:</label></td><td> Blvd. Morelos #349 Local 6 Hermosillo, Sonora. Teléfono:(662) 211 33 90</td> 
-						   <td>Lunes a Viernes de 9:00 - 20:00 horas y Sábados de 10:00 - 18:00 horas </td>
-						</tr>
+						 </tr> 						
 						<tr><td><label> Patio:</label></td><td> Blvd. Periferico Oriente #1247, Local F10  Hermosillo,Sonora , Cel: (6624) 26 90 80</td> 
 						   <td>Lunes a Domingo 10:00 - 17:00 horas </td>
 						 </tr>
@@ -2093,6 +2087,8 @@ $('#c_submit_arti').click(function(){
 
 	var codigo = $('#a_codigo_cat').val();
 	var CODIGO = codigo.toUpperCase();
+	var descripcion = $('#a_descripcion_cat').val();
+	var DESCRIPCION = descripcion.toUpperCase();
 	var marca  = $('#a_marca_cat').val();
 	var MARCA = marca.toUpperCase();
 	var modelo  = $('#a_modelo_cat').val();
@@ -2103,8 +2099,6 @@ $('#c_submit_arti').click(function(){
 	var NOMCAT = nomcat.toUpperCase();
 	var modcompat  =$('#a_modcompat_cat').val();
 	var MODCOMPAT = modcompat.toUpperCase();
-	var distbajo  =$('#a_distbajo_cat').val();
-	var DISTBAJO = distbajo.toUpperCase();
 	var dist  =$('#a_dist_cat').val();
 	var DIST = dist.toUpperCase();
 	var publico  =$('#a_publico_cat').val();
@@ -2112,19 +2106,20 @@ $('#c_submit_arti').click(function(){
 
 
 	//var modelo = $('#modelos').val();
-	if (!LINEA){
-		alert('Para seguir tienes que proporcionar  articulo nuevo');
+	if (!LINEA || !CODIGO){
+		alert('Para seguir tienes que proporcionar clave y nombre de Linea');
 	}else {
 
 	$.ajax({
 			type:"GET",
-			url: "ins.php?artisubmit=1&a_marca_cat="+MARCA+"&a_modelo_cat="+MODELO+"&a_linea_cat="+LINEA+"&a_nomcom_cat="+NOMCAT+"&a_modcompat_cat="+MODCOMPAT+"&a_distbajo_cat="+DISTBAJO+"&a_dist_cat="+DIST+"&a_publico_cat="+PUBLICO+"&a_codigo_cat="+CODIGO,
+			url: "ins.php?artisubmit=1&a_marca_cat="+MARCA+"&a_modelo_cat="+MODELO+"&a_linea_cat="+LINEA+"&a_nomcom_cat="+NOMCAT+"&a_modcompat_cat="+MODCOMPAT+"&a_dist_cat="+DIST+"&a_publico_cat="+PUBLICO+"&a_codigo_cat="+CODIGO+"&a_descripcion_cat="+DESCRIPCION,
 			dataType:"html",
 			success: function(resp){
 				$('#agregaarticulos').html(resp);
 			}
 		});
 		$('#a_codigo_cat').val('');
+		$('#a_descripcion_cat').val('');
 		$('#a_marca_cat').val('');
 		$('#a_modelo_cat').val('');
 		$('#a_linea_cat').val('');
@@ -2193,8 +2188,11 @@ function bitacora(id){
 }
 
 function editararticulo(){
+
 				var CATEDITCODIGO		=  $("#cateditcodigo").val();
 				var cateditcodigo		=  CATEDITCODIGO.toUpperCase();
+				var CATEDITDESCRIPCION  =  $("#cateditdescripcion").val();
+				var cateditdescripcion  =  CATEDITDESCRIPCION.toUpperCase();
 				var cateditid			=  $("#cateditid").val();
 				var CATEDITLINEA		=  $("#cateditlinea").val();
 				var cateditlinea		=  CATEDITLINEA.toUpperCase();
@@ -2206,14 +2204,13 @@ function editararticulo(){
 				var cateditnomcom		=  CATEDITNOMCOM.toUpperCase();
 				var CATEDITMODCOMPAT	=  $("#cateditmodcompat").val();
 				var cateditmodcompat	=  CATEDITMODCOMPAT.toUpperCase();
-				var cateditdistbajo		=  $("#cateditdistbajo").val();		
 				var cateditdist			=  $("#cateditdist").val();
 				var cateditpublico		=  $("#cateditpublico").val();	
 
 
 				$.ajax({
 					type: "GET",
-      				url: "ins.php?e_catalogolive=1&cateditlinea="+cateditlinea+"&cateditmod="+cateditmodelo+"&cateditnomcom="+cateditnomcom+"&cateditmodcompat="+cateditmodcompat+"&cateditdistbajo="+cateditdistbajo+"&cateditid="+cateditid+"&cateditmar="+cateditmarca+"&cateditdist="+cateditdist+"&cateditpublico="+cateditpublico+"&cateditcodigo="+cateditcodigo,
+      				url: "ins.php?e_catalogolive=1&cateditlinea="+cateditlinea+"&cateditmod="+cateditmodelo+"&cateditnomcom="+cateditnomcom+"&cateditmodcompat="+cateditmodcompat+"&cateditid="+cateditid+"&cateditmar="+cateditmarca+"&cateditdist="+cateditdist+"&cateditpublico="+cateditpublico+"&cateditcodigo="+cateditcodigo+"&cateditdescripcion="+cateditdescripcion,
 					success: function(response){
 					$("#catalogotablalive").html(response);  
 					$('#editacatalogo').dialog("close");        

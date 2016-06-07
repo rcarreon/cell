@@ -104,13 +104,13 @@ $tr6 ="
 $tr7 = "
 <table>
      <tr>
-        <td align=center><b>Codigo</b></td>
+        <td align=center><b>Clave</b></td>
+        <td align=center><b>Descripcion</b></td>      
         <td align=center><b>Linea</b></td>
         <td align=center><b>Marca</b></td>
         <td align=center><b>Modelo</b></td>
         <td align=center><b>Nombre Comercial</b></td>
-        <td align=center><b>Modelos compatibles</b></td>
-        <td align=center><b>Distribuidor Bajo</b></td>
+        <td align=center><b>Modelos compatibles</b></td>        
         <td align=center><b>Distribuidor</b></td>
         <td align=center><b>Publico</b></td>";
 
@@ -118,13 +118,13 @@ $tr7 = "
 <table>
      <tr>
         <td align=center><b>Editar</b></td>
-        <td align=center><b>Codigo</b></td>
+        <td align=center><b>Clave</b></td>
+        <td align=center><b>Descripcion</b></td>      
         <td align=center><b>Linea</b></td>
         <td align=center><b>Marca</b></td>
         <td align=center><b>Modelo</b></td>
         <td align=center><b>Nombre Comercial</b></td>
-        <td align=center><b>Modelos compatibles</b></td>
-        <td align=center><b>Distribuidor Bajo</b></td>
+        <td align=center><b>Modelos compatibles</b></td>        
         <td align=center><b>Distribuidor</b></td>
         <td align=center><b>Publico</b></td>";
 
@@ -481,28 +481,28 @@ if(!empty($_GET['modsubmit'])){
 }
 //Agrega articulo para cotizador ///////
 if(!empty($_GET['artisubmit'])){ 
-
-    $codigo    = $_GET['a_codigo_cat'];
-    $marca    = $_GET['a_marca_cat'];
-    $modelo   = $_GET['a_modelo_cat'];
-    $linea  =$_GET['a_linea_cat'];
-    $nomcomer =$_GET['a_nomcom_cat'];
-    $modcompat  =   $_GET['a_modcompat_cat'];
-    $distbajo  =   $_GET['a_distbajo_cat'];
-    $dist  =   $_GET['a_dist_cat'];
-    $publico  =   $_GET['a_publico_cat'];
+    
+    $clave        =   $_GET['a_codigo_cat'];
+    $descripcion  =   $_GET['a_descripcion_cat'];
+    $marca        =   $_GET['a_marca_cat'];
+    $modelo       =   $_GET['a_modelo_cat'];
+    $linea        =   $_GET['a_linea_cat'];
+    $nomcomer     =   $_GET['a_nomcom_cat'];
+    $modcompat    =   $_GET['a_modcompat_cat'];
+    $dist         =   $_GET['a_dist_cat'];
+    $publico      =   $_GET['a_publico_cat'];
 
 
 
     //$modelo   = $_GET['modelos'];
-    $q = mysql_query("SELECT  modelo  from  cotizador  where (modelo = '$modelo' AND linea = '$linea')",$con2);
+    $q = mysql_query("SELECT  modelo  from  cotizador  where (modelo = '$modelo' AND clave = '$clave')",$con2);
     $ress = mysql_fetch_row($q); 
    if ($ress) {
            echo "<script type=text/javascript>alert('Codigo $ress[0] ya existe y no se puede duplicar, favor de ingresar con otro nombre ')</script>";
            //exit(1);
     } else {  
     
-    $query = "INSERT INTO cotizador (linea,marca,modelo,nombrecomer,modelo_compat,precio_dist_bajo,precio_dist,precio_publico,codigo) VALUES ('$linea','$marca','$modelo','$nomcomer','$modcompat', '$distbajo','$dist','$publico','$codigo')";
+    $query = "INSERT INTO cotizador (linea,marca,modelo,nombrecomer,modelo_compat,precio_dist,precio_publico,clave,descripcion) VALUES ('$linea','$marca','$modelo','$nomcomer','$modcompat','$dist','$publico','$clave','$descripcion')";
       $result = mysqli_query($con,$query);
     if(!$result){
         die('Couldnt query'. mysqli_error($con));
@@ -692,15 +692,15 @@ if (!empty($_GET['s_cotizador'])){
     while($dato = mysql_fetch_row($result)){
           echo "<tr>";
           //echo "<td align=center ><a href=updateclientes.php?id=".$dato[0].">Editar</a></td> "; 
-            echo "<td align=center  >$dato[9]</td>";
             echo "<td align=center  >$dato[1]</td>";
             echo "<td align=center  >$dato[2]</td>";
             echo "<td align=center  >$dato[3]</td>";
-            echo "<td align=center >$dato[4]</td>";
+            echo "<td align=center  >$dato[4]</td>";
             echo "<td align=center >$dato[5]</td>";
-            echo "<td align=center  >$dato[6]</td>";
+            echo "<td align=center >$dato[6]</td>";
             echo "<td align=center  >$dato[7]</td>";
             echo "<td align=center  >$dato[8]</td>";
+            echo "<td align=center  >$dato[9]</td>";
           echo "</tr>";
     } 
 
@@ -727,15 +727,15 @@ if (!empty($_GET['s_catalogo'])){
 
           echo "<td align=center><button  type=\"button\"   class=\"btn  catalogo\" onClick=catalogo($dato[0]);>Edita</button></td>";
           //echo "<td align=center ><a href=updateclientes.php?id=".$dato[0].">Editar</a></td> "; 
-            echo "<td align=center tabindex=6 >$dato[9]</td>";
-            echo "<td align=center tabindex=1 >$dato[1]</td>";
-            echo "<td align=center  tabindex=2 >$dato[2]</td>";
-            echo "<td align=center  tabindex=3 >$dato[3]</td>";
-            echo "<td align=center tabindex=4 >$dato[4]</td>";
-            echo "<td align=center tabindex=5 >$dato[5]</td>";
-            echo "<td align=center tabindex=6 >$dato[6]</td>";
-            echo "<td align=center tabindex=6 >$dato[7]</td>";
-            echo "<td align=center tabindex=6 >$dato[8]</td>";           
+            echo "<td align=center  >$dato[1]</td>";
+            echo "<td align=center  >$dato[2]</td>";
+            echo "<td align=center  >$dato[3]</td>";
+            echo "<td align=center  >$dato[4]</td>";
+            echo "<td align=center >$dato[5]</td>";
+            echo "<td align=center >$dato[6]</td>";
+            echo "<td align=center  >$dato[7]</td>";
+            echo "<td align=center  >$dato[8]</td>";
+            echo "<td align=center  >$dato[9]</td>";       
 
          echo "</tr>";
     } 
@@ -779,16 +779,16 @@ if(!empty($_GET['idcat'])){
     $sql2 = "SELECT * from cotizador where id = '$catid'"; 
     $rec2 = mysql_query($sql2,$con2) or die ("Query failed: ".mysql_error()."Actual query:".$query); 
     $rows2 = mysql_fetch_row($rec2);
-     echo "<strong>Codigo: <br> <input type=\"text\"   tabindex=1 id=\"cateditcodigo\" style=\"text-transform:uppercase;\" value=\"$rows2[9]\"><br> ";
-     echo "<strong>Linea: <br> <input type=\"text\"   tabindex=2 id=\"cateditlinea\" style=\"text-transform:uppercase;\" value=\"$rows2[1]\"><br> ";
+     echo "<strong>Clave: <br> <input type=\"text\"   tabindex=1 id=\"cateditcodigo\" style=\"text-transform:uppercase;\" value=\"$rows2[1]\"><br> ";
+     echo "<strong>Descripcion: <br> <input type=\"text\"   tabindex=1 id=\"cateditdescripcion\" style=\"text-transform:uppercase;\" value=\"$rows2[2]\"><br> ";
+     echo "<strong>Linea: <br> <input type=\"text\"   tabindex=2 id=\"cateditlinea\" style=\"text-transform:uppercase;\" value=\"$rows2[3]\"><br> ";
      echo "<input type=\"text\"     id=\"cateditid\" style=\"display:none;text-transform:uppercase;\" value=\"$rows2[0]\"><br>";
-     echo "Marca:  <br> <input type=\"text\"   tabindex=3  id=\"cateditmar\" style=\"text-transform:uppercase;\" value=\"$rows2[2]\"><br>";
-     echo "Modelo: <br> <input type=\"text\"   tabindex=4  id=\"cateditmod\" style=\"text-transform:uppercase;\" value=\"$rows2[3]\"><br>";
-     echo "Nombre Comercial: <br> <input type=\"text\"   tabindex=5  id=\"cateditnomcom\" style=\"text-transform:uppercase;\" value=\"$rows2[4]\"><br>";
-     echo "Modelos compatibles: <br> <input type=\"text\"   tabindex=6  id=\"cateditmodcompat\" style=\"text-transform:uppercase;\" value=\"$rows2[5]\"><br>";
-     echo "Distribuidor Bajo: <br>  <input type=\"text\"   tabindex=7  id=\"cateditdistbajo\" style=\"text-transform:uppercase;\" value=\"$rows2[6]\"></strong><br><br>";
-     echo "Distribuidor : <br>  <input type=\"text\"   tabindex=8 id=\"cateditdist\" style=\"text-transform:uppercase;\" value=\"$rows2[7]\"></strong><br><br>";
-     echo "Publico: <br>  <input type=\"text\"   tabindex=9  id=\"cateditpublico\" style=\"text-transform:uppercase;\" value=\"$rows2[8]\"></strong><br><br>";
+     echo "Marca:  <br> <input type=\"text\"   tabindex=3  id=\"cateditmar\" style=\"text-transform:uppercase;\" value=\"$rows2[4]\"><br>";
+     echo "Modelo: <br> <input type=\"text\"   tabindex=4  id=\"cateditmod\" style=\"text-transform:uppercase;\" value=\"$rows2[5]\"><br>";
+     echo "Nombre Comercial: <br> <input type=\"text\"   tabindex=5  id=\"cateditnomcom\" style=\"text-transform:uppercase;\" value=\"$rows2[6]\"><br>";
+     echo "Modelos compatibles: <br> <input type=\"text\"   tabindex=6  id=\"cateditmodcompat\" style=\"text-transform:uppercase;\" value=\"$rows2[7]\"><br>";     
+     echo "Distribuidor : <br>  <input type=\"text\"   tabindex=8 id=\"cateditdist\" style=\"text-transform:uppercase;\" value=\"$rows2[8]\"></strong><br><br>";
+     echo "Publico: <br>  <input type=\"text\"   tabindex=9  id=\"cateditpublico\" style=\"text-transform:uppercase;\" value=\"$rows2[9]\"></strong><br><br>";
      echo "<button type=\"button\"   tabindex=8  id=\"catalogolive\" class=\"btn btn-primary catalogolive\" onClick=editararticulo();>Guardar</button>";
 
 }
@@ -796,15 +796,14 @@ if(!empty($_GET['idcat'])){
 
 if(!empty($_GET['e_catalogolive'])){
 
-
+  $live_descripcion   = $_GET['cateditdescripcion'];
   $live_codigo        = $_GET['cateditcodigo'];
   $live_id            = $_GET['cateditid'];
   $live_linea         = $_GET['cateditlinea'];
   $live_marca         = $_GET['cateditmar'];
   $live_modelo        = $_GET['cateditmod'];
   $live_nombrecom     = $_GET['cateditnomcom'];   
-  $live_modelocomp    = $_GET['cateditmodcompat'];
-  $live_distbajo      = $_GET['cateditdistbajo'];
+  $live_modelocomp    = $_GET['cateditmodcompat'];  
   $live_dist          = $_GET['cateditdist'];
   $live_publico       = $_GET['cateditpublico'];
 
@@ -812,12 +811,12 @@ if(!empty($_GET['e_catalogolive'])){
 
 
   
-                $query = "UPDATE cotizador SET linea = '$live_linea', marca = '$live_marca', modelo = '$live_modelo', nombrecomer = '$live_nombrecom', modelo_compat = '$live_modelocomp', precio_dist_bajo = '$live_distbajo' , precio_dist = '$live_dist' , precio_publico = '$live_publico' , codigo = '$live_codigo'  WHERE id = '$live_id'";
+                $query = "UPDATE cotizador SET linea = '$live_linea', marca = '$live_marca', modelo = '$live_modelo', nombrecomer = '$live_nombrecom', modelo_compat = '$live_modelocomp', precio_dist = '$live_dist' , precio_publico = '$live_publico' , clave = '$live_codigo', descripcion = '$live_descripcion' WHERE id = '$live_id'";
                 $result = mysqli_query($con,$query);
       if (!$result){
             die('Coudnt query'. mysqli_error($con));
           } else {
-                echo "<script type=text/javascript>alert('Articulo editado con exito  $live_id ,  $live_linea , $live_marca , $live_modelo, $live_nombrecom, $live_modelocomp , $live_distbajo, $live_dist, $live_publico ')</script>";
+                echo "<script type=text/javascript>alert('Articulo editado con exito  $live_id ,  $live_linea , $live_marca , $live_modelo, $live_nombrecom, $live_modelocomp , $live_dist, $live_publico , $live_descripcion ')</script>";
           }
 
 }

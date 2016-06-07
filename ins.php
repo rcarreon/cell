@@ -803,7 +803,7 @@ if(!empty($_GET['e_catalogolive'])){
   $live_linea         = $_GET['cateditlinea'];
   $live_marca         = $_GET['cateditmar'];
   $live_modelo        = $_GET['cateditmod'];
-  $live_nombrecom     = $_GET['cateditnomcom'];   
+  $live_nombrecom     = mysql_real_escape_string($_GET['cateditnomcom']);   
   $live_modelocomp    = $_GET['cateditmodcompat'];  
   $live_dist          = $_GET['cateditdist'];
   $live_publico       = $_GET['cateditpublico'];

@@ -255,7 +255,7 @@ function optionCheck6(){
 			<p style="position:relative;top:5%;left:78%;"class="text-muted credit" ><?php  date_default_timezone_set('America/Hermosillo'); $date = date('Y'); echo "Cellcity $date" ?></p> 
 			<button class="btn btn-success" id="directorio" style="position:relative;left:65%;" >Directorio de Sucursales</button>
 			<button class="btn btn-success " id="s_submit_generacatalogo" style="position:relative;left:65%;" >Generar Catalogo</button>
-			<button class="btn btn-success " id="s_submit_catalogotodo" style="position:relative;left:70%;display:none;" >Bajar Catalogo</button></br></br>
+			<button class="btn btn-success " id="s_submit_catalogotodo" style="position:relative;left:65%;display:none;" >Bajar Catalogo</button></br></br>
 		</div>
 
 		<div align="center" >				

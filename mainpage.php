@@ -937,20 +937,20 @@ function optionCheck6(){
 				<div  style="display:none;" style="position:absolute;top:20%;padding-left:30em;" align="center" class="direct">
 					<table    class="table table-striped table-hover tablesorter">	
 						<tr>
-						<td><label> Matriz: </label></td><td> Bernardo Reyes # 178 RFC: LCO9906169Y0, Hermosillo, Sonora, Teléfono 301-64-64, 285-58-72 y 215-14-93</td> 
-						   <td>Lun a Vie de 9:00 - 20:00 horas Sábados de 10:00 - 13:00 horas </td>
+						<td><label> Matriz: </label></td><td> Bernardo Reyes # 178 RFC: LCO9906169Y0, Hermosillo, Sonora, Tel. 301-64-64, 285-58-72, 215-14-93</td> 
+						   <td>Lun a Vie de 9:00 - 18:00 horas Sábados de 9:00 - 14:00 horas </td>
 						</tr> 
 						<tr>
-					    <td><label> Quiroga:</label></td><td> Blvd. Quiroga esquina con Colosio, Local 18,Hermosillo, Sonora ,  Teléfono 118-94-92</td> 
+					    <td><label> Quiroga:</label></td><td> Blvd. Quiroga esquina con Colosio, Local 18,Hermosillo, Sonora ,  Tel. 118-94-92</td> 
 						   <td>Lunes a Viernes de 10:00 - 20:00 horas y Sábados de 10:00 - 18:00 horas </td>
 						 </tr> 						
 						<tr><td><label> Patio:</label></td><td> Blvd. Periferico Oriente #1247, Local F10  Hermosillo,Sonora , Cel: (6624) 26 90 80</td> 
 						   <td>Lunes a Domingo 10:00 - 17:00 horas </td>
 						 </tr>
-						<tr><td><label> Progreso:</label></td><td> Blvd. Progreso #140-X entre Reyes y Yañez Hermosillo, Sonora. Teléfono: (662) 284 28 04</td> 
+						<tr><td><label> Progreso:</label></td><td> Blvd. Progreso #140-X entre Reyes y Yañez Hermosillo, Sonora. Tel. (662) 284 28 04</td> 
 						   <td>Lunes a Viernes 10:00 - 21:00 horas y Sabado 11:00 - 18:00 horas </td>
 						</tr>
-						<tr><td><label> Monteverde:</label></td><td> Veracruz #270, Local 13, Hermosillo, Sonora. Teléfono: (662) 210 70 75</td> 
+						<tr><td><label> Monteverde:</label></td><td> Veracruz #270, Local 13, Hermosillo, Sonora. Tel. (662) 210 70 75</td> 
 						   <td>Lunes a Viernes  09:00 - 19:00 horas Sabados de 9:00 - 17:00 horas </td>
 						 </tr>
 						<tr><td><label> Plaza Maria:</label></td><td> Blvd. Camino del Seri #331, Local 331-B., Hermosillo, Sonora, Celular: (6622)-20 31 41</td> 
@@ -1765,8 +1765,8 @@ $("#a_submit").click(function(){
 	   });
 	   ////  ESTO es para detectaar que sucursl eligio  y poner la direccion y datos correspondientes, faltan las demas msucursaales //////////
 	if (adonde == "Matriz"){
-		var adnd = "Llamas Comunicación, S.A. de C.V. Matriz: Bernardo Reyes # 178 RFC: LCO9906169Y0, Hermosillo, Sonora, Teléfono 301-64-64, 285-58-72 y 215-14-93 ";
-		var hora =  "Lun a Vie de 9:00 - 20:00 horas Sábados de 10:00 - 13:00 horas";			
+		var adnd = "Llamas Comunicación, S.A. de C.V. Matriz: Bernardo Reyes # 178 RFC: LCO9906169Y0, Hermosillo, Sonora, Tel. 301-64-64, 285-58-72, 215-14-93 ";
+		var hora =  "Lun a Vie de 9:00 - 18:00 horas Sábados de 9:00 - 14:00 horas";			
 		document.getElementById('hora').innerHTML= hora;
 		document.getElementById('adnd').innerHTML= adnd;
 

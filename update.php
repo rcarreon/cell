@@ -717,19 +717,19 @@ function 	updateoutput(){
 
 			var adonde 	=  document.getElementById('editsucursal').getAttribute("value");
 			if (adonde == "Matriz"){
-				var adnd = "Llamas Comunicación, S.A. de C.V. Matriz: Bernardo Reyes # 178 RFC: LCO9906169Y0, Hermosillo, Sonora, Teléfono 301-64-64, 285-58-72 y 215-14-93";
-				var hora =  "Lun a Vie de 9:00 - 20:00 horas Sábados de 10:00 - 13:00 horas";			
+				var adnd = "Llamas Comunicación, S.A. de C.V. Matriz: Bernardo Reyes # 178 RFC: LCO9906169Y0, Hermosillo, Sonora, Tel. 301-64-64, 285-58-72, 215-14-93";
+				var hora =  "Lun a Vie de 9:00 - 18:00 horas Sábados de 09:00 - 14:00 horas";			
 				document.getElementById('hora').innerHTML= hora;
 				document.getElementById('adnd').innerHTML= adnd;
 
 			}else if (adonde == "Quiroga"){
-				var adnd = "Blvd. Quiroga esquina con Colosio, Local 18,Hermosillo, Sonora ,  Teléfono 118-94-92   ";
+				var adnd = "Blvd. Quiroga esquina con Colosio, Local 18,Hermosillo, Sonora ,  Tel. 118-94-92   ";
 				var hora = "Lunes a Viernes de 10:00 - 20:00 horas y Sábados de 10:00 - 18:00 horas";
 				document.getElementById('hora').innerHTML= hora;
 				document.getElementById('adnd').innerHTML= adnd;
 
 			}else if (adonde == "Dila"){
-				var adnd = "Blvd. Morelos #349 Local 6 Hermosillo, Sonora. Teléfono:(662) 211 33 90";
+				var adnd = "Blvd. Morelos #349 Local 6 Hermosillo, Sonora. Tel. (662) 211 33 90";
 				var hora = "Lunes a Viernes de 9:00 - 20:00 horas y Sábados de 10:00 - 18:00 horas";				
 				document.getElementById('hora').innerHTML= hora;
 				document.getElementById('adnd').innerHTML= adnd;
@@ -741,13 +741,13 @@ function 	updateoutput(){
 				document.getElementById('adnd').innerHTML= adnd;
 
 			}else 	if (adonde == "Progreso"){
-				var adnd = "Blvd. Progreso #140-X entre Reyes y Yañez Hermosillo, Sonora. Teléfono: (662) 284 28 04";
+				var adnd = "Blvd. Progreso #140-X entre Reyes y Yañez Hermosillo, Sonora. Tel. (662) 284 28 04";
 				var hora = "Lunes a Viernes 10:00 - 21:00 horas y Sabado 11:00 - 18:00 horas";
 				document.getElementById('hora').innerHTML= hora;
 				document.getElementById('adnd').innerHTML= adnd;
 
 			}else 	if (adonde == "Monteverde"){
-				var adnd = "Veracruz #270, Local 13, Hermosillo, Sonora. Teléfono: (662) 210 70 75";
+				var adnd = "Veracruz #270, Local 13, Hermosillo, Sonora. Tel. (662) 210 70 75";
 				var hora = "Lunes a Viernes  09:00 - 19:00 horas Sabados de 9:00 - 17:00 horas";
 				document.getElementById('hora').innerHTML= hora;
 				document.getElementById('adnd').innerHTML= adnd;

@@ -515,7 +515,7 @@ function optionCheck6(){
 		</div>
 
 		<div   class = "container" id="agregaf" style="display:none;">			
-			<form   name="agrega" method="post" id="aagrega"><strong>
+			<form   name="agrega" method="post" id="aagrega" ><strong>
 				<h4 align="Center" >Agregar Folio</h4>		
 				<div>		
 					<font color="red">**</font>Cliente 
@@ -1359,7 +1359,7 @@ $(document).ready(function() {
 	$(".datte").datepicker({dateFormat: "yy-mm-dd"});
 });
 </script>
-<script type="text/javascript">
+<script type="text/javascript" charset="utf-8">
 
 ////////////////DIALOGO //////////////////
 $(function() {
@@ -1529,11 +1529,39 @@ $(function() {
 $(function(){
 
 
-		$('.s_cliente_auto').autocomplete({
+	/*	$('.s_cliente_auto').autocomplete({
 			source: 'ins.php?clienteauto=2',
+			$.ajax{
+				ContentType: "application/json; charset=utf-8",
+				data:{
+					clienteee : $("#a_cliente").val();
+				}
+			}
 			minLength: 2
 		
 		});
+*/
+		$('.s_cliente_auto').autocomplete({
+			 source: function(request, response) {
+      			  $.ajax({
+            			url: "ins.php?clienteauto=2",
+						ContentType: "application/json;",
+            			dataType: "json",
+            			data: {
+                			clienteee : $("#a_cliente").val()
+            			},
+            			success: function(data) {
+                			response(data);
+            		}
+        		});
+    		},
+    		minLength: 2,	
+		});
+
+
+
+
+
 		$('.s_imei_auto').autocomplete({
 
 			source: 'ins.php?imeiauto=1',

@@ -764,6 +764,12 @@ function 	updateoutput(){
 				document.getElementById('hora').innerHTML= hora;
 				document.getElementById('adnd').innerHTML= adnd;
 			}
+			else 	if (adonde == "LasFuentes"){
+				var adnd = "Olivos #6 esq con Olivares. Col. Las Fuentes del Mezquital, Local 6-B, Celular: (6623)-94 21 33";
+				var hora = "Lunes a Domingo   10:00 - 20:30 horas";
+				document.getElementById('hora').innerHTML= hora;
+				document.getElementById('adnd').innerHTML= adnd;
+			}
 
 
 

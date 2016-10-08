@@ -307,7 +307,6 @@ function optionCheck6(){
 							<option name="s_donde" value="Monteverde">Plaza Monteverde</option>
 							<option name="s_donde" value= "P.Maria">Plaza Maria</option>
 							<option name="s_donde" value= "PaseoSoli">Paseo Solidaridad</option>
-							<option name="s_donde" value= "LasFuentes">Las Fuentes</option>
 						</select> 	
 					<select name="n_columnas" id="n_columnas" style="display:none;width:180px;float:left;" class="form-control"  >
 							<option selected="selected"  value="" >100 Recientes </option>
@@ -564,8 +563,6 @@ function optionCheck6(){
 								<option  value= "Monteverde">Plaza Monteverde</option>
 								<option  value= "P.Maria">Plaza Maria</option>
 								<option  value= "PaseoSoli">Paseo Solidaridad</option>
-								<option  value= "LasFuentes">Las Fuentes</option>
-
 							</select>
 						</div>
 					</div>
@@ -962,9 +959,6 @@ function optionCheck6(){
 						<tr><td><label> Paseo Solidaridad:</label></td><td> Blvd. Solidaridad No. 65 esquina con Avenida Camelia. Col. Libertad, Local LA026, Celular: (6624)-21 55 24</td> 
 						   <td>Lunes a Domingo   10:00 - 20:00 horas </td>
 						</tr>
-						<tr><td><label> Las Fuentes:</label></td><td> Olivos #6 esq con Olivares. Col. Las Fuentes del Mezquital, Local 6-B, Celular: (6623)-94 21 33</td> 
-						   <td>Lunes a Domingo   10:00 - 20:30 horas</td>
-						</tr>
 					</table>	
 				</div>
 
@@ -973,6 +967,7 @@ function optionCheck6(){
 					<button id="imp" TYPE="button" onClick="printArea('print');" >Imprimir 
 					<button type="regresa" id="cancelar">Cancelar
 				</div>
+				
 		<div style="display:none;" id="impo">
 			<div  style="display:inline-block;">
 				<br />
@@ -1844,13 +1839,6 @@ $("#a_submit").click(function(){
     else 	if (adonde == "PaseoSoli"){
 		var adnd = "Blvd. Solidaridad No. 65 esquina con Avenida Camelia. Col. Libertad, Local LA026, Celular: (6624)-21 55 24";
 		var hora = "Lunes a Domingo   10:00 - 20:00 horas";
-		document.getElementById('hora').innerHTML= hora;
-		document.getElementById('adnd').innerHTML= adnd;
-
-	}
-	else 	if (adonde == "LasFuentes"){
-		var adnd = "Olivos #6 esq con Olivares. Col. Las Fuentes del Mezquital, Local 6-B, Celular: (6623)-94 21 33";
-		var hora = "Lunes a Domingo   10:00 - 20:30 horas";
 		document.getElementById('hora').innerHTML= hora;
 		document.getElementById('adnd').innerHTML= adnd;
 

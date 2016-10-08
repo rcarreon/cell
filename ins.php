@@ -275,7 +275,7 @@ if(!empty($_GET['s_sumito'])){
                         die('Couldn\'t query' . mysqli_error($con));
                     }      
             ?>
-                    <script type="text/javascript" charset="utf-8">
+                    <script type="text/javascript">
                         alert('<?php echo  $amodelo?> fue agregado para <?php echo $acliente?>, NO Olvides Imprimir comprobante de recibo.')
                     </script>  
 	     <?php
@@ -362,13 +362,12 @@ if(!empty($_GET['musuario'])){
 ///MUESTRA TODOS LOS CLIENTES
 if (!empty($_GET['mclientes'])){  
     $result=mysql_query("select * from cliente",$con2);
-    mysql_set_charset('utf8');
     echo $tr3;
     while($dato = mysql_fetch_row($result)){
           echo "<tr>";
           echo "<td align=center ><a href=updateclientes.php?id=".$dato[0].">Editar</a></td> "; 
             echo "<td align=center id=editid >$dato[0]</td>";
-            echo "<td align=center id=editnombre >".($dato[1])."</td>";
+            echo "<td align=center id=editnombre >$dato[1]</td>";
             echo "<td align=center id=editemail >$dato[2]</td>";
             echo "<td align=center id=editcelular >$dato[3]</td>";
             echo "<td align=center id=edittelefono >$dato[4]</td>";
@@ -402,7 +401,7 @@ if(!empty($_GET['mcliente'])){
 }
 ///AGREGA CLIENTE
 if(!empty($_GET['agregac'])){
-    $cnombre    =  $_GET['c_nombre'];
+    $cnombre    = $_GET['c_nombre'];
     $cemail     = $_GET['c_email'];
     $ccel       = $_GET['c_cel'];
     $ctel       = $_GET['c_tel'];
@@ -410,8 +409,8 @@ if(!empty($_GET['agregac'])){
     
     $crfc       = $_GET['c_rfc'];
     $ccol       = $_GET['c_col'];
-    $ccd        = $_GET['c_cd'];
-    $cpostal    = $_GET['c_postal'];
+    $ccd       = $_GET['c_cd'];
+    $cpostal       = $_GET['c_postal'];
     $cdom       = $_GET['c_dom'];
 
 
@@ -428,8 +427,8 @@ if(!empty($_GET['agregac'])){
         die('Couldnt query'. mysqli_error($con));
 
     }
-      echo "<script type=text/javascript charset=\"utf-8\">alert('Cliente $cnombre ha sido agregado con exito ')</script>";
-      echo "<script type=text/javascript charset=\"utf-8\">alert('$cnombre, $cemail, $ccel, $crfc, $ccol, $ccd, $cpostal, $cdom')</script>";
+      echo "<script type=text/javascript>alert('Cliente $cnombre ha sido agregado con exito ')</script>";
+      echo "<script type=text/javascript>alert('$cnombre, $cemail, $ccel, $crfc, $ccol, $ccd, $cpostal, $cdom')</script>";
   }
 
 }
@@ -517,14 +516,9 @@ if(!empty($_GET['artisubmit'])){
 ///////////////////////////////////
 ///AUTOCOMPLETAR CLIENTE
 if(!empty($_GET['clienteauto'])) {
-    
-    $cliente = $_GET['clienteee'];
-
-    //SELECT column1, CONVERT(column2 USING utf8)
-
-    $query = "SELECT  nombre  FROM cliente WHERE nombre LIKE '%$cliente%'";
+    $cliente = $_GET['term'];
+    $query = "SELECT  nombre FROM cliente WHERE nombre LIKE '%$cliente%'";
     $result = mysql_query($query, $con2);
-    mysql_set_charset('utf8');
     $clientes = array();
    
     while($dat = mysql_fetch_array($result)){

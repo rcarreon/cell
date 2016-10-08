@@ -14,8 +14,6 @@ if(isset($_GET['id'])){
 	$c_id    = $_GET['id'];
 	$query1=mysql_query("select * from cliente where id ='$c_id'",$con2);
 	$query2=mysql_fetch_array($query1);
-    mysql_set_charset('utf8');
-
 ?>
 <a href=logout.php>Salir sesion</a>
 <div id="uupdate">

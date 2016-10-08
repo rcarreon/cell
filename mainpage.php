@@ -1115,7 +1115,7 @@ function optionCheck6(){
 <script src="js/jquery-1.10.2.min.js"></script>
 <script src="js/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script type="text/javascript" charset="utf-8">
+<script type="text/javascript" >
 
 $("#s_submit_b").click(function(){
 	$('#opsearch option:eq(0)').attr('selected','selected');

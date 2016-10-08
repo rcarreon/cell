@@ -362,13 +362,12 @@ if(!empty($_GET['musuario'])){
 ///MUESTRA TODOS LOS CLIENTES
 if (!empty($_GET['mclientes'])){  
     $result=mysql_query("select * from cliente",$con2);
-    mysql_set_charset('utf8');
     echo $tr3;
     while($dato = mysql_fetch_row($result)){
           echo "<tr>";
           echo "<td align=center ><a href=updateclientes.php?id=".$dato[0].">Editar</a></td> "; 
             echo "<td align=center id=editid >$dato[0]</td>";
-            echo "<td align=center id=editnombre >".($dato[1])."</td>";
+	    echo "<td align=center id=editnombre >$dato[1]</td>"
             echo "<td align=center id=editemail >$dato[2]</td>";
             echo "<td align=center id=editcelular >$dato[3]</td>";
             echo "<td align=center id=edittelefono >$dato[4]</td>";
@@ -524,7 +523,6 @@ if(!empty($_GET['clienteauto'])) {
 
     $query = "SELECT  nombre  FROM cliente WHERE nombre LIKE '%$cliente%'";
     $result = mysql_query($query, $con2);
-    mysql_set_charset('utf8');
     $clientes = array();
    
     while($dat = mysql_fetch_array($result)){

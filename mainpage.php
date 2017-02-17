@@ -1771,7 +1771,7 @@ $("#a_submit").click(function(){
 	   });
 	   ////  ESTO es para detectaar que sucursl eligio  y poner la direccion y datos correspondientes, faltan las demas msucursaales //////////
 	if (adonde == "Matriz"){
-		var adnd = "Llamas Comunicación, S.A. de C.V. Matriz: Bernardo Reyes # 178 RFC: LCO9906169Y0, Hermosillo, Sonora, Tel. 301-64-64, 285-58-72, 215-14-93 ";
+		var adnd = "Llamas Comunicación, S.A. de C.V. Matriz: Bernardo Reyes # 178 RFC: LCO9906169Y0, Hermosillo, Sonora, Tel. 301-64-64";
 		var hora =  "Lun a Vie de 9:00 - 18:00 horas Sábados de 9:00 - 14:00 horas";			
 		document.getElementById('hora').innerHTML= hora;
 		document.getElementById('adnd').innerHTML= adnd;

@@ -734,18 +734,6 @@ function 	updateoutput(){
 				document.getElementById('hora').innerHTML= hora;
 				document.getElementById('adnd').innerHTML= adnd;
 
-			}else if (adonde == "Patio"){
-				var adnd = "Blvd. Periferico Oriente #1247, Local F10  Hermosillo,Sonora , Cel: 6624269080";
-				var hora = "Lunes a Domingo 10:00 - 17:00 horas";
-				document.getElementById('hora').innerHTML= hora;
-				document.getElementById('adnd').innerHTML= adnd;
-
-			}else 	if (adonde == "Progreso"){
-				var adnd = "Blvd. Progreso #140-X entre Reyes y Yañez Hermosillo, Sonora. Tel. (662) 284 28 04";
-				var hora = "Lunes a Viernes 10:00 - 21:00 horas y Sabado 11:00 - 18:00 horas";
-				document.getElementById('hora').innerHTML= hora;
-				document.getElementById('adnd').innerHTML= adnd;
-
 			}else 	if (adonde == "Monteverde"){
 				var adnd = "Veracruz #270, Local 13, Hermosillo, Sonora. Tel. (662) 210 70 75";
 				var hora = "Lunes a Viernes  09:00 - 19:00 horas Sabados de 9:00 - 17:00 horas";

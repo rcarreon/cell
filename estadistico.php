@@ -77,9 +77,7 @@ function optionCheck6(){
 										<option selected="selected" disabled="disabled" value="sucursal">Sucursal</option>
 										<option value="Matriz"> Matriz</option>
 										<option value="Quiroga"> Colosio - Quiroga</option>
-										<Option  value= "Progreso">Progreso </option>
 										<Option  value= "Dila">Dila </option>
-										<Option  value= "Patio">Patio </option>
 										<option  value= "Monteverde">Plaza Monteverde</option>
 										<option  value= "P.Maria">Plaza Maria</option>
 										<option  value= "PaseoSoli">Paseo Solidaridad</option>

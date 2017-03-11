@@ -302,8 +302,6 @@ function optionCheck6(){
 							<option selected="selected" disabled="disabled" value="">opcion</option>
 							<option name="s_donde" value="Matriz" > Matriz </option>
 							<option name="s_donde" value="Quiroga" > Quiroga </option> 
-							<option name="s_donde" value="Progreso" > Progreso </option> 
-							<option name="s_donde" value="Patio" > Patio </option> 
 							<option name="s_donde" value="Monteverde">Plaza Monteverde</option>
 							<option name="s_donde" value= "P.Maria">Plaza Maria</option>
 							<option name="s_donde" value= "PaseoSoli">Paseo Solidaridad</option>
@@ -515,96 +513,122 @@ function optionCheck6(){
 			</div>
 		</div>
 
-		<div   class = "container" id="agregaf" style="display:none;">			
-			<form   name="agrega" method="post" id="aagrega"><strong>
-				<h4 align="Center" >Agregar Folio</h4>		
-				<div>		
-					<font color="red">**</font>Cliente 
-					<div class="f_agrega">
-						<input type="text" name="a_cliente" id="a_cliente" class="s_cliente_auto" placeholder="Ingresa Cliente" tabindex=1 style="text-transform:uppercase;" >	
-					</div>
-					
-					<div style="position:absolute;top:28px;left:55%;">
-						Imei:
-						<div>
-				 			<input type="text" name="a_imei" id="a_imei" class="s_imei_auto" placeholder="Ingresa Imei" tabindex=2 style="text-transform:uppercase;" >
-				 		</div>
-			    	</div>
-					Equipo marca: 
-					<div class="f_agrega" >
-						<input type="text" id="a_modelo" class="s_marca_auto" name="a_modelo" placeholder="Ingresa Marca" tabindex=3  style="text-transform:uppercase;" >
-					</div>
+		<div   class = "container" id="agregaf" style="display:none;">	
+		<span onclick="this.parentElement.style.display='none'">X</span>	
+			<div class="tab">
+				<button class="tablinks" id="defaultopen" onclick="openFolio(event, 'AgregarFolio')"><div  style="position:relative;top:-8px;">Agregar</div></button>
+  				<button class="tablinks" onclick="openFolio(event, 'EntregarFolio')"><div  style="position:relative;top:-8px;">Entregar</div></button>
+  				<button class="tablinks" onclick="openFolio(event, 'ImprimirFolio')"><div  style="position:relative;top:-8px;">Imprimir</div></button>
+  			</div>
 
-					<div style="position:absolute;top:95px;left:55%;">
-						Equipo modelo:
-						<div class="f_agrega" >
-							<input type="text" id="a_mmodelo" name="a_mmodelo" class="s_modelo_auto" placeholder="Ingresa Equipo" tabindex=4 style="text-transform:uppercase;" >
-						</div>
-					</div>
-					Fecha y hora:
-					<div>
-						<input class="datte" type="text" name="a_fecha" id="a_fecha" value="<?php  date_default_timezone_set('America/Hermosillo'); $date = date('Y-m-d         H:m:s'); echo $date; ?>" tabindex=5 style="text-transform:uppercase;">
-					</div>
 
-					<div style="position:absolute;top:150px;left:55%;">
-			    	Contrasena:
-			    		<div>
-							<input type="text" id="a_password" name="a_password" placeholder="Ingresa Contraseña" tabindex=6  style="text-transform:uppercase;">				
-						</div>
-					</div>
-					<div style="position:absolute;top:210px;left:55%" tabindex=9>
-			    		<font color="red">**</font>Sucursal
-			    		<div>
-			    			<select name="a_sucurs" id="a_sucurs"  style="width:150px;">
-								<option  disabled="disabled" value="sucursal">Sucursal</option>
-								<option value="Matriz"  selected="selected"> Matriz</option>
-								<option value="Quiroga"> Colosio - Quiroga</option>
-								<option  value= "Progreso">Progreso </option>
-								<option  value= "Patio">Patio </option>
-								<option  value= "Monteverde">Plaza Monteverde</option>
-								<option  value= "P.Maria">Plaza Maria</option>
-								<option  value= "PaseoSoli">Paseo Solidaridad</option>
-								<option  value= "LasFuentes">Las Fuentes</option>
 
-							</select>
-						</div>
-					</div>
-					<div class="f_agrega">
-				 		<input type="radio" name="a_status" id="a_status"   class="lis" value="Garantia" tabindex=7 >Garantia <font color="red">*</font>
-						<input type="radio" name="a_status" id="a_status"  class="rep" value="En reparacion" tabindex=8 >Nuevo Ingreso <font color="red">*</font>				   			   		
-			   		</div>  <br>	    
-			   		Detalles Tecnicos:
-			    	<div>			
-			    		<textarea maxlength="115" type="text" id="a_detalles" name="a_detalles" placeholder="Detalles Servicio Tecnico" tabindex=10 style="text-transform:uppercase;" ></textarea>					
-			    	</div>
-			    	<div style="position:absolute;top:270px;left:55%" >
-			    		Accesorios:
-			    			<div>
-			    			    <textarea maxlength="115" type="text" id="a_access" name="a_access" placeholder="Accesorios" tabindex=11 style="text-transform:uppercase;" ></textarea>					
-
-			    			</div>
-			    	</div>
-			    	<div style="position:absolute;top:350px;" >
-			    	Bitacora:
-			    			<div>
-			    			    <textarea maxlength="115" type="text" id="a_bitacora" name="a_bitacora" placeholder="Bitacora" tabindex=12 style="text-transform:uppercase;width:460px;" ></textarea>					
-
-			    			</div>
-			    	</div>
-
-					<input  id="a_recibe" name="a_recibe" value="<?php echo $uname;?>" hidden >
-				
-					</strong><br><br><br><br><br><br>
-					<button    type="button" id="a_submit" class="btn btn-primary" tabindex=13 > Agregar Folio </button>
-				<!--<button    type="button" id="nuevo" class="btn btn-primary" > Nuevo Folio </button> -->
-				<button type="button" id="printeando" onclick="updateoutput()" disabled="disabled" tabindex=14 class="btn"> Imprimir </button>	
-					<!-- <button type="button" id="printeando" onclick="updateoutput()"  tabindex=10> Imprimir </button>	-->										
+  			<!-- 
+		
+				<div id="London" class="tabcontent">
+  				<h3>London</h3>
+  				<p>London is the capital city of England.</p>
 				</div>
-			</form>	
-			<button  style="position:absolute;bottom:7%;left:59%;"  id="limpia" type="button" tabindex=15 class="btn" >Limpiar datos</button>												
-			<a href="/" >
-   			<button style="position:absolute;bottom:7%;left:81%;" type="button" tabindex=16 class="btn">Regresar</button>
-			</a>
+
+  			-->
+  			<div id="AgregarFolio" class="tabcontent">
+				<form   name="agrega" method="post" id="aagrega"><strong>
+					<h5 align="Center" style='font-weight: bold;' >Agregar Folio</h5>		
+					<div>		
+						<font color="red">**</font>Cliente 
+						<div class="f_agrega">
+							<input type="text" name="a_cliente" id="a_cliente" class="s_cliente_auto" placeholder="Ingresa Cliente" tabindex=1 style="text-transform:uppercase;" >	
+						</div>
+					
+						<div style="position:absolute;top:28px;left:55%;">
+							Imei:
+							<div>
+				 				<input type="text" name="a_imei" id="a_imei" class="s_imei_auto" placeholder="Ingresa Imei" tabindex=2 style="text-transform:uppercase;" >
+				 			</div>
+			    		</div>
+						Equipo marca: 
+						<div class="f_agrega" >
+							<input type="text" id="a_modelo" class="s_marca_auto" name="a_modelo" placeholder="Ingresa Marca" tabindex=3  style="text-transform:uppercase;" >
+						</div>
+
+						<div style="position:absolute;top:95px;left:55%;">
+						Equipo modelo:
+							<div class="f_agrega" >
+								<input type="text" id="a_mmodelo" name="a_mmodelo" class="s_modelo_auto" placeholder="Ingresa Equipo" tabindex=4 style="text-transform:uppercase;" >
+							</div>
+						</div>
+						Fecha y hora:
+						<div>
+							<input class="datte" type="text" name="a_fecha" id="a_fecha" value="<?php  date_default_timezone_set('America/Hermosillo'); $date = date('Y-m-d         H:m:s'); echo $date; ?>" tabindex=5 style="text-transform:uppercase;">
+						</div>
+
+						<div style="position:absolute;top:150px;left:55%;">
+			    		Contrasena:
+			    			<div>
+								<input type="text" id="a_password" name="a_password" placeholder="Ingresa Contraseña" tabindex=6  style="text-transform:uppercase;">				
+							</div>
+						</div>
+						<div style="position:absolute;top:210px;left:55%" tabindex=9>
+			    			<font color="red">**</font>Sucursal
+			    			<div>
+			    				<select name="a_sucurs" id="a_sucurs"  style="width:150px;">
+									<option  disabled="disabled" value="sucursal">Sucursal</option>
+									<option value="Matriz"  selected="selected"> Matriz</option>
+									<option value="Quiroga"> Colosio - Quiroga</option>
+									<option  value= "Monteverde">Plaza Monteverde</option>
+									<option  value= "P.Maria">Plaza Maria</option>
+									<option  value= "PaseoSoli">Paseo Solidaridad</option>
+									<option  value= "LasFuentes">Las Fuentes</option>
+
+								</select>
+							</div>
+						</div>
+						<div class="f_agrega">
+				 			<input type="radio" name="a_status" id="a_status"   class="lis" value="Garantia" tabindex=7 >Garantia <font color="red">*</font>
+							<input type="radio" name="a_status" id="a_status"  class="rep" value="En reparacion" tabindex=8 >Nuevo Ingreso <font color="red">*</font>				   			   		
+			   			</div>  <br>	    
+			   		Detalles Tecnicos:
+				    	<div>			
+				    		<textarea maxlength="115" type="text" id="a_detalles" name="a_detalles" placeholder="Detalles Servicio Tecnico" tabindex=10 style="text-transform:uppercase;" ></textarea>					
+				    	</div>
+			    		<div style="position:absolute;top:270px;left:55%" >
+			    			Accesorios:
+			    				<div>
+			    				    <textarea maxlength="115" type="text" id="a_access" name="a_access" placeholder="Accesorios" tabindex=11 style="text-transform:uppercase;" ></textarea>					
+
+			    				</div>
+			    		</div>
+			    		<div style="position:absolute;top:350px;" >
+				    	Bitacora:
+				    			<div>
+				    			    <textarea maxlength="115" type="text" id="a_bitacora" name="a_bitacora" placeholder="Bitacora" tabindex=12 style="text-transform:uppercase;width:460px;" ></textarea>					
+
+				    			</div>
+			    		</div>
+
+						<input  id="a_recibe" name="a_recibe" value="<?php echo $uname;?>" hidden >
+				
+						</strong><br><br><br><br><br><br>
+						<button    type="button" id="a_submit" class="btn btn-primary" tabindex=13 > Agregar Folio </button>
+				<!--<button    type="button" id="nuevo" class="btn btn-primary" > Nuevo Folio </button> -->
+					<button type="button" id="printeando" onclick="updateoutput()" disabled="disabled" tabindex=14 class="btn"> Imprimir </button>	
+					<!-- <button type="button" id="printeando" onclick="updateoutput()"  tabindex=10> Imprimir </button>	-->										
+					</div>
+				</form>	
+				<button  style="position:absolute;bottom:7%;left:59%;"  id="limpia" type="button" tabindex=15 class="btn" >Limpiar datos</button>												
+				<a href="/" >
+   				<button style="position:absolute;bottom:7%;left:81%;" type="button" tabindex=16 class="btn">Regresar</button>
+				</a>
+			</div>
+
+			<div id="EntregarFolio" class="tabcontent">
+  				<h3>Entrega</h3>
+  				<p>Aqui entregas Folios</p> 
+			</div>
+			<div id="ImprimirFolio" class="tabcontent">
+  				<h3>Imprimir</h3>
+  				<p>Aqui imprimes etiquetas de folios</p> 
+			</div>
 
 		</div>		
 		<!--IMPRIMIR -->
@@ -946,13 +970,7 @@ function optionCheck6(){
 						<tr>
 					    <td><label> Quiroga:</label></td><td> Blvd. Quiroga esquina con Colosio, Local 18,Hermosillo, Sonora ,  Tel. 118-94-92</td> 
 						   <td>Lunes a Viernes de 10:00 - 20:00 horas y Sábados de 10:00 - 18:00 horas </td>
-						 </tr> 						
-						<tr><td><label> Patio:</label></td><td> Blvd. Periferico Oriente #1247, Local F10  Hermosillo,Sonora , Cel: (6624) 26 90 80</td> 
-						   <td>Lunes a Domingo 10:00 - 17:00 horas </td>
-						 </tr>
-						<tr><td><label> Progreso:</label></td><td> Blvd. Progreso #140-X entre Reyes y Yañez Hermosillo, Sonora. Tel. (662) 284 28 04</td> 
-						   <td>Lunes a Viernes 10:00 - 21:00 horas y Sabado 11:00 - 18:00 horas </td>
-						</tr>
+						 </tr>								
 						<tr><td><label> Monteverde:</label></td><td> Veracruz #270, Local 13, Hermosillo, Sonora. Tel. (662) 210 70 75</td> 
 						   <td>Lunes a Viernes  09:00 - 19:00 horas Sabados de 9:00 - 17:00 horas </td>
 						 </tr>
@@ -1366,6 +1384,32 @@ $(document).ready(function() {
 });
 </script>
 <script type="text/javascript">
+
+/// Aqui abres por default el tab que quieras en el caso el del id defaultopen//
+document.getElementById("defaultopen").click();
+
+////// Esta funcion es para hacer los tab de el boton de folio /////
+
+function openFolio(evt, FolioName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(FolioName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
 
 ////////////////DIALOGO //////////////////
 $(function() {
@@ -1785,19 +1829,6 @@ $("#a_submit").click(function(){
 	}else if (adonde == "Dila"){
 		var adnd = "Blvd. Morelos #349 Local 6 Hermosillo, Sonora. Teléfono:(662) 211 33 90";
 		var hora = "Lunes a Viernes de 9:00 - 20:00 horas y Sábados de 10:00 - 18:00 horas";				
-		document.getElementById('hora').innerHTML= hora;
-		document.getElementById('adnd').innerHTML= adnd;
-
-	}else if (adonde == "Patio"){
-		var adnd = "Blvd. Periferico Oriente #1247, Local F10  Hermosillo,Sonora , Cel: 6624269080";
-		var hora = "Lunes a Domingo 10:00 - 17:00 horas";
-		document.getElementById('hora').innerHTML= hora;
-		document.getElementById('adnd').innerHTML= adnd;
-
-
-	}else 	if (adonde == "Progreso"){
-		var adnd = "Blvd. Progreso #140-X entre Reyes y Yañez Hermosillo, Sonora. Teléfono: (662) 284 28 04";
-		var hora = "Lunes a Viernes 10:00 - 21:00 horas y Sabado 11:00 - 18:00 horas";
 		document.getElementById('hora').innerHTML= hora;
 		document.getElementById('adnd').innerHTML= adnd;
 

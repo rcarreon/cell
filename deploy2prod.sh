@@ -26,7 +26,15 @@ if [[ $ans == y ]];then
 		git push
 		if [[ -d $prd_dir ]];then 
 		### syncing dev to prd  
-		echo "`sudo rsync --dry-run -avhuP  --exclude .git $dev_dir $prd_dir`"
+			echo -e "Esto se haria..\n"
+			echo -e "`sudo rsync  -avhunP  --exclude .git $dev_dir $prd_dir`\n"
+			echo -e "Quieres seguir? y/n\n"
+			read ans
+			if [[ $ans  == "y" ]];then 
+	                	echo -e "`sudo rsync  -avhuP  --exclude .git $dev_dir $prd_dir`\n"
+			else 
+				echo -e "Saliendo sin hacen el rsync\n"
+			fi
 		else 
 			echo -e "No hay dir de prod, quieres crearlo  y sync? "
 			read resync

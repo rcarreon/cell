@@ -19,7 +19,7 @@ if [[ $ans == y ]];then
 		`git add *`
 		echo -e "Mensaje para commit ?\n"
 		read msg
-		`git commit -m "$msg"`
+		`git commit -m "${msg}"`
 		echo -e "Empujando a git.."
 		`git push`
 		if [[ -d $prd_dir ]];then 

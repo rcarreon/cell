@@ -8,7 +8,7 @@ echo -e "About to sync $dev_dir > $prd_dir \n want to continue? y/n"
 read ans
 
 if [[ $ans == y ]];then 
-	`git status | grep "nothing to commit"`
+	git status | grep "nothing to commit"
 	RES="`echo $?`"
 	if [[ $RES == 0 ]];then 
 		echo -e "Nothing to commit \n"
@@ -16,15 +16,16 @@ if [[ $ans == y ]];then
 		set -x
 		echo -e "Archivos modificados .."
 		echo "`git status | egrep -v 'git|branch'`" 
-		`git add .`
+		git add .
+		git diff 
 		echo -e "Mensaje para commit ?\n"
 		read msg
-		`git commit -m \"${msg}\"`
+		git commit -m "${msg}"
 		echo -e "Empujando a git.."
-		`git push`
+		git push
 		if [[ -d $prd_dir ]];then 
 		### syncing dev to prd  
-		echo "`sudo rsync -avhP $dev_dir $prd_dir`"
+		echo "`sudo rsync -avhP  --exclude .git $dev_dir $prd_dir`"
 		else 
 			echo -e "No hay dir de prod, quieres crearlo  y sync? "
 			read resync

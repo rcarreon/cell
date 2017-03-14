@@ -6,6 +6,7 @@ echo -e "Deploy de dev para prod..."
 sleep 2 
 echo -e "About to sync $dev_dir > $prd_dir \n want to continue? y/n"
 read ans
+
 if [[ $ans == y ]];then 
 	`git status | grep "nothing to commit"`
 	RES="`echo $?`"
@@ -17,8 +18,8 @@ if [[ $ans == y ]];then
 		`git add .`
 		echo -e "Mensaje para commit ?\n"
 		read msg
-		`git commit -m "$msg"
-		echo -e "Empujando a git.."`
+		`git commit -m "$msg"`
+		echo -e "Empujando a git.."
 		`git push`
 		if [[ -d $prd_dir ]];then 
 		### syncing dev to prd  

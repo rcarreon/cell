@@ -623,6 +623,16 @@ function optionCheck6(){
 
 			<div id="EntregarFolio" class="tabcontent">
   				<h3>Entrega</h3>
+				<form   name="entrega" method="post" id="entregam"><strong>
+						<div><input type="text" Placeholder="Folio" tabindex=1  ></div>
+						<div><input type="text" Placeholder="Folio" tabindex=2  ></div>
+						<div><input type="text" Placeholder="Folio" tabindex=3  ></div>
+						<div><input type="text" Placeholder="Folio" tabindex=4  ></div>
+						<div><input type="text" Placeholder="Folio" tabindex=5  ></div>
+						<div><button    type="button" id="en_submit" class="btn btn-primary" tabindex=6> Entregar </button></div>
+
+
+				 </form>
   				<p>Aqui entregas Folios</p> 
 			</div>
 			<div id="ImprimirFolio" class="tabcontent">

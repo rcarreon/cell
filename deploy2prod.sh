@@ -1,6 +1,6 @@
 #!/bin/bash
-prd_dir="/app/shared/prd_dir/"
-dev_dir="/app/shared/dev_dir/"
+prd_dir="/app/shared/cell/"
+dev_dir="/app/shared/devcell/"
 cache_dir="/app/shared/cache_dir/"
 echo -e "Deploy de dev para prod..."
 sleep 2 
@@ -25,7 +25,7 @@ if [[ $ans == y ]];then
 		git push
 		if [[ -d $prd_dir ]];then 
 		### syncing dev to prd  
-		echo "`sudo rsync -avhP  --exclude .git $dev_dir $prd_dir`"
+		echo "`sudo rsync --dry-run -avhP  --exclude .git $dev_dir $prd_dir`"
 		else 
 			echo -e "No hay dir de prod, quieres crearlo  y sync? "
 			read resync

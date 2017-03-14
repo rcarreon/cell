@@ -1,4 +1,5 @@
 #!/bin/bash
+### Deploy script para cell city ###
 prd_dir="/app/shared/cell/"
 dev_dir="/app/shared/devcell/"
 cache_dir="/app/shared/cache_dir/"
@@ -25,7 +26,7 @@ if [[ $ans == y ]];then
 		git push
 		if [[ -d $prd_dir ]];then 
 		### syncing dev to prd  
-		echo "`sudo rsync --dry-run -avhP  --exclude .git $dev_dir $prd_dir`"
+		echo "`sudo rsync --dry-run -avhuP  --exclude .git $dev_dir $prd_dir`"
 		else 
 			echo -e "No hay dir de prod, quieres crearlo  y sync? "
 			read resync

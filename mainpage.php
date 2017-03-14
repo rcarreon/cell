@@ -514,7 +514,7 @@ function optionCheck6(){
 		</div>
 
 		<div   class = "container" id="agregaf" style="display:none;">	
-		<span onclick="this.parentElement.style.display='none'">X</span>	
+		<span onclick="this.parentElement.style.display='none'" style="position:relative;top:-1%;left:98%;cursor:hand;"><strong><font color="red">+</font></strong></span>	
 			<div class="tab">
 				<button class="tablinks" id="defaultopen" onclick="openFolio(event, 'AgregarFolio')"><div  style="position:relative;top:-8px;">Agregar</div></button>
   				<button class="tablinks" onclick="openFolio(event, 'EntregarFolio')"><div  style="position:relative;top:-8px;">Entregar</div></button>

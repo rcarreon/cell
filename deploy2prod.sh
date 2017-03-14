@@ -47,6 +47,6 @@ if [[ $ans == y ]];then
 		fi
 	fi	
 else 
-	echo "Saliendo...\n"
+	echo -e "Saliendo...\n"
 	exit 34
 fi 

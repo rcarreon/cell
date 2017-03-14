@@ -13,6 +13,7 @@ if [[ $ans == y ]];then
 	if [[ $RES == 0 ]];then 
 		echo -e "Nothing to commit \n"
 	else	
+		set -x
 		echo -e "Archivos modificados .."
 		echo "`git status | egrep -v 'git|branch'`" 
 		`git add *`

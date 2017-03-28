@@ -128,6 +128,13 @@ $tr7 = "
         <td align=center><b>Distribuidor</b></td>
         <td align=center><b>Publico</b></td>";
 
+  $tr10 = "
+<table>
+     <tr>
+        <td align=center><b>Folio</b></td>
+        <td align=center><b>Imei</b></td>      
+        <td align=center><b>Falla</b></td>";
+
 //Abrimos Conexion a la base de datos usando la conexion 2 
 mysql_select_db("cellcity",$con2);
 
@@ -846,6 +853,104 @@ if(!empty($_GET['id'])){
      echo "$rows2[0]";
 
 }
+
+if(!empty($_GET['en_folio'])){
+    
+      $enfolio1    = $_GET['enfolio1'];
+      $enfolio2    = $_GET['enfolio2'];
+      $enfolio3    = $_GET['enfolio3'];
+      $enfolio4    = $_GET['enfolio4'];
+      $enfolio5    = $_GET['enfolio5'];
+      $enfolio6    = $_GET['enfolio6'];
+      $enfolio7    = $_GET['enfolio7'];
+      $enfolio8    = $_GET['enfolio8'];
+      $enfolio9    = $_GET['enfolio9'];
+      $enfolio10    = $_GET['enfolio10'];
+
+                      
+     // WHERE config_name IN('name1', 'name2');
+    
+    $query = "UPDATE dispos SET status  = 'Entregado'  WHERE  folio IN ('$enfolio1','$enfolio2','$enfolio3','$enfolio4','$enfolio5','$enfolio6','$enfolio7','$enfolio8','$enfolio9','$enfolio10')";
+
+      $result = mysqli_query($con,$query);
+      if (!$result){
+            die('Coudnt query'. mysqli_error($con));
+          } else {
+                  if ( $enfolio1 ||  $enfolio2 ||  $enfolio3 ||  $enfolio4 ||  $enfolio5 || $enfolio6 || $enfolio7 || $enfolio8 || $enfolio9 || $enfolio10) {
+                      echo "<script type=text/javascript>alert('Articulos con folio $enfolio1 $enfolio2 $enfolio3 $enfolio4 $enfolio5 $enfolio6 $enfolio7 $enfolio8 $enfolio9  $enfolio10 actualizados con exito')</script>";
+                  }
+                  /*
+                 if ( $enfolio1 || $enfolio2) {
+                      echo "<script type=text/javascript>alert('Articulos con folio $enfolio1 y $enfolio2 actualizados con exito')</script>";
+                  }
+                  if ( $enfolio1 &&  $enfolio2 &&  $enfolio3) {
+                      echo "<script type=text/javascript>alert('Articulos con folio $enfolio1,$enfolio2 y $enfolio3 actualizados con exito')</script>";
+                  }
+                  if ( $enfolio1 &&  $enfolio2 &&  $enfolio3 &&  $enfolio4) {
+                      echo "<script type=text/javascript>alert('Articulos con folio $enfolio1,$enfolio2,$enfolio3 y $enfolio4 actualizados con exito')</script>";
+                  }
+                  if ( $enfolio1 &&  $enfolio2 &&  $enfolio3 &&  $enfolio4 &&  $enfolio5) {
+                      echo "<script type=text/javascript>alert('Articulos con folio $enfolio1,$enfolio2,$enfolio3,$enfolio4 y $enfolio5 actualizados con exito')</script>";
+                  }
+                  if ( $enfolio1 &&  $enfolio2 &&  $enfolio3 &&  $enfolio4 &&  $enfolio5 && $enfolio6) {
+                      echo "<script type=text/javascript>alert('Articulos con folio $enfolio1,$enfolio2,$enfolio3,$enfolio4,$enfolio5 y $enfolio6 actualizados con exito')</script>";
+                  }
+                  if ( $enfolio1 &&  $enfolio2 &&  $enfolio3 &&  $enfolio4 &&  $enfolio5 && $enfolio6 && $enfolio7) {
+                      echo "<script type=text/javascript>alert('Articulos con folio $enfolio1,$enfolio2,$enfolio3,$enfolio4,$enfolio5,$enfolio6 y $enfolio7 actualizados con exito')</script>";
+                  }
+                  if ( $enfolio1 &&  $enfolio2 &&  $enfolio3 &&  $enfolio4 &&  $enfolio5 && $enfolio6 && $enfolio7 && $enfolio8) {
+                      echo "<script type=text/javascript>alert('Articulos con folio $enfolio1,$enfolio2,$enfolio3,$enfolio4,$enfolio5,$enfolio6, $enfolio7 y $enfolio8 actualizados con exito')</script>";
+                  }
+                  if ( $enfolio1 &&  $enfolio2 &&  $enfolio3 &&  $enfolio4 &&  $enfolio5 && $enfolio6 && $enfolio7 && $enfolio8 && $enfolio9) {
+                      echo "<script type=text/javascript>alert('Articulos con folio $enfolio1,$enfolio2,$enfolio3,$enfolio4,$enfolio5,$enfolio6, $enfolio7, $enfolio8 y $enfolio9 actualizados con exito')</script>";
+                  }
+                  if ( $enfolio1 &&  $enfolio2 &&  $enfolio3 &&  $enfolio4 &&  $enfolio5 && $enfolio6 && $enfolio7 && $enfolio8 && $enfolio9 && $enfolio10) {
+                      echo "<script type=text/javascript>alert('Articulos con folio $enfolio1,$enfolio2,$enfolio3,$enfolio4,$enfolio5,$enfolio6, $enfolio7, $enfolio8, $enfolio9 y && $enfolio10 actualizados con exito')</script>";
+                  }*/
+          }
+}
+
+
+if (!empty($_GET['imp_folio'])){  
+      $impfolio1    = $_GET['impfolio1'];
+      $impfolio2    = $_GET['impfolio2'];
+      $impfolio3    = $_GET['impfolio3'];
+      $impfolio4    = $_GET['impfolio4'];
+      $impfolio5    = $_GET['impfolio5'];
+      $impfolio6    = $_GET['impfolio6'];
+      $impfolio7    = $_GET['impfolio7'];
+      $impfolio8    = $_GET['impfolio8'];
+      $impfolio9    = $_GET['impfolio9'];
+      $impfolio10    = $_GET['impfolio10'];
+
+
+      $query = "SELECT folio,imei,detalles from dispos where folio IN('$impfolio1','$impfolio2','$impfolio3','$impfolio4','$impfolio5','$impfolio6','$impfolio7','$impfolio8','$impfolio9','$impfolio10')";
+
+/*<div id="content">
+  <div id="left">
+     <div id="object1"></div>
+     <div id="object2"></div>
+  </div>
+
+  <div id="right">
+     <div id="object3"></div>
+     <div id="object4"></div>
+  </div>
+</div>
+*/
+  
+   
+    $result=mysql_query($query,$con2);
+    while($dato = mysql_fetch_row($result)){
+          
+            echo "<div align=center display=\"inline-block\" ><img src=barcode/barcode.php?text=".$dato[0]."/></div>
+             <div display=\"inline-block\" align=center  >$dato[1]</div>
+             <div display=\"inline-block\" align=center  >$dato[2]</div>";    
+         
+    } 
+
+}
+
 
 
 ////IMRPIMIR////

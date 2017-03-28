@@ -135,7 +135,7 @@ if(isset($_GET['folio'])){
  								TELEFONÍA CELULAR, O EQUIPOS <br> DE MANEJO DEDATOS E INFORMACIÓN, O EQUIPOS LECTRÓNICOS.</label>
 							</div>
 
-			<div style="position:absolute;top:3%;left:-6%;">
+			<div style="position:absolute;top:2%;left:-6%;">
 				<table class="printt" >
 					
 					<tr>
@@ -174,10 +174,12 @@ if(isset($_GET['folio'])){
 					</tr>
 				</table>
 			</div>
-			<div style="position:absolute;top:3%;right:14.5%;">
+			<div style="position:absolute;top:2%;right:14%;">
 				<table class="printt" id="pfolio">
 					<tr>
-						<strong><td class="seis" align="center"><strong>Folio</strong></td></strong>
+						<strong><td class="seis" align="center"><strong>Folio</strong>
+						<img  src="barcode/barcode.php?text=<?php echo $e_folio ;?>" />
+						</td></strong>
 					</tr>
 					<tr>
 						<td class="seis" align="center" id="pfolio1" >
@@ -187,7 +189,7 @@ if(isset($_GET['folio'])){
 				</table>
 			</div>
 
-			<div style="position:absolute;top:9%;right:7.5%;" >
+			<div style="position:absolute;top:10%;right:7.7%;" >
 				<table class="printt" >					
 					<tr>
 						<td class="seis" align="center">
@@ -202,7 +204,7 @@ if(isset($_GET['folio'])){
 				</table>
 			</div>
 
-			<div style="position:absolute;top:3%;right:31%;"   >
+			<div style="position:absolute;top:2%;right:31%;"   >
 				<table class="printt" >					
 					<tr>
 						

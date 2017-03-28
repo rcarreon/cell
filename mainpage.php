@@ -514,8 +514,8 @@ function optionCheck6(){
 		</div>
 
 		<div   class = "container" id="agregaf" style="display:none;">	
-		<span onclick="this.parentElement.style.display='none'" style="position:relative;top:-1%;left:98%;cursor:hand;"><strong><font color="red">+</font></strong></span>	
-			<div class="tab">
+		<span onclick="goaway();" style="position:relative;top:-22px;left:98%;cursor:hand;"><strong><font color="red">x</font></strong></span>	
+			<div class="tab" style = "position:relative;top:-4%;" >
 				<button class="tablinks" id="defaultopen" onclick="openFolio(event, 'AgregarFolio')"><div  style="position:relative;top:-8px;">Agregar</div></button>
   				<button class="tablinks" onclick="openFolio(event, 'EntregarFolio')"><div  style="position:relative;top:-8px;">Entregar</div></button>
   				<button class="tablinks" onclick="openFolio(event, 'ImprimirFolio')"><div  style="position:relative;top:-8px;">Imprimir</div></button>
@@ -531,7 +531,7 @@ function optionCheck6(){
 				</div>
 
   			-->
-  			<div id="AgregarFolio" class="tabcontent">
+  			<div id="AgregarFolio" class="tabcontent" style = "position:relative;top:-6%;">
 				<form   name="agrega" method="post" id="aagrega"><strong>
 					<h5 align="Center" style='font-weight: bold;' >Agregar Folio</h5>		
 					<div>		
@@ -608,39 +608,73 @@ function optionCheck6(){
 
 						<input  id="a_recibe" name="a_recibe" value="<?php echo $uname;?>" hidden >
 				
-						</strong><br><br><br><br><br><br>
+						</strong><br><br><br><br>
 						<button    type="button" id="a_submit" class="btn btn-primary" tabindex=13 > Agregar Folio </button>
 				<!--<button    type="button" id="nuevo" class="btn btn-primary" > Nuevo Folio </button> -->
 					<button type="button" id="printeando" onclick="updateoutput()" disabled="disabled" tabindex=14 class="btn"> Imprimir </button>	
 					<!-- <button type="button" id="printeando" onclick="updateoutput()"  tabindex=10> Imprimir </button>	-->										
 					</div>
 				</form>	
-				<button  style="position:absolute;bottom:7%;left:59%;"  id="limpia" type="button" tabindex=15 class="btn" >Limpiar datos</button>												
+				<button  style="position:absolute;bottom:3.5%;left:57%;"  id="limpia" type="button" tabindex=15 class="btn" >Limpiar datos</button>												
 				<a href="/" >
-   				<button style="position:absolute;bottom:7%;left:81%;" type="button" tabindex=16 class="btn">Regresar</button>
+   				<button style="position:absolute;bottom:3.5%;left:79%;" type="button" tabindex=16 class="btn">Regresar</button>
 				</a>
 			</div>
 
-			<div id="EntregarFolio" class="tabcontent">
+			<div id="EntregarFolio" class="tabcontent" style = "position:relative;top:-6%;">
   				<h3>Entrega</h3>
 				<form   name="entrega" method="post" id="entregam"><strong>
-						<div><input type="text" Placeholder="Folio" tabindex=1  ></div>
-						<div><input type="text" Placeholder="Folio" tabindex=2  ></div>
-						<div><input type="text" Placeholder="Folio" tabindex=3  ></div>
-						<div><input type="text" Placeholder="Folio" tabindex=4  ></div>
-						<div><input type="text" Placeholder="Folio" tabindex=5  ></div>
-						<div><button    type="button" id="en_submit" class="btn btn-primary" tabindex=6> Entregar </button></div>
+						<div><input type="text" id="enfolio1" Placeholder="Folio1" tabindex=1  ></div>
+						<div><input type="text" id="enfolio2" Placeholder="Folio2" tabindex=2  style="display:none;" ></div>
+						<div><input type="text" id="enfolio3" Placeholder="Folio3" tabindex=3  style="display:none;" ></div>
+						<div><input type="text" id="enfolio4" Placeholder="Folio4" tabindex=4  style="display:none;" ></div>
+						<div><input type="text" id="enfolio5" Placeholder="Folio5" tabindex=5  style="display:none;" ></div>	
+						<div><input type="text" id="enfolio6" Placeholder="Folio6" tabindex=6  style="display:none;" ></div>
+						<div><input type="text" id="enfolio7" Placeholder="Folio7" tabindex=7  style="display:none;" ></div>
+						<div><input type="text" id="enfolio8" Placeholder="Folio8" tabindex=8  style="display:none;" ></div>
+						<div><input type="text" id="enfolio9" Placeholder="Folio9" tabindex=9  style="display:none;" ></div>	
+						<div><input type="text" id="enfolio10" Placeholder="Folio10" tabindex=10  style="display:none;" ></div>					
 
-
+						<div style="position:relative;left:20%;top:5px;">
+							 <button    type="button" id="en_submit" class="btn btn-primary" tabindex=11> Entregar </button>
+						</div>
 				 </form>
-  				<p>Aqui entregas Folios</p> 
+				<button   style="position:relative;top:-30px;" type="button"  class="btn " tabindex=12 Onclick="siguientefolio();"> Siguiente </button>
+            	<p>Entrega multiple de folios</p> 
 			</div>
-			<div id="ImprimirFolio" class="tabcontent">
+			<div id="ImprimirFolio" class="tabcontent" style = "position:relative;top:-6%;">
+				<form   	name="imprimeee" method="post" id="imprimefol"><strong>
+						<div><input type="text" id="impfolio1" Placeholder="Folio1" tabindex=1  ></div>
+						<div><input type="text" id="impfolio2" Placeholder="Folio2" tabindex=2  style="display:none;" ></div>
+						<div><input type="text" id="impfolio3" Placeholder="Folio3" tabindex=3  style="display:none;" ></div>
+						<div><input type="text" id="impfolio4" Placeholder="Folio4" tabindex=4  style="display:none;" ></div>
+						<div><input type="text" id="impfolio5" Placeholder="Folio5" tabindex=5  style="display:none;" ></div>	
+						<div><input type="text" id="impfolio6" Placeholder="Folio6" tabindex=6  style="display:none;" ></div>
+						<div><input type="text" id="impfolio7" Placeholder="Folio7" tabindex=7  style="display:none;" ></div>
+						<div><input type="text" id="impfolio8" Placeholder="Folio8" tabindex=8  style="display:none;" ></div>
+						<div><input type="text" id="impfolio9" Placeholder="Folio9" tabindex=9  style="display:none;" ></div>	
+						<div><input type="text" id="impfolio10" Placeholder="Folio10" tabindex=10  style="display:none;" ></div>					
+
+						<div style="position:relative;left:20%;top:5px;">
+							 <button    type="button" id="imp_submit" class="btn btn-primary" tabindex=11> Imprimir </button>
+						</div>
+				 </form>
+				<button   style="position:relative;top:-30px;" type="button"  class="btn " tabindex=12 Onclick="siguientefolio2();"> Siguiente </button>
   				<h3>Imprimir</h3>
   				<p>Aqui imprimes etiquetas de folios</p> 
 			</div>
 
 		</div>		
+	<p id="entregafolio"></p>
+	<div  style="display:none;" style="position:absolute;top:20%;padding-left:30em;" align="center" class="impfolios">
+					<button id="imp" TYPE="button" onClick="printArea('imprimesfolio');" >Imprimir 
+					<button type="regresa" id="cancelar">Cancelar
+				</div>
+	<div style="display:none;" id="imprimesfolio" >
+	
+	</div>
+
+
 		<!--IMPRIMIR -->
 	<div id="print" class="print" >	
 							<div align="justify" class="doces" style="position:absolute;top:-5%;">
@@ -686,15 +720,19 @@ function optionCheck6(){
 					</tr>
 				</table>
 			</div>
-			<div style="position:absolute;top:3%;right:14.5%;">
+			<div style="position:absolute;top:1%;right:14.5%;">
 				<table class="printt" id="pfolio">
 					<tr>
 						<strong><td class="seis" align="center"><strong>Folio</strong></td></strong>
 					</tr>
 					<tr>
-						<td class="seis" align="center" id="pfolio1" >
-
-						</td>
+								<td class="seis" align="center" id="pfolio1" >
+     							</td>
+					</tr>
+					<tr>
+							<td>
+								<img  id="barras1"  />
+							</td>
 					</tr>
 				</table>
 			</div>
@@ -707,6 +745,7 @@ function optionCheck6(){
 							<tr>
 								<td class="cinco" align="Center"  >  
 									<img src="images/cuadritocellcity2.jpg" width="90" height="87">
+
 						    </tr>
 
 						</td>
@@ -1507,10 +1546,16 @@ $('#printeando').click(function(){
 			success:function(response){
 				$("#pfolio1").html(response); 
 				$("#pfolio2").html(response); 
+				
+
 			},
-		});			
+		});	
+	
 
 });
+
+
+
 
 $('#cancelar').click(function(){
 						$('.prnt').dialog("close");
@@ -1528,9 +1573,10 @@ $('#cancelar').click(function(){
 $(function() {
     $( ".print" ).draggable();
 });
-
+//parent
 ////ESTA FUNCION ES PARA MANDAR LOS VALORES QUE ESTAN EN EL DIV DE UPDATE PARA EL DIV DE PRINT /////////////
 function 	updateoutput(){
+
 			
 			document.getElementById('p_cp').innerHTML=document.getElementById('pcpostal').getAttribute("value");
 			document.getElementById('p_cd').innerHTML=document.getElementById('pciudad').getAttribute("value");
@@ -1559,13 +1605,43 @@ function 	updateoutput(){
 			document.getElementById('p_imei').innerHTML=document.getElementById('a_imei').value;
 			document.getElementById('p_passwd').innerHTML=document.getElementById('a_password').value;
 
+			//var foliobarra = document.getElementById('pfolio1').innerHTML;
+			//var foliobarra = barfol.innerHTML;
+			//alert('Tienes que proporcionar marca de celular'+ foliobarra);
+			//$("#tdid").text();
+			//var foliobarra = $("#pfolio1").text();
+			
+			//var foliobarra = document.getElementById('pfolio1').textContent;
+			//var bar = document.getElementById('barras1');
+            //bar.src = "barcode/barcode.php?text="+foliobarra;
+			/////
+			/////
+
 }
 
 ////ESTA FUNCION ES PARA MANDAR A IMPRIMIR NADA MAS EL DIV QUE SE QUIERE ///////////
 function printArea(areaName){
+	     ///Codigo de Barras ////
+		var foliobarra = document.getElementById('pfolio1').innerHTML;
+		var codigob = "barcode/barcode.php?text="+foliobarra;
+		document.getElementById('barras1').src = codigob;
+        ////////////////////////
         var printContents = document.getElementById('print').innerHTML; 
-        document.body.innerHTML = printContents;
+        document.body.innerHTML = printContents;       
         window.print();
+       // return codigob;
+
+        document.body.innerHTML= "";
+        location.reload();        
+}  
+
+function printArea(areaName){
+
+        var printContents = document.getElementById('imprimesfolio').innerHTML; 
+        document.body.innerHTML = printContents;       
+        window.print();
+       // return codigob;
+
         document.body.innerHTML= "";
         location.reload();        
 }   
@@ -1576,7 +1652,7 @@ $(function() {
     $( "#agregaf" ).draggable();
   });
 $(function() {
-    $( "#agregac" ).draggable();
+    $( "#agregac" ).draggable();parent
   });
 $(function() {
     $( "#agregau" ).draggable();
@@ -2328,6 +2404,230 @@ $("#s_submit_exporta").click(function(e) {
 
     ////Esta mamada me tomo algunas horas , parece una mamada pero a la v! 
 });
+
+
+///Funcion para cerrar el div de agregar y limpiar lo que haya en los inputs
+function goaway(){
+		//this.parentElement.style.display='none';
+		document.getElementById('agregaf').setAttribute("style", "display:none");		
+	  					$('#enfolio1').val('');
+	    				$('#enfolio2').val('');
+        				$('#enfolio3').val('');
+        				$('#enfolio4').val('');
+        				$('#enfolio5').val('');
+        				$('#enfolio6').val('');
+	    				$('#enfolio7').val('');
+        				$('#enfolio8').val('');
+        				$('#enfolio9').val('');
+        				$('#enfolio10').val('');
+        				$('#s_cotiza').val('');
+						$('#s_cotiza2').val('');
+						$('#s_cotiza3').val('');
+						$('#s_cotiza4').val('');			
+						$('#a_imei').val('');
+						$('#a_mmodelo').val('');
+						$('#a_modelo').val('');
+						$('#a_cliente').val('');
+						$('#a_detalles').val('');
+						$('#a_password').val('');
+						$('#a_status').val('');
+						$('#a_conta').val('');						
+						$('#a_email').val('');	
+						$('#a_access').val('');	
+						$('#a_bitacora').val('');
+						$('#a_modelo').val('');	
+						$('input:radio[name=a_status]:checked').removeAttr("disabled");
+
+
+}
+
+function siguientefolio (){
+	var enfoliocheck = 	$.trim($("#enfolio1").val());
+	var enfoliocheck2 = $.trim($("#enfolio2").val());
+	var enfoliocheck3 = $.trim($("#enfolio3").val());
+	var enfoliocheck4 = $.trim($("#enfolio4").val());
+	var enfoliocheck5 = $.trim($("#enfolio5").val());
+	var enfoliocheck6 = $.trim($("#enfolio6").val());
+	var enfoliocheck7 = $.trim($("#enfolio7").val());
+	var enfoliocheck8 = $.trim($("#enfolio8").val());
+	var enfoliocheck9 = $.trim($("#enfolio9").val());
+
+		if(enfoliocheck.length>0){
+       			$('#enfolio2').show();
+		}
+		if (enfoliocheck.length>0 && enfoliocheck2.length>0 ){
+       			$('#enfolio3').show();			
+		}
+		if (enfoliocheck.length>0 && enfoliocheck2.length>0 && enfoliocheck3.length>0 ){
+       			$('#enfolio4').show();			
+		}
+		if (enfoliocheck.length>0 && enfoliocheck2.length>0 && enfoliocheck3.length>0 && enfoliocheck4.length>0 ){
+       			$('#enfolio5').show();			
+		}
+		if (enfoliocheck.length>0 && enfoliocheck2.length>0 && enfoliocheck3.length>0 && enfoliocheck4.length>0 && enfoliocheck5.length>0){
+       			$('#enfolio6').show();			
+		}
+		if (enfoliocheck.length>0 && enfoliocheck2.length>0 && enfoliocheck3.length>0 && enfoliocheck4.length>0 && enfoliocheck5.length>0 && enfoliocheck6.length>0){
+       			$('#enfolio7').show();			
+		}
+		if (enfoliocheck.length>0 && enfoliocheck2.length>0 && enfoliocheck3.length>0 && enfoliocheck4.length>0 && enfoliocheck5.length>0 && enfoliocheck6.length>0 && enfoliocheck7.length>0){
+       			$('#enfolio8').show();			
+		}
+		if (enfoliocheck.length>0 && enfoliocheck2.length>0 && enfoliocheck3.length>0 && enfoliocheck4.length>0 && enfoliocheck5.length>0 && enfoliocheck6.length>0 && enfoliocheck7.length>0 && enfoliocheck8.length>0){
+       			$('#enfolio9').show();			
+		}
+		if (enfoliocheck.length>0 && enfoliocheck2.length>0 && enfoliocheck3.length>0 && enfoliocheck4.length>0 && enfoliocheck5.length>0 && enfoliocheck6.length>0 && enfoliocheck7.length>0 && enfoliocheck8.length>0 && enfoliocheck9.length>0){
+       			$('#enfolio10').show();			
+		}
+}
+
+function siguientefolio2 (){
+	var impfoliocheck  = $.trim($("#impfolio1").val());
+	var impfoliocheck2 = $.trim($("#impfolio2").val());
+	var impfoliocheck3 = $.trim($("#impfolio3").val());
+	var impfoliocheck4 = $.trim($("#impfolio4").val());
+	var impfoliocheck5 = $.trim($("#impfolio5").val());
+	var impfoliocheck6 = $.trim($("#impfolio6").val());
+	var impfoliocheck7 = $.trim($("#impfolio7").val());
+	var impfoliocheck8 = $.trim($("#impfolio8").val());
+	var impfoliocheck9 = $.trim($("#impfolio9").val());
+
+		if(impfoliocheck.length>0){
+       			$('#impfolio2').show();
+		}
+		if (impfoliocheck.length>0 && impfoliocheck2.length>0 ){
+       			$('#impfolio3').show();			
+		}
+		if (impfoliocheck.length>0 && impfoliocheck2.length>0 && impfoliocheck3.length>0 ){
+       			$('#impfolio4').show();			
+		}
+		if (impfoliocheck.length>0 && impfoliocheck2.length>0 && impfoliocheck3.length>0 && impfoliocheck4.length>0 ){
+       			$('#impfolio5').show();			
+		}
+		if (impfoliocheck.length>0 && impfoliocheck2.length>0 && impfoliocheck3.length>0 && impfoliocheck4.length>0 && impfoliocheck5.length>0){
+       			$('#impfolio6').show();			
+		}
+		if (impfoliocheck.length>0 && impfoliocheck2.length>0 && impfoliocheck3.length>0 && impfoliocheck4.length>0 && impfoliocheck5.length>0 && impfoliocheck6.length>0){
+       			$('#impfolio7').show();			
+		}
+		if (impfoliocheck.length>0 && impfoliocheck2.length>0 && impfoliocheck3.length>0 && impfoliocheck4.length>0 && impfoliocheck5.length>0 && impfoliocheck6.length>0 && impfoliocheck7.length>0){
+       			$('#impfolio8').show();			
+		}
+		if (impfoliocheck.length>0 && impfoliocheck2.length>0 && impfoliocheck3.length>0 && impfoliocheck4.length>0 && impfoliocheck5.length>0 && impfoliocheck6.length>0 && impfoliocheck7.length>0 && impfoliocheck8.length>0){
+       			$('#impfolio9').show();			
+		}
+		if (impfoliocheck.length>0 && impfoliocheck2.length>0 && impfoliocheck3.length>0 && impfoliocheck4.length>0 && impfoliocheck5.length>0 && impfoliocheck6.length>0 && impfoliocheck7.length>0 && impfoliocheck8.length>0 && impfoliocheck9.length>0){
+       			$('#impfolio10').show();			
+		}
+}
+
+
+$("#en_submit").click(function() { 				
+ 				var enfolio1 		=  $('#enfolio1').val();
+  				var enfolio2 		=  $('#enfolio2').val();
+ 				var enfolio3 		=  $('#enfolio3').val();
+ 				var enfolio4 		=  $('#enfolio4').val();
+ 				var enfolio5 		=  $('#enfolio5').val();
+  				var enfolio6 		=  $('#enfolio6').val();
+  				var enfolio7 		=  $('#enfolio7').val();
+ 				var enfolio8 		=  $('#enfolio8').val();
+ 				var enfolio9 		=  $('#enfolio9').val();
+ 				var enfolio10 		=  $('#enfolio10').val();
+
+				
+			
+ 	   	$.ajax({    
+      		type: "GET",
+      		url: "ins.php?en_folio=1&enfolio1="+enfolio1+"&enfolio2="+enfolio2+"&enfolio3="+enfolio3+"&enfolio4="+enfolio4+"&enfolio5="+enfolio5+"&enfolio6="+enfolio6+"&enfolio7="+enfolio7+"&enfolio8="+enfolio8+"&enfolio9="+enfolio9+"&enfolio10="+enfolio10,
+      		dataType: "html",   
+      //expect html to be returned                
+      		success: function(resp){                    
+      	    	$("#entregafolio").html(resp);   
+      		}      
+    	});
+		
+ 	   	$('#enfolio1').val('');
+	    $('#enfolio2').val('');
+        $('#enfolio3').val('');
+        $('#enfolio4').val('');
+        $('#enfolio5').val('');
+        $('#enfolio6').val('');
+	    $('#enfolio7').val('');
+        $('#enfolio8').val('');
+        $('#enfolio9').val('');
+        $('#enfolio10').val('');
+        $('#enfolio2').hide();
+        $('#enfolio3').hide();
+        $('#enfolio4').hide();
+        $('#enfolio5').hide();
+        $('#enfolio6').hide();
+        $('#enfolio7').hide();
+        $('#enfolio8').hide();
+        $('#enfolio9').hide();
+        $('#enfolio10').hide();
+
+
+
+    
+});
+
+$("#imp_submit").click(function() { 				
+ 				var impfolio1 		=  $('#impfolio1').val();
+  				var impfolio2 		=  $('#impfolio2').val();
+ 				var impfolio3 		=  $('#impfolio3').val();
+ 				var impfolio4 		=  $('#impfolio4').val();
+ 				var impfolio5 		=  $('#impfolio5').val();
+  				var impfolio6 		=  $('#impfolio6').val();
+  				var impfolio7 		=  $('#impfolio7').val();
+ 				var impfolio8 		=  $('#impfolio8').val();
+ 				var impfolio9 		=  $('#impfolio9').val();
+ 				var impfolio10 		=  $('#impfolio10').val();
+
+				
+			
+ 	   	$.ajax({    
+      		type: "GET",
+      		url: "ins.php?imp_folio=1&impfolio1="+impfolio1+"&impfolio2="+impfolio2+"&impfolio3="+impfolio3+"&impfolio4="+impfolio4+"&impfolio5="+impfolio5+"&impfolio6="+impfolio6+"&impfolio7="+impfolio7+"&impfolio8="+impfolio8+"&impfolio9="+impfolio9+"&impfolio10="+impfolio10,
+      		dataType: "html",   
+      //expect html to be returned                
+      		success: function(resp){                    
+      	    	$("#imprimesfolio").html(resp);   
+      		}      
+    	});
+		var width = (screen.width - 850) / 2;
+		$('.impfolios').dialog({
+			modal: true,
+			width: 300,
+            position: [500, 305],
+            resizable: true,
+            title: "Impresion de etiquetas",
+
+        });
+ 	   	$('#impfolio1').val('');
+	    $('#impfolio2').val('');
+        $('#impfolio3').val('');
+        $('#impfolio4').val('');
+        $('#impfolio5').val('');
+        $('#impfolio6').val('');
+	    $('#impfolio7').val('');
+        $('#impfolio8').val('');
+        $('#impfolio9').val('');
+        $('#impfolio10').val('');
+        $('#impfolio2').hide();
+        $('#impfolio3').hide();
+        $('#impfolio4').hide();
+        $('#impfolio5').hide();
+        $('#impfolio6').hide();
+        $('#impfolio7').hide();
+        $('#impfolio8').hide();
+        $('#impfolio9').hide();
+        $('#impfolio10').hide();
+
+
+
+    
+});
+
 
 
 ///Coded by rcarreon ///  

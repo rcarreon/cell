@@ -48,7 +48,8 @@ $tr = "
         <td align=center><b>Detalles</b></td>        
         <td align=center><b>Fecha</b></td>
         <td align=center><b>Email</b></td>
-        <td align=center><b>Telefono Contacto</b></td>";
+        <td align=center><b>Telefono Contacto</b></td>
+        <td align=center><b>Tecnico</b></td>";
 ///////////tabla para mostrar columbas de la tabla usuarios/////////////////
 $tr2 = "
 <table>
@@ -252,10 +253,12 @@ mysql_select_db("cellcity",$con2);
             echo "<td  align=center id=editpassword>$data[8]</td>";
             echo "<td  align=center id=editdetalles>$data[6]</td>"; 
             echo "<td  align=center id=editfecha >$data[9]</td>";          
-            echo "<td  align=center id=editmail >$data[16]</td>";
-            echo "<td  align=center id=editcontacto >$data[17]</td>";            
+            echo "<td  align=center id=editmail >$data[17]</td>";
+            echo "<td  align=center id=editcontacto >$data[18]</td>"; 
+            echo "<td  align=center id=edittecnico >$data[16]</td>";            
+           
             echo "</tr>";
-            
+            //6623011024
     }
   ///Cerrando Connection a la base de datos usando con2       
     mysql_close($con2);

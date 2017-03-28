@@ -19,6 +19,7 @@ if [[ $ans == y ]];then
 		echo "`git status | egrep -v 'git|branch'`" 
 		git add *
 		git diff 
+		git log 
 		echo -e "Mensaje para commit ?\n"
 		read msg
 		git commit -m "${msg}"

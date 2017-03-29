@@ -18,12 +18,12 @@ if [[ $ans == y ]];then
 		echo -e "Archivos modificados .."
 		echo "`git status | egrep -v 'git|branch'`" 
 		git add .
-		git diff 
-		git log 
 		echo -e "Mensaje para commit ?\n"
 		read msg
 		git commit -m "${msg}"
 		echo -e "Empujando a git.."
+		echo -e "Esto se hara..."
+		git diff 
 		git push
 		if [[ -d $prd_dir ]];then 
 		### syncing dev to prd  

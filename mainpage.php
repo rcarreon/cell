@@ -611,7 +611,7 @@ function optionCheck6(){
 						</strong><br><br><br><br>
 						<button    type="button" id="a_submit" class="btn btn-primary" tabindex=13 > Agregar Folio </button>
 				<!--<button    type="button" id="nuevo" class="btn btn-primary" > Nuevo Folio </button> -->
-					<button type="button" id="printeando" onclick="updateoutput()" disabled="disabled" tabindex=14 class="btn"> Imprimir </button>	
+					<button type="button" id="printeando" onclick="updateoutput();" disabled="disabled" tabindex=14 class="btn"> Imprimir </button>	
 					<!-- <button type="button" id="printeando" onclick="updateoutput()"  tabindex=10> Imprimir </button>	-->										
 					</div>
 				</form>	
@@ -667,7 +667,7 @@ function optionCheck6(){
 		</div>		
 	<p id="entregafolio"></p>
 	<div  style="display:none;" style="position:absolute;top:20%;padding-left:30em;" align="center" class="impfolios">
-					<button id="imp" TYPE="button" onClick="printArea('imprimesfolio');" >Imprimir 
+					<button id="imp" TYPE="button" onClick="printArea1('imprimesfolio');" >Imprimir 
 					<button type="regresa" id="cancelar">Cancelar
 				</div>
 	<div style="display:none;" id="imprimesfolio" >
@@ -1038,7 +1038,7 @@ function optionCheck6(){
 				<!-- SE Usa para el dialogo de impresion  -->
 				<div  style="display:none;" style="position:absolute;top:20%;padding-left:30em;" align="center" class="prnt">
 					<button id="imp" TYPE="button" onClick="printArea('print');" >Imprimir 
-					<button type="regresa" id="cancelar">Cancelar
+					<button type="button" id="cancelar">Cancelar
 				</div>
 				
 		<div style="display:none;" id="impo">
@@ -1635,7 +1635,7 @@ function printArea(areaName){
         location.reload();        
 }  
 
-function printArea(areaName){
+function printArea1(areaName){
 
         var printContents = document.getElementById('imprimesfolio').innerHTML; 
         document.body.innerHTML = printContents;       

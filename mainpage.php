@@ -518,7 +518,7 @@ function optionCheck6(){
 			<div class="tab" style = "position:relative;top:-4%;" >
 				<button class="tablinks" id="defaultopen" onclick="openFolio(event, 'AgregarFolio')"><div  style="position:relative;top:-8px;">Agregar</div></button>
   				<button class="tablinks" onclick="openFolio(event, 'EntregarFolio')"><div  style="position:relative;top:-8px;">Entregar</div></button>
-  				<button class="tablinks" onclick="openFolio(event, 'ImprimirFolio')"><div  style="position:relative;top:-8px;">Etiquetas</div></button>
+  				<button class="tablinks" onclick="openFolio(event, 'ImprimirFolio')"><div  style="position:relative;top:-8px;">Imprimir</div></button>
   			</div>
 
 
@@ -622,7 +622,7 @@ function optionCheck6(){
 			</div>
 
 			<div id="EntregarFolio" class="tabcontent" style = "position:relative;top:-6%;">
-  				<h4>Entrega de folios</h4>
+  				<h3>Entrega</h3>
 				<form   name="entrega" method="post" id="entregam"><strong>
 						<div><input type="text" id="enfolio1" Placeholder="Folio1" tabindex=1  ></div>
 						<div><input type="text" id="enfolio2" Placeholder="Folio2" tabindex=2  style="display:none;" ></div>
@@ -643,7 +643,6 @@ function optionCheck6(){
             	<p>Entrega multiple de folios</p> 
 			</div>
 			<div id="ImprimirFolio" class="tabcontent" style = "position:relative;top:-6%;">
-				<h4>Impresion de etiquetas</h4>
 				<form   	name="imprimeee" method="post" id="imprimefol"><strong>
 						<div><input type="text" id="impfolio1" Placeholder="Folio1" tabindex=1  ></div>
 						<div><input type="text" id="impfolio2" Placeholder="Folio2" tabindex=2  style="display:none;" ></div>
@@ -661,8 +660,8 @@ function optionCheck6(){
 						</div>
 				 </form>
 				<button   style="position:relative;top:-30px;" type="button"  class="btn " tabindex=12 Onclick="siguientefolio2();"> Siguiente </button>
-  				
-  				<p>Impresion Multiple de etiquetas</p> 
+  				<h3>Imprimir</h3>
+  				<p>Aqui imprimes etiquetas de folios</p> 
 			</div>
 
 		</div>		
@@ -1224,8 +1223,6 @@ $("#s_submit_a").click(function(){
 		$('#opsearch4 option:eq(0)').attr('selected','selected');
 		$('#opsearch5 option:eq(0)').attr('selected','selected');
 		$('#opsearch6 option:eq(0)').attr('selected','selected');
-		document.getElementById("defaultopen").click();
-
 
 
 		$('#mcatalogo').hide();
@@ -1252,45 +1249,6 @@ $("#s_submit_a").click(function(){
 		$('#eq_submit').hide();
 		$("#cotizatabla").hide();
 		$('#managecotiza').hide();
-		$('#enfolio1').val('');
-	    $('#enfolio2').val('');
-        $('#enfolio3').val('');
-        $('#enfolio4').val('');
-        $('#enfolio5').val('');
-        $('#enfolio6').val('');
-	    $('#enfolio7').val('');
-        $('#enfolio8').val('');
-        $('#enfolio9').val('');
-        $('#enfolio10').val('');
-        $('#enfolio2').hide();
-        $('#enfolio3').hide();
-        $('#enfolio4').hide();
-        $('#enfolio5').hide();
-        $('#enfolio6').hide();
-        $('#enfolio7').hide();
-        $('#enfolio8').hide();
-        $('#enfolio9').hide();
-        $('#enfolio10').hide();
-       	$('#impfolio1').val('');
-	    $('#impfolio2').val('');
-        $('#impfolio3').val('');
-        $('#impfolio4').val('');
-        $('#impfolio5').val('');
-        $('#impfolio6').val('');
-	    $('#impfolio7').val('');
-        $('#impfolio8').val('');
-        $('#impfolio9').val('');
-        $('#impfolio10').val('');
-        $('#impfolio2').hide();
-        $('#impfolio3').hide();
-        $('#impfolio4').hide();
-        $('#impfolio5').hide();
-        $('#impfolio6').hide();
-        $('#impfolio7').hide();
-        $('#impfolio8').hide();
-        $('#impfolio9').hide();
-        $('#impfolio10').hide();
-
 
 });
 $("#s_submit_c").click(function(){
@@ -2576,9 +2534,7 @@ $("#en_submit").click(function() {
  				var enfolio9 		=  $('#enfolio9').val();
  				var enfolio10 		=  $('#enfolio10').val();
 
-		if (!enfolio1){
- 					alert('Necesitas ingresar al menos un folio a entregar');
- 		}else {
+				
 			
  	   	$.ajax({    
       		type: "GET",
@@ -2611,7 +2567,7 @@ $("#en_submit").click(function() {
         $('#enfolio10').hide();
 
 
-    }
+
     
 });
 
@@ -2626,10 +2582,7 @@ $("#imp_submit").click(function() {
  				var impfolio8 		=  $('#impfolio8').val();
  				var impfolio9 		=  $('#impfolio9').val();
  				var impfolio10 		=  $('#impfolio10').val();
- 				if (!impfolio1){
- 					alert('Necesitas ingresar al menos un folio a imprimir');
 
- 				}else {
 				
 			
  	   	$.ajax({    
@@ -2671,7 +2624,7 @@ $("#imp_submit").click(function() {
         $('#impfolio10').hide();
 
 
-     }
+
     
 });
 

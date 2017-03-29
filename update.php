@@ -18,7 +18,7 @@ mysql_select_db("cellcity",$con2);
 if(isset($_GET['folio'])){
 	$e_folio     = $_GET['folio'];
 	$nombree = mysql_real_escape_string($_GET['editcliente']);
-	$query1=mysql_query("select folio,modelo,imei,cliente,status,reparacion,detalles,password,fecha,sucursal,recibe,marca,bitacora,tecnico   from dispos where folio='$e_folio'",$con2);
+	$query1=mysql_query("select folio,modelo,imei,cliente,status,reparacion,detalles,password,fecha,sucursal,recibe,marca,bitacora  from dispos where folio='$e_folio'",$con2);
 	$query3=mysql_query("select email,telefono,celular,RFC,domicilio,colonia,ciudad,cpostal from cliente where nombre ='$nombree'",$con2);	
 	$query2=mysql_fetch_array($query1);
 	$query4=mysql_fetch_array($query3);
@@ -107,29 +107,18 @@ if(isset($_GET['folio'])){
 						Email:<div><input type="text" disabled="disabled"  name="editemail" id="editemail" value="<?php echo $query4[0]; ?>"/></div>
 						Modelo:<div><input type="text" name="editmmodelo" id="editmmodelo" value="<?php echo $query2[11]; ?>" tabindex=6 /></div>						
 			    		Detalles:<div><textarea type="text"  maxlength="115" name="editdetalles" id="editdetalles" tabindex=5 ><?php echo $query2[6]; ?></textarea></div>
-						Contraseña:<div><input type="text" name="editpassword" id="editpassword" value="<?php echo $query2[7]; ?>" tabindex=6 /></div>
-						Tecnico:<label><strong><?php echo $query2[13]; ?></strong></label>
-						<div>
-						<select id="edittecnico" tabindex=8 class="form-control">
-							<option selected="selected" disabled="disabled"><?php echo $query2[13]; ?></option>
-							<option  value="TecnicoA" id="tecA"> A </option>
-							<option  value="TecnicoB" id="tecB"> B </option>
-							<option  value="TecnicoC" id="tecC">C</option>
-
-						</select>
-						</div>	
-
+						Contraseña:<div><input type="text" name="editpassword" id="editpassword" value="<?php echo $query2[7]; ?>" tabindex=6 /></div>		
 						
 					
 						<br /><br>		
 			</div>
 					<br> <br /><br /><br /><br />
 				<form>
-					<button  type="button" class="btn btn-success bitacora" style="position:relative;top:340px;left:75%;">Bitacora</button>
-					<button  style="position:relative;left:-10%;top:340px;"class="btn btn-primary" type="button" id="editaa" tabindex=7 > Guardar cambios </button>
-					<button  style="position:relative;top:340px;left:-6%;" class="btn" type="button" id="printeando" onclick="updateoutput()" tabindex=8> Imprimir </button>								
+					<button  type="button" class="btn btn-success bitacora" style="position:relative;top:260px;">Bitacora</button>
+					<button  style="position:relative;left:1%;top:340px;"class="btn btn-primary" type="button" id="editaa" tabindex=7 > Guardar cambios </button>
+					<button  style="position:relative;top:340px;left:3%;" class="btn" type="button" id="printeando" onclick="updateoutput()" tabindex=8> Imprimir </button>								
 					<a  href="/" >
-	   					<button style="position:relative;top:340px;left:-4%;" type="button" id="regresa" class="btn" tabindex=9>Regresar</button>
+	   					<button style="position:relative;top:340px;left:5%;" type="button" id="regresa" class="btn" tabindex=9>Regresar</button>
 					</a>		
 				</form>
 	</form>	
@@ -902,7 +891,6 @@ $("#editaa").click(function(){
 	var edetalles   = $('#editdetalles').val();
 	var emmodelo	= $('#editmmodelo').val();
 	var ebitacora   = $('#editbitacora').val();
-	var etecnico    = $('#edittecnico option:selected').val();
 	var estatus = $('#editstatus option:selected').val();
 	var repara  = [];
 	   $(':checkbox:checked').each(function(i){
@@ -910,7 +898,7 @@ $("#editaa").click(function(){
 	   });
 	$.ajax({
 	type:"GET",
-		url:"ins.php?eeditas=1&editimei="+eimei+"&editcliente="+ecliente+"&editmodelo="+emodelo+"&editstatus="+estatus+"&editcontacto="+econta+"&editfecha="+efecha+"&editemail="+eemail+"&editfolio="+efolio+"&editpassword="+epass+"&editdetalles="+edetalles+"&editrepara="+repara+"&editmmodelo="+emmodelo+"&editbitacora="+ebitacora+"&edittecnico="+etecnico,
+		url:"ins.php?eeditas=1&editimei="+eimei+"&editcliente="+ecliente+"&editmodelo="+emodelo+"&editstatus="+estatus+"&editcontacto="+econta+"&editfecha="+efecha+"&editemail="+eemail+"&editfolio="+efolio+"&editpassword="+epass+"&editdetalles="+edetalles+"&editrepara="+repara+"&editmmodelo="+emmodelo+"&editbitacora="+ebitacora,
 		success: function(response){
 			$('#editaste').html(response);
 			alert('Folio '+efolio+' modificado con exito');

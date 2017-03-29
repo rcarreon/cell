@@ -307,13 +307,11 @@ if(!empty($_GET['eeditas'])){
   $e_folio     = $_GET['editfolio'];
   $e_repara    = $_GET['editrepara'];
   $e_mmodelo   = $_GET['editmmodelo'];
-  $e_tecnico   = $_GET['edittecnico'];
-
   
   if (!$e_repara){
-                $query = "UPDATE dispos SET modelo = '$e_modelo', imei = '$e_imei', cliente = '$e_cliente', status = '$e_status', fecha = '$e_fecha', email = '$e_email', detalles = '$e_detalles', password = '$e_pass', contacto = '$e_contacto' , marca = '$e_mmodelo', bitacora = '$e_bitacora' , tecnico = '$e_tecnico' WHERE folio = '$e_folio'";
+                $query = "UPDATE dispos SET modelo = '$e_modelo', imei = '$e_imei', cliente = '$e_cliente', status = '$e_status', fecha = '$e_fecha', email = '$e_email', detalles = '$e_detalles', password = '$e_pass', contacto = '$e_contacto' , marca = '$e_mmodelo', bitacora = '$e_bitacora' WHERE folio = '$e_folio'";
   }else{
-                $query = "UPDATE dispos SET modelo = '$e_modelo', imei = '$e_imei', cliente = '$e_cliente', status = '$e_status', fecha = '$e_fecha', email = '$e_email', detalles = '$e_detalles', password = '$e_pass', contacto = '$e_contacto', marca = '$e_mmodelo',  reparacion = '$e_repara', bitacora = '$e_bitacora', tecnico = '$e_tecnico' WHERE folio = '$e_folio'";
+                $query = "UPDATE dispos SET modelo = '$e_modelo', imei = '$e_imei', cliente = '$e_cliente', status = '$e_status', fecha = '$e_fecha', email = '$e_email', detalles = '$e_detalles', password = '$e_pass', contacto = '$e_contacto', marca = '$e_mmodelo',  reparacion = '$e_repara', bitacora = '$e_bitacora' WHERE folio = '$e_folio'";
   }
       $result = mysqli_query($con,$query);
       if (!$result){
@@ -931,14 +929,26 @@ if (!empty($_GET['imp_folio'])){
 
       $query = "SELECT folio,imei,detalles from dispos where folio IN('$impfolio1','$impfolio2','$impfolio3','$impfolio4','$impfolio5','$impfolio6','$impfolio7','$impfolio8','$impfolio9','$impfolio10')";
 
+/*<div id="content">
+  <div id="left">
+     <div id="object1"></div>
+     <div id="object2"></div>
+  </div>
+
+  <div id="right">
+     <div id="object3"></div>
+     <div id="object4"></div>
+  </div>
+</div>
+*/
+  
    
     $result=mysql_query($query,$con2);
     while($dato = mysql_fetch_row($result)){
           
-            echo "<br><div style=\"border:1px solid #73AD21;width:255px;\"><br><div align=center style=\"clear:left;\" ><p><img src=barcode/barcode.php?text=".$dato[0]."/></p>";
-            echo "<p>$dato[1]</p>";
-            echo "<p style=\"width:250px;\">$dato[2]</p></div>"; 
-            echo "</div>";
+            echo "<div align=center display=\"inline-block\" ><img src=barcode/barcode.php?text=".$dato[0]."/></div>
+             <div display=\"inline-block\" align=center  >$dato[1]</div>
+             <div display=\"inline-block\" align=center  >$dato[2]</div>";    
          
     } 
 

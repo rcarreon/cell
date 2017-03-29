@@ -913,7 +913,7 @@ $("#editaa").click(function(){
 		url:"ins.php?eeditas=1&editimei="+eimei+"&editcliente="+ecliente+"&editmodelo="+emodelo+"&editstatus="+estatus+"&editcontacto="+econta+"&editfecha="+efecha+"&editemail="+eemail+"&editfolio="+efolio+"&editpassword="+epass+"&editdetalles="+edetalles+"&editrepara="+repara+"&editmmodelo="+emmodelo+"&editbitacora="+ebitacora+"&edittecnico="+etecnico,
 		success: function(response){
 			$('#editaste').html(response);
-			alert('Contacto modificado con exito');
+			alert('Folio '+efolio+' modificado con exito');
 			//window.location="/";
 		},
 	});

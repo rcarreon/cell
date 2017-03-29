@@ -18,8 +18,8 @@ if [[ $ans == y ]];then
 		echo -e "Archivos modificados .."
 		echo "`git status | egrep -v 'git|branch'`" 
 		git add *
-		git diff 
-		git log 
+		git diff . 
+		git log -p
 		echo -e "Mensaje para commit ?\n"
 		read msg
 		git commit -m "${msg}"

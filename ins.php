@@ -235,7 +235,8 @@ mysql_select_db("cellcity",$con2);
     while($data = mysql_fetch_row($resulta)){   
         echo "<tr>";              
             echo "<td align=center><a href=update.php?folio=".$data[0]."&editcliente=".urlencode($data[3]).">Editar</a></td> ";   
-            if (!$data[15] ){
+
+            if ( empty($data[15]) ){
                   echo "<td align=center><button  type=\"button\"   class=\"btn  bitacora\" onClick=\"bitacora($data[0])\";>Bitacora</button></td>";
             }else{
               echo "<td align=center><button  type=\"button\"   class=\"btn btn-info btn-block bitacora\" onClick=\"bitacora($data[0])\";>Bitacora</button></td>";

@@ -67,7 +67,7 @@ if(isset($_GET['folio'])){
 				<input type="text"  disabled="disabled" name="editcontacto" id="editcontacto" value="<?php echo $query4[1]; ?>"/>
 			</div>
 			<div id="bitacora" style="display: none;" title="Bitacora Folio: <?php echo $e_folio ;?>" > 
-					<textarea  type="text" id="editbitacora" name="editbitacora" style="width:350;height:200;text-align:left;" Placeholder="Bitacora" ><?php echo $query2[12];?></textarea>	
+					<textarea  type="text" id="editbitacora" name="editbitacora" style="width:350;height:200;text-align:left;" Placeholder="Bitacora" > <?php echo $query2[12];?></textarea>	
 					<button class="btn btn-primary bita_guarda" >Guardar</button>
 			</div> 
 		</div>
@@ -114,7 +114,7 @@ if(isset($_GET['folio'])){
 							<option selected="selected" disabled="disabled"><?php echo $query2[13]; ?></option>
 							<option  value="TecnicoA" id="tecA"> A </option>
 							<option  value="TecnicoB" id="tecB"> B </option>
-							<option  value="TecnicoC" id="tecC"> C </option>
+							<option  value="TecnicoC" id="tecC">C</option>
 
 						</select>
 						</div>	

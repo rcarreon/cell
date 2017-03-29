@@ -17,7 +17,7 @@ if [[ $ans == y ]];then
 		#set -x
 		echo -e "Archivos modificados .."
 		echo "`git status | egrep -v 'git|branch'`" 
-		git add *
+		git add .
 		git diff 
 		git log 
 		echo -e "Mensaje para commit ?\n"

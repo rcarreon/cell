@@ -643,6 +643,7 @@ function optionCheck6(){
             	<p>Entrega multiple de folios</p> 
 			</div>
 			<div id="ImprimirFolio" class="tabcontent" style = "position:relative;top:-6%;">
+  				<h3>Impresion</h3>
 				<form   	name="imprimeee" method="post" id="imprimefol"><strong>
 						<div><input type="text" id="impfolio1" Placeholder="Folio1" tabindex=1  ></div>
 						<div><input type="text" id="impfolio2" Placeholder="Folio2" tabindex=2  style="display:none;" ></div>
@@ -660,7 +661,6 @@ function optionCheck6(){
 						</div>
 				 </form>
 				<button   style="position:relative;top:-30px;" type="button"  class="btn " tabindex=12 Onclick="siguientefolio2();"> Siguiente </button>
-  				<h3>Imprimir</h3>
   				<p>Aqui imprimes etiquetas de folios</p> 
 			</div>
 
@@ -2519,6 +2519,8 @@ function siguientefolio2 (){
 		if (impfoliocheck.length>0 && impfoliocheck2.length>0 && impfoliocheck3.length>0 && impfoliocheck4.length>0 && impfoliocheck5.length>0 && impfoliocheck6.length>0 && impfoliocheck7.length>0 && impfoliocheck8.length>0 && impfoliocheck9.length>0){
        			$('#impfolio10').show();			
 		}
+
+
 }
 
 
@@ -2623,10 +2625,14 @@ $("#imp_submit").click(function() {
         $('#impfolio9').hide();
         $('#impfolio10').hide();
 
+        
+
 
 
     
 });
+
+
 
 
 

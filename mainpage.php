@@ -266,7 +266,7 @@ function optionCheck6(){
 			<div>
 				<div style="position:left5%;">
 					<button   type="button" class="btn btn-primary" id="s_submit_b" value="bujcar" >Buscar</button>
-					<button   type="button" class="btn btn-primary" id="s_submit_a"  value="folios">Folios</button>
+					<button   type="button" class="btn btn-primary" id="s_submit_a"  onclick="opentabo();"value="folios">Folios</button>
 					<button   type="button" class="btn btn-primary" id="s_submit_c"  value="clientela ">Clientes</button>
 					<button   type="button" class="btn btn-primary" id="s_submit_co"  value="cotizando ">Cotizador</button> 
 				</div>
@@ -543,7 +543,7 @@ function optionCheck6(){
 						<div style="position:absolute;top:28px;left:55%;">
 							Imei:
 							<div>
-				 				<input type="text" name="a_imei" id="a_imei" class="s_imei_auto" placeholder="Ingresa Imei" tabindex=2 style="text-transform:uppercase;" >
+				 				<input type="number" name="a_imei" id="a_imei" class="s_imei_auto" placeholder="Ingresa Imei" tabindex=2 style="text-transform:uppercase;" >
 				 			</div>
 			    		</div>
 						Equipo marca: 
@@ -624,16 +624,16 @@ function optionCheck6(){
 			<div id="EntregarFolio" class="tabcontent" style = "position:relative;top:-6%;">
   				<h3>Entrega</h3>
 				<form   name="entrega" method="post" id="entregam"><strong>
-						<div><input type="text" id="enfolio1" Placeholder="Folio1" tabindex=1  ></div>
-						<div><input type="text" id="enfolio2" Placeholder="Folio2" tabindex=2  style="display:none;" ></div>
-						<div><input type="text" id="enfolio3" Placeholder="Folio3" tabindex=3  style="display:none;" ></div>
-						<div><input type="text" id="enfolio4" Placeholder="Folio4" tabindex=4  style="display:none;" ></div>
-						<div><input type="text" id="enfolio5" Placeholder="Folio5" tabindex=5  style="display:none;" ></div>	
-						<div><input type="text" id="enfolio6" Placeholder="Folio6" tabindex=6  style="display:none;" ></div>
-						<div><input type="text" id="enfolio7" Placeholder="Folio7" tabindex=7  style="display:none;" ></div>
-						<div><input type="text" id="enfolio8" Placeholder="Folio8" tabindex=8  style="display:none;" ></div>
-						<div><input type="text" id="enfolio9" Placeholder="Folio9" tabindex=9  style="display:none;" ></div>	
-						<div><input type="text" id="enfolio10" Placeholder="Folio10" tabindex=10  style="display:none;" ></div>					
+						<div><input type="number" id="enfolio1" Placeholder="Folio1" tabindex=1  ></div>
+						<div><input type="number" id="enfolio2" Placeholder="Folio2" tabindex=2  style="display:none;" ></div>
+						<div><input type="number" id="enfolio3" Placeholder="Folio3" tabindex=3  style="display:none;" ></div>
+						<div><input type="number" id="enfolio4" Placeholder="Folio4" tabindex=4  style="display:none;" ></div>
+						<div><input type="number" id="enfolio5" Placeholder="Folio5" tabindex=5  style="display:none;" ></div>	
+						<div><input type="number" id="enfolio6" Placeholder="Folio6" tabindex=6  style="display:none;" ></div>
+						<div><input type="number" id="enfolio7" Placeholder="Folio7" tabindex=7  style="display:none;" ></div>
+						<div><input type="number" id="enfolio8" Placeholder="Folio8" tabindex=8  style="display:none;" ></div>
+						<div><input type="number" id="enfolio9" Placeholder="Folio9" tabindex=9  style="display:none;" ></div>	
+						<div><input type="number" id="enfolio10" Placeholder="Folio10" tabindex=10  style="display:none;" ></div>					
 
 						<div style="position:relative;left:20%;top:5px;">
 							 <button    type="button" id="en_submit" class="btn btn-primary" tabindex=11> Entregar </button>
@@ -645,16 +645,16 @@ function optionCheck6(){
 			<div id="ImprimirFolio" class="tabcontent" style = "position:relative;top:-6%;">
   				<h3>Impresion</h3>
 				<form   	name="imprimeee" method="post" id="imprimefol"><strong>
-						<div><input type="text" id="impfolio1" Placeholder="Folio1" tabindex=1  ></div>
-						<div><input type="text" id="impfolio2" Placeholder="Folio2" tabindex=2  style="display:none;" ></div>
-						<div><input type="text" id="impfolio3" Placeholder="Folio3" tabindex=3  style="display:none;" ></div>
-						<div><input type="text" id="impfolio4" Placeholder="Folio4" tabindex=4  style="display:none;" ></div>
-						<div><input type="text" id="impfolio5" Placeholder="Folio5" tabindex=5  style="display:none;" ></div>	
-						<div><input type="text" id="impfolio6" Placeholder="Folio6" tabindex=6  style="display:none;" ></div>
-						<div><input type="text" id="impfolio7" Placeholder="Folio7" tabindex=7  style="display:none;" ></div>
-						<div><input type="text" id="impfolio8" Placeholder="Folio8" tabindex=8  style="display:none;" ></div>
-						<div><input type="text" id="impfolio9" Placeholder="Folio9" tabindex=9  style="display:none;" ></div>	
-						<div><input type="text" id="impfolio10" Placeholder="Folio10" tabindex=10  style="display:none;" ></div>					
+						<div><input type="number" id="impfolio1" Placeholder="Folio1" tabindex=1  ></div>
+						<div><input type="number" id="impfolio2" Placeholder="Folio2" tabindex=2  style="display:none;" ></div>
+						<div><input type="number" id="impfolio3" Placeholder="Folio3" tabindex=3  style="display:none;" ></div>
+						<div><input type="number" id="impfolio4" Placeholder="Folio4" tabindex=4  style="display:none;" ></div>
+						<div><input type="number" id="impfolio5" Placeholder="Folio5" tabindex=5  style="display:none;" ></div>	
+						<div><input type="number" id="impfolio6" Placeholder="Folio6" tabindex=6  style="display:none;" ></div>
+						<div><input type="number" id="impfolio7" Placeholder="Folio7" tabindex=7  style="display:none;" ></div>
+						<div><input type="number" id="impfolio8" Placeholder="Folio8" tabindex=8  style="display:none;" ></div>
+						<div><input type="number" id="impfolio9" Placeholder="Folio9" tabindex=9  style="display:none;" ></div>	
+						<div><input type="number" id="impfolio10" Placeholder="Folio10" tabindex=10  style="display:none;" ></div>					
 
 						<div style="position:relative;left:20%;top:5px;">
 							 <button    type="button" id="imp_submit" class="btn btn-primary" tabindex=11> Imprimir </button>
@@ -1249,6 +1249,46 @@ $("#s_submit_a").click(function(){
 		$('#eq_submit').hide();
 		$("#cotizatabla").hide();
 		$('#managecotiza').hide();
+		$('#impfolio1').val('');
+	    $('#impfolio2').val('');
+        $('#impfolio3').val('');
+        $('#impfolio4').val('');
+        $('#impfolio5').val('');
+        $('#impfolio6').val('');
+	    $('#impfolio7').val('');
+        $('#impfolio8').val('');
+        $('#impfolio9').val('');
+        $('#impfolio10').val('');
+        $('#impfolio2').hide();
+        $('#impfolio3').hide();
+        $('#impfolio4').hide();
+        $('#impfolio5').hide();
+        $('#impfolio6').hide();
+        $('#impfolio7').hide();
+        $('#impfolio8').hide();
+        $('#impfolio9').hide();
+        $('#impfolio10').hide();
+
+
+        $('#enfolio1').val('');
+	    $('#enfolio2').val('');
+        $('#enfolio3').val('');
+        $('#enfolio4').val('');
+        $('#enfolio5').val('');
+        $('#enfolio6').val('');
+	    $('#enfolio7').val('');
+        $('#enfolio8').val('');
+        $('#enfolio9').val('');
+        $('#enfolio10').val('');
+        $('#enfolio2').hide();
+        $('#enfolio3').hide();
+        $('#enfolio4').hide();
+        $('#enfolio5').hide();
+        $('#enfolio6').hide();
+        $('#enfolio7').hide();
+        $('#enfolio8').hide();
+        $('#enfolio9').hide();
+        $('#enfolio10').hide();
 
 });
 $("#s_submit_c").click(function(){
@@ -1434,6 +1474,10 @@ $(document).ready(function() {
 </script>
 <script type="text/javascript">
 
+function opentabo(){
+	document.getElementById("defaultopen").click();
+
+}
 /// Aqui abres por default el tab que quieras en el caso el del id defaultopen//
 document.getElementById("defaultopen").click();
 
@@ -1899,6 +1943,7 @@ $("#a_submit").click(function(){
 	   $(':checkbox:checked').each(function(i){
 	   		repara[i] = $(this).val();
 	   });
+
 	   ////  ESTO es para detectaar que sucursl eligio  y poner la direccion y datos correspondientes, faltan las demas msucursaales //////////
 	if (adonde == "Matriz"){
 		var adnd = "Llamas Comunicación, S.A. de C.V. Matriz: Bernardo Reyes # 178 RFC: LCO9906169Y0, Hermosillo, Sonora, Tel. 301-64-64";

@@ -1134,12 +1134,12 @@ function optionCheck6(){
 					</div>
 					Celular:
  					<div>
- 						<input size="30" type="text" name="c_cel" id="c_cel" placeholder="Celular" tabindex=3 style="text-transform:uppercase;" >				
+ 						<input size="30" type="number" name="c_cel" id="c_cel" placeholder="Celular" tabindex=3 style="text-transform:uppercase;" >				
  					</div>
  					<div style="position:absolute;top:75px;left:55%;">
 						<font color="red">**</font>Telefono contacto autorización:
 						<div>						
-							<input size="30" type="text" name="c_tel" id="c_tel" placeholder="Telefono de contacto" tabindex=4 style="text-transform:uppercase;" >
+							<input size="30" type="number" name="c_tel" id="c_tel" placeholder="Telefono de contacto" tabindex=4 style="text-transform:uppercase;" >
 						</div>
 					</div>
 						RFC:

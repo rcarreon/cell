@@ -77,10 +77,11 @@ function optionCheck6(){
 										<option selected="selected" disabled="disabled" value="sucursal">Sucursal</option>
 										<option value="Matriz"> Matriz</option>
 										<option value="Quiroga"> Colosio - Quiroga</option>
-										<Option  value= "Dila">Dila </option>
 										<option  value= "Monteverde">Plaza Monteverde</option>
 										<option  value= "P.Maria">Plaza Maria</option>
 										<option  value= "PaseoSoli">Paseo Solidaridad</option>
+										<option  value= "LasFuentes">Las Fuentes</option>
+
 									</select>																					
 									<select  onchange="optionCheck6();" id="f_por"   title="Selecciona una de las opciones siguientes para filtrar dispositivos en nuestra base de datos" class="form-control" style="display:none;width:200px;float:left;">
 										<option selected="selected" disabled="disabled">--Seleciona  opcion--</option>

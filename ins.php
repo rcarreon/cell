@@ -206,12 +206,12 @@ mysql_select_db("cellcity",$con2);
     }    
      if($sfecha){  
         if ( $numcolum > 500){       
-            $resulta=mysql_query("SELECT dispos.*, cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente  ON  cliente.nombre = dispos.cliente where dispos.fecha = '$sfecha' order by dispos.folio desc",$con2);
+            $resulta=mysql_query("SELECT dispos.*, cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente  ON  cliente.nombre = dispos.cliente where dispos.fecha LIKE '$sfecha%' order by dispos.folio desc",$con2);
         }
         if ( empty($numcolum) ){
-            $resulta=mysql_query("SELECT dispos.*, cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente  ON  cliente.nombre = dispos.cliente where dispos.fecha = '$sfecha' order by dispos.folio desc LIMIT 100",$con2);
+            $resulta=mysql_query("SELECT dispos.*, cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente  ON  cliente.nombre = dispos.cliente where dispos.fecha LIKE  '$sfecha%' order by dispos.folio desc LIMIT 100",$con2);
         }else {
-            $resulta=mysql_query("SELECT dispos.*, cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente  ON  cliente.nombre = dispos.cliente where dispos.fecha = '$sfecha' order by dispos.folio desc LIMIT $numcolum",$con2);
+            $resulta=mysql_query("SELECT dispos.*, cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente  ON  cliente.nombre = dispos.cliente where dispos.fecha LIKE '$sfecha%' order by dispos.folio desc LIMIT $numcolum",$con2);
 
         }
         echo $tr;
@@ -947,7 +947,7 @@ if (!empty($_GET['imp_folio'])){
     $result=mysql_query($query,$con2);
     while($dato = mysql_fetch_row($result)){
           
-             echo "<br><div style=\"border:1px solid #73AD21;width:255px; float:left;margin:10px;\"><br><div align=center  ><p><img src=barcode/barcode.php?text=".$dato[0]."/></p>";
+             echo "<br><div style=\"border:1px solid #73AD21;width:255px; float:left;margin:10px; \"><br><div align=center  ><p><img src=barcode/barcode.php?text=".$dato[0]."/></p>";
              echo "<p>$dato[1]</p>";
              echo "<p style=\"width:250px;\">$dato[2]</p></div>"; 
              echo "</div>";

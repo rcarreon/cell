@@ -98,7 +98,7 @@ function optionCheck6(){
 								<div id="f_fecha" style="display:none;position:relative;left:25%;top:20px;width:400px;"> <p>Rango de Fecha</p> 
 									<input  type="text" name="f_fecha_i" id="f_fecha_i" placeholder="Inicial" style="display:none;" class="datte">
 									<input  type="text" name="f_fecha_t" id="f_fecha_t" placeholder="Final" style="display:none;" class="datte">
-									<button type="button" class="btn btn-primary" id="f_submit" style="position:relative;left:89%;top:-28px;display:none;" > Busca </button> 
+									<button type="button" class="btn btn-primary" id="f_submit" style="position:relative;left:19%;top:-32px;display:none;" > Busca </button> 
 									<button type="button" id="genera"  style="position:relative;top:-28px;left:90%;display:none;" class="btn btn-success ">Generar Detalles</button>
 									<button type="button" id="mostrar"  style="position:relative;top:-28px;left:90%;display:none;" class="btn btn-success detalles">Mostrar</button>
 								</div>

@@ -543,7 +543,7 @@ function optionCheck6(){
 						<div style="position:absolute;top:28px;left:55%;">
 							Imei:
 							<div>
-				 				<input type="number" name="a_imei" id="a_imei" class="s_imei_auto" placeholder="Ingresa Imei" tabindex=2 style="text-transform:uppercase;" >
+				 				<input type="text" name="a_imei" id="a_imei" class="s_imei_auto" placeholder="Ingresa Imei" tabindex=2 style="text-transform:uppercase;" >
 				 			</div>
 			    		</div>
 						Equipo marca: 

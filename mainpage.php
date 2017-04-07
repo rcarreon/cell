@@ -146,7 +146,8 @@ switch (option2){
 		break;
 
 	}
-	
+		$('#s_submit').focus();
+
 }
 
 function optionCheck3(){
@@ -307,7 +308,7 @@ function optionCheck6(){
 							<option name="s_donde" value= "PaseoSoli">Paseo Solidaridad</option>
 							<option name="s_donde" value= "LasFuentes">Las Fuentes</option>
 						</select> 	
-					<select name="n_columnas" id="n_columnas" style="display:none;width:180px;float:left;" class="form-control"  >
+					<select  onchange="enfocado();" name="n_columnas" id="n_columnas" style="display:none;width:180px;float:left;" class="form-control"  >
 							<option selected="selected"  value="" >100 Recientes </option>
 							<option name="n_columnas" value="200" > 200 </option>
 							<option name="n_columnas" value="300" > 300 </option> 
@@ -1928,6 +1929,8 @@ $('#regresando').click(function(){
  	            var sfecha 		=  $('#s_fecha').val();
  	            var columnas 	=  $('#n_columnas option:selected').val();
 
+
+
  	            
 
     $.ajax({    
@@ -2524,30 +2527,41 @@ function siguientefolio (){
 
 		if(enfoliocheck.length>0){
        			$('#enfolio2').show();
+				$('#enfolio2').focus();
+
 		}
 		if (enfoliocheck.length>0 && enfoliocheck2.length>0 ){
-       			$('#enfolio3').show();			
+       			$('#enfolio3').show();
+				$('#enfolio3').focus();
+			
 		}
 		if (enfoliocheck.length>0 && enfoliocheck2.length>0 && enfoliocheck3.length>0 ){
        			$('#enfolio4').show();			
+       			$('#enfolio4').focus();
 		}
 		if (enfoliocheck.length>0 && enfoliocheck2.length>0 && enfoliocheck3.length>0 && enfoliocheck4.length>0 ){
        			$('#enfolio5').show();			
+       			$('#enfolio5').focus();
 		}
 		if (enfoliocheck.length>0 && enfoliocheck2.length>0 && enfoliocheck3.length>0 && enfoliocheck4.length>0 && enfoliocheck5.length>0){
-       			$('#enfolio6').show();			
+       			$('#enfolio6').show();	
+       			$('#enfolio6').focus();		
 		}
 		if (enfoliocheck.length>0 && enfoliocheck2.length>0 && enfoliocheck3.length>0 && enfoliocheck4.length>0 && enfoliocheck5.length>0 && enfoliocheck6.length>0){
-       			$('#enfolio7').show();			
+       			$('#enfolio7').show();	
+       			$('#enfolio7').focus();		
 		}
 		if (enfoliocheck.length>0 && enfoliocheck2.length>0 && enfoliocheck3.length>0 && enfoliocheck4.length>0 && enfoliocheck5.length>0 && enfoliocheck6.length>0 && enfoliocheck7.length>0){
-       			$('#enfolio8').show();			
+       			$('#enfolio8').show();
+       			$('#enfolio8').focus();			
 		}
 		if (enfoliocheck.length>0 && enfoliocheck2.length>0 && enfoliocheck3.length>0 && enfoliocheck4.length>0 && enfoliocheck5.length>0 && enfoliocheck6.length>0 && enfoliocheck7.length>0 && enfoliocheck8.length>0){
-       			$('#enfolio9').show();			
+       			$('#enfolio9').show();
+       			$('#enfolio9').focus();			
 		}
 		if (enfoliocheck.length>0 && enfoliocheck2.length>0 && enfoliocheck3.length>0 && enfoliocheck4.length>0 && enfoliocheck5.length>0 && enfoliocheck6.length>0 && enfoliocheck7.length>0 && enfoliocheck8.length>0 && enfoliocheck9.length>0){
-       			$('#enfolio10').show();			
+       			$('#enfolio10').show();
+       			$('#enfolio10').focus();			
 		}
 }
 
@@ -2723,30 +2737,39 @@ $('#lrep').click(function(){
 			var enfolio10	= $('#enfolio10').val();
 			if ( enfolio && enfolio2 ){
 					var enfolio = $('#enfolio2').val();
+					$('#enfolio2').focus();
 			}
 			if ( enfolio && enfolio2 && enfolio3 ){
 					var enfolio = $('#enfolio3').val();
+					$('#enfolio3').focus();
 			}
 			if ( enfolio && enfolio2 && enfolio3 && enfolio4 ){
 					var enfolio = $('#enfolio4').val();
+					$('#enfolio4').focus();
 			}
 			if ( enfolio && enfolio2 && enfolio3 && enfolio4 && enfolio5 ){
 					var enfolio = $('#enfolio5').val();
+					$('#enfolio5').focus();
 			}
 			if ( enfolio && enfolio2 && enfolio3 && enfolio4 && enfolio5 && enfolio6 ){
 					var enfolio = $('#enfolio6').val();
+					$('#enfolio6').focus();
 			}
 			if ( enfolio && enfolio2 && enfolio3 && enfolio4 && enfolio5 && enfolio6 && enfolio7 ){
 					var enfolio = $('#enfolio7').val();
+					$('#enfolio7').focus();
 			}
 			if ( enfolio && enfolio2 && enfolio3 && enfolio4 && enfolio5 && enfolio6 && enfolio7 && enfolio8 ){
 					var enfolio = $('#enfolio8').val();
+					$('#enfolio8').focus();
 			}
 			if ( enfolio && enfolio2 && enfolio3 && enfolio4 && enfolio5 && enfolio6 && enfolio7 && enfolio8 && enfolio9 ){
 					var enfolio = $('#enfolio9').val();
+					$('#enfolio9').focus();
 			}
 			if ( enfolio && enfolio2 && enfolio3 && enfolio4 && enfolio5 && enfolio6 && enfolio7 && enfolio8 && enfolio9  && enfolio10){
 					var enfolio = $('#enfolio10').val();
+					$('#enfolio10').focus();
 			}
 
 			var repara  = [];
@@ -2777,6 +2800,7 @@ $('#lrep').click(function(){
 
 				$('.rcasos').hide();
 				$('#a_rep:checked').removeAttr('checked');
+
 		
 
 
@@ -2787,7 +2811,14 @@ $('#Siguentrega').click(function(){
 });
 $(function(){
 	$('.rcasos').draggable();
-})
+});
+
+function enfocado(){
+
+		$('#s_submit').focus();
+
+}
+
 
 ///Coded by rcarreon ///  
 

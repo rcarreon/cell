@@ -633,13 +633,36 @@ function optionCheck6(){
 						<div><input type="number" id="enfolio7" Placeholder="Folio7" tabindex=7  style="display:none;" ></div>
 						<div><input type="number" id="enfolio8" Placeholder="Folio8" tabindex=8  style="display:none;" ></div>
 						<div><input type="number" id="enfolio9" Placeholder="Folio9" tabindex=9  style="display:none;" ></div>	
-						<div><input type="number" id="enfolio10" Placeholder="Folio10" tabindex=10  style="display:none;" ></div>					
+						<div><input type="number" id="enfolio10" Placeholder="Folio10" tabindex=10  style="display:none;" ></div>	
+
+
+						<div class="rcasos"  style="display:none;">				
+								<h5 align="center"> Reparacion </h5>					
+								<div><input type="checkbox" name="a_rep[]" id="a_rep" value="LCD">LCD 
+									 <input type="checkbox" name="a_rep[]" id="a_rep" value="Touch">Touch 
+									 <input type="checkbox" name="a_rep[]" id="a_rep" value="Trackpad">TrackPad</div>
+								<div><input type="checkbox" name="a_rep[]" id="a_rep"  value="C.Carga">C. de Carga
+									 <input type="checkbox" name="a_rep[]" id="a_rep" value="Bocina">Bocina
+				    				 <input type="checkbox" name="a_rep[]" id="a_rep" value="Grantia">Garantia</div>
+								<div><input type="checkbox" name="a_rep[]" id="a_rep" value="Mic">Mic
+									 <input type="checkbox" name="a_rep[]" id="a_rep" value="Bateria">Bateria
+									 <input type="checkbox" name="a_rep[]" id="a_rep" value="Cristal">Cristal</div>
+								<div><input type="checkbox" name="a_rep[]" id="a_rep" value="Flex">Flex
+									 <input type="checkbox" name="a_rep[]" id="a_rep" value="Camara">Camara
+									 <input type="checkbox" name="a_rep[]" id="a_rep" value="B.Encendido">Boton Encendido</div>
+								<div><input type="checkbox" name="a_rep[]" id="a_rep" value="Portasim">Porta Sim
+									 <input type="checkbox" name="a_rep[]" id="a_rep" value="Servicio">Servicio
+									 <input type="checkbox" name="a_rep[]" id="a_rep" value="Software">Software</div>
+								<div><input type="checkbox" name="a_rep[]" id="a_rep" value="No hay reparacion">No hay reparacion </div>
+
+								<input type="button" id="lrep"  value="Listo">					
+						</div>				
 
 						<div style="position:relative;left:20%;top:5px;">
 							 <button    type="button" id="en_submit" class="btn btn-primary" tabindex=11> Entregar </button>
 						</div>
 				 </form>
-				<button   style="position:relative;top:-30px;" type="button"  class="btn " tabindex=12 Onclick="siguientefolio();"> Siguiente </button>
+				<button   style="position:relative;top:-30px;" type="button" id="Siguentrega" class="btn " tabindex=12 Onclick="siguientefolio();"> Siguiente </button>
             	<p>Entrega multiple de folios</p> 
 			</div>
 			<div id="ImprimirFolio" class="tabcontent" style = "position:relative;top:-6%;">
@@ -673,6 +696,8 @@ function optionCheck6(){
 	<div style="display:none;" id="imprimesfolio" >
 	
 	</div>
+
+
 
 
 		<!--IMPRIMIR -->
@@ -2580,12 +2605,16 @@ $("#en_submit").click(function() {
  				var enfolio8 		=  $('#enfolio8').val();
  				var enfolio9 		=  $('#enfolio9').val();
  				var enfolio10 		=  $('#enfolio10').val();
+ 				var entre  = [];
+	   				$(':checkbox:checked').each(function(i){
+	   				entre[i] = $(this).val();
+	   			});
 
 				
 			
  	   	$.ajax({    
       		type: "GET",
-      		url: "ins.php?en_folio=1&enfolio1="+enfolio1+"&enfolio2="+enfolio2+"&enfolio3="+enfolio3+"&enfolio4="+enfolio4+"&enfolio5="+enfolio5+"&enfolio6="+enfolio6+"&enfolio7="+enfolio7+"&enfolio8="+enfolio8+"&enfolio9="+enfolio9+"&enfolio10="+enfolio10,
+      		url: "ins.php?en_folio=1&enfolio1="+enfolio1+"&enfolio2="+enfolio2+"&enfolio3="+enfolio3+"&enfolio4="+enfolio4+"&enfolio5="+enfolio5+"&enfolio6="+enfolio6+"&enfolio7="+enfolio7+"&enfolio8="+enfolio8+"&enfolio9="+enfolio9+"&enfolio10="+enfolio10+"&entre="+entre,
       		dataType: "html",   
       //expect html to be returned                
       		success: function(resp){                    
@@ -2680,6 +2709,85 @@ $("#imp_submit").click(function() {
 
 
 
+$('#lrep').click(function(){
+
+			var enfolio 	= $('#enfolio1').val();
+			var enfolio2 	= $('#enfolio2').val();
+			var enfolio3 	= $('#enfolio3').val();
+			var enfolio4 	= $('#enfolio4').val();
+			var enfolio5 	= $('#enfolio5').val();
+			var enfolio6 	= $('#enfolio6').val();
+			var enfolio7 	= $('#enfolio7').val();
+			var enfolio8 	= $('#enfolio8').val();
+			var enfolio9 	= $('#enfolio9').val();
+			var enfolio10	= $('#enfolio10').val();
+			if ( enfolio && enfolio2 ){
+					var enfolio = $('#enfolio2').val();
+			}
+			if ( enfolio && enfolio2 && enfolio3 ){
+					var enfolio = $('#enfolio3').val();
+			}
+			if ( enfolio && enfolio2 && enfolio3 && enfolio4 ){
+					var enfolio = $('#enfolio4').val();
+			}
+			if ( enfolio && enfolio2 && enfolio3 && enfolio4 && enfolio5 ){
+					var enfolio = $('#enfolio5').val();
+			}
+			if ( enfolio && enfolio2 && enfolio3 && enfolio4 && enfolio5 && enfolio6 ){
+					var enfolio = $('#enfolio6').val();
+			}
+			if ( enfolio && enfolio2 && enfolio3 && enfolio4 && enfolio5 && enfolio6 && enfolio7 ){
+					var enfolio = $('#enfolio7').val();
+			}
+			if ( enfolio && enfolio2 && enfolio3 && enfolio4 && enfolio5 && enfolio6 && enfolio7 && enfolio8 ){
+					var enfolio = $('#enfolio8').val();
+			}
+			if ( enfolio && enfolio2 && enfolio3 && enfolio4 && enfolio5 && enfolio6 && enfolio7 && enfolio8 && enfolio9 ){
+					var enfolio = $('#enfolio9').val();
+			}
+			if ( enfolio && enfolio2 && enfolio3 && enfolio4 && enfolio5 && enfolio6 && enfolio7 && enfolio8 && enfolio9  && enfolio10){
+					var enfolio = $('#enfolio10').val();
+			}
+
+			var repara  = [];
+	   $(':checkbox:checked').each(function(i){
+	   		repara[i] = $(this).val();
+	   	});
+		$.ajax({
+		type:"GET",
+		 	url:"ins.php?eeditas2=1&editfolio="+enfolio+"&editrepara="+repara,
+			success: function(response){
+			$('#editaste').html(response);
+			//alert('Folio '+enfolio+' modificado con exito');
+			//window.location="/";
+		},
+		});
+
+	//var pcliente2 = $('#editcliente').val();
+	//		$.ajax({
+	//		type:"GET",
+	//		url:"ins.php?pclient2=1&a_cliente="+pcliente2,
+	//		dataType:"html",
+	//		success:function(response){
+	//			$("#printdiv").html(response); 
+	//			
+	//		},
+	//	});
+
+
+				$('.rcasos').hide();
+				$('#a_rep:checked').removeAttr('checked');
+		
+
+
+});
+
+$('#Siguentrega').click(function(){
+			$('.rcasos').show();
+});
+$(function(){
+	$('.rcasos').draggable();
+})
 
 ///Coded by rcarreon ///  
 

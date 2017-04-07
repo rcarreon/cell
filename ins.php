@@ -308,12 +308,28 @@ if(!empty($_GET['eeditas'])){
   $e_repara    = $_GET['editrepara'];
   $e_mmodelo   = $_GET['editmmodelo'];
   $e_tecnico   = $_GET['edittecnico'];
+
+  
   
   if (!$e_repara){
                 $query = "UPDATE dispos SET modelo = '$e_modelo', imei = '$e_imei', cliente = '$e_cliente', status = '$e_status', fecha = '$e_fecha', email = '$e_email', detalles = '$e_detalles', password = '$e_pass', contacto = '$e_contacto' , marca = '$e_mmodelo', bitacora = '$e_bitacora' , tecnico = '$e_tecnico' WHERE folio = '$e_folio'";
   }else{
                  $query = "UPDATE dispos SET modelo = '$e_modelo', imei = '$e_imei', cliente = '$e_cliente', status = '$e_status', fecha = '$e_fecha', email = '$e_email', detalles = '$e_detalles', password = '$e_pass', contacto = '$e_contacto', marca = '$e_mmodelo',  reparacion = '$e_repara', bitacora = '$e_bitacora', tecnico = '$e_tecnico' WHERE folio = '$e_folio'";
   }
+      $result = mysqli_query($con,$query);
+      if (!$result){
+            die('Coudnt query'. mysqli_error($con));
+          } 
+
+}
+
+if(!empty($_GET['eeditas2'])){
+  $e_folio     = $_GET['editfolio'];
+  $e_repara    = $_GET['editrepara'];
+
+  
+       $query = "UPDATE dispos SET reparacion = '$e_repara' WHERE folio = '$e_folio'";
+
       $result = mysqli_query($con,$query);
       if (!$result){
             die('Coudnt query'. mysqli_error($con));

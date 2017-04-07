@@ -26,6 +26,7 @@ function optionCheck(){
 		$("#agregau").hide();
 		$("#mostrar").show();
 	}
+	$('#m_submit').focus();
 
 }
 function optionCheck2(){
@@ -176,6 +177,7 @@ function optionCheck4(){
 			break;
 
 		}
+		$('#clientes_submit').focus();
 
 }
 function optionCheck5(){
@@ -202,6 +204,7 @@ function optionCheck5(){
 			break;
 
 		}
+		$('.mmodeloss').focus();
 
 }
 
@@ -219,6 +222,7 @@ function optionCheck6(){
 			break;
 
 		}
+		$('.cata_marca').focus();
 
 }
 
@@ -362,7 +366,7 @@ function optionCheck6(){
 				<h4 align="center"> Agrega articulo Nuevo </h4>
 				<strong><font color="red">**</font>Clave:
 				<div>
-					<input type="text" name="a_codigo_cat" id="a_codigo_cat" class="a_codigo_cat"  style="text-transform:uppercase;"> 
+					<input type="text" name="a_codigo_cat" id="a_codigo_cat" class="a_codigo_cat cata_marca"  style="text-transform:uppercase;"> 
 				</div>
 				Descripcion:
 				<div>				
@@ -415,8 +419,8 @@ function optionCheck6(){
 	<div  class= "container" id="mcatalogo"  style="display:none;position:relative;left:10%;">
 		<h4> Buscar en catalogo </h4>				
 					<div>
-						<input type="text" id="cat_marca" class="s_catmar_auto" name="cat_marca" placeholder="Ingresa Marca" tabindex=1  style="text-transform:uppercase;" >
-						<input type="text" id="cat_modelo" class="s_catmod_auto" name="cat_modelo" placeholder="Ingresa Modelo" tabindex=2  style="text-transform:uppercase;display:none" >
+						<input type="text" id="cat_marca" class="s_catmar_auto cata_marca" name="cat_marca" placeholder="Ingresa Marca" tabindex=1  style="text-transform:uppercase;" >
+						<input type="text" id="cat_modelo" class="s_catmod_auto cata_marca" name="cat_modelo" placeholder="Ingresa Modelo" tabindex=2  style="text-transform:uppercase;display:none" >
   						<input type="text" id="cat_producto" class="s_catprod_auto" name="cat_producto" placeholder="Ingresa Producto" tabindex=3  style="text-transform:uppercase;display:none" >
   						<button  id="limpiando" class="btn" tabindex=4>Limpiar</button>
   						<button id="s_submit_catalogo" class="btn" tabindex=5>Buscar</button>
@@ -468,8 +472,8 @@ function optionCheck6(){
 		</div>
 		<div id="agregamarca" style="display:none;position:relative;bottom:50px;left:250px;">
 				<form name="busqueda" method="get" >
-					<input  type="text" name="a_marca" id="a_marca"  placeholder="Nueva Marca"  style="display:none;text-transform:uppercase;" >
-					<input  type="text" name="modelos" id="modelos"  placeholder="Nuevo Modelo"  style="display:none;text-transform:uppercase;" >
+					<input  class="mmodeloss" type="text" name="a_marca" id="a_marca"  placeholder="Nueva Marca"  style="display:none;text-transform:uppercase;" >
+					<input  class="mmodeloss" type="text" name="modelos" id="modelos"  placeholder="Nuevo Modelo"  style="display:none;text-transform:uppercase;" >
 					<button   type="button" class="btn btn-primary" id="eq_submit" style="display:none;"   >Agregar marca</button>	
 					<button   type="button" class="btn btn-primary" id="mod_submit" style="display:none;"   >Agregar Modelo</button>		
 
@@ -1444,6 +1448,7 @@ $("#s_submit_co").click(function(){
 		$('#manageeq').hide();
 		$("#cotizatabla").show();
 		$('#managecotiza').hide();
+		$('#s_cotiza').focus();
 
 });
 

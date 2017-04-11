@@ -303,7 +303,7 @@ function optionCheck6(){
 						<option value="sucursal"> Recibido en </option>	
 						<option value="todos">Todos los Equipos</status>
 					</select>
-					<select name="s_donde" id="s_donde" style="display:none;width:165px;float:left;" class="form-control"  >
+					<select  onchange="enfocado();" name="s_donde" id="s_donde" style="display:none;width:165px;float:left;" class="form-control"  >
 							<option selected="selected" disabled="disabled" value="">opcion</option>
 							<option name="s_donde" value="Matriz" > Matriz </option>
 							<option name="s_donde" value="Quiroga" > Quiroga </option> 
@@ -328,7 +328,7 @@ function optionCheck6(){
 <!-- INICIA COTIZADOR -->			
 	<div  class= "container" id="cotiza"  style="display:none;position:relative;left:10%;">
 		<h4> Cotizacion </h4>				
-					<div>
+					<div >
 						<input type="text" id="s_cotiza" class="s_cotizamar_auto" name="s_cotiza" placeholder="Ingresa Marca" tabindex=1  style="text-transform:uppercase;" >
 						<input type="text" id="s_cotiza2" class="s_cotizamod_auto" name="s_cotiza2" placeholder="Ingresa Modelo" tabindex=2  style="text-transform:uppercase;display:none" >
   						<input type="text" id="s_cotiza3" class="s_cotizaprod_auto" name="s_cotiza3" placeholder="Ingresa Producto" tabindex=3  style="text-transform:uppercase;display:none" >
@@ -495,7 +495,7 @@ function optionCheck6(){
 					<input  type="text" name="s_modelo" id="s_modelo"  class="s_marca_auto" placeholder="Busca por Marca" style="display:none;" >
 					<input  type="text" name="s_fecha" id="s_fecha" placeholder="Buscar por fecha" style="display:none;" class="datte">
 					<input  type="text" name="s_cliente" id="s_cliente"  placeholder="Busca por cliente" class="s_cliente_auto" style="display:none;" >
-						<select name="s_status" id="s_status" style="display:none;width:110px;position:relative;left:19%;bottom:30px;" class="form-control"  >
+						<select onchange="enfocado();" name="s_status" id="s_status" style="display:none;width:110px;position:relative;left:19%;bottom:30px;" class="form-control"  >
 							<option selected="selected" disabled="disabled" value="">opcion</option>
 							<option name="s_status" value="listo" > Listo </option>
 							<option name="s_status" value="En reparacion" > En reparacion </option> 
@@ -597,9 +597,9 @@ function optionCheck6(){
 				    		<textarea maxlength="115" type="text" id="a_detalles" name="a_detalles" placeholder="Detalles Servicio Tecnico" tabindex=10 style="text-transform:uppercase;" ></textarea>					
 				    	</div>
 			    		<div style="position:absolute;top:270px;left:55%" >
-			    			Accesorios:
+			    			Detalles para impresion:
 			    				<div>
-			    				    <textarea maxlength="115" type="text" id="a_access" name="a_access" placeholder="Accesorios" tabindex=11 style="text-transform:uppercase;" ></textarea>					
+			    				    <textarea maxlength="20" type="text" id="a_access" name="a_access" placeholder="Detales para impresion" tabindex=11 style="text-transform:uppercase;" ></textarea>					
 
 			    				</div>
 			    		</div>
@@ -627,40 +627,141 @@ function optionCheck6(){
 			</div>
 
 			<div id="EntregarFolio" class="tabcontent" style = "position:relative;top:-6%;">
-  				<h3>Entrega</h3>
+  				<h4>Entrega multiple de folios</h4> 
 				<form   name="entrega" method="post" id="entregam"><strong>
-						<div><input type="number" id="enfolio1" Placeholder="Folio1" tabindex=1  ></div>
-						<div><input type="number" id="enfolio2" Placeholder="Folio2" tabindex=2  style="display:none;" ></div>
-						<div><input type="number" id="enfolio3" Placeholder="Folio3" tabindex=3  style="display:none;" ></div>
-						<div><input type="number" id="enfolio4" Placeholder="Folio4" tabindex=4  style="display:none;" ></div>
-						<div><input type="number" id="enfolio5" Placeholder="Folio5" tabindex=5  style="display:none;" ></div>	
-						<div><input type="number" id="enfolio6" Placeholder="Folio6" tabindex=6  style="display:none;" ></div>
-						<div><input type="number" id="enfolio7" Placeholder="Folio7" tabindex=7  style="display:none;" ></div>
-						<div><input type="number" id="enfolio8" Placeholder="Folio8" tabindex=8  style="display:none;" ></div>
-						<div><input type="number" id="enfolio9" Placeholder="Folio9" tabindex=9  style="display:none;" ></div>	
-						<div><input type="number" id="enfolio10" Placeholder="Folio10" tabindex=10  style="display:none;" ></div>	
+						<div class="enfolio1">
+								<input type="number" id="enfolio1" Placeholder="Folio1" tabindex=1 >
+								<select id="entecnico" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
+                                                      <option selected="selected" disabled="disabled">Tecnico</option>
+                                                      <option  value="TecnicoA" id="tecA"> A </option>
+                                                      <option  value="TecnicoB" id="tecB"> B </option>
+                                                      <option  value="TecnicoC" id="tecC"> C </option>
+ 
+                                </select>
+						</div>
+						<br class="enfolio2" style="display:none;">
+						<div class="enfolio2" style="display:none;">
+								<input type="number" id="enfolio2" Placeholder="Folio2" tabindex=2   >
+								<select id="entecnico" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
+                                                      <option selected="selected" disabled="disabled">Tecnico</option>
+                                                      <option  value="TecnicoA" id="tecA"> A </option>
+                                                      <option  value="TecnicoB" id="tecB"> B </option>
+                                                      <option  value="TecnicoC" id="tecC"> C </option>
+ 
+                                </select>
+						</div>
+						<br class="enfolio3" style="display:none;">
+						<div class="enfolio3" style="display:none;">
+								<input type="number" id="enfolio3" Placeholder="Folio3" tabindex=3   >
+								<select id="entecnico" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
+                                                      <option selected="selected" disabled="disabled">Tecnico</option>
+                                                      <option  value="TecnicoA" id="tecA"> A </option>
+                  	<p id="entregafolio"></p>
+                                    <option  value="TecnicoB" id="tecB"> B </option>
+                                                      <option  value="TecnicoC" id="tecC"> C </option>
+ 
+                                </select>
+						</div>
+						<br class="enfolio4" style="display:none;">
+						<div class="enfolio4" style="display:none;">
+								<input type="number" id="enfolio4" Placeholder="Folio4" tabindex=4   >
+								<select id="entecnico" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
+                                                      <option selected="selected" disabled="disabled">Tecnico</option>
+                                                      <option  value="TecnicoA" id="tecA"> A </option>
+                                                      <option  value="TecnicoB" id="tecB"> B </option>
+                                                      <option  value="TecnicoC" id="tecC"> C </option>
+ 
+                                </select>
+						</div>
+						<br class="enfolio5" style="display:none;">
+						<div class="enfolio5" style="display:none;" >
+								<input type="number" id="enfolio5" Placeholder="Folio5" tabindex=5   >
+								<select id="entecnico" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
+                                                      <option selected="selected" disabled="disabled">Tecnico</option>
+                                                      <option  value="TecnicoA" id="tecA"> A </option>
+                                                      <option  value="TecnicoB" id="tecB"> B </option>
+                                                      <option  value="TecnicoC" id="tecC"> C </option>
+ 
+                                </select>
+                        </div>
+                        <br class="enfolio6" style="display:none;">
+						<div class="enfolio6" style="display:none;">
+								<input type="number" id="enfolio6" Placeholder="Folio6" tabindex=6   >
+								<select id="entecnico" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
+                                                      <option selected="selected" disabled="disabled">Tecnico</option>
+                                                      <option  value="TecnicoA" id="tecA"> A </option>
+                                                      <option  value="TecnicoB" id="tecB"> B </option>
+                                                      <option  value="TecnicoC" id="tecC"> C </option>
+ 
+                                </select>
+						</div>
+						<br class="enfolio7" style="display:none;">
+						<div class="enfolio7" style="display:none;" >
+								<input type="number" id="enfolio7" Placeholder="Folio7" tabindex=7   >
+								<select id="entecnico" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
+                                                      <option selected="selected" disabled="disabled">Tecnico</option>
+                                                      <option  value="TecnicoA" id="tecA"> A </option>
+                                                      <option  value="TecnicoB" id="tecB"> B </option>
+                                                      <option  value="TecnicoC" id="tecC"> C </option>
+ 
+                                </select>
+						</div>
+						<br class="enfolio8" style="display:none;">
+						<div class="enfolio8" style="display:none;">
+								<input type="number" id="enfolio8" Placeholder="Folio8" tabindex=8   >
+								<select id="entecnico" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
+                                                      <option selected="selected" disabled="disabled">Tecnico</option>
+                                                      <option  value="TecnicoA" id="tecA"> A </option>
+                                                      <option  value="TecnicoB" id="tecB"> B </option>
+                                                      <option  value="TecnicoC" id="tecC"> C </option>
+ 
+                                </select>
+						</div>
+						<br class="enfolio9" style="display:none;" >
+						<div class="enfolio9" style="display:none;" >
+								<input type="number" id="enfolio9" Placeholder="Folio9" tabindex=9   >
+								<select id="entecnico" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
+                                                      <option selected="selected" disabled="disabled">Tecnico</option>
+                                                      <option  value="TecnicoA" id="tecA"> A </option>
+                                                      <option  value="TecnicoB" id="tecB"> B </option>
+                                                      <option  value="TecnicoC" id="tecC"> C </option>
+ 
+                                </select>
+						</div>
+						<br class="enfolio10" style="display:none;">
+						<div class="enfolio10" style="display:none;">
+								<input type="number" id="enfolio10" Placeholder="Folio10" tabindex=10   >
+								<select id="entecnico" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
+                                                      <option selected="selected" disabled="disabled">Tecnico</option>
+                                                      <option  value="TecnicoA" id="tecA"> A </option>
+                                                      <option  value="TecnicoB" id="tecB"> B </option>
+                                                      <option  value="TecnicoC" id="tecC"> C </option>
+ 
+                                </select>
+						</div>	
 
 
 						<div class="rcasos"  style="display:none;">				
 								<h5 align="center"> Reparacion </h5>					
-								<div><input type="checkbox" name="a_rep[]" id="a_rep" value="LCD">LCD 
-									 <input type="checkbox" name="a_rep[]" id="a_rep" value="Touch">Touch 
-									 <input type="checkbox" name="a_rep[]" id="a_rep" value="Trackpad">TrackPad</div>
-								<div><input type="checkbox" name="a_rep[]" id="a_rep"  value="C.Carga">C. de Carga
-									 <input type="checkbox" name="a_rep[]" id="a_rep" value="Bocina">Bocina
-				    				 <input type="checkbox" name="a_rep[]" id="a_rep" value="Grantia">Garantia</div>
-								<div><input type="checkbox" name="a_rep[]" id="a_rep" value="Mic">Mic
-									 <input type="checkbox" name="a_rep[]" id="a_rep" value="Bateria">Bateria
-									 <input type="checkbox" name="a_rep[]" id="a_rep" value="Cristal">Cristal</div>
-								<div><input type="checkbox" name="a_rep[]" id="a_rep" value="Flex">Flex
-									 <input type="checkbox" name="a_rep[]" id="a_rep" value="Camara">Camara
-									 <input type="checkbox" name="a_rep[]" id="a_rep" value="B.Encendido">Boton Encendido</div>
-								<div><input type="checkbox" name="a_rep[]" id="a_rep" value="Portasim">Porta Sim
-									 <input type="checkbox" name="a_rep[]" id="a_rep" value="Servicio">Servicio
-									 <input type="checkbox" name="a_rep[]" id="a_rep" value="Software">Software</div>
-								<div><input type="checkbox" name="a_rep[]" id="a_rep" value="No hay reparacion">No hay reparacion </div>
+								<div><input type="checkbox" name="a_rep[]" id="a_rep" value=" LCD">LCD 
+									 <input type="checkbox" name="a_rep[]" id="a_rep" value=" Touch">Touch 
+									 <input type="checkbox" name="a_rep[]" id="a_rep" value=" Trackpad">TrackPad</div>
+								<div><input type="checkbox" name="a_rep[]" id="a_rep"  value=" C.Carga">C. de Carga
+									 <input type="checkbox" name="a_rep[]" id="a_rep" value=" Bocina">Bocina
+				    				 <input type="checkbox" name="a_rep[]" id="a_rep" value=" Grantia">Garantia</div>
+								<div><input type="checkbox" name="a_rep[]" id="a_rep" value=" Mic">Mic
+									 <input type="checkbox" name="a_rep[]" id="a_rep" value=" Bateria">Bateria
+									 <input type="checkbox" name="a_rep[]" id="a_rep" value=" Cristal">Cristal</div>
+								<div><input type="checkbox" name="a_rep[]" id="a_rep" value=" Flex">Flex
+									 <input type="checkbox" name="a_rep[]" id="a_rep" value=" Camara">Camara
+									 <input type="checkbox" name="a_rep[]" id="a_rep" value=" B.Encendido">Boton Encendido</div>
+								<div><input type="checkbox" name="a_rep[]" id="a_rep" value=" Portasim">Porta Sim
+									 <input type="checkbox" name="a_rep[]" id="a_rep" value=" Servicio">Servicio
+									 <input type="checkbox" name="a_rep[]" id="a_rep" value=" Software">Software</div>
+								<div><input type="checkbox" name="a_rep[]" id="a_rep" value=" No hay reparacion">No hay reparacion </div>
 
-								<input type="button" id="lrep"  value="Listo">					
+								<input type="button" id="lrep"  value="Listo" class="btn btn-primary">	
+								<button type="button"	 class="btn "  id ="cancela"	> Cancelar </button>		
 						</div>				
 
 						<div style="position:relative;left:20%;top:5px;">
@@ -668,12 +769,12 @@ function optionCheck6(){
 						</div>
 				 </form>
 				<button   style="position:relative;top:-30px;" type="button" id="Siguentrega" class="btn " tabindex=12 Onclick="siguientefolio();"> Siguiente </button>
-            	<p>Entrega multiple de folios</p> 
 			</div>
+
 			<div id="ImprimirFolio" class="tabcontent" style = "position:relative;top:-6%;">
-  				<h3>Impresion</h3>
+  				<h4>Impresion multiple de folios</h4>
 				<form   	name="imprimeee" method="post" id="imprimefol"><strong>
-						<div><input type="number" id="impfolio1" Placeholder="Folio1" tabindex=1  ></div>
+						<div><input type="number" id="impfolio1" Placeholder="Folio1" tabindex=1  ></div> 
 						<div><input type="number" id="impfolio2" Placeholder="Folio2" tabindex=2  style="display:none;" ></div>
 						<div><input type="number" id="impfolio3" Placeholder="Folio3" tabindex=3  style="display:none;" ></div>
 						<div><input type="number" id="impfolio4" Placeholder="Folio4" tabindex=4  style="display:none;" ></div>
@@ -689,16 +790,19 @@ function optionCheck6(){
 						</div>
 				 </form>
 				<button   style="position:relative;top:-30px;" type="button"  class="btn " tabindex=12 Onclick="siguientefolio2();"> Siguiente </button>
-  				<p>Aqui imprimes etiquetas de folios</p> 
+  				 
 			</div>
 
 		</div>		
-	<p id="entregafolio"></p>
-	<div  style="display:none;" style="position:absolute;top:20%;padding-left:30em;" align="center" class="impfolios">
-					<button id="imp" TYPE="button" onClick="printArea1('imprimesfolio');" >Imprimir 
-					<button type="regresa" id="cancelar">Cancelar
+
+				<div  style="display:none;" style="position:absolute;top:20%;padding-left:30em;" align="center" class="impfolios">
+					<!-- <button id="imp" TYPE="button" onClick="printArea1('imprimesfolio');" >Imprimir 
+					<button type="button" id="cancelar">Cancelar -->
 				</div>
 	<div style="display:none;" id="imprimesfolio" >
+
+	<p id="entregafolio"></p>
+
 	
 	</div>
 
@@ -829,7 +933,7 @@ function optionCheck6(){
 								<td class="ocho" align="left"  >  
 									<strong>Equipo</strong><br>
 									Marca: <label style="width:100px;"  align="center" id="p_marca">  </label>  Modelo: <label style="width:100px;" align="center" id="p_modelo">  </label>    IMEI: <label style="width:100px;" align="center" id="p_imei">  </label> Otros:<label style="width:100px;" align="center" id="p_otros">  </label> </br>
-									Acesorios Entregados por <label style="width:250px;" id="p_cliente66" align="left" id="p_acces">  </label></br>Fecha de ingreso: <label style="width:250px;" id="fecha2" align="center"><font size="1"></font> </label> Contraseña : <label style="width:120px;" id="p_passwd" align="center"><font size="1"></font> </label> Recibio:<label><?php echo $uname?></label>
+									</br>Fecha de ingreso: <label style="width:250px;" id="fecha2" align="center"><font size="1"></font> </label> Contraseña : <label style="width:120px;" id="p_passwd" align="center"><font size="1"></font> </label> Recibio:<label><?php echo $uname?></label>
 
 						    </tr>
 
@@ -1067,8 +1171,8 @@ function optionCheck6(){
 
 				<!-- SE Usa para el dialogo de impresion  -->
 				<div  style="display:none;" style="position:absolute;top:20%;padding-left:30em;" align="center" class="prnt">
-					<button id="imp" TYPE="button" onClick="printArea('print');" >Imprimir 
-					<button type="button" id="cancelar">Cancelar
+					<!-- <button id="imp" TYPE="button" onClick="printArea('print');" >Imprimir --> 
+					<!-- <button type="button" id="cancelar" >Cancelar-->
 				</div>
 				
 		<div style="display:none;" id="impo">
@@ -1310,15 +1414,15 @@ $("#s_submit_a").click(function(){
         $('#enfolio8').val('');
         $('#enfolio9').val('');
         $('#enfolio10').val('');
-        $('#enfolio2').hide();
-        $('#enfolio3').hide();
-        $('#enfolio4').hide();
-        $('#enfolio5').hide();
-        $('#enfolio6').hide();
-        $('#enfolio7').hide();
-        $('#enfolio8').hide();
-        $('#enfolio9').hide();
-        $('#enfolio10').hide();
+        $('.enfolio2').hide();
+        $('.enfolio3').hide();
+        $('.enfolio4').hide();
+        $('.enfolio5').hide();
+        $('.enfolio6').hide();
+        $('.enfolio7').hide();
+        $('.enfolio8').hide();
+        $('.enfolio9').hide();
+        $('.enfolio10').hide();
 
 });
 $("#s_submit_c").click(function(){
@@ -1381,6 +1485,7 @@ $("#s_submit_mu").click(function(){
 		$('#modelos').hide();
 		$('#mod_submit').hide();
 		$('#managecotiza').hide();
+		$('#cotiza').hide();
 		
 });
 
@@ -1610,6 +1715,18 @@ $('#printeando').click(function(){
             position: [500, 305],
             resizable: true,
             title: "Impresion",
+            buttons: { 
+            	
+      			'Imprimir' : function(){
+      				//<button id="imp" TYPE="button" onClick="printArea('print');" >Imprimir
+      				printArea('print');
+      			},
+      			 
+      			'Cancelar' : function() { 
+         			$( this ).dialog( "close" ); 
+      			}
+      			
+   			}
 
         });
 
@@ -1633,7 +1750,10 @@ $('#printeando').click(function(){
 
 
 $('#cancelar').click(function(){
-						$('.prnt').dialog("close");
+						//$('.prnt').dialog('close');
+						$('.prnt').dialog("close");        
+
+
 						//$('.print').hide();
 						$('#a_modelo').removeAttr("disabled");
 						$('#a_imei').removeAttr("disabled");
@@ -1644,6 +1764,7 @@ $('#cancelar').click(function(){
 						$('#a_fecha').removeAttr("disabled");
 						$('#a_email').removeAttr("disabled");
 						$('input:radio[name=a_status]:checked').removeAttr("disabled","disabled");
+
 });
 $(function() {
     $( ".print" ).draggable();
@@ -1671,7 +1792,7 @@ function 	updateoutput(){
 			document.getElementById('p_cliente63').innerHTML=document.getElementById('a_cliente').value;
 			document.getElementById('p_cliente64').innerHTML=document.getElementById('a_cliente').value;
 			document.getElementById('p_cliente65').innerHTML=document.getElementById('a_cliente').value;
-			document.getElementById('p_cliente66').innerHTML=document.getElementById('a_cliente').value;						
+			//document.getElementById('p_cliente66').innerHTML=document.getElementById('a_cliente').value;						
 			document.getElementById('fecha').innerHTML=document.getElementById('a_fecha').value; 
 			document.getElementById('fecha2').innerHTML=document.getElementById('a_fecha').value;	
 			document.getElementById('p_detalles').innerHTML=document.getElementById('a_detalles').value;			
@@ -1852,7 +1973,7 @@ $(function(){
             			url: "ins.php?modeloautocotiza=1",
             			dataType: "json",
             			data: {
-                			s_cotiza : $("#s_cotiza").val()
+                			s_cotiza : $("#s_cotiza2").val()
             			},
             			success: function(data) {
                 			//response(data.slice(0,10));
@@ -1861,7 +1982,7 @@ $(function(){
         		});
     		},
 
-    		minLength: 0,
+    		minLength: 2,
 			select: function (a, b) {
         		$(this).val(b.item.value);
         		$('#s_cotiza3').show();
@@ -1880,14 +2001,15 @@ $(function(){
             			dataType: "json",
             			data: {
             				s_cotiza : $("#s_cotiza").val(),
-                			s_cotiza2 : $("#s_cotiza2").val()
+            				s_cotiza2 : $("#s_cotiza2").val(),
+                			s_cotiza3 : $("#s_cotiza3").val()
             			},
             			success: function(data) {
                 			response(data);
             		}
         		});
     		},
-    		minLength: 0,
+    		minLength: 2,
 			select: function (a, b) {
         		$(this).val(b.item.value);
         		$('#s_cotiza4').show();
@@ -1971,6 +2093,8 @@ $("#a_submit").click(function(){
 	var ammodelo    = AMMODELO.toUpperCase();
 	var ABITACORA   = $('#a_bitacora').val();
 	var abitacora   = ABITACORA.toUpperCase();
+	var AACESS 		= $('#a_access').val();
+	var aacess 		=  AACESS.toUpperCase();
 	var adonde 	=  $('#a_sucurs option:selected').val();
 	var repara  = [];
 	   $(':checkbox:checked').each(function(i){
@@ -2040,7 +2164,7 @@ $("#a_submit").click(function(){
 	else {
 		$.ajax({
 			type: "GET",
-			url: "ins.php?s_sumito=1&a_imei="+aimei+"&a_cliente="+acliente+"&a_modelo="+amodelo+"&a_status="+astatus+"&a_conta="+aconta+"&a_fecha="+afecha+"&a_email="+aemail+"&a_rep="+repara+"&a_password="+apass+"&a_detalles="+adetalles+"&a_donde="+adonde+"&a_recibe="+arecibe+"&a_mmodelo="+ammodelo+"&a_bitacora="+abitacora,
+			url: "ins.php?s_sumito=1&a_imei="+aimei+"&a_cliente="+acliente+"&a_modelo="+amodelo+"&a_status="+astatus+"&a_conta="+aconta+"&a_fecha="+afecha+"&a_email="+aemail+"&a_rep="+repara+"&a_password="+apass+"&a_detalles="+adetalles+"&a_donde="+adonde+"&a_recibe="+arecibe+"&a_mmodelo="+ammodelo+"&a_bitacora="+abitacora+"&a_access="+aacess,
 			dataType: "html",
 			success: function(response){
 				$('#agregarespuesta').html(response);				
@@ -2531,41 +2655,41 @@ function siguientefolio (){
 	var enfoliocheck9 = $.trim($("#enfolio9").val());
 
 		if(enfoliocheck.length>0){
-       			$('#enfolio2').show();
+       			$('.enfolio2').show();
 				$('#enfolio2').focus();
 
 		}
 		if (enfoliocheck.length>0 && enfoliocheck2.length>0 ){
-       			$('#enfolio3').show();
+       			$('.enfolio3').show();
 				$('#enfolio3').focus();
 			
 		}
 		if (enfoliocheck.length>0 && enfoliocheck2.length>0 && enfoliocheck3.length>0 ){
-       			$('#enfolio4').show();			
+       			$('.enfolio4').show();			
        			$('#enfolio4').focus();
 		}
 		if (enfoliocheck.length>0 && enfoliocheck2.length>0 && enfoliocheck3.length>0 && enfoliocheck4.length>0 ){
-       			$('#enfolio5').show();			
+       			$('.enfolio5').show();			
        			$('#enfolio5').focus();
 		}
 		if (enfoliocheck.length>0 && enfoliocheck2.length>0 && enfoliocheck3.length>0 && enfoliocheck4.length>0 && enfoliocheck5.length>0){
-       			$('#enfolio6').show();	
+       			$('.enfolio6').show();	
        			$('#enfolio6').focus();		
 		}
 		if (enfoliocheck.length>0 && enfoliocheck2.length>0 && enfoliocheck3.length>0 && enfoliocheck4.length>0 && enfoliocheck5.length>0 && enfoliocheck6.length>0){
-       			$('#enfolio7').show();	
+       			$('.enfolio7').show();	
        			$('#enfolio7').focus();		
 		}
 		if (enfoliocheck.length>0 && enfoliocheck2.length>0 && enfoliocheck3.length>0 && enfoliocheck4.length>0 && enfoliocheck5.length>0 && enfoliocheck6.length>0 && enfoliocheck7.length>0){
-       			$('#enfolio8').show();
+       			$('.enfolio8').show();
        			$('#enfolio8').focus();			
 		}
 		if (enfoliocheck.length>0 && enfoliocheck2.length>0 && enfoliocheck3.length>0 && enfoliocheck4.length>0 && enfoliocheck5.length>0 && enfoliocheck6.length>0 && enfoliocheck7.length>0 && enfoliocheck8.length>0){
-       			$('#enfolio9').show();
+       			$('.enfolio9').show();
        			$('#enfolio9').focus();			
 		}
 		if (enfoliocheck.length>0 && enfoliocheck2.length>0 && enfoliocheck3.length>0 && enfoliocheck4.length>0 && enfoliocheck5.length>0 && enfoliocheck6.length>0 && enfoliocheck7.length>0 && enfoliocheck8.length>0 && enfoliocheck9.length>0){
-       			$('#enfolio10').show();
+       			$('.enfolio10').show();
        			$('#enfolio10').focus();			
 		}
 }
@@ -2651,15 +2775,15 @@ $("#en_submit").click(function() {
         $('#enfolio8').val('');
         $('#enfolio9').val('');
         $('#enfolio10').val('');
-        $('#enfolio2').hide();
-        $('#enfolio3').hide();
-        $('#enfolio4').hide();
-        $('#enfolio5').hide();
-        $('#enfolio6').hide();
-        $('#enfolio7').hide();
-        $('#enfolio8').hide();
-        $('#enfolio9').hide();
-        $('#enfolio10').hide();
+        $('.enfolio2').hide();
+        $('.enfolio3').hide();
+        $('.enfolio4').hide();
+        $('.enfolio5').hide();
+        $('.enfolio6').hide();
+        $('.enfolio7').hide();
+        $('.enfolio8').hide();
+        $('.enfolio9').hide();
+        $('.enfolio10').hide();
 
 
 
@@ -2696,6 +2820,24 @@ $("#imp_submit").click(function() {
             position: [500, 305],
             resizable: true,
             title: "Impresion de etiquetas",
+
+            buttons: { 
+            	
+      			'Imprimir' : function(){
+      				//<button id="imp" TYPE="button" onClick="printArea('print');" >Imprimir
+      				printArea1('imprimesfolio');
+      			},
+      			 
+      			'Cancelar' : function() { 
+         			$( this ).dialog( "close" ); 
+      			}
+      			
+   			}
+
+
+
+            //<button id="imp" TYPE="button" onClick="printArea1('imprimesfolio');" >Imprimir 
+			//		<button type="button" id="cancelar">Cancela
 
         });
  	   	$('#impfolio1').val('');
@@ -2827,7 +2969,42 @@ function enfocado(){
 		$('#s_submit').focus();
 
 }
+$('#cancela').click(function(){
+			$('.rcasos').hide();
+			$('#a_rep:checked').removeAttr('checked');
 
+
+});
+
+
+$(document).ready(function(){ 
+    $('#s_folio').keypress(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#s_submit').click();//Trigger search button click event
+        }
+    });
+    $('#s_modelo').keypress(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#s_submit').click();//Trigger search button click event
+        }
+    });
+    $('#s_cliente').keypress(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#s_submit').click();//Trigger search button click event
+        }
+    });
+    $('#s_fecha').keypress(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#s_submit').click();//Trigger search button click event
+        }
+    });
+     $('#s_imei').keypress(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#s_submit').click();//Trigger search button click event
+        }
+    });
+
+});
 
 ///Coded by rcarreon ///  
 

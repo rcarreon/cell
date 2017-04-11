@@ -260,7 +260,7 @@ if(isset($_GET['folio'])){
 								<td class="ocho" align="left"  >  
 									<strong>Equipo</strong><br>
 									Marca: <label style="width:100px;"  align="center" id="p_marca">  </label>  Modelo: <label style="width:100px;" align="center" id="p_modelo">  </label>    IMEI: <label style="width:100px;" align="center" id="p_imei">  </label> Otros:<label style="width:100px;" align="center" id="p_otros">  </label> </br>
-									Acesorios Entregados por <label style="width:250px;" id="p_cliente66" align="left" id="p_acces">  </label></br>Fecha de ingreso: <label style="width:250px;" id="fecha2" align="center"> </label> Contraseña <label style="width:150px;" id="p_password" align="center"></label> Recibio: <label align="center"><?php echo $query2[10] ?></label>
+									</br>Fecha de ingreso: <label style="width:250px;" id="fecha2" align="center"> </label> Contraseña <label style="width:150px;" id="p_password" align="center"></label> Recibio: <label align="center"><?php echo $query2[10] ?></label>
 
 						    </tr>
 
@@ -787,7 +787,7 @@ function 	updateoutput(){
 			document.getElementById('p_cliente63').innerHTML=document.getElementById('editcliente').value;
 			document.getElementById('p_cliente64').innerHTML=document.getElementById('editcliente').value;
 			document.getElementById('p_cliente65').innerHTML=document.getElementById('editcliente').value;
-			document.getElementById('p_cliente66').innerHTML=document.getElementById('editcliente').value;
+			//document.getElementById('p_cliente66').innerHTML=document.getElementById('editcliente').value;
 			document.getElementById('fecha').innerHTML=document.getElementById('editfecha').value; 
 			document.getElementById('p_detalles').innerHTML=document.getElementById('editdetalles').value; 
 			document.getElementById('fecha2').innerHTML=document.getElementById('editfecha').value;	

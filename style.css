@@ -63,13 +63,13 @@ div#update a:first-child{
 
 div#agregaf{
 	position:absolute;
-	top: 45px;
+	top: 505px;
 	border: 1px solid #DDDDDD;
 	font-family: sans-serif; 
     margin: 0 auto; 
     padding: 20px; 
     width: 550px; 
-    height: 550px; 
+    height: 600px; 
     top:30%;
     left:30%;
     background-color: #FFFFFF;

@@ -28,6 +28,7 @@ $fpor     = $_GET['f_por'];
 $numcolum = $_GET['n_columnas'];
 $e_bitacora   = $_GET['editbitacora'];
 $abitacora  = $_GET['a_bitacora'];
+$aaccess     = $_GET['a_access'];
 
 //////////tabla para mostrar todas las columas de la tabla dispos//////////
 
@@ -278,8 +279,8 @@ if(!empty($_GET['s_sumito'])){
              exit(1);
           }else{
               if ($acliente){ 
-                    $query = "INSERT INTO dispos ( modelo, imei, cliente, email, status, detalles, reparacion, fecha, contacto,password,sucursal,recibe, marca,bitacora)
-                    VALUES ('$amodelo','$aimei','$acliente','$aemail','$astatus','$adetalles','$arep', '$afecha','$aconta', '$apass', '$adonde', '$arecibe', '$ammodelo', '$abitacora')";
+                    $query = "INSERT INTO dispos ( modelo, imei, cliente, email, status, detalles, reparacion, fecha, contacto,password,sucursal,recibe, marca,bitacora,access)
+                    VALUES ('$amodelo','$aimei','$acliente','$aemail','$astatus','$adetalles','$arep', '$afecha','$aconta', '$apass', '$adonde', '$arecibe', '$ammodelo', '$abitacora','$aaccess')";
                     $result = mysqli_query($con,$query);
                     if (!$result){
                         die('Couldn\'t query' . mysqli_error($con));
@@ -328,7 +329,7 @@ if(!empty($_GET['eeditas2'])){
   $e_repara    = $_GET['editrepara'];
 
   
-       $query = "UPDATE dispos SET reparacion = '$e_repara' WHERE folio = '$e_folio'";
+       $query = "UPDATE dispos SET detalles = '$e_repara' WHERE folio = '$e_folio'";
 
       $result = mysqli_query($con,$query);
       if (!$result){
@@ -627,9 +628,9 @@ if(!empty($_GET['marcaautocotiza'])) {
 
 
 if(!empty($_GET['modeloautocotiza'])) {
-    $marca = $_GET['s_cotiza'];
+    $modelo = $_GET['s_cotiza'];
 
-    $query = "SELECT DISTINCT  modelo FROM cotizador WHERE marca LIKE '$marca%'";
+    $query = "SELECT DISTINCT  modelo FROM cotizador WHERE modelo LIKE '$modelo%'";
     $result = mysql_query($query, $con2);
     $marca = array();
    
@@ -645,9 +646,11 @@ if(!empty($_GET['modeloautocotiza'])) {
 if(!empty($_GET['productoautocotiza'])) {
     $producto = $_GET['s_cotiza'];
     $producto2 = $_GET['s_cotiza2'];
+    $producto3 = $_GET['s_cotiza3'];
 
 
-    $query = "SELECT  DISTINCT linea FROM cotizador WHERE (marca = '$producto' AND modelo = '$producto2' )";
+
+    $query = "SELECT  DISTINCT linea FROM cotizador WHERE (marca = '$producto' AND modelo = '$producto2'  and linea LIKE '$producto3%')";
     $result = mysql_query($query, $con2);
     $producto = array();
    
@@ -922,7 +925,7 @@ if(!empty($_GET['en_folio'])){
                       echo "<script type=text/javascript>alert('Articulos con folio $enfolio1,$enfolio2,$enfolio3,$enfolio4,$enfolio5,$enfolio6, $enfolio7 y $enfolio8 actualizados con exito')</script>";
                   }
                   if ( $enfolio1 &&  $enfolio2 &&  $enfolio3 &&  $enfolio4 &&  $enfolio5 && $enfolio6 && $enfolio7 && $enfolio8 && $enfolio9) {
-                      echo "<script type=text/javascript>alert('Articulos con folio $enfolio1,$enfolio2,$enfolio3,$enfolio4,$enfolio5,$enfolio6, $enfolio7, $enfolio8 y $enfolio9 actualizados con exito')</script>";
+                      echo "<script type=ditext/javascript>alert('Articulos con folio $enfolio1,$enfolio2,$enfolio3,$enfolio4,$enfolio5,$enfolio6, $enfolio7, $enfolio8 y $enfolio9 actualizados con exito')</script>";
                   }
                   if ( $enfolio1 &&  $enfolio2 &&  $enfolio3 &&  $enfolio4 &&  $enfolio5 && $enfolio6 && $enfolio7 && $enfolio8 && $enfolio9 && $enfolio10) {
                       echo "<script type=text/javascript>alert('Articulos con folio $enfolio1,$enfolio2,$enfolio3,$enfolio4,$enfolio5,$enfolio6, $enfolio7, $enfolio8, $enfolio9 y && $enfolio10 actualizados con exito')</script>";
@@ -944,7 +947,7 @@ if (!empty($_GET['imp_folio'])){
       $impfolio10    = $_GET['impfolio10'];
 
 
-      $query = "SELECT folio,imei,detalles from dispos where folio IN('$impfolio1','$impfolio2','$impfolio3','$impfolio4','$impfolio5','$impfolio6','$impfolio7','$impfolio8','$impfolio9','$impfolio10')";
+      $query = "SELECT folio,imei,access from dispos where folio IN('$impfolio1','$impfolio2','$impfolio3','$impfolio4','$impfolio5','$impfolio6','$impfolio7','$impfolio8','$impfolio9','$impfolio10')";
 
 /*<div id="content">
   <div id="left">
@@ -963,9 +966,9 @@ if (!empty($_GET['imp_folio'])){
     $result=mysql_query($query,$con2);
     while($dato = mysql_fetch_row($result)){
           
-             echo "<br><div style=\"border:1px solid #73AD21;width:255px; float:left;margin:10px; \"><br><div align=center  ><p><img src=barcode/barcode.php?text=".$dato[0]."/></p>";
+             echo "<br><div style=\"border:1px solid #545454;width:255px; height:115px;float:left;margin:10px; \"><br><div align=center  ><p><img src=barcode/barcode.php?text=".$dato[0]."/></p>";
              echo "<p>$dato[1]</p>";
-             echo "<p style=\"width:250px;\">$dato[2]</p></div>"; 
+             echo "<p style=\"font-size:9px;width:260px;\">$dato[2]</p></div>"; 
              echo "</div>";
     
          

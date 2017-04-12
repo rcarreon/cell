@@ -631,7 +631,7 @@ function optionCheck6(){
 				<form   name="entrega" method="post" id="entregam"><strong>
 						<div class="enfolio1">
 								<input type="number" id="enfolio1" Placeholder="Folio1" tabindex=1 >
-								<select id="entecnico" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
+								<select id="entecnico1" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
                                                       <option selected="selected" disabled="disabled">Tecnico</option>
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
@@ -642,7 +642,7 @@ function optionCheck6(){
 						<br class="enfolio2" style="display:none;">
 						<div class="enfolio2" style="display:none;">
 								<input type="number" id="enfolio2" Placeholder="Folio2" tabindex=2   >
-								<select id="entecnico" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
+								<select id="entecnico2" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
                                                       <option selected="selected" disabled="disabled">Tecnico</option>
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
@@ -653,7 +653,7 @@ function optionCheck6(){
 						<br class="enfolio3" style="display:none;">
 						<div class="enfolio3" style="display:none;">
 								<input type="number" id="enfolio3" Placeholder="Folio3" tabindex=3   >
-								<select id="entecnico" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
+								<select id="entecnico3" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
                                                       <option selected="selected" disabled="disabled">Tecnico</option>
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                   	<p id="entregafolio"></p>
@@ -665,7 +665,7 @@ function optionCheck6(){
 						<br class="enfolio4" style="display:none;">
 						<div class="enfolio4" style="display:none;">
 								<input type="number" id="enfolio4" Placeholder="Folio4" tabindex=4   >
-								<select id="entecnico" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
+								<select id="entecnico4" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
                                                       <option selected="selected" disabled="disabled">Tecnico</option>
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
@@ -676,7 +676,7 @@ function optionCheck6(){
 						<br class="enfolio5" style="display:none;">
 						<div class="enfolio5" style="display:none;" >
 								<input type="number" id="enfolio5" Placeholder="Folio5" tabindex=5   >
-								<select id="entecnico" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
+								<select id="entecnico5" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
                                                       <option selected="selected" disabled="disabled">Tecnico</option>
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
@@ -687,7 +687,7 @@ function optionCheck6(){
                         <br class="enfolio6" style="display:none;">
 						<div class="enfolio6" style="display:none;">
 								<input type="number" id="enfolio6" Placeholder="Folio6" tabindex=6   >
-								<select id="entecnico" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
+								<select id="entecnico6" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
                                                       <option selected="selected" disabled="disabled">Tecnico</option>
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
@@ -698,7 +698,7 @@ function optionCheck6(){
 						<br class="enfolio7" style="display:none;">
 						<div class="enfolio7" style="display:none;" >
 								<input type="number" id="enfolio7" Placeholder="Folio7" tabindex=7   >
-								<select id="entecnico" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
+								<select id="entecnico7" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
                                                       <option selected="selected" disabled="disabled">Tecnico</option>
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
@@ -709,7 +709,7 @@ function optionCheck6(){
 						<br class="enfolio8" style="display:none;">
 						<div class="enfolio8" style="display:none;">
 								<input type="number" id="enfolio8" Placeholder="Folio8" tabindex=8   >
-								<select id="entecnico" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
+								<select id="entecnico8" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
                                                       <option selected="selected" disabled="disabled">Tecnico</option>
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
@@ -720,7 +720,7 @@ function optionCheck6(){
 						<br class="enfolio9" style="display:none;" >
 						<div class="enfolio9" style="display:none;" >
 								<input type="number" id="enfolio9" Placeholder="Folio9" tabindex=9   >
-								<select id="entecnico" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
+								<select id="entecnico9" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
                                                       <option selected="selected" disabled="disabled">Tecnico</option>
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
@@ -731,7 +731,7 @@ function optionCheck6(){
 						<br class="enfolio10" style="display:none;">
 						<div class="enfolio10" style="display:none;">
 								<input type="number" id="enfolio10" Placeholder="Folio10" tabindex=10   >
-								<select id="entecnico" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
+								<select id="entecnico10" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
                                                       <option selected="selected" disabled="disabled">Tecnico</option>
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
@@ -760,7 +760,7 @@ function optionCheck6(){
 									 <input type="checkbox" name="a_rep[]" id="a_rep" value="Software">Software</div>
 								<div><input type="checkbox" name="a_rep[]" id="a_rep" value="No hay reparacion">No hay reparacion </div>
 
-								<input type="button" id="lrep"  value="Listo" class="btn btn-primary">	
+								<button type="button" id="lrep"   class="btn btn-primary" style="margin-left: 2cm;">Listo	</button>
 								<button type="button"	 class="btn "  id ="cancela"	> Cancelar </button>		
 						</div>				
 
@@ -2654,6 +2654,8 @@ function siguientefolio (){
 	var enfoliocheck8 = $.trim($("#enfolio8").val());
 	var enfoliocheck9 = $.trim($("#enfolio9").val());
 
+		
+
 		if(enfoliocheck.length>0){
        			$('.enfolio2').show();
 				$('#enfolio2').focus();
@@ -2748,6 +2750,9 @@ $("#en_submit").click(function() {
  				var enfolio8 		=  $('#enfolio8').val();
  				var enfolio9 		=  $('#enfolio9').val();
  				var enfolio10 		=  $('#enfolio10').val();
+ 			
+
+
  				var entre  = [];
 	   				$(':checkbox:checked').each(function(i){
 	   				entre[i] = $(this).val();
@@ -2757,7 +2762,7 @@ $("#en_submit").click(function() {
 			
  	   	$.ajax({    
       		type: "GET",
-      		url: "ins.php?en_folio=1&enfolio1="+enfolio1+"&enfolio2="+enfolio2+"&enfolio3="+enfolio3+"&enfolio4="+enfolio4+"&enfolio5="+enfolio5+"&enfolio6="+enfolio6+"&enfolio7="+enfolio7+"&enfolio8="+enfolio8+"&enfolio9="+enfolio9+"&enfolio10="+enfolio10+"&entre="+entre,
+      		url: "ins.php?en_folio=1&enfolio1="+enfolio1+"&enfolio2="+enfolio2+"&enfolio3="+enfolio3+"&enfolio4="+enfolio4+"&enfolio5="+enfolio5+"&enfolio6="+enfolio6+"&enfolio7="+enfolio7+"&enfolio8="+enfolio8+"&enfolio9="+enfolio9+"&enfolio10="+enfolio10,
       		dataType: "html",   
       //expect html to be returned                
       		success: function(resp){                    
@@ -2882,6 +2887,16 @@ $('#lrep').click(function(){
 			var enfolio8 	= $('#enfolio8').val();
 			var enfolio9 	= $('#enfolio9').val();
 			var enfolio10	= $('#enfolio10').val();
+			var entecnico 		=  $('#entecnico1').val();
+  			var entecnico2 		=  $('#entecnico2').val();
+ 			var entecnico3 		=  $('#entecnico3').val();
+ 			var entecnico4 		=  $('#entecnico4').val();
+ 			var entecnico5 		=  $('#entecnico5').val();
+  			var entecnico6 		=  $('#entecnico6').val();
+  			var entecnico7 		=  $('#entecnico7').val();
+ 			var entecnico8 		=  $('#entecnico8').val();
+ 			var entecnico9 		=  $('#entecnico9').val();
+ 			var entecnico10 		=  $('#entecnico10').val()
 
 
 			if (enfolio){
@@ -2923,13 +2938,50 @@ $('#lrep').click(function(){
 					var enfolio = $('#enfolio10').val();
 			}
 
+			if (entecnico){
+                    var entecnico = $('#entecnico1').val();
+            }
+            if ( entecnico && entecnico2 ){
+                	var entecnico = $('#entecnico2').val();
+            }
+            if (  entecnico && entecnico2 && entecnico3 ){
+                    var entecnico = $('#entecnico3').val();
+            }
+            if ( entecnico && entecnico2 && entecnico3 && entecnico4 ){
+                    var entecnico = $('#entecnico4').val();
+            }
+            if ( entecnico && entecnico2 && entecnico3 && entecnico4 && entecnico5 ){
+                    var entecnico = $('#entecnico5').val();
+            }
+            if ( entecnico && entecnico2 && entecnico3 && entecnico4 && entecnico5 && entecnico6 ){
+                    var entecnico = $('#entecnico6').val();
+            }
+            if ( entecnico && entecnico2 && entecnico3 && entecnico4 && entecnico5 && entecnico6 && entecnico7 ){
+                    var entecnico = $('#entecnico7').val();
+            }
+            if ( entecnico && entecnico2 && entecnico3 && entecnico4 && entecnico5 && entecnico6 && entecnico7 && entecnico8 ){
+                    var entecnico = $('#entecnico8').val();
+            }
+            if ( entecnico && entecnico2 && entecnico3 && entecnico4 && entecnico5 && entecnico6 && entecnico7 && entecnico8 && entecnico9 ){
+                    var entecnico = $('#entecnico9').val();
+            }
+            if ( entecnico && entecnico2 && entecnico3 && entecnico4 && entecnico5 && entecnico6 && entecnico7 && entecnico8 && entecnico9 && entecnico10){
+                    var entecnico = $('#entecnico10').val();
+            }
+
+
+
+
+
+
+
 			var repara  = [];
 	   $(':checkbox:checked').each(function(i){
 	   		repara[i] = $(this).val();
 	   	});
 		$.ajax({
 		type:"GET",
-		 	url:"ins.php?eeditas2=1&editfolio="+enfolio+"&editrepara="+repara,
+		 	url:"ins.php?eeditas2=1&editfolio="+enfolio+"&editrepara="+repara+"&editecnico="+entecnico,
 			success: function(response){
 			$('#editaste').html(response);
 			//alert('Folio '+enfolio+' modificado con exito');
@@ -2958,7 +3010,15 @@ $('#lrep').click(function(){
 });
 
 $('#Siguentrega').click(function(){
-			$('.rcasos').show();
+
+
+
+			var enfolio = $('#enfolio1').val();
+			if ( ! enfolio  ){
+						alert('Se necesita al menos un folio  para a entregar ');
+			} else{
+						$('.rcasos').show();
+			}	
 });
 $(function(){
 	$('.rcasos').draggable();

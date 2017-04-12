@@ -743,22 +743,22 @@ function optionCheck6(){
 
 						<div class="rcasos"  style="display:none;">				
 								<h5 align="center"> Reparacion </h5>					
-								<div><input type="checkbox" name="a_rep[]" id="a_rep" value=" LCD">LCD 
-									 <input type="checkbox" name="a_rep[]" id="a_rep" value=" Touch">Touch 
-									 <input type="checkbox" name="a_rep[]" id="a_rep" value=" Trackpad">TrackPad</div>
-								<div><input type="checkbox" name="a_rep[]" id="a_rep"  value=" C.Carga">C. de Carga
-									 <input type="checkbox" name="a_rep[]" id="a_rep" value=" Bocina">Bocina
-				    				 <input type="checkbox" name="a_rep[]" id="a_rep" value=" Grantia">Garantia</div>
-								<div><input type="checkbox" name="a_rep[]" id="a_rep" value=" Mic">Mic
-									 <input type="checkbox" name="a_rep[]" id="a_rep" value=" Bateria">Bateria
-									 <input type="checkbox" name="a_rep[]" id="a_rep" value=" Cristal">Cristal</div>
-								<div><input type="checkbox" name="a_rep[]" id="a_rep" value=" Flex">Flex
-									 <input type="checkbox" name="a_rep[]" id="a_rep" value=" Camara">Camara
-									 <input type="checkbox" name="a_rep[]" id="a_rep" value=" B.Encendido">Boton Encendido</div>
-								<div><input type="checkbox" name="a_rep[]" id="a_rep" value=" Portasim">Porta Sim
-									 <input type="checkbox" name="a_rep[]" id="a_rep" value=" Servicio">Servicio
-									 <input type="checkbox" name="a_rep[]" id="a_rep" value=" Software">Software</div>
-								<div><input type="checkbox" name="a_rep[]" id="a_rep" value=" No hay reparacion">No hay reparacion </div>
+								<div><input type="checkbox" name="a_rep[]" id="a_rep" value="LCD">LCD 
+									 <input type="checkbox" name="a_rep[]" id="a_rep" value="Touch">Touch 
+									 <input type="checkbox" name="a_rep[]" id="a_rep" value="BotonHome">Botom Home</div>
+								<div><input type="checkbox" name="a_rep[]" id="a_rep"  value="C.Carga">C. de Carga
+									 <input type="checkbox" name="a_rep[]" id="a_rep" value="Bocina">Bocina
+				    				 <input type="checkbox" name="a_rep[]" id="a_rep" value="Grantia">Garantia</div>
+								<div><input type="checkbox" name="a_rep[]" id="a_rep" value="Mic">Mic
+									 <input type="checkbox" name="a_rep[]" id="a_rep" value="Bateria">Bateria
+									 <input type="checkbox" name="a_rep[]" id="a_rep" value="Cristal">Cristal</div>
+								<div><input type="checkbox" name="a_rep[]" id="a_rep" value="Flex">Flex
+									 <input type="checkbox" name="a_rep[]" id="a_rep" value="Camara">Camara
+									 <input type="checkbox" name="a_rep[]" id="a_rep" value="B.Encendido">Boton Encendido</div>
+								<div><input type="checkbox" name="a_rep[]" id="a_rep" value="LectorSim">Lector Sim
+									 <input type="checkbox" name="a_rep[]" id="a_rep" value="Servicio">Servicio
+									 <input type="checkbox" name="a_rep[]" id="a_rep" value="Software">Software</div>
+								<div><input type="checkbox" name="a_rep[]" id="a_rep" value="No hay reparacion">No hay reparacion </div>
 
 								<input type="button" id="lrep"  value="Listo" class="btn btn-primary">	
 								<button type="button"	 class="btn "  id ="cancela"	> Cancelar </button>		

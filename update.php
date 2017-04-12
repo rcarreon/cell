@@ -75,7 +75,7 @@ if(isset($_GET['folio'])){
 					<h5 align="center"> Reparacion </h5>					
 					<div><input type="checkbox" name="a_rep[]" id="a_rep" value="LCD">LCD 
 					<input type="checkbox" name="a_rep[]" id="a_rep" value="Touch">Touch 
-					<input type="checkbox" name="a_rep[]" id="a_rep" value="Trackpad">TrackPad</div>
+					<input type="checkbox" name="a_rep[]" id="a_rep" value="BotonHome">Boton Home</div>
 					<div><input type="checkbox" name="a_rep[]" id="a_rep"  value="C.Carga">C. de Carga
 					<input type="checkbox" name="a_rep[]" id="a_rep" value="Bocina">Bocina
 				    <input type="checkbox" name="a_rep[]" id="a_rep" value="Grantia">Garantia</div>
@@ -85,7 +85,7 @@ if(isset($_GET['folio'])){
 					<div><input type="checkbox" name="a_rep[]" id="a_rep" value="Flex">Flex
 					<input type="checkbox" name="a_rep[]" id="a_rep" value="Camara">Camara
 					<input type="checkbox" name="a_rep[]" id="a_rep" value="B.Encendido">Boton Encendido</div>
-					<div><input type="checkbox" name="a_rep[]" id="a_rep" value="Portasim">Porta Sim
+					<div><input type="checkbox" name="a_rep[]" id="a_rep" value="LectorSim">Lector Sim
 					<input type="checkbox" name="a_rep[]" id="a_rep" value="Servicio">Servicio
 					<input type="checkbox" name="a_rep[]" id="a_rep" value="Software">Software</div>
 					<div><input type="checkbox" name="a_rep[]" id="a_rep" value="No hay reparacion">No hay reparacion </div>

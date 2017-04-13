@@ -1957,7 +1957,6 @@ $(function(){
         		$(this).val(b.item.value);
         		$('#s_cotiza2').show();
         		$('#s_cotiza').attr('disabled','disabled');
-        		$('#s_cotiza2').focus();
 	
   			 }
 			  

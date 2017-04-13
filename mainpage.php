@@ -765,7 +765,7 @@ function optionCheck6(){
 						</div>				
 
 						<div style="position:relative;left:20%;top:5px;">
-							 <button    type="button" id="en_submit" class="btn btn-primary" tabindex=11> Entregar </button>
+							 <button    type="button" id="en_submit" class="btn btn-primary" tabindex=11 disabled="disabled"> Entregar </button>
 						</div>
 				 </form>
 				<button   style="position:relative;top:-30px;" type="button" id="Siguentrega" class="btn " tabindex=12 Onclick="siguientefolio();"> Siguiente </button>
@@ -2975,7 +2975,7 @@ $('#lrep').click(function(){
 
 
 
-			var repara  = [];
+		var repara  = [];
 	   $(':checkbox:checked').each(function(i){
 	   		repara[i] = $(this).val();
 	   	});
@@ -3018,6 +3018,7 @@ $('#Siguentrega').click(function(){
 						alert('Se necesita al menos un folio  para a entregar ');
 			} else{
 						$('.rcasos').show();
+						$('#en_submit').removeAttr('disabled');
 			}	
 });
 $(function(){

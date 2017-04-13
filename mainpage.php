@@ -631,7 +631,7 @@ function optionCheck6(){
 				<form   name="entrega" method="post" id="entregam"><strong>
 						<div class="enfolio1">
 								<input type="number" id="enfolio1" Placeholder="Folio1" tabindex=1 >
-								<select id="entecnico1" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
+								<select id="entecnico1" style="width:175px;float:right;margin-right:65px;"  class="form-control entecnicos" >
                                                       <option selected="selected" disabled="disabled">Tecnico</option>
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
@@ -642,7 +642,7 @@ function optionCheck6(){
 						<br class="enfolio2" style="display:none;">
 						<div class="enfolio2" style="display:none;">
 								<input type="number" id="enfolio2" Placeholder="Folio2" tabindex=2   >
-								<select id="entecnico2" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
+								<select id="entecnico2" style="width:175px;float:right;margin-right:65px;"  class="form-control entecnicos" >
                                                       <option selected="selected" disabled="disabled">Tecnico</option>
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
@@ -653,7 +653,7 @@ function optionCheck6(){
 						<br class="enfolio3" style="display:none;">
 						<div class="enfolio3" style="display:none;">
 								<input type="number" id="enfolio3" Placeholder="Folio3" tabindex=3   >
-								<select id="entecnico3" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
+								<select id="entecnico3" style="width:175px;float:right;margin-right:65px;"  class="form-control entecnicos" >
                                                       <option selected="selected" disabled="disabled">Tecnico</option>
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                   	<p id="entregafolio"></p>
@@ -665,7 +665,7 @@ function optionCheck6(){
 						<br class="enfolio4" style="display:none;">
 						<div class="enfolio4" style="display:none;">
 								<input type="number" id="enfolio4" Placeholder="Folio4" tabindex=4   >
-								<select id="entecnico4" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
+								<select id="entecnico4" style="width:175px;float:right;margin-right:65px;"  class="form-control entecnicos" >
                                                       <option selected="selected" disabled="disabled">Tecnico</option>
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
@@ -676,7 +676,7 @@ function optionCheck6(){
 						<br class="enfolio5" style="display:none;">
 						<div class="enfolio5" style="display:none;" >
 								<input type="number" id="enfolio5" Placeholder="Folio5" tabindex=5   >
-								<select id="entecnico5" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
+								<select id="entecnico5" style="width:175px;float:right;margin-right:65px;"  class="form-control entecnicos" >
                                                       <option selected="selected" disabled="disabled">Tecnico</option>
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
@@ -687,7 +687,7 @@ function optionCheck6(){
                         <br class="enfolio6" style="display:none;">
 						<div class="enfolio6" style="display:none;">
 								<input type="number" id="enfolio6" Placeholder="Folio6" tabindex=6   >
-								<select id="entecnico6" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
+								<select id="entecnico6" style="width:175px;float:right;margin-right:65px;"  class="form-control entecnicos" >
                                                       <option selected="selected" disabled="disabled">Tecnico</option>
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
@@ -698,7 +698,7 @@ function optionCheck6(){
 						<br class="enfolio7" style="display:none;">
 						<div class="enfolio7" style="display:none;" >
 								<input type="number" id="enfolio7" Placeholder="Folio7" tabindex=7   >
-								<select id="entecnico7" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
+								<select id="entecnico7" style="width:175px;float:right;margin-right:65px;"  class="form-control entecnicos" >
                                                       <option selected="selected" disabled="disabled">Tecnico</option>
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
@@ -709,7 +709,7 @@ function optionCheck6(){
 						<br class="enfolio8" style="display:none;">
 						<div class="enfolio8" style="display:none;">
 								<input type="number" id="enfolio8" Placeholder="Folio8" tabindex=8   >
-								<select id="entecnico8" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
+								<select id="entecnico8" style="width:175px;float:right;margin-right:65px;"  class="form-control entecnicos" >
                                                       <option selected="selected" disabled="disabled">Tecnico</option>
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
@@ -720,7 +720,7 @@ function optionCheck6(){
 						<br class="enfolio9" style="display:none;" >
 						<div class="enfolio9" style="display:none;" >
 								<input type="number" id="enfolio9" Placeholder="Folio9" tabindex=9   >
-								<select id="entecnico9" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
+								<select id="entecnico9" style="width:175px;float:right;margin-right:65px;"  class="form-control entecnicos" >
                                                       <option selected="selected" disabled="disabled">Tecnico</option>
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
@@ -731,7 +731,7 @@ function optionCheck6(){
 						<br class="enfolio10" style="display:none;">
 						<div class="enfolio10" style="display:none;">
 								<input type="number" id="enfolio10" Placeholder="Folio10" tabindex=10   >
-								<select id="entecnico10" style="width:175px;float:right;margin-right:65px;"  class="form-control" >
+								<select id="entecnico10" style="width:175px;float:right;margin-right:65px;"  class="form-control entecnicos" >
                                                       <option selected="selected" disabled="disabled">Tecnico</option>
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
@@ -768,7 +768,7 @@ function optionCheck6(){
 							 <button    type="button" id="en_submit" class="btn btn-primary" tabindex=11 disabled="disabled"> Entregar </button>
 						</div>
 				 </form>
-				<button   style="position:relative;top:-30px;" type="button" id="Siguentrega" class="btn " tabindex=12 Onclick="siguientefolio();"> Siguiente </button>
+				<button   style="position:relative;top:-30px;" type="button" disabled="disabled" id="Siguentrega" class="btn " tabindex=12 Onclick="siguientefolio();"> Siguiente </button>
 			</div>
 
 			<div id="ImprimirFolio" class="tabcontent" style = "position:relative;top:-6%;">
@@ -1957,9 +1957,10 @@ $(function(){
         		$(this).val(b.item.value);
         		$('#s_cotiza2').show();
         		$('#s_cotiza').attr('disabled','disabled');
-
+        		$('#s_cotiza2').focus();
+	
   			 }
-		
+			  
 		});
 
 		
@@ -3003,6 +3004,8 @@ $('#lrep').click(function(){
 
 				$('.rcasos').hide();
 				$('#a_rep:checked').removeAttr('checked');
+				$('#en_submit').removeAttr('disabled');
+			    $('#Siguentrega').removeAttr('disabled');
 
 		
 
@@ -3013,13 +3016,13 @@ $('#Siguentrega').click(function(){
 
 
 
-			var enfolio = $('#enfolio1').val();
-			if ( ! enfolio  ){
-						alert('Se necesita al menos un folio  para a entregar ');
-			} else{
-						$('.rcasos').show();
-						$('#en_submit').removeAttr('disabled');
-			}	
+			//var enfolio = $('#enfolio1').val();
+			//if ( ! enfolio  ){
+			//			alert('Se necesita al menos un folio  para a entregar ');
+			//} else{
+			//			$('.rcasos').show();
+			//			$('#en_submit').removeAttr('disabled');
+			//}	
 });
 $(function(){
 	$('.rcasos').draggable();
@@ -3030,6 +3033,8 @@ function enfocado(){
 		$('#s_submit').focus();
 
 }
+
+
 $('#cancela').click(function(){
 			$('.rcasos').hide();
 			$('#a_rep:checked').removeAttr('checked');
@@ -3062,6 +3067,33 @@ $(document).ready(function(){
      $('#s_imei').keypress(function(e){
         if(e.which == 13){//Enter key pressed
             $('#s_submit').click();//Trigger search button click event
+        }
+    });
+     $('.entecnicos').change(function(){
+     		var enfolio = $('#enfolio1').val();
+			if ( ! enfolio  ){
+						alert('Se necesita al menos un folio  para a entregar ');
+			} else{
+						$('.rcasos').show();
+						
+
+						
+			}	
+			
+     });
+     $('#s_cotiza').keypress(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#s_submit_cotiza').click();//Trigger search button click event
+        }
+    });
+     $('#s_cotiza2').keypress(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#s_submit_cotiza').click();//Trigger search button click event
+        }
+    });
+     $('#s_cotiza3').keypress(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#s_submit_cotiza').click();//Trigger search button click event
         }
     });
 

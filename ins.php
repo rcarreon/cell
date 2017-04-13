@@ -629,9 +629,10 @@ if(!empty($_GET['marcaautocotiza'])) {
 
 
 if(!empty($_GET['modeloautocotiza'])) {
-    $modelo = $_GET['s_cotiza'];
+    $marcas = $_GET['s_cotiza'];
+    $modelo = $_GET['s_cotiza2'];
 
-    $query = "SELECT DISTINCT  modelo FROM cotizador WHERE modelo LIKE '$modelo%'";
+    $query = "SELECT DISTINCT  modelo FROM cotizador WHERE (marca = '$marcas' and  modelo LIKE '$modelo%')";
     $result = mysql_query($query, $con2);
     $marca = array();
    

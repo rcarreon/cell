@@ -1973,7 +1973,8 @@ $(function(){
             			url: "ins.php?modeloautocotiza=1",
             			dataType: "json",
             			data: {
-                			s_cotiza : $("#s_cotiza2").val()
+            				s_cotiza : $("#s_cotiza").val(),
+                			s_cotiza2 : $("#s_cotiza2").val()
             			},
             			success: function(data) {
                 			//response(data.slice(0,10));

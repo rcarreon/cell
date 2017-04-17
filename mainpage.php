@@ -2095,7 +2095,7 @@ $("#a_submit").click(function(){
 	var ABITACORA   = $('#a_bitacora').val();
 	var abitacora   = ABITACORA.toUpperCase();
 	var AACESS 		= $('#a_access').val();
-	var aacess 		=  AACESS.toUpperCase();
+	var aacess 		=  escape(AACESS.toUpperCase());
 	var adonde 	=  $('#a_sucurs option:selected').val();
 	var repara  = [];
 	   $(':checkbox:checked').each(function(i){

@@ -28,7 +28,7 @@ $fpor     = $_GET['f_por'];
 $numcolum = $_GET['n_columnas'];
 $e_bitacora   = $_GET['editbitacora'];
 $abitacora  = $_GET['a_bitacora'];
-$aaccess     = $_GET['a_access'];
+$aaccess     = mysql_real_escape_string($_GET['a_access']);
 
 //////////tabla para mostrar todas las columas de la tabla dispos//////////
 

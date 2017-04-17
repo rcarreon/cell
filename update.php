@@ -188,7 +188,7 @@ if(isset($_GET['folio'])){
 				<table class="printt" id="pfolio">
 					<tr>
 						<strong><td class="seis" align="center"><strong>Folio</strong>
-						<img  src="barcode/barcode.php?text=<?php echo $e_folio ;?>" />
+						<img  src="barcode/barcode.php?text=<?php echo $e_folio ;?>" >
 						</td></strong>
 					</tr>
 					<tr>

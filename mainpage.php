@@ -599,7 +599,7 @@ function optionCheck6(){
 			    		<div style="position:absolute;top:270px;left:55%" >
 			    			Detalles para impresion:
 			    				<div>
-			    				    <textarea maxlength="20" type="text" id="a_access" name="a_access" placeholder="Detales para impresion" tabindex=11 style="text-transform:uppercase;" ></textarea>					
+			    				    <textarea maxlength="20" type="text" id="a_access" name="a_access" placeholder="Detalles para impresion" tabindex=11 style="text-transform:uppercase;" ></textarea>					
 
 			    				</div>
 			    		</div>
@@ -865,7 +865,7 @@ function optionCheck6(){
 					</tr>
 					<tr>
 							<td>
-								<img  id="barras1"  />
+								<img  id="barras1" >
 							</td>
 					</tr>
 				</table>

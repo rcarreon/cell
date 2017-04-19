@@ -18,7 +18,7 @@ mysql_select_db("cellcity",$con2);
 if(isset($_GET['folio'])){
 	$e_folio     = $_GET['folio'];
 	$nombree = mysql_real_escape_string($_GET['editcliente']);
-	$query1=mysql_query("select folio,modelo,imei,cliente,status,reparacion,detalles,password,fecha,sucursal,recibe,marca,bitacora,tecnico   from dispos where folio='$e_folio'",$con2);
+	$query1=mysql_query("select folio,modelo,imei,cliente,status,reparacion,detalles,password,fecha,sucursal,recibe,marca,bitacora,tecnico,access   from dispos where folio='$e_folio'",$con2);
 	$query3=mysql_query("select email,telefono,celular,RFC,domicilio,colonia,ciudad,cpostal from cliente where nombre ='$nombree'",$con2);	
 	$query2=mysql_fetch_array($query1);
 	$query4=mysql_fetch_array($query3);
@@ -36,8 +36,8 @@ if(isset($_GET['folio'])){
 			 </div>
 	<!-- <a href=logout.php>Salir sesion</a> -->
 	<form  method="get" id="update" >		
-		<h4> Edita Folio </h4>
-		<div style="position:absolute;top:15%;left:15%">
+		<h4 style="position:absolute;top:-10%;"> Edita Folio </h4>
+		<div style="position:absolute;top:6%;left:15%">
 			Folio:
 			<div>
 				<input type="text" name="editfolio"  disabled="disabled" id="editfolio" value="<?php echo $e_folio ;?>" />
@@ -70,6 +70,11 @@ if(isset($_GET['folio'])){
 					<textarea  type="text" id="editbitacora" name="editbitacora" style="width:350;height:200;text-align:left;" Placeholder="Bitacora" ><?php echo $query2[12];?></textarea>	
 					<button class="btn btn-primary bita_guarda" >Guardar</button>
 			</div> 
+			
+			Detalles para impresion de etiquetas:
+			<div>
+				<input type="text" style="width:250px;"name="editdimpresion"  id="editdimpresion" value="<?php echo $query2[14]; ?>" tabindex=3 />
+			</div>
 		</div>
 			<div class="rcasos"  style="display:none;">				
 					<h5 align="center"> Reparacion </h5>					
@@ -92,7 +97,7 @@ if(isset($_GET['folio'])){
 
 					<input type="button" id="lrep"  value="Listo">					
 			</div>
-			<div style="position:absolute;top:15%;right:15%">
+			<div style="position:absolute;top:5%;right:15%">
 								
 					Status:<label ><?php echo $query2[4]; ?></label><br/>
 					<div>
@@ -120,9 +125,12 @@ if(isset($_GET['folio'])){
                                               </div> 		
 						
 					
-						<br /><br>		
+						
+		
 			</div>
-					<br> <br /><br /><br /><br />
+
+					<br> <br /><br /><br /><br /><br><br><br>
+
 				<form>
 				     	<button  type="button" class="btn btn-success bitacora" style="position:relative;top:340px;left:75%;">Bitacora</button>
                                        <button  style="position:relative;left:-10%;top:340px;"class="btn btn-primary" type="button" id="editaa" tabindex=7 > Guardar cambios </button>
@@ -901,6 +909,7 @@ $("#editaa").click(function(){
 	var edetalles   = $('#editdetalles').val();
 	var emmodelo	= $('#editmmodelo').val();
 	var ebitacora   = $('#editbitacora').val();
+	var editdimpresion = $('#editdimpresion').val();
 	var etecnico    = $('#edittecnico option:selected').val();
 	var estatus = $('#editstatus option:selected').val();
 	var repara  = [];
@@ -909,7 +918,7 @@ $("#editaa").click(function(){
 	   });
 	$.ajax({
 	type:"GET",
-		 url:"ins.php?eeditas=1&editimei="+eimei+"&editcliente="+ecliente+"&editmodelo="+emodelo+"&editstatus="+estatus+"&editcontacto="+econta+"&editfecha="+efecha+"&editemail="+eemail+"&editfolio="+efolio+"&editpassword="+epass+"&editdetalles="+edetalles+"&editrepara="+repara+"&editmmodelo="+emmodelo+"&editbitacora="+ebitacora+"&edittecnico="+etecnico,
+		 url:"ins.php?eeditas=1&editimei="+eimei+"&editcliente="+ecliente+"&editmodelo="+emodelo+"&editstatus="+estatus+"&editcontacto="+econta+"&editfecha="+efecha+"&editemail="+eemail+"&editfolio="+efolio+"&editpassword="+epass+"&editdetalles="+edetalles+"&editrepara="+repara+"&editmmodelo="+emmodelo+"&editbitacora="+ebitacora+"&edittecnico="+etecnico+"&editdimpresion="+editdimpresion,
 		success: function(response){
 			$('#editaste').html(response);
 			alert('Folio '+efolio+' modificado con exito');

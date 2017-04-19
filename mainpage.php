@@ -3096,6 +3096,75 @@ $(document).ready(function(){
             $('#s_submit_cotiza').click();//Trigger search button click event
         }
     });
+        $('#enfolio1').keydown(function(e){
+        if( e.which == 9 ){//tab key
+        	event.preventDefault();
+            $('#entecnico1').focus();
+        }
+    });
+
+     $('#enfolio2').keydown(function(e){
+        if(e.which == 9){//Enter key pressed
+        	event.preventDefault();
+            $('#entecnico2').focus();
+        }
+    });
+
+     $('#enfolio3').keydown(function(e){
+        if(e.which == 9){//Enter key pressed
+        	event.preventDefault();
+            $('#entecnico3').focus();
+        }
+    });
+
+     $('#enfolio4').keydown(function(e){
+        if(e.which == 9){//Enter key pressed
+        	event.preventDefault();
+            $('#entecnico4').focus();//Trigger search button click event
+        }
+    });
+
+     $('#enfolio5').keydown(function(e){
+        if(e.which == 9){//Enter key pressed
+        	event.preventDefault();
+            $('#enfolio5').focus();//Trigger search button click event
+        }
+    });
+
+     $('#enfolio6').keydown(function(e){
+        if(e.which == 9){//Enter key pressed
+        	event.preventDefault();
+            $('#entecnico6').focus();//Trigger search button click event
+        }
+    });
+
+     $('#enfolio7').keydown(function(e){
+        if(e.which == 9){//Enter key pressed
+        	event.preventDefault();
+            $('#entecnico7').focus();//Trigger search button click event
+        }
+    });
+
+     $('#enfolio8').keydown(function(e){
+        if(e.which == 9){//Enter key pressed
+        	event.preventDefault();
+            $('#entecnico8').focus();//Trigger search button click event
+        }
+    });
+
+     $('#enfolio9').keydown(function(e){
+        if(e.which == 9){//Enter key pressed
+        	event.preventDefault();
+            $('#entecnico9').focus();//Trigger search button click event
+        }
+    });
+
+     $('#enfolio10').keydown(function(e){
+        if(e.which == 9){//Enter key pressed
+        	event.preventDefault();
+            $('#entecnico10').focus();//Trigger search button click event
+        }
+    });
 
 });
 

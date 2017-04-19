@@ -310,13 +310,14 @@ if(!empty($_GET['eeditas'])){
   $e_repara    = $_GET['editrepara'];
   $e_mmodelo   = $_GET['editmmodelo'];
   $e_tecnico   = $_GET['edittecnico'];
+  $e_dimpresion = $_GET['editdimpresion'];
 
   
   
   if (!$e_repara){
-                $query = "UPDATE dispos SET modelo = '$e_modelo', imei = '$e_imei', cliente = '$e_cliente', status = '$e_status', fecha = '$e_fecha', email = '$e_email', detalles = '$e_detalles', password = '$e_pass', contacto = '$e_contacto' , marca = '$e_mmodelo', bitacora = '$e_bitacora' , tecnico = '$e_tecnico' WHERE folio = '$e_folio'";
+                $query = "UPDATE dispos SET modelo = '$e_modelo', imei = '$e_imei', cliente = '$e_cliente', status = '$e_status', fecha = '$e_fecha', email = '$e_email', detalles = '$e_detalles', password = '$e_pass', contacto = '$e_contacto' , marca = '$e_mmodelo', bitacora = '$e_bitacora' , tecnico = '$e_tecnico' , access = '$e_dimpresion'  WHERE folio = '$e_folio'";
   }else{
-                 $query = "UPDATE dispos SET modelo = '$e_modelo', imei = '$e_imei', cliente = '$e_cliente', status = '$e_status', fecha = '$e_fecha', email = '$e_email', detalles = '$e_detalles', password = '$e_pass', contacto = '$e_contacto', marca = '$e_mmodelo',  reparacion = '$e_repara', bitacora = '$e_bitacora', tecnico = '$e_tecnico' WHERE folio = '$e_folio'";
+                 $query = "UPDATE dispos SET modelo = '$e_modelo', imei = '$e_imei', cliente = '$e_cliente', status = '$e_status', fecha = '$e_fecha', email = '$e_email', detalles = '$e_detalles', password = '$e_pass', contacto = '$e_contacto', marca = '$e_mmodelo',  reparacion = '$e_repara', bitacora = '$e_bitacora', tecnico = '$e_tecnico', access = '$e_dimpresion' WHERE folio = '$e_folio'";
   }
       $result = mysqli_query($con,$query);
       if (!$result){

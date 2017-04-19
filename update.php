@@ -73,7 +73,7 @@ if(isset($_GET['folio'])){
 			
 			Detalles para impresion de etiquetas:
 			<div>
-				<input type="text" style="width:250px;"name="editdimpresion"  id="editdimpresion" value="<?php echo $query2[14]; ?>" tabindex=3 />
+				<input maxlength="20" type="text" style="width:250px;"name="editdimpresion"  id="editdimpresion" value="<?php echo $query2[14]; ?>" tabindex=3 />
 			</div>
 		</div>
 			<div class="rcasos"  style="display:none;">				

@@ -597,9 +597,9 @@ function optionCheck6(){
 				    		<textarea maxlength="115" type="text" id="a_detalles" name="a_detalles" placeholder="Detalles Servicio Tecnico" tabindex=10 style="text-transform:uppercase;" ></textarea>					
 				    	</div>
 			    		<div style="position:absolute;top:270px;left:55%" >
-			    			Detalles para impresion:
+			    			Detalles impresion de etiquetas:
 			    				<div>
-			    				    <textarea maxlength="20" type="text" id="a_access" name="a_access" placeholder="Detalles para impresion" tabindex=11 style="text-transform:uppercase;" ></textarea>					
+			    				    <textarea maxlength="20" type="text" id="a_access" name="a_access" placeholder="Detalles impresion de etiquetas" tabindex=11 style="text-transform:uppercase;" ></textarea>					
 
 			    				</div>
 			    		</div>

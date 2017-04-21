@@ -669,8 +669,9 @@ if(!empty($_GET['productoautocotiza'])) {
 
 if(!empty($_GET['modelocata'])) {
     $marca = $_GET['cat_marca'];
+    $modelo = $_GET['cat_modelo'];
 
-    $query = "SELECT DISTINCT  modelo FROM cotizador WHERE marca LIKE '$marca%'";
+    $query = "SELECT DISTINCT  modelo FROM cotizador WHERE (marca = '$marca' AND modelo LIKE '$modelo%')";
     $result = mysql_query($query, $con2);
     $marca = array();
    
@@ -687,9 +688,10 @@ if(!empty($_GET['modelocata'])) {
 if(!empty($_GET['productocata'])) {
     $catmarca = $_GET['cat_marca'];
     $catmodelo = $_GET['cat_modelo'];
+    $catproducto = $_GET['cat_producto'];
 
 
-    $query = "SELECT  DISTINCT linea FROM cotizador WHERE (marca = '$catmarca' AND modelo = '$catmodelo' )";
+    $query = "SELECT  DISTINCT linea FROM cotizador WHERE (marca = '$catmarca' AND modelo = '$catmodelo' AND linea LIKE '$catproducto%' )";
     $result = mysql_query($query, $con2);
     $producto = array();
    

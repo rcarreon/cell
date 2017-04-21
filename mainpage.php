@@ -1905,7 +1905,8 @@ $(function(){
             			url: "ins.php?modelocata=1",
             			dataType: "json",
             			data: {
-                			cat_marca : $("#cat_marca").val()
+                			cat_marca : $("#cat_marca").val(),
+                			cat_modelo : $("#cat_modelo").val()
             			},
             			success: function(data) {
                 			response(data);
@@ -1930,7 +1931,8 @@ $(function(){
             			dataType: "json",
             			data: {
             				cat_marca : $("#cat_marca").val(),
-                			cat_modelo : $("#cat_modelo").val()
+                			cat_modelo : $("#cat_modelo").val(),
+                			cat_producto : $("#cat_producto").val()
             			},
             			success: function(data) {
                 			response(data);
@@ -2790,6 +2792,68 @@ $("#en_submit").click(function() {
         $('.enfolio8').hide();
         $('.enfolio9').hide();
         $('.enfolio10').hide();
+
+        $('#entecnico1 option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
+    	$('#entecnico2 option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
+    	$('#entecnico3 option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
+    	$('#entecnico4 option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
+    	$('#entecnico5 option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
+    	$('#entecnico6 option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
+    	$('#entecnico7 option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
+    	$('#entecnico8 option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
+    	$('#entecnico9 option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
+    	$('#entecnico10 option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
+
+    	$('#enstatus1 option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
+    	$('#enstatus2 option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
+    	$('#enstatus3 option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
+    	$('#enstatus4 option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
+    	$('#enstatus5 option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
+    	$('#enstatus6 option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
+    	$('#enstatus7 option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
+    	$('#enstatus8 option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
+    	$('#enstatus9 option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
+    	$('#enstatus10 option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
 
 
 

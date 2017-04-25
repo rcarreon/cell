@@ -760,7 +760,7 @@ function optionCheck6(){
 									 <input type="checkbox" name="a_rep[]" id="a_rep" value="Software">Software</div>
 								<div><input type="checkbox" name="a_rep[]" id="a_rep" value="No hay reparacion">No hay reparacion </div>
 
-								<button type="button" id="lrep"   class="btn btn-primary" style="margin-left: 2cm;">Listo	</button>
+								<button type="button" id="lrep"   class="btn btn-primary" style="margin-left: 2cm;">Guardar cambios</button>
 								<button type="button"	 class="btn "  id ="cancela"	> Cancelar </button>		
 						</div>				
 
@@ -3138,6 +3138,7 @@ $(document).ready(function(){
 			if ( ! enfolio  ){
 						alert('Se necesita al menos un folio  para a entregar ');
 			} else{
+						alert('Al presionar el boton de guardar , guardaras informacion en a base de datos');
 						$('.rcasos').show();
 						
 

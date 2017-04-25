@@ -895,13 +895,14 @@ if(!empty($_GET['en_folio'])){
       $enfolio8    = $_GET['enfolio8'];
       $enfolio9    = $_GET['enfolio9'];
       $enfolio10    = $_GET['enfolio10'];
+      $enstatus    = $_GET['enstatus'];
       
 
 
                       
      // WHERE config_name IN('name1', 'name2');
     
-    $query = "UPDATE dispos SET status  = 'Entregado'    WHERE  folio IN ('$enfolio1','$enfolio2','$enfolio3','$enfolio4','$enfolio5','$enfolio6','$enfolio7','$enfolio8','$enfolio9','$enfolio10')";
+    $query = "UPDATE dispos SET status  = '$enstatus'    WHERE  folio IN ('$enfolio1','$enfolio2','$enfolio3','$enfolio4','$enfolio5','$enfolio6','$enfolio7','$enfolio8','$enfolio9','$enfolio10')";
 
       $result = mysqli_query($con,$query);
       if (!$result){
@@ -974,7 +975,7 @@ if (!empty($_GET['imp_folio'])){
     $result=mysql_query($query,$con2);
     while($dato = mysql_fetch_row($result)){
           
-             echo "<br><div style=\"border:1px solid #545454;width:255px; height:115px;float:left;margin:10px; \"><br><div align=center  ><p><img src=barcode/barcode.php?text=".$dato[0]."/></p>";
+             echo "<br><div style=\"border:1px solid #545454;width:255px; height:115px;margin:10px; \"><br><div align=center  ><p><img src=barcode/barcode.php?text=".$dato[0]."/></p>";
              echo "<p>$dato[1]</p>";
              echo "<p style=\"font-size:9px;width:260px;\">$dato[2]</p></div>"; 
              echo "</div>";

@@ -168,6 +168,15 @@ hr{
 	z-index: 7;
 	height: 300px
 }
+
+.floating-box {
+    display: inline-block;
+    width: 50px;
+    height: 35px;
+    margin: 10px;
+    border: 1px solid #73AD21;  
+}
+
 div#casos div{
 	position: relative;
 	top: 10%;

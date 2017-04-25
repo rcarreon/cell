@@ -519,11 +519,11 @@ function optionCheck6(){
 		</div>
 
 		<div   class = "container" id="agregaf" style="display:none;">	
-		<span onclick="goaway();" style="position:relative;top:-22px;left:98%;cursor:hand;"><strong><font color="red">x</font></strong></span>	
-			<div class="tab" style = "position:relative;top:-4%;" >
-				<button class="tablinks" id="defaultopen" onclick="openFolio(event, 'AgregarFolio')"><div  style="position:relative;top:-8px;">Agregar</div></button>
-  				<button class="tablinks" onclick="openFolio(event, 'EntregarFolio')"><div  style="position:relative;top:-8px;">Entregar</div></button>
-  				<button class="tablinks" onclick="openFolio(event, 'ImprimirFolio')"><div  style="position:relative;top:-8px;">Imprimir</div></button>
+		<span onclick="goaway();" style="position:relative;top:-16px;left:98%;cursor:hand;"><strong><img src="images/close.png" width="15" height="15"></strong></span>	
+			<div class="tab" style = "position:relative;top:-1%;" >
+				<button class="tablinks" onclick="openFolio(event, 'AgregarFolio')" id="defaultopen" ><div  style="position:relative;top:-8px;">Agregar Folio</div></button>
+  				<button class="tablinks" onclick="openFolio(event, 'EntregarFolio')"><div  style="position:relative;top:-8px;">Entrega multiple</div></button>
+  				<button class="tablinks" onclick="openFolio(event, 'ImprimirFolio')"><div  style="position:relative;top:-8px;">Impresion multiple</div></button>
   			</div>
 
 
@@ -536,7 +536,7 @@ function optionCheck6(){
 				</div>
 
   			-->
-  			<div id="AgregarFolio" class="tabcontent" style = "position:relative;top:-6%;">
+  			<div id="AgregarFolio" class="tabcontent" style = "position:relative;top:-2%;">
 				<form   name="agrega" method="post" id="aagrega"><strong>
 					<h5 align="Center" style='font-weight: bold;' >Agregar Folio</h5>		
 					<div>		
@@ -626,124 +626,184 @@ function optionCheck6(){
 				</a>
 			</div>
 
-			<div id="EntregarFolio" class="tabcontent" style = "position:relative;top:-6%;">
+			<div id="EntregarFolio" class="tabcontent" style = "position:relative;top:-2%;">
   				<h4>Entrega multiple de folios</h4> 
+  						<div class="f_agrega">
+				 			<input type="radio" name="en_status" id="en_status"    value="Entregado"  >Entregado 
+							<input type="radio" name="en_status" id="en_status"   value="Listo"  >Listo 		 <font color="red">**</font>
+							<p><strong><font size="-1">El estatus elegido es para todos los folios ingresados a continuacion</font></strong></p>   			   		
+			   			</div>
 				<form   name="entrega" method="post" id="entregam"><strong>
-						<div class="enfolio1">
+						<div class="enfolio1" >
 								<input type="number" id="enfolio1" Placeholder="Folio1" tabindex=1 >
-								<select id="entecnico1" style="width:175px;float:right;margin-right:65px;"  class="form-control entecnicos" >
+								
+								<select id="entecnico1" style="width:95px;float:right;margin-right:140px;"  class="form-control entecnicos" >
                                                       <option selected="selected" disabled="disabled">Tecnico</option>
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
                                                       <option  value="TecnicoC" id="tecC"> C </option>
  
                                 </select>
+                                
 						</div>
+
+
+
+
+						
 						<br class="enfolio2" style="display:none;">
 						<div class="enfolio2" style="display:none;">
+							<div >
 								<input type="number" id="enfolio2" Placeholder="Folio2" tabindex=2   >
-								<select id="entecnico2" style="width:175px;float:right;margin-right:65px;"  class="form-control entecnicos" >
+								<select id="entecnico2" style="width:95px;float:right;margin-right:140px;"  class="form-control entecnicos" >
                                                       <option selected="selected" disabled="disabled">Tecnico</option>
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
                                                       <option  value="TecnicoC" id="tecC"> C </option>
  
                                 </select>
+							</div>
+
 						</div>
+
+
+
+
+
 						<br class="enfolio3" style="display:none;">
 						<div class="enfolio3" style="display:none;">
+							<div >
 								<input type="number" id="enfolio3" Placeholder="Folio3" tabindex=3   >
-								<select id="entecnico3" style="width:175px;float:right;margin-right:65px;"  class="form-control entecnicos" >
-                                                      <option selected="selected" disabled="disabled">Tecnico</option>
-                                                      <option  value="TecnicoA" id="tecA"> A </option>
-                  	<p id="entregafolio"></p>
-                                    <option  value="TecnicoB" id="tecB"> B </option>
-                                                      <option  value="TecnicoC" id="tecC"> C </option>
+								<select id="entecnico3" style="width:95px;float:right;margin-right:140px;"  class="form-control entecnicos" >
+                                                    <option selected="selected" disabled="disabled" >Tecnico</option>
+                                                    <option  value="TecnicoA" id="tecA"> A </option>
+                                       				<option  value="TecnicoB" id="tecB"> B </option>
+                                                    <option  value="TecnicoC" id="tecC"> C </option>
  
                                 </select>
+							</div>
+
+
 						</div>
+
+
+
+
 						<br class="enfolio4" style="display:none;">
 						<div class="enfolio4" style="display:none;">
+							<div >
 								<input type="number" id="enfolio4" Placeholder="Folio4" tabindex=4   >
-								<select id="entecnico4" style="width:175px;float:right;margin-right:65px;"  class="form-control entecnicos" >
+								<select id="entecnico4" style="width:95px;float:right;margin-right:140px;"  class="form-control entecnicos" >
                                                       <option selected="selected" disabled="disabled">Tecnico</option>
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
                                                       <option  value="TecnicoC" id="tecC"> C </option>
  
                                 </select>
+							</div>
+
+
 						</div>
+
+
 						<br class="enfolio5" style="display:none;">
-						<div class="enfolio5" style="display:none;" >
+						<div class="enfolio5" style="display:none;">
+							<div  >
 								<input type="number" id="enfolio5" Placeholder="Folio5" tabindex=5   >
-								<select id="entecnico5" style="width:175px;float:right;margin-right:65px;"  class="form-control entecnicos" >
+								<select id="entecnico5" style="width:95px;float:right;margin-right:140px;"  class="form-control entecnicos" >
                                                       <option selected="selected" disabled="disabled">Tecnico</option>
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
                                                       <option  value="TecnicoC" id="tecC"> C </option>
  
                                 </select>
+                        	</div>
+ 
                         </div>
+
+
+
                         <br class="enfolio6" style="display:none;">
-						<div class="enfolio6" style="display:none;">
+                        <div class="enfolio6" style="display:none;">
+							<div >
 								<input type="number" id="enfolio6" Placeholder="Folio6" tabindex=6   >
-								<select id="entecnico6" style="width:175px;float:right;margin-right:65px;"  class="form-control entecnicos" >
+								<select id="entecnico6" style="width:95px;float:right;margin-right:140px;"  class="form-control entecnicos" >
                                                       <option selected="selected" disabled="disabled">Tecnico</option>
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
                                                       <option  value="TecnicoC" id="tecC"> C </option>
  
                                 </select>
+							</div>
+
 						</div>
+
+
 						<br class="enfolio7" style="display:none;">
-						<div class="enfolio7" style="display:none;" >
+						<div class="enfolio7" style="display:none;">
+							<div  >
 								<input type="number" id="enfolio7" Placeholder="Folio7" tabindex=7   >
-								<select id="entecnico7" style="width:175px;float:right;margin-right:65px;"  class="form-control entecnicos" >
+								<select id="entecnico7" style="width:95px;float:right;margin-right:140px;"  class="form-control entecnicos" >
                                                       <option selected="selected" disabled="disabled">Tecnico</option>
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
                                                       <option  value="TecnicoC" id="tecC"> C </option>
  
                                 </select>
+							</div>
+
 						</div>
+
+
 						<br class="enfolio8" style="display:none;">
 						<div class="enfolio8" style="display:none;">
+							<div>
 								<input type="number" id="enfolio8" Placeholder="Folio8" tabindex=8   >
-								<select id="entecnico8" style="width:175px;float:right;margin-right:65px;"  class="form-control entecnicos" >
+								<select id="entecnico8" style="width:95px;float:right;margin-right:140px;"  class="form-control entecnicos" >
                                                       <option selected="selected" disabled="disabled">Tecnico</option>
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
                                                       <option  value="TecnicoC" id="tecC"> C </option>
  
                                 </select>
+							</div>
+
 						</div>
 						<br class="enfolio9" style="display:none;" >
 						<div class="enfolio9" style="display:none;" >
+							<div>
 								<input type="number" id="enfolio9" Placeholder="Folio9" tabindex=9   >
-								<select id="entecnico9" style="width:175px;float:right;margin-right:65px;"  class="form-control entecnicos" >
+								<select id="entecnico9" style="width:95px;float:right;margin-right:140px;"  class="form-control entecnicos" >
                                                       <option selected="selected" disabled="disabled">Tecnico</option>
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
                                                       <option  value="TecnicoC" id="tecC"> C </option>
  
                                 </select>
+                            </div>
+
 						</div>
+
 						<br class="enfolio10" style="display:none;">
 						<div class="enfolio10" style="display:none;">
+							<div>
 								<input type="number" id="enfolio10" Placeholder="Folio10" tabindex=10   >
-								<select id="entecnico10" style="width:175px;float:right;margin-right:65px;"  class="form-control entecnicos" >
-                                                      <option selected="selected" disabled="disabled">Tecnico</option>
+								<select id="entecnico10" style="width:95px;float:right;margin-right:140px;"  class="form-control entecnicos" >
+                                                      <option selected="selected" disabled="disabled" value="" >Tecnico</option>
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
                                                       <option  value="TecnicoC" id="tecC"> C </option>
  
                                 </select>
+                            </div>
+
 						</div>	
 
 
 						<div class="rcasos"  style="display:none;">				
-								<h5 align="center"> Reparacion </h5>					
-								<div><input type="checkbox" name="a_rep[]" id="a_rep" value="LCD">LCD 
+								<h5 align="center"> Reparacion </h5>	
+
+								<div ><input type="checkbox" name="a_rep[]" id="a_rep" value="LCD">LCD 
 									 <input type="checkbox" name="a_rep[]" id="a_rep" value="Touch">Touch 
 									 <input type="checkbox" name="a_rep[]" id="a_rep" value="BotonHome">Botom Home</div>
 								<div><input type="checkbox" name="a_rep[]" id="a_rep"  value="C.Carga">C. de Carga
@@ -760,7 +820,7 @@ function optionCheck6(){
 									 <input type="checkbox" name="a_rep[]" id="a_rep" value="Software">Software</div>
 								<div><input type="checkbox" name="a_rep[]" id="a_rep" value="No hay reparacion">No hay reparacion </div>
 
-								<button type="button" id="lrep"   class="btn btn-primary" style="margin-left: 2cm;">Guardar cambios</button>
+								<button type="button" id="lrep"   class="btn btn-primary" style="margin-left: 1cm;">Guardar cambios</button>
 								<button type="button"	 class="btn "  id ="cancela"	> Cancelar </button>		
 						</div>				
 
@@ -771,7 +831,7 @@ function optionCheck6(){
 				<button   style="position:relative;top:-30px;" type="button" disabled="disabled" id="Siguentrega" class="btn " tabindex=12 Onclick="siguientefolio();"> Siguiente </button>
 			</div>
 
-			<div id="ImprimirFolio" class="tabcontent" style = "position:relative;top:-6%;">
+			<div id="ImprimirFolio" class="tabcontent" style = "position:relative;top:-2%;">
   				<h4>Impresion multiple de folios</h4>
 				<form   	name="imprimeee" method="post" id="imprimefol"><strong>
 						<div><input type="number" id="impfolio1" Placeholder="Folio1" tabindex=1  ></div> 
@@ -2642,6 +2702,8 @@ function goaway(){
 						$('#a_bitacora').val('');
 						$('#a_modelo').val('');	
 						$('input:radio[name=a_status]:checked').removeAttr("disabled");
+						$('input:radio[name=en_status]:checked').removeAttr("checked");
+
 
 
 }
@@ -2753,6 +2815,11 @@ $("#en_submit").click(function() {
  				var enfolio8 		=  $('#enfolio8').val();
  				var enfolio9 		=  $('#enfolio9').val();
  				var enfolio10 		=  $('#enfolio10').val();
+ 				var enstatus      = $('input:radio[name=en_status]:checked').val();
+
+ 		if (! enstatus){
+ 						alert('Necesitas elegir status');
+ 		}else{		
  			
 
 
@@ -2765,7 +2832,7 @@ $("#en_submit").click(function() {
 			
  	   	$.ajax({    
       		type: "GET",
-      		url: "ins.php?en_folio=1&enfolio1="+enfolio1+"&enfolio2="+enfolio2+"&enfolio3="+enfolio3+"&enfolio4="+enfolio4+"&enfolio5="+enfolio5+"&enfolio6="+enfolio6+"&enfolio7="+enfolio7+"&enfolio8="+enfolio8+"&enfolio9="+enfolio9+"&enfolio10="+enfolio10,
+      		url: "ins.php?en_folio=1&enfolio1="+enfolio1+"&enfolio2="+enfolio2+"&enfolio3="+enfolio3+"&enfolio4="+enfolio4+"&enfolio5="+enfolio5+"&enfolio6="+enfolio6+"&enfolio7="+enfolio7+"&enfolio8="+enfolio8+"&enfolio9="+enfolio9+"&enfolio10="+enfolio10+"&enstatus="+enstatus,
       		dataType: "html",   
       //expect html to be returned                
       		success: function(resp){                    
@@ -2855,7 +2922,7 @@ $("#en_submit").click(function() {
        		return this.defaultSelected;
     	});
 
-
+    }
 
     
 });
@@ -3070,6 +3137,7 @@ $('#lrep').click(function(){
 				$('#a_rep:checked').removeAttr('checked');
 				$('#en_submit').removeAttr('disabled');
 			    $('#Siguentrega').removeAttr('disabled');
+			    $('input:radio[name=en_status]:checked').removeAttr("checked");
 
 		
 

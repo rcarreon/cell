@@ -968,26 +968,12 @@ if (!empty($_GET['imp_folio'])){
 
       $query = "SELECT folio,imei,access from dispos where folio IN('$impfolio1','$impfolio2','$impfolio3','$impfolio4','$impfolio5','$impfolio6','$impfolio7','$impfolio8','$impfolio9','$impfolio10')";
 
-/*<div id="content">
-  <div id="left">
-     <div id="object1"></div>
-     <div id="object2"></div>
-  </div>
-
-  <div id="right">
-     <div id="object3"></div>
-     <div id="object4"></div>
-  </div>
-</div>
-*/
-  
-   
     $result=mysql_query($query,$con2);
     while($dato = mysql_fetch_row($result)){
           
-             echo "<br><div style=\"border:1px solid #545454;width:189px; height:94.5px;margin:10px; \"><br><div align=center  ><p><img src=barcode/barcode.php?text=".$dato[0]."/></p>";
-             echo "<p>$dato[1]</p>";
-             echo "<p style=\"font-size:9px;width:260px;\">$dato[2]</p></div>"; 
+             echo "<br><div style=\"border:1px solid #545454;width:189px; height:94.5px;margin:10px; \"><br><div align=\"center\"  ><p><img src=barcode/barcode.php?text=".$dato[0]."/></p>";
+             echo "<label>$dato[1]</label>";
+             echo "<label style=\"font-size:9px;width:189px;\">$dato[2]</label></div>"; 
              echo "</div>";
     
          

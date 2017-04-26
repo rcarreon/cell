@@ -331,14 +331,24 @@ if(!empty($_GET['eeditas2'])){
   $e_repara    = $_GET['editrepara'];
   $e_tecnico   = $_GET['editecnico'];
 
-  
-       $query = "UPDATE dispos SET reparacion = '$e_repara', tecnico = '$e_tecnico' WHERE folio = '$e_folio'";
 
-      $result = mysqli_query($con,$query);
-      if (!$result){
-            die('Coudnt query'. mysqli_error($con));
+            $query2 = mysql_query("SELECT folio from dispos  WHERE  folio = '$e_folio'",$con2);
+            $ress = mysql_fetch_row($query2);  
+      if (!$ress){
+                echo "<script type=text/javascript>alert('Folio  $e_folio no existe favor ingresar un folio valido')</script>";
+            
+      }else{
+
+      if (!$e_repara){
+            echo "<script type=text/javascript>alert('Tienes que selccionar al menos una reparacion')</script>";
+      }else{
+          $query = "UPDATE dispos SET reparacion = '$e_repara', tecnico = '$e_tecnico' WHERE folio = '$e_folio'";
+
+          $result = mysqli_query($con,$query);
+          if (!$result){
+              die('Coudnt query'. mysqli_error($con));
           } 
-
+      }
 }
 ///AGREGA USUARIO NUEVO
 if(!empty($_GET['agregau'])){
@@ -894,15 +904,14 @@ if(!empty($_GET['en_folio'])){
       $enfolio7    = $_GET['enfolio7'];
       $enfolio8    = $_GET['enfolio8'];
       $enfolio9    = $_GET['enfolio9'];
-      $enfolio10    = $_GET['enfolio10'];
+      $enfolio10   = $_GET['enfolio10'];
       $enstatus    = $_GET['enstatus'];
       
 
-
-                      
+                                
      // WHERE config_name IN('name1', 'name2');
     
-    $query = "UPDATE dispos SET status  = '$enstatus'    WHERE  folio IN ('$enfolio1','$enfolio2','$enfolio3','$enfolio4','$enfolio5','$enfolio6','$enfolio7','$enfolio8','$enfolio9','$enfolio10')";
+      $query = "UPDATE dispos SET status  = '$enstatus'    WHERE  folio IN ('$enfolio1','$enfolio2','$enfolio3','$enfolio4','$enfolio5','$enfolio6','$enfolio7','$enfolio8','$enfolio9','$enfolio10')";
 
       $result = mysqli_query($con,$query);
       if (!$result){
@@ -940,6 +949,7 @@ if(!empty($_GET['en_folio'])){
                       echo "<script type=text/javascript>alert('Articulos con folio $enfolio1,$enfolio2,$enfolio3,$enfolio4,$enfolio5,$enfolio6, $enfolio7, $enfolio8, $enfolio9 y && $enfolio10 actualizados con exito')</script>";
                   }*/
           }
+    }
 }
 
 

@@ -629,12 +629,12 @@ function optionCheck6(){
 			<div id="EntregarFolio" class="tabcontent" style = "position:relative;top:-2%;">
   				<h4>Entrega multiple de folios</h4> 
   						<div class="f_agrega">
-				 			<input type="radio" name="en_status" id="en_status"    value="Entregado"  >Entregado 
-							<input type="radio" name="en_status" id="en_status"   value="Listo"  >Listo 		 <font color="red">**</font>
+				 			<input type="radio" name="entregados" 	id="en_status" 	 value="Entregado"  >Entregado 
+							<input type="radio" name="listones" 	id="en_status"   value="Listo"  >Listo 		 <font color="red">**</font>
 							<p><strong><font size="-1">El estatus elegido es para todos los folios ingresados a continuacion</font></strong></p>   			   		
 			   			</div>
-				<form   name="entrega" method="post" id="entregam"><strong>
-						<div class="enfolio1" >
+				<form   name="entrega" method="post" id="entregam" ><strong>
+						<div class="enfolio1" style="display:none;">
 								<input type="number" id="enfolio1" Placeholder="Folio1" tabindex=1 >
 								
 								<select id="entecnico1" style="width:95px;float:right;margin-right:140px;"  class="form-control entecnicos" >
@@ -2815,7 +2815,7 @@ $("#en_submit").click(function() {
  				var enfolio8 		=  $('#enfolio8').val();
  				var enfolio9 		=  $('#enfolio9').val();
  				var enfolio10 		=  $('#enfolio10').val();
- 				var enstatus      = $('input:radio[name=en_status]:checked').val();
+ 				var enstatus        = $('input:radio[name=en_status]:checked').val();
 
  		if (! enstatus){
  						alert('Necesitas elegir status');
@@ -3201,6 +3201,57 @@ $(document).ready(function(){
             $('#s_submit').click();//Trigger search button click event
         }
     });
+     $('#enfolio1').keypress(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#Siguentrega').click();//Trigger search button click event
+        }
+    });
+     $('#enfolio2').keypress(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#Siguentrega').click();//Trigger search button click event
+        }
+    });
+     $('#enfolio3').keypress(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#Siguentrega').click();//Trigger search button click event
+        }
+    });
+     $('#enfolio4').keypress(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#Siguentrega').click();//Trigger search button click event
+        }
+    });
+     $('#enfolio5').keypress(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#Siguentrega').click();//Trigger search button click event
+        }
+    });
+     $('#enfolio6').keypress(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#Siguentrega').click();//Trigger search button click event
+        }
+    });
+     $('#enfolio7').keypress(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#Siguentrega').click();//Trigger search button click event
+        }
+    });
+     $('#enfolio8').keypress(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#Siguentrega').click();//Trigger search button click event
+        }
+    });
+     $('#enfolio9').keypress(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#Siguentrega').click();//Trigger search button click event
+        }
+    });
+     $('#enfolio10').keypress(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#Siguentrega').click();//Trigger search button click event
+        }
+    });
+
      $('.entecnicos').change(function(){
      		var enfolio = $('#enfolio1').val();
 			if ( ! enfolio  ){
@@ -3299,8 +3350,40 @@ $(document).ready(function(){
         }
     });
 
+	
+
+
 });
 
+
+$(function(){
+  $('input[name="entregados"]').click(function(){
+    if ($(this).is(':checked')){
+      $('.enfolio1').show();
+      $('.entecnicos').hide();      
+      $('input:radio[name=listones]:checked').removeAttr("checked");
+      $('#Siguentrega').removeAttr('disabled');
+    }
+  });
+  $('input[name="listones"]').click(function(){
+    if ($(this).is(':checked'))
+    {
+      $('.enfolio1').show();
+      $('.entecnicos').show();     
+      $('input:radio[name=entregados]:checked').removeAttr("checked");
+    }
+    
+  });
+});
+/*$('en_status').prop(function(){
+		if (!$("input[name='entregados']").is(':checked')) {
+   		alert('Nothing is checked!');
+		}
+		else {
+  		 alert('One of the radio buttons is checked!');
+		}
+});
+*/
 ///Coded by rcarreon ///  
 
 

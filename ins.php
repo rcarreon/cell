@@ -331,24 +331,14 @@ if(!empty($_GET['eeditas2'])){
   $e_repara    = $_GET['editrepara'];
   $e_tecnico   = $_GET['editecnico'];
 
+  
+       $query = "UPDATE dispos SET reparacion = '$e_repara', tecnico = '$e_tecnico' WHERE folio = '$e_folio'";
 
-            $query2 = mysql_query("SELECT folio from dispos  WHERE  folio = '$e_folio'",$con2);
-            $ress = mysql_fetch_row($query2);  
-      if (!$ress){
-                echo "<script type=text/javascript>alert('Folio  $e_folio no existe favor ingresar un folio valido')</script>";
-            
-      }else{
-
-      if (!$e_repara){
-            echo "<script type=text/javascript>alert('Tienes que selccionar al menos una reparacion')</script>";
-      }else{
-          $query = "UPDATE dispos SET reparacion = '$e_repara', tecnico = '$e_tecnico' WHERE folio = '$e_folio'";
-
-          $result = mysqli_query($con,$query);
-          if (!$result){
-              die('Coudnt query'. mysqli_error($con));
+      $result = mysqli_query($con,$query);
+      if (!$result){
+            die('Coudnt query'. mysqli_error($con));
           } 
-      }
+
 }
 ///AGREGA USUARIO NUEVO
 if(!empty($_GET['agregau'])){
@@ -679,9 +669,8 @@ if(!empty($_GET['productoautocotiza'])) {
 
 if(!empty($_GET['modelocata'])) {
     $marca = $_GET['cat_marca'];
-    $modelo = $_GET['cat_modelo'];
 
-    $query = "SELECT DISTINCT  modelo FROM cotizador WHERE (marca = '$marca' AND modelo LIKE '$modelo%')";
+    $query = "SELECT DISTINCT  modelo FROM cotizador WHERE marca LIKE '$marca%'";
     $result = mysql_query($query, $con2);
     $marca = array();
    
@@ -698,10 +687,9 @@ if(!empty($_GET['modelocata'])) {
 if(!empty($_GET['productocata'])) {
     $catmarca = $_GET['cat_marca'];
     $catmodelo = $_GET['cat_modelo'];
-    $catproducto = $_GET['cat_producto'];
 
 
-    $query = "SELECT  DISTINCT linea FROM cotizador WHERE (marca = '$catmarca' AND modelo = '$catmodelo' AND linea LIKE '$catproducto%' )";
+    $query = "SELECT  DISTINCT linea FROM cotizador WHERE (marca = '$catmarca' AND modelo = '$catmodelo' )";
     $result = mysql_query($query, $con2);
     $producto = array();
    
@@ -904,14 +892,14 @@ if(!empty($_GET['en_folio'])){
       $enfolio7    = $_GET['enfolio7'];
       $enfolio8    = $_GET['enfolio8'];
       $enfolio9    = $_GET['enfolio9'];
-      $enfolio10   = $_GET['enfolio10'];
-      $enstatus    = $_GET['enstatus'];
+      $enfolio10    = $_GET['enfolio10'];
       
 
-                                
+
+                      
      // WHERE config_name IN('name1', 'name2');
     
-      $query = "UPDATE dispos SET status  = '$enstatus'    WHERE  folio IN ('$enfolio1','$enfolio2','$enfolio3','$enfolio4','$enfolio5','$enfolio6','$enfolio7','$enfolio8','$enfolio9','$enfolio10')";
+    $query = "UPDATE dispos SET status  = 'Entregado'    WHERE  folio IN ('$enfolio1','$enfolio2','$enfolio3','$enfolio4','$enfolio5','$enfolio6','$enfolio7','$enfolio8','$enfolio9','$enfolio10')";
 
       $result = mysqli_query($con,$query);
       if (!$result){
@@ -949,7 +937,6 @@ if(!empty($_GET['en_folio'])){
                       echo "<script type=text/javascript>alert('Articulos con folio $enfolio1,$enfolio2,$enfolio3,$enfolio4,$enfolio5,$enfolio6, $enfolio7, $enfolio8, $enfolio9 y && $enfolio10 actualizados con exito')</script>";
                   }*/
           }
-    }
 }
 
 
@@ -965,47 +952,33 @@ if (!empty($_GET['imp_folio'])){
       $impfolio9    = $_GET['impfolio9'];
       $impfolio10    = $_GET['impfolio10'];
 
-      /*$query1 = mysql_query("SELECT folio from dispos  WHERE  folio = '$impfolio1'",$con2);
-      $query2 = mysql_query("SELECT folio from dispos  WHERE  folio = '$impfolio2'",$con2);
-      $query3 = mysql_query("SELECT folio from dispos  WHERE  folio = '$impfolio3'",$con2);
-      $query4 = mysql_query("SELECT folio from dispos  WHERE  folio = '$impfolio4'",$con2);
-      $query5 = mysql_query("SELECT folio from dispos  WHERE  folio = '$impfolio5'",$con2);
-      $query6 = mysql_query("SELECT folio from dispos  WHERE  folio = '$impfolio6'",$con2);
-      $query7 = mysql_query("SELECT folio from dispos  WHERE  folio = '$impfolio7'",$con2);
-      $query8 = mysql_query("SELECT folio from dispos  WHERE  folio = '$impfolio8'",$con2);
-      $query9 = mysql_query("SELECT folio from dispos  WHERE  folio = '$impfolio9'",$con2);
-      $query10 = mysql_query("SELECT folio from dispos  WHERE  folio = '$impfolio10'",$con2);
-      $ress1 = mysql_fetch_row($query1);
-      $ress2 = mysql_fetch_row($query2);
-      $ress3 = mysql_fetch_row($query3);
-      $ress4 = mysql_fetch_row($query4);
-      $ress5 = mysql_fetch_row($query5);
-      $ress6 = mysql_fetch_row($query6);
-      $ress7 = mysql_fetch_row($query7);
-      $ress8 = mysql_fetch_row($query8);
-      $ress9 = mysql_fetch_row($query9);
-      $ress10 = mysql_fetch_row($query10);
 
-       
+      $query = "SELECT folio,imei,access from dispos where folio IN('$impfolio1','$impfolio2','$impfolio3','$impfolio4','$impfolio5','$impfolio6','$impfolio7','$impfolio8','$impfolio9','$impfolio10')";
 
-      if ( $impfolio1 && !$ress1){        
-                echo "<script type=text/javascript>alert('Folio  $impfolio1 no existe favor ingresar un folio valido')</script>";
-        
-      }else { */
-      
+/*<div id="content">
+  <div id="left">
+     <div id="object1"></div>
+     <div id="object2"></div>
+  </div>
 
-
-          $query = "SELECT folio,imei,access from dispos where folio IN('$impfolio1','$impfolio2','$impfolio3','$impfolio4','$impfolio5','$impfolio6','$impfolio7','$impfolio8','$impfolio9','$impfolio10')";
-
-          $result=mysql_query($query,$con2);
-          while($dato = mysql_fetch_row($result)){
+  <div id="right">
+     <div id="object3"></div>
+     <div id="object4"></div>
+  </div>
+</div>
+*/
+  
+   
+    $result=mysql_query($query,$con2);
+    while($dato = mysql_fetch_row($result)){
           
-             echo "<br><div  style=\"border:1px solid #545454;width:189px; height:94.5px;margin:10px;display:block;clear:left; \"><br><div align=\"center\"  ><p><img src=barcode/barcode.php?text=".$dato[0]."/></p>";
-             echo "<label>$dato[1]</label>";
-             echo "<label style=\"font-size:9px;width:189px;\">$dato[2]</label></div>"; 
+             echo "<br><div style=\"border:1px solid #545454;width:255px; height:115px;float:left;margin:10px; \"><br><div align=center  ><p><img src=barcode/barcode.php?text=".$dato[0]."/></p>";
+             echo "<p>$dato[1]</p>";
+             echo "<p style=\"font-size:9px;width:260px;\">$dato[2]</p></div>"; 
              echo "</div>";
-        } 
-      //}
+    
+         
+    } 
 
 }
 

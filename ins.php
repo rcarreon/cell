@@ -965,19 +965,47 @@ if (!empty($_GET['imp_folio'])){
       $impfolio9    = $_GET['impfolio9'];
       $impfolio10    = $_GET['impfolio10'];
 
+      /*$query1 = mysql_query("SELECT folio from dispos  WHERE  folio = '$impfolio1'",$con2);
+      $query2 = mysql_query("SELECT folio from dispos  WHERE  folio = '$impfolio2'",$con2);
+      $query3 = mysql_query("SELECT folio from dispos  WHERE  folio = '$impfolio3'",$con2);
+      $query4 = mysql_query("SELECT folio from dispos  WHERE  folio = '$impfolio4'",$con2);
+      $query5 = mysql_query("SELECT folio from dispos  WHERE  folio = '$impfolio5'",$con2);
+      $query6 = mysql_query("SELECT folio from dispos  WHERE  folio = '$impfolio6'",$con2);
+      $query7 = mysql_query("SELECT folio from dispos  WHERE  folio = '$impfolio7'",$con2);
+      $query8 = mysql_query("SELECT folio from dispos  WHERE  folio = '$impfolio8'",$con2);
+      $query9 = mysql_query("SELECT folio from dispos  WHERE  folio = '$impfolio9'",$con2);
+      $query10 = mysql_query("SELECT folio from dispos  WHERE  folio = '$impfolio10'",$con2);
+      $ress1 = mysql_fetch_row($query1);
+      $ress2 = mysql_fetch_row($query2);
+      $ress3 = mysql_fetch_row($query3);
+      $ress4 = mysql_fetch_row($query4);
+      $ress5 = mysql_fetch_row($query5);
+      $ress6 = mysql_fetch_row($query6);
+      $ress7 = mysql_fetch_row($query7);
+      $ress8 = mysql_fetch_row($query8);
+      $ress9 = mysql_fetch_row($query9);
+      $ress10 = mysql_fetch_row($query10);
 
-      $query = "SELECT folio,imei,access from dispos where folio IN('$impfolio1','$impfolio2','$impfolio3','$impfolio4','$impfolio5','$impfolio6','$impfolio7','$impfolio8','$impfolio9','$impfolio10')";
+       
 
-    $result=mysql_query($query,$con2);
-    while($dato = mysql_fetch_row($result)){
+      if ( $impfolio1 && !$ress1){        
+                echo "<script type=text/javascript>alert('Folio  $impfolio1 no existe favor ingresar un folio valido')</script>";
+        
+      }else { */
+      
+
+
+          $query = "SELECT folio,imei,access from dispos where folio IN('$impfolio1','$impfolio2','$impfolio3','$impfolio4','$impfolio5','$impfolio6','$impfolio7','$impfolio8','$impfolio9','$impfolio10')";
+
+          $result=mysql_query($query,$con2);
+          while($dato = mysql_fetch_row($result)){
           
-             echo "<br><div style=\"border:1px solid #545454;width:189px; height:94.5px;margin:10px; \"><br><div align=\"center\"  ><p><img src=barcode/barcode.php?text=".$dato[0]."/></p>";
+             echo "<br><div  style=\"border:1px solid #545454;width:189px; height:94.5px;margin:10px;display:block;clear:left; \"><br><div align=\"center\"  ><p><img src=barcode/barcode.php?text=".$dato[0]."/></p>";
              echo "<label>$dato[1]</label>";
              echo "<label style=\"font-size:9px;width:189px;\">$dato[2]</label></div>"; 
              echo "</div>";
-    
-         
-    } 
+        } 
+      //}
 
 }
 

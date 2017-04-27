@@ -2703,6 +2703,10 @@ function goaway(){
 						$('#a_modelo').val('');	
 						$('input:radio[name=a_status]:checked').removeAttr("disabled");
 						$('input:radio[name=en_status]:checked').removeAttr("checked");
+					    $('input:radio[name=entregados]:checked').removeAttr("checked");
+					    $('input:radio[name=listones]:checked').removeAttr("checked");
+
+
 
 
 
@@ -2938,70 +2942,61 @@ $("#imp_submit").click(function() {
  				var impfolio8 		=  $('#impfolio8').val();
  				var impfolio9 		=  $('#impfolio9').val();
  				var impfolio10 		=  $('#impfolio10').val();
+ 				var width = (screen.width - 850) / 2;
+ 		if (!  impfolio1) {
+ 				alert('Ingresa al menos un folio a imprimir');
+ 		}else{
 
 				
 			
- 	   	$.ajax({    
-      		type: "GET",
-      		url: "ins.php?imp_folio=1&impfolio1="+impfolio1+"&impfolio2="+impfolio2+"&impfolio3="+impfolio3+"&impfolio4="+impfolio4+"&impfolio5="+impfolio5+"&impfolio6="+impfolio6+"&impfolio7="+impfolio7+"&impfolio8="+impfolio8+"&impfolio9="+impfolio9+"&impfolio10="+impfolio10,
-      		dataType: "html",   
+ 	   			$.ajax({    
+      				type: "GET",
+      				url: "ins.php?imp_folio=1&impfolio1="+impfolio1+"&impfolio2="+impfolio2+"&impfolio3="+impfolio3+"&impfolio4="+impfolio4+"&impfolio5="+impfolio5+"&impfolio6="+impfolio6+"&impfolio7="+impfolio7+"&impfolio8="+impfolio8+"&impfolio9="+impfolio9+"&impfolio10="+impfolio10,
+      				dataType: "html",   
       //expect html to be returned                
-      		success: function(resp){                    
-      	    	$("#imprimesfolio").html(resp);   
-      		}      
-    	});
-		var width = (screen.width - 850) / 2;
-		$('.impfolios').dialog({
-			modal: true,
-			width: 300,
-            position: [500, 305],
-            resizable: true,
-            title: "Impresion de etiquetas",
-
-            buttons: { 
-            	
-      			'Imprimir' : function(){
+      				success: function(resp){                    
+      	    			$("#imprimesfolio").html(resp);   
+      				}   
+    			});
+				$('.impfolios').dialog({
+					modal: true,
+					width: 300,
+            		position: [500, 305],
+            		resizable: true,
+            		title: "Impresion de etiquetas",
+		            buttons: { 
+        	      			'Imprimir' : function(){
       				//<button id="imp" TYPE="button" onClick="printArea('print');" >Imprimir
-      				printArea1('imprimesfolio');
-      			},
-      			 
-      			'Cancelar' : function() { 
-         			$( this ).dialog( "close" ); 
-      			}
+      						printArea1('imprimesfolio');
+      						},
+      			   			'Cancelar' : function() { 
+         					$( this ).dialog( "close" ); 
+      						}
       			
-   			}
+   					}
 
 
-
-            //<button id="imp" TYPE="button" onClick="printArea1('imprimesfolio');" >Imprimir 
-			//		<button type="button" id="cancelar">Cancela
-
-        });
- 	   	$('#impfolio1').val('');
-	    $('#impfolio2').val('');
-        $('#impfolio3').val('');
-        $('#impfolio4').val('');
-        $('#impfolio5').val('');
-        $('#impfolio6').val('');
-	    $('#impfolio7').val('');
-        $('#impfolio8').val('');
-        $('#impfolio9').val('');
-        $('#impfolio10').val('');
-        $('#impfolio2').hide();
-        $('#impfolio3').hide();
-        $('#impfolio4').hide();
-        $('#impfolio5').hide();
-        $('#impfolio6').hide();
-        $('#impfolio7').hide();
-        $('#impfolio8').hide();
-        $('#impfolio9').hide();
-        $('#impfolio10').hide();
-
-        
-
-
-
-    
+        		});
+ 	   			$('#impfolio1').val('');
+	    		$('#impfolio2').val('');
+        		$('#impfolio3').val('');
+        		$('#impfolio4').val('');
+        		$('#impfolio5').val('');
+        		$('#impfolio6').val('');
+	    		$('#impfolio7').val('');
+        		$('#impfolio8').val('');
+        		$('#impfolio9').val('');
+        		$('#impfolio10').val('');
+        		$('#impfolio2').hide();
+        		$('#impfolio3').hide();
+        		$('#impfolio4').hide();
+        		$('#impfolio5').hide();
+        		$('#impfolio6').hide();
+        		$('#impfolio7').hide();
+        		$('#impfolio8').hide();
+        		$('#impfolio9').hide();
+        		$('#impfolio10').hide();
+    	}   
 });
 
 
@@ -3138,6 +3133,8 @@ $('#lrep').click(function(){
 				$('#en_submit').removeAttr('disabled');
 			    $('#Siguentrega').removeAttr('disabled');
 			    $('input:radio[name=en_status]:checked').removeAttr("checked");
+			    $('input:radio[name=entregados]:checked').removeAttr("checked");
+				$('input:radio[name=listones]:checked').removeAttr("checked");
 
 		
 

@@ -548,7 +548,7 @@ if(!empty($_GET['artisubmit'])){
 ///AUTOCOMPLETAR CLIENTE
 if(!empty($_GET['clienteauto'])) {
     $cliente = $_GET['term'];
-    $query = "SELECT  nombre FROM cliente WHERE nombre LIKE '%$cliente%'";
+    $query = "SELECT  nombre FROM cliente WHERE nombre LIKE '$cliente%'";
     $result = mysql_query($query, $con2);
     $clientes = array();
    

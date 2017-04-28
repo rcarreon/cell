@@ -3419,7 +3419,8 @@ $(function(){
   $('input[name="entregados"]').click(function(){
     if ($(this).is(':checked')){
       $('.enfolio1').show();
-      $('.entecnicos').hide();      
+      $('.entecnicos').hide();    
+      $('#en_submit').removeAttr("disabled");  
       $('input:radio[name=listones]:checked').removeAttr("checked");
       $('#Siguentrega').removeAttr('disabled');
     }
@@ -3428,7 +3429,8 @@ $(function(){
     if ($(this).is(':checked'))
     {
       $('.enfolio1').show();
-      $('.entecnicos').show();     
+      $('.entecnicos').show(); 
+      $('#en_submit').attr("disabled","disabled");    
       $('input:radio[name=entregados]:checked').removeAttr("checked");
     }
     

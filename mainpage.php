@@ -849,7 +849,7 @@ function optionCheck6(){
 							 <button    type="button" id="imp_submit" class="btn btn-primary" tabindex=11> Imprimir </button>
 						</div>
 				 </form>
-				<button   style="position:relative;top:-30px;" type="button"  class="btn " tabindex=12 Onclick="siguientefolio2();"> Siguiente </button>
+				<button   style="position:relative;top:-30px;" type="button"  id="Siguentrega2" class="btn " tabindex=12 Onclick="siguientefolio2();"> Siguiente </button>
   				 
 			</div>
 
@@ -2821,9 +2821,9 @@ $("#en_submit").click(function() {
  				var enfolio10 		=  $('#enfolio10').val();
  				var enstatus        = $('input:radio[name=en_status]:checked').val();
 
- 		if (! enstatus){
- 						alert('Necesitas elegir status');
- 		}else{		
+
+
+ 			
  			
 
 
@@ -2926,7 +2926,10 @@ $("#en_submit").click(function() {
        		return this.defaultSelected;
     	});
 
-    }
+    
+    			$('input:radio[name=en_status]:checked').removeAttr("checked");
+			    $('input:radio[name=entregados]:checked').removeAttr("checked");
+				$('input:radio[name=listones]:checked').removeAttr("checked");
 
     
 });
@@ -3132,9 +3135,7 @@ $('#lrep').click(function(){
 				$('#a_rep:checked').removeAttr('checked');
 				$('#en_submit').removeAttr('disabled');
 			    $('#Siguentrega').removeAttr('disabled');
-			    $('input:radio[name=en_status]:checked').removeAttr("checked");
-			    $('input:radio[name=entregados]:checked').removeAttr("checked");
-				$('input:radio[name=listones]:checked').removeAttr("checked");
+			    
 
 		
 
@@ -3246,6 +3247,67 @@ $(document).ready(function(){
      $('#enfolio10').keypress(function(e){
         if(e.which == 13){//Enter key pressed
             $('#Siguentrega').click();//Trigger search button click event
+        }
+    });
+
+     $('#impfolio1').keydown(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#Siguentrega2').click();//Trigger search button click event
+            $('#impfolio2').focus();
+        }
+    });
+     $('#impfolio2').keydown(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#Siguentrega2').click();//Trigger search button click event
+            $('#impfolio3').focus();
+        }
+    });
+     $('#impfolio3').keydown(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#Siguentrega2').click();//Trigger search button click event
+            $('#impfolio4').focus();
+        }
+    });
+     $('#impfolio4').keydown(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#Siguentrega2').click();//Trigger search button click event
+            $('#impfolio5').focus();
+        }
+    });
+     $('#impfolio5').keydown(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#Siguentrega2').click();//Trigger search button click event
+            $('#impfolio6').focus();
+        }
+    });
+     $('#impfolio6').keydown(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#Siguentrega2').click();//Trigger search button click event
+            $('#impfolio7').focus();
+        }
+    });
+     $('#impfolio7').keydown(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#Siguentrega2').click();//Trigger search button click event
+            $('#impfolio8').focus();
+        }
+    });
+     $('#impfolio8').keydown(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#Siguentrega2').click();//Trigger search button click event
+            $('#impfolio9').focus();
+        }
+    });
+     $('#impfolio9').keydown(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#Siguentrega2').click();//Trigger search button click event
+            $('#impfolio10').focus();
+        }
+    });
+     $('#impfolio10').keydown(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#Siguentrega2').click();//Trigger search button click event
+            $('#imp_submit').focus();
         }
     });
 

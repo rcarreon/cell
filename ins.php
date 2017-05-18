@@ -548,7 +548,7 @@ if(!empty($_GET['artisubmit'])){
 ///AUTOCOMPLETAR CLIENTE
 if(!empty($_GET['clienteauto'])) {
     $cliente = $_GET['term'];
-    $query = "SELECT  nombre FROM cliente WHERE nombre LIKE '$cliente%'";
+    $query = "SELECT  nombre FROM cliente WHERE nombre LIKE '%$cliente%'";
     $result = mysql_query($query, $con2);
     $clientes = array();
    
@@ -893,13 +893,13 @@ if(!empty($_GET['en_folio'])){
       $enfolio8    = $_GET['enfolio8'];
       $enfolio9    = $_GET['enfolio9'];
       $enfolio10    = $_GET['enfolio10'];
-      
+      $enstatus    = $_GET['enstatus'];
 
 
                       
      // WHERE config_name IN('name1', 'name2');
     
-    $query = "UPDATE dispos SET status  = 'Entregado'    WHERE  folio IN ('$enfolio1','$enfolio2','$enfolio3','$enfolio4','$enfolio5','$enfolio6','$enfolio7','$enfolio8','$enfolio9','$enfolio10')";
+    $query = "UPDATE dispos SET status  = '$enstatus'    WHERE  folio IN ('$enfolio1','$enfolio2','$enfolio3','$enfolio4','$enfolio5','$enfolio6','$enfolio7','$enfolio8','$enfolio9','$enfolio10')";
 
       $result = mysqli_query($con,$query);
       if (!$result){
@@ -936,6 +936,38 @@ if(!empty($_GET['en_folio'])){
                   if ( $enfolio1 &&  $enfolio2 &&  $enfolio3 &&  $enfolio4 &&  $enfolio5 && $enfolio6 && $enfolio7 && $enfolio8 && $enfolio9 && $enfolio10) {
                       echo "<script type=text/javascript>alert('Articulos con folio $enfolio1,$enfolio2,$enfolio3,$enfolio4,$enfolio5,$enfolio6, $enfolio7, $enfolio8, $enfolio9 y && $enfolio10 actualizados con exito')</script>";
                   }*/
+          }
+}
+
+if(!empty($_GET['tec_folio'])){
+
+      $tecfolio1    = $_GET['tecfolio1'];
+      $tecfolio2    = $_GET['tecfolio2'];
+      $tecfolio3    = $_GET['tecfolio3'];
+      $tecfolio4    = $_GET['tecfolio4'];
+      $tecfolio5    = $_GET['tecfolio5'];
+      $tecfolio6    = $_GET['tecfolio6'];
+      $tecfolio7    = $_GET['tecfolio7'];
+      $tecfolio8    = $_GET['tecfolio8'];
+      $tecfolio9    = $_GET['tecfolio9'];
+      $tecfolio10    = $_GET['tecfolio10'];
+      $tectecnico   = $_GET['tecstatus'];
+      
+
+
+                      
+     // WHERE config_name IN('name1', 'name2');
+    
+    $query = "UPDATE dispos SET tecnico  = '$tectecnico'    WHERE  folio IN ('$tecfolio1','$tecfolio2','$tecfolio3','$tecfolio4','$tecfolio5','$tecfolio6','$tecfolio7','$tecfolio8','$tecfolio9','$tecfolio10')";
+
+      $result = mysqli_query($con,$query);
+      if (!$result){
+            die('Coudnt query'. mysqli_error($con));
+          } else {
+                  if ( $tecfolio1 ||  $tecfolio2 ||  $tecfolio3 ||  $tecfolio4 ||  $tecfolio5 || $tecfolio6 || $etecfolio7 || $tecfolio8 || $tecfolio9 || $tecfolio10) {
+                      echo "<script type=text/javascript>alert('Articulos con folio $tecfolio1 $tecfolio2 $tecfolio3 $tecfolio4 $tecfolio5 $tecfolio6 $tecfolio7 $tecfolio8 $tecfolio9  $tecfolio10 actualizados con exito')</script>";
+                  }
+                 
           }
 }
 

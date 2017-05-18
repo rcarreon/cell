@@ -268,7 +268,7 @@ function optionCheck6(){
 				<hr>
 		</div>			
 		<div align="center" id="botones">			
-			<div>
+			<div style="height:120px;">
 				<div style="position:left5%;">
 					<button   type="button" class="btn btn-primary" id="s_submit_b" value="bujcar" >Buscar</button>
 					<button   type="button" class="btn btn-primary" id="s_submit_a"  onclick="opentabo();"value="folios">Folios</button>
@@ -521,9 +521,10 @@ function optionCheck6(){
 		<div   class = "container" id="agregaf" style="display:none;">	
 		<span onclick="goaway();" style="position:relative;top:-16px;left:98%;cursor:hand;"><strong><img src="images/close.png" width="15" height="15"></strong></span>	
 			<div class="tab" style = "position:relative;top:-1%;" >
-				<button class="tablinks" onclick="openFolio(event, 'AgregarFolio')" id="defaultopen" ><div  style="position:relative;top:-8px;">Agregar Folio</div></button>
+				<button class="tablinks" onclick="openFolio(event, 'AgregarFolio')" id="defaultopen" ><div  style="position:relative;top:-8px;">Ingreso Folio</div></button>
   				<button class="tablinks" onclick="openFolio(event, 'EntregarFolio')"><div  style="position:relative;top:-8px;">Entrega multiple</div></button>
   				<button class="tablinks" onclick="openFolio(event, 'ImprimirFolio')"><div  style="position:relative;top:-8px;">Impresion multiple</div></button>
+  				<button class="tablinks" onclick="openFolio(event, 'Tecnicoexpress')"><div  style="position:relative;top:-8px;">Tecnico Express</div></button>
   			</div>
 
 
@@ -851,6 +852,107 @@ function optionCheck6(){
 				 </form>
 				<button   style="position:relative;top:-30px;" type="button"  id="Siguentrega2" class="btn " tabindex=12 Onclick="siguientefolio2();"> Siguiente </button>
   				 
+			</div>
+
+
+			<div id="Tecnicoexpress" class="tabcontent" style = "position:relative;top:-2%;">
+
+				<h4>Tecnico Express</h4> 
+  						<div class="f_tecnicoexp">
+				 			<input type="radio" name="TecA" 	id="tec_status"	  value="TecnicoA"  >Tecnico A 
+							<input type="radio" name="TecB" 	id="tec_status"   value="TecnicoB"  >Tecnico B 
+							<input type="radio" name="TecC" 	id="tec_status"   value="TecnicoC"  >Tecnico C		 
+							<p><strong><font size="-1">El Tecnico  elegido es para todos los folios ingresados a continuacion</font></strong></p>     		
+			   			</div>
+
+			   			<form   name="entrega" method="post" id="entregam" ><strong>
+							<div class="tecfolio1" style="display:none;">
+								<input type="number" id="tecfolio1" Placeholder="Folio1" tabindex=1 >
+							
+                                
+							</div>
+
+
+
+
+						
+						<br class="tecfolio2" style="display:none;">
+						<div class="tecfolio2" style="display:none;">
+								<input type="number" id="tecfolio2" Placeholder="Folio2" tabindex=2   >
+								
+
+						</div>
+
+
+
+
+
+						<br class="tecfolio3" style="display:none;">
+						<div class="tecfolio3" style="display:none;">
+								<input type="number" id="tecfolio3" Placeholder="Folio3" tabindex=3   >
+								
+
+
+						</div>
+
+
+
+
+						<br class="tecfolio4" style="display:none;">
+						<div class="tecfolio4" style="display:none;">
+								<input type="number" id="tecfolio4" Placeholder="Folio4" tabindex=4   >
+						</div>
+
+
+						<br class="tecfolio5" style="display:none;">
+						<div class="tecfolio5" style="display:none;">
+								<input type="number" id="tecfolio5" Placeholder="Folio5" tabindex=5   >						
+ 
+                        </div>
+
+
+
+                        <br class="tecfolio6" style="display:none;">
+                        <div class="tecfolio6" style="display:none;">
+								<input type="number" id="tecfolio6" Placeholder="Folio6" tabindex=6   >							
+
+						</div>
+
+
+						<br class="tecfolio7" style="display:none;">
+						<div class="tecfolio7" style="display:none;">
+								<input type="number" id="tecfolio7" Placeholder="Folio7" tabindex=7   >							
+
+						</div>
+
+
+						<br class="tecfolio8" style="display:none;">
+						<div class="tecfolio8" style="display:none;">
+								<input type="number" id="tecfolio8" Placeholder="Folio8" tabindex=8   >							
+
+						</div>
+						<br class="tecfolio9" style="display:none;" >
+						<div class="tecfolio9" style="display:none;" >
+								<input type="number" id="tecfolio9" Placeholder="Folio9" tabindex=9   >							
+
+						</div>
+
+						<br class="tecfolio10" style="display:none;">
+						<div class="tecfolio10" style="display:none;">
+								<input type="number" id="tecfolio10" Placeholder="Folio10" tabindex=10   >
+								
+
+						</div>	
+
+
+									
+
+						<div style="position:relative;left:20%;top:5px;">
+							 <button    type="button" id="tec_submit" class="btn btn-primary" tabindex=11 disabled="disabled"> Modificar </button>
+						</div>
+				 </form>
+				<button   style="position:relative;top:-30px;" type="button" disabled="disabled" id="Siguentregatec" class="btn " tabindex=12 Onclick="siguientefolio3();"> Siguiente </button>
+				
 			</div>
 
 		</div>		
@@ -2701,11 +2803,23 @@ function goaway(){
 						$('#a_access').val('');	
 						$('#a_bitacora').val('');
 						$('#a_modelo').val('');	
+						$('#tecfolio1').val('');
+	    				$('#tecfolio2').val('');
+        				$('#tecfolio3').val('');
+        				$('#tecfolio4').val('');
+        				$('#tecfolio5').val('');
+        				$('#tecfolio6').val('');
+	    				$('#tecfolio7').val('');
+        				$('#tecfolio8').val('');
+        				$('#tecfolio9').val('');
+        				$('#tecfolio10').val('');
 						$('input:radio[name=a_status]:checked').removeAttr("disabled");
 						$('input:radio[name=en_status]:checked').removeAttr("checked");
 					    $('input:radio[name=entregados]:checked').removeAttr("checked");
 					    $('input:radio[name=listones]:checked').removeAttr("checked");
 
+					    $('input:radio[id=tec_status]:checked').removeAttr("checked");
+					    
 
 
 
@@ -2765,6 +2879,7 @@ function siguientefolio (){
 		}
 }
 
+
 function siguientefolio2 (){
 	var impfoliocheck  = $.trim($("#impfolio1").val());
 	var impfoliocheck2 = $.trim($("#impfolio2").val());
@@ -2808,6 +2923,60 @@ function siguientefolio2 (){
 }
 
 
+function siguientefolio3(){
+	var enfoliocheck = 	$.trim($("#tecfolio1").val());
+	var enfoliocheck2 = $.trim($("#tecfolio2").val());
+	var enfoliocheck3 = $.trim($("#tecfolio3").val());
+	var enfoliocheck4 = $.trim($("#tecfolio4").val());
+	var enfoliocheck5 = $.trim($("#tecfolio5").val());
+	var enfoliocheck6 = $.trim($("#tecfolio6").val());
+	var enfoliocheck7 = $.trim($("#tecfolio7").val());
+	var enfoliocheck8 = $.trim($("#tecfolio8").val());
+	var enfoliocheck9 = $.trim($("#tecfolio9").val());
+
+		
+
+		if(enfoliocheck.length>0){
+       			$('.tecfolio2').show();
+				$('#tecfolio2').focus();
+
+		}
+		if (enfoliocheck.length>0 && enfoliocheck2.length>0 ){
+       			$('.tecfolio3').show();
+				$('#tecfolio3').focus();
+			
+		}
+		if (enfoliocheck.length>0 && enfoliocheck2.length>0 && enfoliocheck3.length>0 ){
+       			$('.tecfolio4').show();			
+       			$('#tecfolio4').focus();
+		}
+		if (enfoliocheck.length>0 && enfoliocheck2.length>0 && enfoliocheck3.length>0 && enfoliocheck4.length>0 ){
+       			$('.tecfolio5').show();			
+       			$('#tecfolio5').focus();
+		}
+		if (enfoliocheck.length>0 && enfoliocheck2.length>0 && enfoliocheck3.length>0 && enfoliocheck4.length>0 && enfoliocheck5.length>0){
+       			$('.tecfolio6').show();	
+       			$('#tecfolio6').focus();		
+		}
+		if (enfoliocheck.length>0 && enfoliocheck2.length>0 && enfoliocheck3.length>0 && enfoliocheck4.length>0 && enfoliocheck5.length>0 && enfoliocheck6.length>0){
+       			$('.tecfolio7').show();	
+       			$('#tecfolio7').focus();		
+		}
+		if (enfoliocheck.length>0 && enfoliocheck2.length>0 && enfoliocheck3.length>0 && enfoliocheck4.length>0 && enfoliocheck5.length>0 && enfoliocheck6.length>0 && enfoliocheck7.length>0){
+       			$('.tecfolio8').show();
+       			$('#tecfolio8').focus();			
+		}
+		if (enfoliocheck.length>0 && enfoliocheck2.length>0 && enfoliocheck3.length>0 && enfoliocheck4.length>0 && enfoliocheck5.length>0 && enfoliocheck6.length>0 && enfoliocheck7.length>0 && enfoliocheck8.length>0){
+       			$('.tecfolio9').show();
+       			$('#tecfolio9').focus();			
+		}
+		if (enfoliocheck.length>0 && enfoliocheck2.length>0 && enfoliocheck3.length>0 && enfoliocheck4.length>0 && enfoliocheck5.length>0 && enfoliocheck6.length>0 && enfoliocheck7.length>0 && enfoliocheck8.length>0 && enfoliocheck9.length>0){
+       			$('.tecfolio10').show();
+       			$('#tecfolio10').focus();			
+		}
+}
+
+
 $("#en_submit").click(function() { 				
  				var enfolio1 		=  $('#enfolio1').val();
   				var enfolio2 		=  $('#enfolio2').val();
@@ -2819,7 +2988,7 @@ $("#en_submit").click(function() {
  				var enfolio8 		=  $('#enfolio8').val();
  				var enfolio9 		=  $('#enfolio9').val();
  				var enfolio10 		=  $('#enfolio10').val();
- 				var enstatus        = $('input:radio[name=en_status]:checked').val();
+ 				var enstatus        = $('input:radio[id=en_status]:checked').val();
 
 
 
@@ -2933,6 +3102,130 @@ $("#en_submit").click(function() {
 
     
 });
+
+///////////////////////////////////
+
+$("#tec_submit").click(function() { 				
+ var tecfolio1 		=  $('#tecfolio1').val();
+  				var tecfolio2 		=  $('#tecfolio2').val();
+ 				var tecfolio3 		=  $('#tecfolio3').val();
+ 				var tecfolio4 		=  $('#tecfolio4').val();
+ 				var tecfolio5 		=  $('#tecfolio5').val();
+  				var tecfolio6 		=  $('#tecfolio6').val();
+  				var tecfolio7 		=  $('#tecfolio7').val();
+ 				var tecfolio8 		=  $('#tecfolio8').val();
+ 				var tecfolio9 		=  $('#tecfolio9').val();
+ 				var tecfolio10 		=  $('#tecfolio10').val()
+ 				var tecstatus        = $('input:radio[id=tec_status]:checked').val();	
+
+
+			
+ 	   	$.ajax({    
+      		type: "GET",
+      		url: "ins.php?tec_folio=1&tecfolio1="+tecfolio1+"&tecfolio2="+tecfolio2+"&tecfolio3="+tecfolio3+"&tecfolio4="+tecfolio4+"&tecfolio5="+tecfolio5+"&tecfolio6="+tecfolio6+"&tecfolio7="+tecfolio7+"&tecfolio8="+tecfolio8+"&tecfolio9="+tecfolio9+"&tecfolio10="+tecfolio10+"&tecstatus="+tecstatus,
+      		dataType: "html",   
+      //expect html to be returned                
+      		success: function(resp){                    
+      	    	$("#entregafolio").html(resp);   
+      		}      
+    	});
+		
+	 	   	$('#enfolio1').val('');
+		    $('#enfolio2').val('');
+	        $('#enfolio3').val('');
+	        $('#enfolio4').val('');
+	        $('#enfolio5').val('');
+	        $('#enfolio6').val('');
+		    $('#enfolio7').val('');
+	        $('#enfolio8').val('');
+	        $('#enfolio9').val('');
+	        $('#enfolio10').val('');
+        $('.enfolio2').hide();
+        $('.enfolio3').hide();
+        $('.enfolio4').hide();
+        $('.enfolio5').hide();
+        $('.enfolio6').hide();
+        $('.enfolio7').hide();
+        $('.enfolio8').hide();
+        $('.enfolio9').hide();
+        $('.enfolio10').hide();
+        $('#tecfolio1').val('');
+	    $('#tecfolio2').val('');
+        $('#tecfolio3').val('');
+        $('#tecfolio4').val('');
+        $('#tecfolio5').val('');
+        $('#tecfolio6').val('');
+	    $('#tecfolio7').val('');
+        $('#tecfolio8').val('');
+        $('#tecfolio9').val('');
+        $('#tecfolio10').val('');
+        $('.tecfolio1').val('');
+	    $('.tecfolio2').val('');
+        $('.tecfolio3').val('');
+        $('.tecfolio4').val('');
+        $('.tecfolio5').val('');
+        $('.tecfolio6').val('');
+	    $('.tecfolio7').val('');
+        $('.tecfolio8').val('');
+        $('.tecfolio9').val('');
+        $('.tecfolio10').val('');
+
+         $('.tecfolio2').hide();
+        $('.tecfolio3').hide();
+        $('.tecfolio4').hide();
+        $('.tecfolio5').hide();
+        $('.tecfolio6').hide();
+        $('.tecfolio7').hide();
+        $('.tecfolio8').hide();
+        $('.tecfolio9').hide();
+        $('.tecfolio10').hide();
+
+
+        $('#entecnico1 option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
+    	$('#entecnico2 option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
+    	$('#entecnico3 option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
+    	$('#entecnico4 option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
+    	$('#entecnico5 option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
+    	$('#entecnico6 option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
+    	$('#entecnico7 option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
+    	$('#entecnico8 option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
+    	$('#entecnico9 option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
+    	$('#entecnico10 option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
+
+    	
+
+    
+    			$('input:radio[name=tec_status]:checked').removeAttr("checked");
+			    $('input:radio[name=TecA]:checked').removeAttr("checked");
+			    $('input:radio[name=TecB]:checked').removeAttr("checked");
+			    $('input:radio[name=TecC]:checked').removeAttr("checked");
+
+    
+});
+
+///////////////////////////////////
+
+
 
 $("#imp_submit").click(function() { 				
  				var impfolio1 		=  $('#impfolio1').val();
@@ -3409,6 +3702,68 @@ $(document).ready(function(){
         }
     });
 
+
+$('#tecfolio1').keydown(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#Siguentregatec').click();//Trigger search button click event
+            $('#tecfolio2').focus();
+        }
+    });
+     $('#tecfolio2').keydown(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#Siguentregatec').click();//Trigger search button click event
+            $('#tecfolio3').focus();
+        }
+    });
+     $('#tecfolio3').keydown(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#Siguentregatec').click();//Trigger search button click event
+            $('#tecfolio4').focus();
+        }
+    });
+     $('#tecfolio4').keydown(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#Siguentregatec').click();//Trigger search button click event
+            $('#tecfolio5').focus();
+        }
+    });
+     $('#tecfolio5').keydown(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#Siguentregatec').click();//Trigger search button click event
+            $('#tecfolio6').focus();
+        }
+    });
+     $('#tecfolio6').keydown(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#Siguentregatec').click();//Trigger search button click event
+            $('#tecfolio7').focus();
+        }
+    });
+     $('#tecfolio7').keydown(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#Siguentregatec').click();//Trigger search button click event
+            $('#tecfolio8').focus();
+        }
+    });
+     $('#tecfolio8').keydown(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#Siguentregatec').click();//Trigger search button click event
+            $('#tecfolio9').focus();
+        }
+    });
+     $('#tecfolio9').keydown(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#Siguentregatec').click();//Trigger search button click event
+            $('#tecfolio10').focus();
+        }
+    });
+     $('#tecfolio10').keydown(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#Siguentregatec').click();//Trigger search button click event
+            $('#imp_submit').focus();
+        }
+    });
+
 	
 
 
@@ -3432,6 +3787,46 @@ $(function(){
       $('.entecnicos').show(); 
       $('#en_submit').attr("disabled","disabled");    
       $('input:radio[name=entregados]:checked').removeAttr("checked");
+    }
+    
+  });
+});
+
+
+$(function(){
+  $('input[name="TecA"]').click(function(){
+    if ($(this).is(':checked')){
+      $('.tecfolio1').show();
+      $('#tec_submit').removeAttr("disabled");  
+      $('input:radio[name=TecB]:checked').removeAttr("checked");
+      $('input:radio[name=TecC]:checked').removeAttr("checked");
+      $('#Siguentregatec').removeAttr('disabled');
+    }
+  });
+  $('input[name="TecB"]').click(function(){
+    if ($(this).is(':checked'))
+    {
+       $('.tecfolio1').show();
+      $('#tec_submit').attr("disabled","disabled");    
+      $('input:radio[name=TecA]:checked').removeAttr("checked");
+      $('input:radio[name=TecC]:checked').removeAttr("checked");
+            $('#Siguentregatec').removeAttr('disabled');
+            $('#tec_submit').removeAttr("disabled");
+
+
+    }
+    
+  });
+   $('input[name="TecC"]').click(function(){
+    if ($(this).is(':checked'))
+    {
+ 	  $('.tecfolio1').show();
+      $('#tec_submit').attr("disabled","disabled"); 
+      $('input:radio[name=TecA]:checked').removeAttr("checked");
+      $('input:radio[name=TecB]:checked').removeAttr("checked");
+            $('#Siguentregatec').removeAttr('disabled');
+            $('#tec_submit').removeAttr("disabled");
+
     }
     
   });

@@ -268,7 +268,7 @@ function optionCheck6(){
 				<hr>
 		</div>			
 		<div align="center" id="botones">			
-			<div style="height:120px;">
+			<div >
 				<div style="position:left5%;">
 					<button   type="button" class="btn btn-primary" id="s_submit_b" value="bujcar" >Buscar</button>
 					<button   type="button" class="btn btn-primary" id="s_submit_a"  onclick="opentabo();"value="folios">Folios</button>

@@ -833,7 +833,7 @@ function optionCheck6(){
 			</div>
 
 			<div id="ImprimirFolio" class="tabcontent" style = "position:relative;top:-2%;">
-  				<h4>Impresion multiple de folios</h4>
+  				<h4>Impresion multiple etiquetas</h4>
 				<form   	name="imprimeee" method="post" id="imprimefol"><strong>
 						<div><input type="number" id="impfolio1" Placeholder="Folio1" tabindex=1  ></div> 
 						<div><input type="number" id="impfolio2" Placeholder="Folio2" tabindex=2  style="display:none;" ></div>

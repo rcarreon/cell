@@ -523,7 +523,7 @@ function optionCheck6(){
 			<div class="tab" style = "position:relative;top:-1%;" >
 				<button class="tablinks" onclick="openFolio(event, 'AgregarFolio')" id="defaultopen" ><div  style="position:relative;top:-8px;">Ingreso Folio</div></button>
   				<button class="tablinks" onclick="openFolio(event, 'EntregarFolio')"><div  style="position:relative;top:-8px;">Entrega multiple</div></button>
-  				<button class="tablinks" onclick="openFolio(event, 'ImprimirFolio')"><div  style="position:relative;top:-8px;">Impresion multiple</div></button>
+  				<button class="tablinks" onclick="openFolio(event, 'ImprimirFolio')"><div  style="position:relative;top:-8px;">Impresion etiquetas</div></button>
   				<button class="tablinks" onclick="openFolio(event, 'Tecnicoexpress')"><div  style="position:relative;top:-8px;">Tecnico Express</div></button>
   			</div>
 
@@ -833,7 +833,7 @@ function optionCheck6(){
 			</div>
 
 			<div id="ImprimirFolio" class="tabcontent" style = "position:relative;top:-2%;">
-  				<h4>Impresion multiple etiquetas</h4>
+  				<h4>Impresion etiquetas</h4>
 				<form   	name="imprimeee" method="post" id="imprimefol"><strong>
 						<div><input type="number" id="impfolio1" Placeholder="Folio1" tabindex=1  ></div> 
 						<div><input type="number" id="impfolio2" Placeholder="Folio2" tabindex=2  style="display:none;" ></div>

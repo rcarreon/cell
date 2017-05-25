@@ -18,6 +18,7 @@ $arep     = $_GET['a_rep'];
 $adonde   = $_GET['a_donde'];
 $arecibe  = $_GET['a_recibe'];
 $sfolio   = $_GET['s_folio'];
+$stecnico   = $_GET['s_tecnico'];
 $simei   = $_GET['s_imei'];
 $smodelo   = $_GET['s_modelo'];
 $scliente  = mysql_real_escape_string($_GET['s_cliente']);
@@ -232,6 +233,25 @@ mysql_select_db("cellcity",$con2);
         echo $tr;
         
     }      
+
+    ////Filtro para buscar por tecnico 
+    if($stecnico){   
+      if ( $numcolum > 500){     
+         $resulta=mysql_query("SELECT dispos.*, cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente  ON  cliente.nombre = dispos.cliente where dispos.tecnico = '$stecnico' order by dispos.folio desc",$con2);
+      }
+      if ( empty($numcolum) ){
+         $resulta=mysql_query("SELECT dispos.*, cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente  ON  cliente.nombre = dispos.cliente where dispos.tecnico = '$stecnico' order by dispos.folio desc LIMIT 100 ",$con2);
+
+      }else {
+         $resulta=mysql_query("SELECT dispos.*, cliente.email,cliente.telefono,cliente.nombre from dispos LEFT JOIN cliente  ON  cliente.nombre = dispos.cliente where dispos.tecnico = '$stecnico' order by dispos.folio desc LIMIT $numcolum",$con2);
+
+      }
+      
+        
+    } 
+
+
+    ////
 ////loop para mostrar los registros mientras haya resultados en la busqueda
     while($data = mysql_fetch_row($resulta)){   
         echo "<tr>";              

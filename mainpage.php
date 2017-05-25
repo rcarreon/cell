@@ -46,6 +46,8 @@ switch (option2){
 			$("#s_submit").show();
 			$("#s_table").show();
 			$('#sestatus').hide();
+			$("#s_tecnico").hide();
+
 		break;
 		case "folio":
 			$("#s_imei").val('').hide();
@@ -60,6 +62,7 @@ switch (option2){
 			$("#s_submit").show();
 			$("#s_table").show();
 			$('#sestatus').hide();
+			$("#s_tecnico").hide();
 		break;
 		case "modelo":
 			$("#s_imei").val('').hide();
@@ -74,6 +77,10 @@ switch (option2){
 			$("#s_submit").show();
 			$("#s_table").show();
 			$('#sestatus').hide();
+			$("#s_tecnico").hide();
+
+
+
 		break;
 		case "cliente":
 			$("#s_imei").val('').hide();
@@ -88,6 +95,8 @@ switch (option2){
 			$("#s_cliente").show();
 			$("#s_submit").show();
 			$("#s_table").show();
+			$("#s_tecnico").hide();
+			$("#s_tecnico").hide();
 		break;
 		case "todos":
 			$("#s_imei").val('').hide();
@@ -102,6 +111,8 @@ switch (option2){
 			$("#s_submit").show();
 			$("#s_table").show();
 			$('#sestatus').hide();
+			$("#s_tecnico").hide();
+			
 		break;
 		case "todosclientes":
 			$("#s_imei").val('').hide();
@@ -116,6 +127,7 @@ switch (option2){
 			$("#s_submit").show();
 			$("#s_table").show();
 			$('#sestatus').hide();
+			$("#s_tecnico").hide();
 		break;
 		case "fecha":
 			$("#s_imei").val('').hide();
@@ -130,6 +142,7 @@ switch (option2){
 			$("#s_submit").show();
 			$("#s_table").show();
 			$('#sestatus').hide();
+			$("#s_tecnico").hide();
 		break;
 		case "sucursal":
 			$("#s_imei").val('').hide();
@@ -144,6 +157,23 @@ switch (option2){
 			$("#s_submit").show();
 			$("#s_table").show();
 			$('#sestatus').hide();
+			$("#s_tecnico").hide();
+		break;
+		case "tecnico":
+			$("#s_imei").val('').hide();
+			$("#s_folio").val('').hide();
+			$("#s_modelo").val('').hide();
+			$("#s_cliente").val('').hide();
+			$("#s_status").val('').hide();
+			$("#s_fecha").val('').hide();
+			$("#n_columnas").val('').hide();
+			$("#s_donde").hide();
+			$("#s_todos").show();
+			$("#s_submit").show();
+			$("#s_table").show();
+			$('#sestatus').hide();
+			$("#s_tecnico").show();
+
 		break;
 
 	}
@@ -301,6 +331,7 @@ function optionCheck6(){
 						<option value="cliente" > Cliente</option>	
 						<option value="fecha" > Fecha</option>
 						<option value="sucursal"> Recibido en </option>	
+						<option value="tecnico"> Tecnico </option>	
 						<option value="todos">Todos los Equipos</status>
 					</select>
 					<select  onchange="enfocado();" name="s_donde" id="s_donde" style="display:none;width:165px;float:left;" class="form-control"  >
@@ -501,7 +532,13 @@ function optionCheck6(){
 							<option name="s_status" value="En reparacion" > En reparacion </option> 
 							<option name="s_status" value="Garantia" > Garantia </option>  
 							<option name="s_status" value="Entregado" > Entregado </option>
-					  	</select>				  		
+					  	</select>	
+						<select onchange="enfocado();" name="s_tecnico" id="s_tecnico" style="display:none;width:110px;position:relative;left:19%;bottom:45px;" class="form-control"  >
+							<option selected="selected" disabled="disabled" value="">opcion</option>
+							<option name="s_tecnico" value="TecnicoA" > Tecnico A </option>
+							<option name="s_tecnico" value="TecnicoB" > Tecnico B </option> 
+							<option name="s_tecnico" value="TecnicoC" > Tecnico C </option>  
+					  	</select>				  					  		
 							<button   type="button" class="btn btn-primary" id="s_submit" style="display:none;"   >Buscar</button>			
 				</form>		
 		</div>						 						
@@ -2219,6 +2256,7 @@ $('#regresando').click(function(){
  	            var sfolio 		=  $('#s_folio').val();
  	            var scliente 	=  $('#s_cliente').val();
  	            var sfecha 		=  $('#s_fecha').val();
+ 	            var stecnico 	=  $('#s_tecnico option:selected').val();
  	            var columnas 	=  $('#n_columnas option:selected').val();
 
 
@@ -2227,7 +2265,7 @@ $('#regresando').click(function(){
 
     $.ajax({    
       type: "GET",
-      url: "ins.php?s_submit=1&s_folio="+sfolio+"&s_imei="+simei+"&s_cliente="+scliente+"&s_modelo="+smodelo+"&s_status="+sstatus+"&s_fecha="+sfecha+"&s_donde="+sdonde+"&n_columnas="+columnas,
+      url: "ins.php?s_submit=1&s_folio="+sfolio+"&s_imei="+simei+"&s_cliente="+scliente+"&s_modelo="+smodelo+"&s_status="+sstatus+"&s_fecha="+sfecha+"&s_donde="+sdonde+"&n_columnas="+columnas+"&s_tecnico="+stecnico,
       dataType: "html",   
       //expect html to be returned                
       success: function(response){                    
@@ -2235,6 +2273,10 @@ $('#regresando').click(function(){
       },
       
     });
+
+    $('#s_tecnico option').prop('selected', function() {
+       		return this.defaultSelected;
+    	});
     
 });
  ///Agrega Folio

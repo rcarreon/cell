@@ -11,6 +11,7 @@
 <body>
 <?php
 include("connection.php");
+session_start(); 		
 $uname =$_SESSION['uname'];
 //$tipo =$_SESSION['tipouser'];
 
@@ -18,7 +19,7 @@ mysql_select_db("cellcity",$con2);
 if(isset($_GET['folio'])){
 	$e_folio     = $_GET['folio'];
 	$nombree = mysql_real_escape_string($_GET['editcliente']);
-	$query1=mysql_query("select folio,modelo,imei,cliente,status,reparacion,detalles,password,fecha,sucursal,recibe,marca,bitacora,tecnico,access   from dispos where folio='$e_folio'",$con2);
+	$query1=mysql_query("select folio,modelo,imei,cliente,status,reparacion,detalles,password,fecha,sucursal,recibe,marca,bitacora,tecnico,access,modifica   from dispos where folio='$e_folio'",$con2);
 	$query3=mysql_query("select email,telefono,celular,RFC,domicilio,colonia,ciudad,cpostal from cliente where nombre ='$nombree'",$con2);	
 	$query2=mysql_fetch_array($query1);
 	$query4=mysql_fetch_array($query3);
@@ -67,7 +68,15 @@ if(isset($_GET['folio'])){
 				<input type="text"  disabled="disabled" name="editcontacto" id="editcontacto" value="<?php echo $query4[1]; ?>"/>
 			</div>
 			<div id="bitacora" style="display: none;" title="Bitacora Folio: <?php echo $e_folio ;?>" > 
-					<textarea  type="text" id="editbitacora" name="editbitacora" style="width:350;height:200;text-align:left;" Placeholder="Bitacora" ><?php echo $query2[12];?></textarea>	
+
+				<?php 
+					date_default_timezone_set('America/Hermosillo');
+  					$date = date('Y-m-d H:i:s');
+  					$e_usuario = "Ultima modificacion: $date, por: $uname ";
+  					?>
+					<textarea  type="text" id="editbitacora" name="editbitacora" style="width:350;height:200;text-align:left;" Placeholder="Bitacora" ><?php  echo $query2[12];?></textarea>
+					<label ><?php echo $query2[15]; ?></label>
+					<input hidden id="editusuario" value="<?php echo $e_usuario; ?>"></input>
 					<button class="btn btn-primary bita_guarda" >Guardar</button>
 			</div> 
 			
@@ -139,6 +148,8 @@ if(isset($_GET['folio'])){
 	   					<button style="position:relative;top:340px;left:-4%;" type="button" id="regresa" class="btn" tabindex=9>Regresar</button>
 					</a>		
 				</form>
+
+				
 	</form>	
 
 
@@ -721,12 +732,16 @@ $(".bitacora").click(function(){
 		var width = (screen.width - 700) / 2;
 		$('#bitacora').dialog({
 			modal: true,
-			width: 400,
-			height:300,
+			width: 450,
+			height:350,
             position: [width, 75],
             resizable: true,
 
         });
+        var searchInput = $('#editbitacora');
+		var strLength = searchInput.val().length * 2;
+		searchInput.focus();
+		searchInput[0].setSelectionRange(strLength, strLength);
 });
 ////////////////////////IMPRIMIR/////////////////////////////////////////////
 ////ESTA FUNCION ES PARA MANDAR LOS VALORES QUE ESTAN EN EL DIV DE UPDATE PARA EL DIV DE PRINT /////////////
@@ -909,6 +924,8 @@ $("#editaa").click(function(){
 	var edetalles   = $('#editdetalles').val();
 	var emmodelo	= $('#editmmodelo').val();
 	var ebitacora   = $('#editbitacora').val();
+	var eusuario   = $('#editusuario').val()
+	var eusuario   = $('#editusuario').val();
 	var editdimpresion = $('#editdimpresion').val();
 	var etecnico    = $('#edittecnico option:selected').val();
 	var estatus = $('#editstatus option:selected').val();
@@ -918,7 +935,7 @@ $("#editaa").click(function(){
 	   });
 	$.ajax({
 	type:"GET",
-		 url:"ins.php?eeditas=1&editimei="+eimei+"&editcliente="+ecliente+"&editmodelo="+emodelo+"&editstatus="+estatus+"&editcontacto="+econta+"&editfecha="+efecha+"&editemail="+eemail+"&editfolio="+efolio+"&editpassword="+epass+"&editdetalles="+edetalles+"&editrepara="+repara+"&editmmodelo="+emmodelo+"&editbitacora="+ebitacora+"&edittecnico="+etecnico+"&editdimpresion="+editdimpresion,
+		 url:"ins.php?eeditas=1&editimei="+eimei+"&editcliente="+ecliente+"&editmodelo="+emodelo+"&editstatus="+estatus+"&editcontacto="+econta+"&editfecha="+efecha+"&editemail="+eemail+"&editfolio="+efolio+"&editpassword="+epass+"&editdetalles="+edetalles+"&editrepara="+repara+"&editmmodelo="+emmodelo+"&editbitacora="+ebitacora+"&edittecnico="+etecnico+"&editdimpresion="+editdimpresion+"&editusuario="+eusuario,
 		success: function(response){
 			$('#editaste').html(response);
 			alert('Folio '+efolio+' modificado con exito');

@@ -27,9 +27,11 @@ $sfecha    = $_GET['s_fecha'];
 $sdonde   = $_GET['s_donde'];
 $fpor     = $_GET['f_por'];
 $numcolum = $_GET['n_columnas'];
-$e_bitacora   = $_GET['editbitacora'];
+$e_bitacora   = mysql_real_escape_string($_GET['editbitacora']);
 $abitacora  = $_GET['a_bitacora'];
 $aaccess     = mysql_real_escape_string($_GET['a_access']);
+session_start();    
+$uname =$_SESSION['uname'];
 
 //////////tabla para mostrar todas las columas de la tabla dispos//////////
 
@@ -331,15 +333,19 @@ if(!empty($_GET['eeditas'])){
   $e_mmodelo   = $_GET['editmmodelo'];
   $e_tecnico   = $_GET['edittecnico'];
   $e_dimpresion = $_GET['editdimpresion'];
+  $e_usuario   = mysql_real_escape_string($_GET['editusuario']);
 
-  
+    
   
   if (!$e_repara){
                 $query = "UPDATE dispos SET modelo = '$e_modelo', imei = '$e_imei', cliente = '$e_cliente', status = '$e_status', fecha = '$e_fecha', email = '$e_email', detalles = '$e_detalles', password = '$e_pass', contacto = '$e_contacto' , marca = '$e_mmodelo', bitacora = '$e_bitacora' , tecnico = '$e_tecnico' , access = '$e_dimpresion'  WHERE folio = '$e_folio'";
   }else{
                  $query = "UPDATE dispos SET modelo = '$e_modelo', imei = '$e_imei', cliente = '$e_cliente', status = '$e_status', fecha = '$e_fecha', email = '$e_email', detalles = '$e_detalles', password = '$e_pass', contacto = '$e_contacto', marca = '$e_mmodelo',  reparacion = '$e_repara', bitacora = '$e_bitacora', tecnico = '$e_tecnico', access = '$e_dimpresion' WHERE folio = '$e_folio'";
   }
+      $query2 = "UPDATE dispos set modifica ='$e_usuario' where folio = '$e_folio'";
       $result = mysqli_query($con,$query);
+      $result2 = mysqli_query($con,$query2);
+
       if (!$result){
             die('Coudnt query'. mysqli_error($con));
           } 

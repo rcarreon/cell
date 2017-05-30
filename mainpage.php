@@ -256,6 +256,11 @@ function optionCheck6(){
 
 }
 
+function optionCheck7(){
+		var optiontecnico = $('#s_tecnico option:selected').val();
+		$('#s_submit').focus();
+}
+
 
 
 
@@ -602,7 +607,7 @@ function optionCheck6(){
 						</div>
 						Fecha y hora:
 						<div>
-							<input class="datte" type="text" name="a_fecha" id="a_fecha" value="<?php  date_default_timezone_set('America/Hermosillo'); $date = date('Y-m-d         H:m:s'); echo $date; ?>" tabindex=5 style="text-transform:uppercase;">
+							<input class="datte" type="text" name="a_fecha" id="a_fecha" value="<?php  date_default_timezone_set('America/Hermosillo'); $date = date('Y-m-d         H:i:s'); echo $date; ?>" tabindex=5 style="text-transform:uppercase;">
 						</div>
 
 						<div style="position:absolute;top:150px;left:55%;">

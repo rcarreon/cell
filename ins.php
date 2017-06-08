@@ -1032,9 +1032,9 @@ if (!empty($_GET['imp_folio'])){
           
              echo "<br>";
 
-              echo "<tr  style=\"width:259px; height:110px;position:relative;top:-30%;\">";
+              echo "<tr  style=\"width:259px; height:110px;\">";
 
-              echo "<td   >";
+              echo "<td  style=\"position:relative;top:-30%;\" >";
               echo "<br><br><br><p align=center ><img height=\"32\" width=\"182\" src=barcode/barcode.php?text=".$dato[0]."/></p>";
               echo "<p align=center style=\"font-size:15px; \">$dato[1]</p>";
               echo "<p align=center style=\"font-size:15px; \">$dato[2]</p>";

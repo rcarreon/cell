@@ -1030,7 +1030,7 @@ if (!empty($_GET['imp_folio'])){
     $result=mysql_query($query,$con2);
     while($dato = mysql_fetch_row($result)){
           
-             echo "<br><br><br>";
+             echo "<br>";
 
               echo "<tr  style=\"width:259px; height:124.5px;\">";
 

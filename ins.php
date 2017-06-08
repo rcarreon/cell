@@ -1030,11 +1030,17 @@ if (!empty($_GET['imp_folio'])){
     $result=mysql_query($query,$con2);
     while($dato = mysql_fetch_row($result)){
           
-             echo "<br><div style=\"width:259px; height:124.5px;margin-left:-30px;margin-top:-25px;position:relative;top:7%;clear:both;\"><br><div align=center  ><p><img height=\"32\" width=\"182\" src=barcode/barcode.php?text=".$dato[0]."/></p>";
-             echo "<p  style=\"font-size:15px; \">$dato[1]</p>";
-             echo "<p style=\"font-size:15px;width:192px;\">$dato[2]</p></div>"; 
-             echo "</div>";
-	     echo "<br><br><br>";
+             echo "<br><br><br>";
+
+              echo "<tr  style=\"width:259px; height:124.5px;\">";
+
+              echo "<td   >";
+              echo "<br><br><br><p align=center ><img height=\"32\" width=\"182\" src=barcode/barcode.php?text=".$dato[0]."/></p>";
+              echo "<p align=center style=\"font-size:15px; \">$dato[1]</p>";
+              echo "<p align=center style=\"font-size:15px; \">$dato[2]</p>";
+              
+              echo "</td>";
+        echo "</tr>";
     
          
     } 

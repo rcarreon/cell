@@ -1003,7 +1003,7 @@ function optionCheck7(){
 					<!-- <button id="imp" TYPE="button" onClick="printArea1('imprimesfolio');" >Imprimir 
 					<button type="button" id="cancelar">Cancelar -->
 				</div>
-	<div style="display:none;" id="imprimesfolio" >
+	<table style="display:none;" id="imprimesfolio" ></table>
 
 	<p id="entregafolio"></p>
 

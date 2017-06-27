@@ -302,8 +302,8 @@ function optionCheck7(){
 				<img src="images/titulocellcity.jpg">
 				<hr>
 		</div>			
-		<div align="center" id="botones">			
-			<div >
+		<div align="center" id="botones" style="height:150px;" >			
+			<div style="height:150px;"  >
 				<div style="position:left5%;">
 					<button   type="button" class="btn btn-primary" id="s_submit_b" value="bujcar" >Buscar</button>
 					<button   type="button" class="btn btn-primary" id="s_submit_a"  onclick="opentabo();"value="folios">Folios</button>

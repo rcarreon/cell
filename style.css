@@ -519,3 +519,24 @@ table.gridtable td {
 .datagrid table tfoot ul.active, .datagrid table tfoot ul a:hover { text-decoration: none;border-color: #006699; color: #FFFFFF; background: none; background-color:#00557F;}
 div.dhtmlx_window_active, div.dhx_modal_cover_dv { position: fixed !important; }
 */
+
+.label{
+        width: 2.025in; /* plus .6 inches from padding */
+        height: .875in; /* plus .125 inches from padding */
+        padding: .125in .3in 0;
+        margin-right: .125in; /* the gutter */
+
+        float: left;
+
+        text-align: center;
+        overflow: hidden;
+
+        /*outline: 1px dotted; /* outline doesn't occupy space like border does */
+ }
+ .page-break  {
+        clear: left;
+        display:block;
+        /*page-break-after:always;*/
+        margin-top: .125in; /* the gutter */
+
+ }

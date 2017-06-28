@@ -521,8 +521,8 @@ div.dhtmlx_window_active, div.dhx_modal_cover_dv { position: fixed !important; }
 */
 
 .label{
-        /*width: 1.9685in; /* plus .6 inches from padding */
-        /*height: .984in;  plus .125 inches from padding */
+        width: 1.9685in; /* plus .6 inches from padding */
+        height: .984in;  plus .125 inches from padding */
         padding: .125in .3in 0;*/
         margin-right: .125in; /* the gutter */
 

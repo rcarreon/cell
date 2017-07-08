@@ -475,6 +475,30 @@ div.tab button.active {
   	display:none;
 
   }
+  div.label{
+  		position: relative;
+  		top:-10%;
+  		right: 5%;
+        width: 259px; /* plus .6 inches from padding */
+        height: 110px;  /*plus .125 inches from padding */
+        padding: .125in .3in 0;*/
+        margin: 90px; /* the gutter */
+        clear:left;
+
+        float: left;
+
+        text-align: center;
+        /* overflow: hidden; */
+
+        outline: 1px dotted; /* outline doesn't occupy space like border does */
+ }
+ div.page-break  {
+        clear: left;
+        display:block;
+        page-break-after:always;
+        margin-top: 30px;  
+
+ }
 }
 textarea{
 	resize: none;
@@ -520,23 +544,4 @@ table.gridtable td {
 div.dhtmlx_window_active, div.dhx_modal_cover_dv { position: fixed !important; }
 */
 
-.label{
-        width: 1.9685in; /* plus .6 inches from padding */
-        height: .984in;  plus .125 inches from padding */
-        padding: .125in .3in 0;*/
-        margin-right: .125in; /* the gutter */
 
-        float: left;
-
-        text-align: center;
-        overflow: hidden;
-
-        /*outline: 1px dotted; /* outline doesn't occupy space like border does */
- }
- .page-break  {
-        clear: left;
-        display:block;
-        /*page-break-after:always;*/
-        margin-top: .125in; /* the gutter */
-
- }

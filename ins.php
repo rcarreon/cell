@@ -1043,12 +1043,12 @@ if (!empty($_GET['imp_folio'])){
               echo "<br><br>";
 
         echo "</tr>"; */
-
-              echo "<div class=\"label\"><img  align=\"center\" height=\"32px\" width=\"182px\" src=barcode/barcode.php?text=".$dato[0]."/>";
+              
+              echo "<div class=\"label page-break\"  ><img  align=\"center\" height=\"32px\" width=\"182px\" src=barcode/barcode.php?text=".$dato[0]."/>";
               echo "<p align=center style=\"font-size:15px; \">$dato[1]</p>";
               echo "<p align=center style=\"font-size:15px; \">$dato[2]</p>";
               echo "</div>";
-              echo "<div class=\"page-break\"></div>";
+              //echo "<div class=\"page-break\"></div>";
 
     
          

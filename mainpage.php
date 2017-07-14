@@ -882,11 +882,11 @@ function optionCheck7(){
 						<div><input type="number" id="impfolio3" Placeholder="Folio3" tabindex=3  style="display:none;" ></div>
 						<div><input type="number" id="impfolio4" Placeholder="Folio4" tabindex=4  style="display:none;" ></div>
 						<div><input type="number" id="impfolio5" Placeholder="Folio5" tabindex=5  style="display:none;" ></div>	
-						<div><input type="number" id="impfolio6" Placeholder="Folio6" tabindex=6  style="display:none;" ></div>
+					<!--	<div><input type="number" id="impfolio6" Placeholder="Folio6" tabindex=6  style="display:none;" ></div>
 						<div><input type="number" id="impfolio7" Placeholder="Folio7" tabindex=7  style="display:none;" ></div>
 						<div><input type="number" id="impfolio8" Placeholder="Folio8" tabindex=8  style="display:none;" ></div>
 						<div><input type="number" id="impfolio9" Placeholder="Folio9" tabindex=9  style="display:none;" ></div>	
-						<div><input type="number" id="impfolio10" Placeholder="Folio10" tabindex=10  style="display:none;" ></div>					
+						<div><input type="number" id="impfolio10" Placeholder="Folio10" tabindex=10  style="display:none;" ></div>					-->
 
 						<div style="position:relative;left:20%;top:5px;">
 							 <button    type="button" id="imp_submit" class="btn btn-primary" tabindex=11> Imprimir </button>
@@ -2933,10 +2933,10 @@ function siguientefolio2 (){
 	var impfoliocheck3 = $.trim($("#impfolio3").val());
 	var impfoliocheck4 = $.trim($("#impfolio4").val());
 	var impfoliocheck5 = $.trim($("#impfolio5").val());
-	var impfoliocheck6 = $.trim($("#impfolio6").val());
-	var impfoliocheck7 = $.trim($("#impfolio7").val());
-	var impfoliocheck8 = $.trim($("#impfolio8").val());
-	var impfoliocheck9 = $.trim($("#impfolio9").val());
+//	var impfoliocheck6 = $.trim($("#impfolio6").val());
+//	var impfoliocheck7 = $.trim($("#impfolio7").val());
+//	var impfoliocheck8 = $.trim($("#impfolio8").val());
+//	var impfoliocheck9 = $.trim($("#impfolio9").val());
 
 		if(impfoliocheck.length>0){
        			$('#impfolio2').show();
@@ -2953,7 +2953,7 @@ function siguientefolio2 (){
 		if (impfoliocheck.length>0 && impfoliocheck2.length>0 && impfoliocheck3.length>0 && impfoliocheck4.length>0 && impfoliocheck5.length>0){
        			$('#impfolio6').show();			
 		}
-		if (impfoliocheck.length>0 && impfoliocheck2.length>0 && impfoliocheck3.length>0 && impfoliocheck4.length>0 && impfoliocheck5.length>0 && impfoliocheck6.length>0){
+/*		if (impfoliocheck.length>0 && impfoliocheck2.length>0 && impfoliocheck3.length>0 && impfoliocheck4.length>0 && impfoliocheck5.length>0 && impfoliocheck6.length>0){
        			$('#impfolio7').show();			
 		}
 		if (impfoliocheck.length>0 && impfoliocheck2.length>0 && impfoliocheck3.length>0 && impfoliocheck4.length>0 && impfoliocheck5.length>0 && impfoliocheck6.length>0 && impfoliocheck7.length>0){
@@ -2966,7 +2966,7 @@ function siguientefolio2 (){
        			$('#impfolio10').show();			
 		}
 
-
+*/
 }
 
 
@@ -3617,10 +3617,10 @@ $(document).ready(function(){
      $('#impfolio5').keydown(function(e){
         if(e.which == 13){//Enter key pressed
             $('#Siguentrega2').click();//Trigger search button click event
-            $('#impfolio6').focus();
+            $('#imp_submit').focus();
         }
     });
-     $('#impfolio6').keydown(function(e){
+     /*$('#impfolio6').keydown(function(e){
         if(e.which == 13){//Enter key pressed
             $('#Siguentrega2').click();//Trigger search button click event
             $('#impfolio7').focus();
@@ -3649,7 +3649,7 @@ $(document).ready(function(){
             $('#Siguentrega2').click();//Trigger search button click event
             $('#imp_submit').focus();
         }
-    });
+    });*/
 
      $('.entecnicos').change(function(){
      		var enfolio = $('#enfolio1').val();

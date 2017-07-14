@@ -347,6 +347,7 @@ function optionCheck7(){
 							<option name="s_donde" value= "P.Maria">Plaza Maria</option>
 							<option name="s_donde" value= "PaseoSoli">Paseo Solidaridad</option>
 							<option name="s_donde" value= "LasFuentes">Las Fuentes</option>
+							<option name="s_donde" value= "Caborca">Caborca</option>
 						</select> 	
 					<select  onchange="enfocado();" name="n_columnas" id="n_columnas" style="display:none;width:180px;float:left;" class="form-control"  >
 							<option selected="selected"  value="" >100 Recientes </option>
@@ -627,6 +628,8 @@ function optionCheck7(){
 									<option  value= "P.Maria">Plaza Maria</option>
 									<option  value= "PaseoSoli">Paseo Solidaridad</option>
 									<option  value= "LasFuentes">Las Fuentes</option>
+									<option  value= "Caborca">Caborca</option>
+
 
 								</select>
 							</div>
@@ -1369,6 +1372,9 @@ function optionCheck7(){
 						</tr>
 						<tr><td><label> Las Fuentes:</label></td><td> Olivos #6 esq con Olivares, Local 6-B, Col. Las Fuenes del Mezquital, Celular: (6623) 94-21-33</td> 
 						   <td>Lunes a Domingo   10:00 - 20:30 horas </td>
+						</tr>
+						<tr><td><label> Caborca:</label></td><td> Avenida #46 Norte Entre 7 y 8 Col. Centro, Caborca, Sonora, Celular: (6623) 94-21-33</td>
+							<td>Lunes a Viernes   10:00 - 19:00 horas , Sabados 10:00 - 17:00 horas </td> 						   
 						</tr>
 					</table>	
 				</div>
@@ -2355,6 +2361,13 @@ $("#a_submit").click(function(){
     else 	if (adonde == "LasFuentes"){
 		var adnd = "Olivos #6 esq con Olivares, Local 6-B, Col. Las Fuenes del Mezquital, Celular: (6623) 94-21-33";
 		var hora = "Lunes a Domingo   10:00 - 20:30 horas";
+		document.getElementById('hora').innerHTML= hora;
+		document.getElementById('adnd').innerHTML= adnd;
+
+	}
+	else 	if (adonde == "Caborca"){
+		var adnd = "Avenida #46 Norte Entre 7 y 8 Col. Centro, Caborca, Sonora, Celular: (6623) 94-21-33";
+		var hora = "Lunes a Viernes   10:00 - 19:00 horas , Sabados 10:00 - 17:00 horas";
 		document.getElementById('hora').innerHTML= hora;
 		document.getElementById('adnd').innerHTML= adnd;
 

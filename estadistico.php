@@ -81,6 +81,7 @@ function optionCheck6(){
 										<option  value= "P.Maria">Plaza Maria</option>
 										<option  value= "PaseoSoli">Paseo Solidaridad</option>
 										<option  value= "LasFuentes">Las Fuentes</option>
+										<option  value= "Caborca">Caborca</option>
 
 									</select>																					
 									<select  onchange="optionCheck6();" id="f_por"   title="Selecciona una de las opciones siguientes para filtrar dispositivos en nuestra base de datos" class="form-control" style="display:none;width:200px;float:left;">

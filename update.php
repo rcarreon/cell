@@ -794,6 +794,13 @@ function 	updateoutput(){
 				document.getElementById('adnd').innerHTML= adnd;
 
 			}
+			else 	if (adonde == "Caborca"){
+				var adnd = "Avenida #46 Norte Entre 7 y 8 Col. Centro, Caborca, Sonora, Celular: (6623) 94-21-33";
+				var hora = "Lunes a Viernes   10:00 - 19:00 horas , Sabados 10:00 - 17:00 horas";
+				document.getElementById('hora').innerHTML= hora;
+				document.getElementById('adnd').innerHTML= adnd;
+
+			}
 
 
 

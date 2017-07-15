@@ -477,10 +477,10 @@ div.tab button.active {
   }
   div.label{
   	position: relative;
-  	top:-70%;
-  	right: 15%;
-        width: 400px; /* plus .6 inches from padding */
-        height: 220px;  /*plus .125 inches from padding */
+  	top:-20%;
+  	right: 5%;
+        width: 2in; /* plus .6 inches from padding */
+        height: 1in;  /*plus .125 inches from padding */
         padding: .125in .3in 0;*/
         margin: 90px; /* the gutter */
         clear:left;
@@ -496,7 +496,7 @@ div.tab button.active {
         clear: left;
         display:block;
         page-break-after:always;
-        margin-top: 65px;  
+        margin-top: 15px;  
 
  }
 }

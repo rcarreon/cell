@@ -8,7 +8,7 @@ echo -e "Deploy de dev para prod..."
 sleep 2 
 echo -e "About to sync $dev_dir > $cache_dir \n want to continue? y/n"
 #read ans
-
+###cambio aqui y alla
 #if [[ $ans == y ]];then 
 	git status | grep "nothing to commit"
 	RES="`echo $?`"

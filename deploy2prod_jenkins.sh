@@ -25,7 +25,7 @@ echo -e "About to sync $dev_dir > $cache_dir \n want to continue? y/n"
 		echo -e "Esto se hara..."
 		git diff 
 		git push
-		if [[ -d $prd_dir ]];then 
+		if [[ -d $cache_dir ]];then 
 		### syncing dev to prd  
 			echo -e "Esto se haria..\n"
 			echo -e "`sudo rsync  -avhunP  --exclude .git $dev_dir $cache_dir`\n"

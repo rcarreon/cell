@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 ### Deploy script para cell city ###
 prd_dir="/app/shared/cell/"
 dev_dir="/app/shared/devcell/"
@@ -38,7 +39,6 @@ echo -e "About to sync $dev_dir > $cache_dir \n want to continue? y/n"
 			sleep 1
 			echo -e ".\n"
 				echo -e "Creando directorio cache_temp y synceando"
-				set -x
 				`sudo mkdir $cache_dir && sudo rsync -avhP $dev_dir $cache_dir`
 		fi
 	fi	

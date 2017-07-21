@@ -29,13 +29,7 @@ echo -e "About to sync $dev_dir > $cache_dir \n want to continue? y/n"
 		### syncing dev to prd  
 			echo -e "Esto se haria..\n"
 			echo -e "`sudo rsync  -avhunP  --exclude .git $dev_dir $cache_dir`\n"
-#			echo -e "Quieres seguir? y/n\n"
-#			read ans
-#			if [[ $ans  == "y" ]];then 
 	                	echo -e "`sudo rsync  -avhuP  --exclude .git $dev_dir $cache_dir`\n"
-#			else 
-#				echo -e "Saliendo sin hacen el rsync\n"
-#			fi
 		else 
 			echo -e "No hay dir de cache prod, creando... "
 			echo -e ".\n"
@@ -43,17 +37,7 @@ echo -e "About to sync $dev_dir > $cache_dir \n want to continue? y/n"
 			echo -e ".\n"
 			sleep 1
 			echo -e ".\n"
-#			read resync
-#			if [[ $resync == "y" ]];then 
 				echo -e "Creando directorio cache_temp y synceando"
 				`sudo mkdir $cache_dir && sudo rsync -avhP $dev_dir $cache_dir`
-#			else 
-#				echo -e "Saliendo...\n"
-#				exit 29
-#			fi 
 		fi
 	fi	
-#else 
-#	echo -e "Saliendo...\n"
-#	exit 34
-#fi 

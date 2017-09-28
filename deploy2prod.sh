@@ -4,7 +4,11 @@ prd_dir="/app/shared/cell/"
 dev_dir="/app/shared/devcell/"
 cache_dir="/app/shared/cache_dir/"
 ###  un cambio para la branch
+<<<<<<< HEAD
 ## otro comentario  mas mamon dev stg 
+=======
+## otro comentario  mas mamon dev ccity_gdl  scripting
+>>>>>>> ccity_gdl/dev
 echo -e "Deploy de dev para prod..."
 sleep 2 
 echo -e "About to sync $dev_dir > $prd_dir \n want to continue? y/n"

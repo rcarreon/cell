@@ -1,7 +1,7 @@
 #!/bin/bash
 set -x
 ### Deploy script para cell city ###
-### test 2 
+### test 3 
 prd_dir="/app/shared/cell/"
 dev_dir="/app/shared/devcell/"
 cache_dir="/tmp/cache_dir/"

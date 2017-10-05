@@ -126,7 +126,11 @@ $("#c_editaa").click(function(){
 		success: function(response){
 			$('#ceditaste').html(response);
 			alert('Contacto modificado con exito');
-			window.location="/";
+			//window.location="/";
+		},
+		error: function(response){
+			$('#ceditaste').html(response);
+			alert('Contacto no modificado, algo paso, preocupate!!')
 		},
 	});
 });

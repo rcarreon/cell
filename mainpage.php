@@ -2301,7 +2301,7 @@ $("#a_submit").click(function(){
 	var ADETALLES 	= $('#a_detalles').val();
 	var adetalles 	= ADETALLES.toUpperCase();
 	var apass 		= $('#a_password').val();
-	var astatus     = $('input:radio[name=a_status]:checked').val();	
+	var astatus     = $('input:radio[id=a_status]:checked').val();	
 	var aconta 		= $('#a_conta').val();
 	var afecha 		= $('#a_fecha').val();
 	var aemail 		= $('#a_email').val();
@@ -2376,7 +2376,7 @@ $("#a_submit").click(function(){
 	if (!acliente){
 		alert('Tienes que proporcionar nombre de cliente');	
 		var nohay = 1;
-	} else if (!astatus){
+	} else if ( !astatus ){
 	  	 alert('Tienes que elegir tipo de ingreso');
 
 	  }

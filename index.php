@@ -3,7 +3,7 @@ session_start();
 include_once "connection.php"; 
 mysql_select_db("cellcity",$con2);
   
-function verificar_logini($user,$password,&$result) { 
+function verificar_login($user,$password,&$result) { 
 
     $sql = "SELECT * FROM usuarios WHERE usuario = '$user' and passwd = '$password'"; 
     $rec = mysql_query($sql) or die ("Query failed: ".mysql_error()."Actual query:".$sql); 

@@ -140,13 +140,14 @@ if(isset($_GET['folio'])){
 
 					<br> <br /><br /><br /><br /><br><br><br>
 
+
 				<form>
 				     	<button  type="button" class="btn btn-success bitacora" style="position:relative;top:340px;left:75%;">Bitacora</button>
-                                       <button  style="position:relative;left:-10%;top:340px;"class="btn btn-primary" type="button" id="editaa" tabindex=7 > Guardar cambios </button>
-                                       <button  style="position:relative;top:340px;left:-6%;" class="btn" type="button" id="printeando" onclick="updateoutput()" tabindex=8> Imprimir </button> 								
-					<a  href="/" >
-	   					<button style="position:relative;top:340px;left:-4%;" type="button" id="regresa" class="btn" tabindex=9>Regresar</button>
-					</a>		
+                        <button  style="position:relative;left:-10%;top:340px;"class="btn btn-primary" type="button" id="editaa" tabindex=7 > Guardar cambios </button>
+                        <button  style="position:relative;top:340px;left:-6%;" class="btn" type="button" id="printeando" onclick="updateoutput()" tabindex=8> Imprimir </button> 								
+						<a  style="position:relative;top:340px;left:-4%;" href="/" >
+	   						<button  style="position:relative;top:0px;left:-1%;" type="button" id="regresa" class="btn" tabindex=9>Regresar</button>
+						</a>		
 				</form>
 
 				

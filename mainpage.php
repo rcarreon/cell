@@ -544,6 +544,7 @@ function optionCheck7(){
 							<option name="s_tecnico" value="TecnicoA" > Tecnico A </option>
 							<option name="s_tecnico" value="TecnicoB" > Tecnico B </option> 
 							<option name="s_tecnico" value="TecnicoC" > Tecnico C </option>  
+							<option name="s_tecnico" value="TecnicoD" > Tecnico D </option>
 					  	</select>				  					  		
 							<button   type="button" class="btn btn-primary" id="s_submit" style="display:none;"   >Buscar</button>			
 				</form>		
@@ -688,6 +689,7 @@ function optionCheck7(){
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
                                                       <option  value="TecnicoC" id="tecC"> C </option>
+                                                      <option  value="TecnicoD" id="tecC"> D </option>
  
                                 </select>
                                 
@@ -706,6 +708,7 @@ function optionCheck7(){
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
                                                       <option  value="TecnicoC" id="tecC"> C </option>
+                                                      <option  value="TecnicoD" id="tecC"> D </option>
  
                                 </select>
 							</div>
@@ -725,6 +728,7 @@ function optionCheck7(){
                                                     <option  value="TecnicoA" id="tecA"> A </option>
                                        				<option  value="TecnicoB" id="tecB"> B </option>
                                                     <option  value="TecnicoC" id="tecC"> C </option>
+                                                    <option  value="TecnicoD" id="tecC"> D </option>
  
                                 </select>
 							</div>
@@ -744,6 +748,7 @@ function optionCheck7(){
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
                                                       <option  value="TecnicoC" id="tecC"> C </option>
+                                                      <option  value="TecnicoD" id="tecC"> D </option>
  
                                 </select>
 							</div>
@@ -761,6 +766,7 @@ function optionCheck7(){
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
                                                       <option  value="TecnicoC" id="tecC"> C </option>
+                                                      <option  value="TecnicoD" id="tecC"> D </option>
  
                                 </select>
                         	</div>
@@ -778,6 +784,7 @@ function optionCheck7(){
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
                                                       <option  value="TecnicoC" id="tecC"> C </option>
+                                                      <option  value="TecnicoD" id="tecC"> D </option>
  
                                 </select>
 							</div>
@@ -794,6 +801,7 @@ function optionCheck7(){
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
                                                       <option  value="TecnicoC" id="tecC"> C </option>
+                                                      <option  value="TecnicoD" id="tecC"> D </option>
  
                                 </select>
 							</div>
@@ -810,6 +818,7 @@ function optionCheck7(){
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
                                                       <option  value="TecnicoC" id="tecC"> C </option>
+                                                      <option  value="TecnicoD" id="tecC"> D </option>
  
                                 </select>
 							</div>
@@ -824,6 +833,7 @@ function optionCheck7(){
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
                                                       <option  value="TecnicoC" id="tecC"> C </option>
+                                                      <option  value="TecnicoD" id="tecC"> D </option>
  
                                 </select>
                             </div>
@@ -839,6 +849,7 @@ function optionCheck7(){
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
                                                       <option  value="TecnicoC" id="tecC"> C </option>
+                                                      <option  value="TecnicoD" id="tecC"> D </option>
  
                                 </select>
                             </div>
@@ -906,7 +917,9 @@ function optionCheck7(){
   						<div class="f_tecnicoexp">
 				 			<input type="radio" name="TecA" 	id="tec_status"	  value="TecnicoA"  >Tecnico A 
 							<input type="radio" name="TecB" 	id="tec_status"   value="TecnicoB"  >Tecnico B 
-							<input type="radio" name="TecC" 	id="tec_status"   value="TecnicoC"  >Tecnico C		 
+							<input type="radio" name="TecC" 	id="tec_status"   value="TecnicoC"  >Tecnico C	
+							<input type="radio" name="TecD" 	id="tec_status"   value="TecnicoD"  >Tecnico D	 
+
 							<p><strong><font size="-1">El Tecnico  elegido es para todos los folios ingresados a continuacion</font></strong></p>     		
 			   			</div>
 

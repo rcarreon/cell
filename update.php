@@ -129,6 +129,7 @@ if(isset($_GET['folio'])){
                                                       <option  value="TecnicoA" id="tecA"> A </option>
                                                       <option  value="TecnicoB" id="tecB"> B </option>
                                                       <option  value="TecnicoC" id="tecC"> C </option>
+                                                      <option  value="TecnicoD" id="tecC"> D </option>
  
                                               </select>
                                               </div> 		
